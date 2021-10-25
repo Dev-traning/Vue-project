@@ -1,0 +1,55 @@
+<template>
+    <div>
+
+         <Nav />
+        <div style="  margin-top: 100px;">
+<table>
+  <tr>
+        <td>
+    email {{user.full_name}}
+
+  
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+        <Wallet />
+        </td>
+    </tr>
+
+
+       <tr>
+        <td>
+            <PostsShow />
+        </td>
+    </tr>
+
+
+</table>
+            </div>
+    </div>
+</template>
+
+ 
+
+<script>
+import {mapGetters} from 'vuex'
+import Nav from '../components/Nav.vue'
+import Wallet from '../components/Wallet'
+import PostsShow from '../components/PostsShow'
+export default {
+    name: 'Profile',
+      components: {
+    Nav,
+    Wallet,
+    PostsShow
+   } ,
+ computed: {
+       ...mapGetters(['user'])
+     }
+ 
+}
+</script> 
