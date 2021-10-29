@@ -18,11 +18,11 @@
              
 
                   <b-nav-form  >
-                     <Search/>
+                     <Search class="d-none d-sm-block"/>
 
                      <!-- <a href="#" class="p-2 text-center ms-auto menu-icon show" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-bs-toggle="dropdown"><span class="dot-count bg-warning"></span><i class="feather-bell font-xl text-current"></i></a> -->
                    
-                  <a  class="p-0 ms-3 menu-icon" v-bind:href="'/home/User'" ><img src="../assets/home-icon.png" alt="user" class="w40 rounded "></a>
+                  <a  class="p-0 ms-3 menu-icon d-none d-sm-block " v-bind:href="'/home/User'" ><img src="../assets/home-icon.png" alt="user" class="w40 rounded "></a>
                      <b-nav-item-dropdown right >
                         
                         <template #button-content>

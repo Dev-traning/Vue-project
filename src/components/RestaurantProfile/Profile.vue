@@ -178,17 +178,16 @@
                                           </div>
 
                                           <div class="row">
-                                             <div class="mb-2 col-lg-4">
-                                                <div class="">
-                                                   <label class="mont-font text-grey-400 fw-600 font-xsss">City</label> 
-                                                     <select style=" padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem; " class="form-select" aria-required="true" aria-invalid="false" v-model="list.city.id" >
-                                                   <option value="" disabled selected>City</option>
-                                                   <option v-for="item in city" :value="item.id" v-bind:key="item.id" >{{item.name}}</option>
-                                                </select>
-                                                </div>
-                                             </div>
+                                           
 
  
+                                             <div class="mb-2 col-lg-4">
+                                                <label class="mont-font text-grey-400 fw-600 font-xsss">Country</label> 
+                                                <select style=" padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem; " class="form-select" aria-required="true" aria-invalid="false" v-model="list.country.id" @change="getState()" >
+                                                <option value="" disabled selected>Country</option>
+                                                <option v-for="country in countryname" :value="country.id" v-bind:key="country.id" >{{country.name}}</option>
+                                             </select>
+                                             </div>
 
                                              <div class="mb-2 col-lg-4">
                                                 <div class="">
@@ -199,14 +198,16 @@
                                              </select>
                                                 </div>
                                              </div>
-                                        
-                                             <div class="mb-2 col-lg-4">
-                                                <label class="mont-font text-grey-400 fw-600 font-xsss">Country</label> 
-                                                <select style=" padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem; " class="form-select" aria-required="true" aria-invalid="false" v-model="list.country.id" @change="getState()" >
-                                                <option value="" disabled selected>Country</option>
-                                                <option v-for="country in countryname" :value="country.id" v-bind:key="country.id" >{{country.name}}</option>
-                                             </select>
+                                               <div class="mb-2 col-lg-4">
+                                                <div class="">
+                                                   <label class="mont-font text-grey-400 fw-600 font-xsss">City</label> 
+                                                     <select style=" padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem; " class="form-select" aria-required="true" aria-invalid="false" v-model="list.city.id" >
+                                                   <option value="" disabled selected>City</option>
+                                                   <option v-for="item in city" :value="item.id" v-bind:key="item.id" >{{item.name}}</option>
+                                                </select>
+                                                </div>
                                              </div>
+                                        
    
                                           </div>
 
@@ -307,7 +308,8 @@ this.$refs['modal'].hide()
       
       .then((result) => {
           this.list =result.data.data
-              this.list.push();})
+              this.list.push();
+             })
    setTimeout(function(scope) {
              scope.loading = false;
         }, 1000, this);

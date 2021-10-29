@@ -14,7 +14,7 @@ import Router from 'vue-router'
 
 import Home from './components/Home.vue'
 import PageNotFound from './components/PageNotFound.vue'
-import Login from './components/Login.vue'
+
 
 
 
@@ -22,6 +22,13 @@ import Register from './components/Register.vue'
 
 import MailVerify from './components/Auth/MailVerify.vue'
 import UserStore from './components/Auth/UserStore.vue'
+import Login from './components/Auth/Login.vue'
+
+//Register
+import RegisterNew from './components/Auth/RegisterNew.vue'
+import OtpVery from './components/Auth/OtpVery.vue'
+import NewUser from './components/Auth/NewUser.vue'
+
 
 import Forgot from './components/Forgot.vue'
 import Posts from './components/Posts.vue'
@@ -89,6 +96,7 @@ import Setting from './components/Header/Setting.vue'
 
 // atmnirbhar
 import Atmnirbhar from './components/Atmnirbhar/Atmnirbhar.vue'
+import AtmPaySuc from './components/Atmnirbhar/AtmPaySuc.vue'
 // Post feed
 
 import PostFeed from './components/Feed/PostFeed.vue'
@@ -125,7 +133,25 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    { path: '/', component: Login },
+    { path: '/', component: Login,
+    children: [
+      {
+        name: 'RegisterNew',
+        path: '/RegisterNew',
+        component: RegisterNew
+      },
+      {
+        name: 'OtpVery',
+        path: '/OtpVery',
+        component: OtpVery
+      },  {
+        name: 'NewUser',
+        path: '/NewUser',
+        component: NewUser
+      },
+
+      
+    ]},
     { path: "*", component: PageNotFound },
     {
       path: '/home',
@@ -166,11 +192,17 @@ export default new Router({
 
             {
           path: '/home/User/Fail',
-          component: Fail
+          component: Fail,
+          
         },{
           path: '/home/User/success',
           component: Success
         },{
+          path: '/home/User/AtmPaySuc',
+          component: AtmPaySuc
+        },
+        
+        {
           path: '/home/User/help',
           component: Help
         },{

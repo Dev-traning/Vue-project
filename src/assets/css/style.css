@@ -4461,15 +4461,15 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
-	color: #000;
-	background-color: #1e74fd;
-	border-color: #1e74fd
+    color: var(--bs-light);
+    background-color: #0048a5;
+    border-color: #ff01013d;
 }
 
 .btn-primary:hover {
-	color: #000;
-	background-color: #4089fd;
-	border-color: #3582fd
+    color: #0048a5;
+    background-color: #c41e1645;
+    border-color: #0048a563;
 }
 
 .btn-check:focus+.btn-primary,

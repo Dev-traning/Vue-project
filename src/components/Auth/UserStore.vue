@@ -1,27 +1,18 @@
 <template>
     <div class="mont-font">
-         <div class="brand-wrapper text-center">
-                        <p class="mb-2 h1 text-primary">SignUp Now</p>
-                        <hr/>
+         <div  >
+  
+    <!-- <h1>  <b   ><span style="color: #004898">Restro</span ><span style="color: #c41e16">world</span></b ></h1>
+    <h1 class="display-1">Display 1</h1>
+<h1 class="display-2">Display 2</h1>
+<h1 class="display-3">Display 3</h1> -->
+<h1 class="font-xl"> <b   ><span style="color: #004898">Restro</span ><span style="color: #c41e16">world</span></b ></h1>
+                  
                      </div>
    <form @submit.prevent="handalSubmit">
-                        <!-- <error v-if="error" :error="error"/> -->
-                        <div class="form-group">
 
-                           
-                           <select style="padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem;" class="form-select " aria-required="true" aria-invalid="false" v-model="user_type" required>
-                              <option value="" disabled>Select Bussiness Type?</option>
-                              <option value="6">Restaurant/Restaurant Owner</option>
-                              <option value="7">Vendor (Supplier of Restaurant materials and services)</option>
-                              <option value="8">Restaurant Professional (Chef, Captain, Manager, etc.)</option>
-                           </select>
-                        </div>
-                        <div class="form-group" v-if="user_type !='8'"> <label for="email" class="sr-only">Email</label> <input type="Business" name="Business" class="form-control" v-show="user_type" v-model="business_name" placeholder='Business Name'> </div>
-                        <div class="form-row">
-                           <div class="form-group col-md-6"> <input type="text" class="form-control" placeholder="First Name" v-model="first_name"> </div>
-                           <div class="form-group col-md-6"> <input type="Text" class="form-control" placeholder="Last Name" v-model="last_name"> </div>
-                        </div>
-                        <div class="form-row">
+
+            <div class="form-row">
                            <div class="form-group col-md-4">
                               <select style="padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem;" class="form-select" aria-required="true" aria-invalid="false" v-model="country_id" @change="getState()">
                                  <option value="" disabled selected>Country</option>
@@ -41,9 +32,47 @@
                               </select>
                            </div>
                         </div>
+
+
+                  
+                        <!-- <div class="form-group">
+                     <select style="padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem;" class="form-select " aria-required="true" aria-invalid="false" v-model="user_type" required>
+                              <option value="" disabled>Select Bussiness Type?</option>
+                              <option value="6">Restaurant/Restaurant Owner</option>
+                              <option value="7">Vendor (Supplier of Restaurant materials and services)</option>
+                              <option value="8">Restaurant Professional (Chef, Captain, Manager, etc.)</option>
+                           </select>
+                        </div>
+                        
+                        <div class="form-group" v-if="user_type !='8'"> 
+                           <label for="email" class="sr-only">Email</label> <input type="Business" name="Business" class="form-control" v-show="user_type" v-model="business_name" placeholder='Business Name'> </div> -->
+                        <!-- <div class="form-row">
+                           <div class="form-group col-md-6"> <input type="text" class="form-control" placeholder="First Name" v-model="first_name"> </div>
+                           <div class="form-group col-md-6"> <input type="Text" class="form-control" placeholder="Last Name" v-model="last_name"> </div>
+                        </div> -->
+                 
                         <div class="form-group"> <label for="email" class="sr-only">Email</label> <input type="email" name="email" id="email" class="form-control" placeholder="Email address" v-model="email"/> </div>
-                        <div class="form-group "> <label for="password" class="sr-only">Password</label> <input type="password" name="password" id="password" class="form-control mb-0" placeholder="Password" v-model="password"/> </div>
-                        <div class="form-group mb-4"> <label for="password" class="sr-only">Confirm Password</label> <input type="password" name="password" id="password" class="form-control mb-1" placeholder="Confirm Password" v-model="password_confirmation"/> <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"/> By creating an account you agree to our <a href="#" class="text-reset">Terms & Privacy</a>. </div>
+
+
+                      
+
+                      <div class="row mb-3">
+                         <div class="btn-group " role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary shadow-none fw-500 font-xss text-primary-500">SignUp</button>
+  <button type="button" class="btn btn-primary shadow-none fw-500 font-xss text-primary-500">Elite Account</button>
+   
+</div>
+
+    <!-- <div class="col-6 col-sm-6 pr-0 ">
+      <button type="button" class="btn btn-primary w-100">Primary</button>
+    </div>
+    <div class="col-6 col-sm-6 pl-0">
+      <button type="button" class="btn btn-primary w-100">Primary</button>
+    </div> -->
+                      </div> 
+
+                        <!-- <div class="form-group "> <label for="password" class="sr-only">Password</label> <input type="password" name="password" id="password" class="form-control mb-0" placeholder="Password" v-model="password"/> </div> -->
+                        <!-- <div class="form-group mb-4"> <label for="password" class="sr-only">Confirm Password</label> <input type="password" name="password" id="password" class="form-control mb-1" placeholder="Confirm Password" v-model="password_confirmation"/> <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"/> By creating an account you agree to our <a href="#" class="text-reset">Terms & Privacy</a>. </div> -->
                         <button class="btn btn-block login-btn mb-4" type="submit" > Sign Up </button> 
                      </form>
  <p class="login-card-footer-text">

@@ -29,13 +29,13 @@
              
   <b-dropdown-item v-if="item.user.id == userid" v-b-modal.homepageedit v-on:click="updatePostid(item.id,itemIndex)">
               
-                     <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss me-4"  >Edit</h4>
+                     <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss me-4">Edit</h4>
                
                </b-dropdown-item>
                
                <b-dropdown-item  @click="copyDoiToClipboard(item.id)">
                
-                     <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss  "  >Copy Link</h4>
+                     <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss">Copy Link</h4>
                      
             
                </b-dropdown-item>

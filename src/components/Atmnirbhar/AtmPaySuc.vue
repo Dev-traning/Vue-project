@@ -6,7 +6,6 @@
 
 
 <div class="card w-100 shadow-sm rounded border-0 mb-3 ">
-    <div v-if="errormas" class="alert alert-success" role="alert">{{errormas}}</div>
    <b-img style="height: 111px;width: auto;margin-top: 6rem !important; margin-bottom: 2rem !important;" center src="../../assets/paymentsuses.png" alt="Center image"></b-img>
                                                 
                                                 <h1 class="text-success fw-600 text-danger-600 font-xl" style="color: #00a00b!important;" >Your Payment Was Successful !</h1>
@@ -27,72 +26,37 @@
    
 </template>
 <script>
-
 import axios from "axios";
 export default {
     Name:'Success',
     data() {
     return {
         errormas:'',
-        coupon_code:'',
-        errormasss:''
+        
     }},
       methods: {
 
       },
 
         mounted() {
-           
-            this.subscribe = JSON.parse(localStorage.getItem("copondetails"))
-            if(this.subscribe){
-               this.coupon_code=this.subscribe.applied_coupon
-              
-            }else{
-               this.coupon_code=''
-              
-            }
-  
-          if(localStorage.getItem("hash")){
-                    this.errormas = 'Your subscription process is in progress. Do not refresh or leave page'
-               axios.post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
-               .then((result) => { if (result.data.status_code == 201) {
-                 axios.post('payment/'+result.data.data.id,{payment_status:'1'})
-                .then((result) => { 
-              
-                   if(result.data.status_code == '200')
-                    
-                      this.$router.go(this.$router.currentRoute)
-                      localStorage.removeItem('hash');
-                      localStorage.removeItem('copondetails');
-                        })
-            }})}
+             this.subscribe = JSON.parse(localStorage.getItem("subscribe"));
+         
+              const response = axios.post('payment/'+this.subscribe.id,{
+                  payment_status:'1'
+              })
+                .catch(error =>{
+                              if(error){this.errormas=error.response.data.message} 
 
-            if(localStorage.getItem('expireSession')){
-                    setTimeout(() => {localStorage.removeItem('expireSession')}, 10000);
-             }else if(!localStorage.getItem('expireSession')){
-                 this.$router.push("/home");
-             }
-           
-           
-              
-            // .catch((error) => {
-            //     this.errormas = error.response.data.message;
-                
-            // })
+                              console.log(error)
+                           })
 
-   //         this.subscribe = JSON.parse(localStorage.getItem("subscribe"));
-   //         const response = axios.post('payment/'+this.subscribe.id,{
-   //                payment_status:'1'
-   //            }) .catch(error =>{
-   //                            if(error){this.errormas=error.response.data.message} 
-   //                            console.log(error)})
-   //                            if (response.data.status_code == '200') {
-   //                             this.$router.go(this.$router.currentRoute)
-   //                              localStorage.removeItem('subscribe');
-   //  }
+                             if (response.data.status_code == '200') {
+                               this.$router.go(this.$router.currentRoute)
+                                localStorage.removeItem('subscribe');
+    }
 
                             
-   //            console.log(response)
+              console.log(response)
                 
          
      },
@@ -104,7 +68,8 @@ export default {
 
 
 <style scoped>
-   
+ 
+
 body {
   display: flex;
   align-items: center;

@@ -62,38 +62,49 @@
 </div>
 </template>
 <script>
+
 import axios from "axios";
 export default {
     Name:'Success',
     data() {
     return {
-        errormas:''
+        errormas:'',
+        coupon_code:'',
+        errormasss:''
     }},
       methods: {
 
       },
 
         mounted() {
-             this.subscribe = JSON.parse(localStorage.getItem("subscribe"));
-         
-              const response = axios.post('payment/'+this.subscribe.id,{
-                  payment_status:'0'
-              })
-                .catch(error =>{
-                              if(error){this.errormas=error.response.data.message} 
+           
+            this.subscribe = JSON.parse(localStorage.getItem("copondetails"))
+            if(this.subscribe){
+               this.coupon_code=this.subscribe.applied_coupon
+              
+            }else{
+               this.coupon_code=''
+              
+            }
+  
+          if(localStorage.getItem("hash")){
+                 
+               axios.post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
+               .then((result) => { if (result.data.status_code == 201) {
+                 axios.post('payment/'+result.data.data.id,{payment_status:'2'})
+                 .catch((error) => { 
+                           if(error.response.data.status_code == '422'){
+                              localStorage.removeItem('hash');
+                              localStorage.removeItem('copondetails');
+                              this.$router.go(this.$router.currentRoute)
+                           }})}})}
 
-                              console.log(error)
-                           })
-                            if (response.data.status_code == '200') {
-                               this.$router.go(this.$router.currentRoute)
-                         localStorage.removeItem('subscribe');
-    } else {
-        // Set a flag so that we know not to reload the page twice.
-        localStorage.setItem('subscribe', '1');
-        location.reload();
-    }
-                           
-               console.log(response)
+            if(localStorage.getItem('expireSession')){
+                    setTimeout(() => {localStorage.removeItem('expireSession')}, 10000);
+             }else if(!localStorage.getItem('expireSession')){
+                 this.$router.push("/home");
+             }
+         
          
      },
 

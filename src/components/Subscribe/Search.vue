@@ -16,9 +16,8 @@
                </button>
             </div>
             <div class="text-center">
-               <b-alert show variant="warning" v-if="failMsg">{{failMsg}}</b-alert>
-               <!-- <b  style="font-size: 50px !important; " ><span class="space1" style="color: #004898">Restro</span><span class="space1" style="color: #c41e16">world</span></b>
-                  <p style="color: black; font-size: 14px; margin-left: 4px; margin-top: -18px; font-weight: bold;" class=""> India's First Global Restaurant Community </p> -->
+               <b-alert show variant="warning" v-if="failMsg" class="p-1">{{failMsg}}</b-alert>
+            
                <a href="#">
                   <h3 style="color: #004898;   margin-left: 4px;  font-weight: bold;" class="pl-4 pr-4 pb-2 pt-2" ><u>Make this An Elite Account</u></h3>
                </a>
@@ -27,55 +26,41 @@
                <div class="row">
                   <div class="col">
                      <b-form-group class=" mb-2 mt-0" label="First Name" label-for="name-input" invalid-feedback="Name is required" >
-                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="users.first_name" autocomplete="off"></b-form-input>
+                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="user.first_name" autocomplete="off"></b-form-input>
                      </b-form-group>
                   </div>
                   <div class="col">
                      <b-form-group class=" mb-2 mt-0" label="Last Name" label-for="name-input" invalid-feedback="Name is required" >
-                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="users.last_name" autocomplete="off"></b-form-input>
+                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="user.last_name" autocomplete="off"></b-form-input>
                      </b-form-group>
                   </div>
                </div>
                <div class="row">
                   <div class="col">
                      <b-form-group class=" mb-2 mt-0" label="Mobile No" label-for="name-input" invalid-feedback="Name is required" >
-                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="users.mobile_no" autocomplete="off"></b-form-input>
+                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="user.mobile_no" autocomplete="off"></b-form-input>
                      </b-form-group>
                   </div>
                   <div class="col">
                      <b-form-group class=" mb-2 mt-0" label="Email" label-for="name-input" invalid-feedback="Name is required" >
-                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="users.email" autocomplete="off"></b-form-input>
+                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="users.email" autocomplete="off" readonly></b-form-input>
                      </b-form-group>
                   </div>
                </div>
                <div class="row">
                   <div class="col">
-                     <b-form-group class=" mb-2 mt-0" label="Country" label-for="name-input" invalid-feedback="Name is required" >
-                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="country" autocomplete="off"></b-form-input>
+                     <b-form-group class=" mb-2 mt-0" label="Address" label-for="name-input" invalid-feedback="Name is required" >
+                        <b-form-input placeholder="Optinal" class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="user.address" autocomplete="off"></b-form-input>
                      </b-form-group>
                   </div>
-                  <div class="col">
-                     <b-form-group class=" mb-2 mt-0" label=" State" label-for="name-input" invalid-feedback="Name is required" >
-                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="state" autocomplete="off"></b-form-input>
-                     </b-form-group>
-                  </div>
-                  <div class="col">
-                     <b-form-group class=" mb-2 mt-0" label="City" label-for="name-input" invalid-feedback="Name is required" >
-                        <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="city" autocomplete="off"></b-form-input>
-                     </b-form-group>
-                  </div>
+               
                </div>
                <b-form-group class=" mb-2 mt-0" label="GST No." label-for="name-input" invalid-feedback="Name is required" >
                   <b-form-input placeholder="Optinal" class="rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="gst" autocomplete="off"></b-form-input>
                </b-form-group>
                <b-form-group class="mb-2 mt-0" label="Plan"   label-for="name-input"  invalid-feedback="Name is required"  >
                   <input type="text" class="form-control" placeholder="For 1 Year (Rs. 999.00/-)" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
-                  <!-- <select name="LeaveType" @change="onChange($event)" v-model="selected"  class="form-select  rounded-xxxxl p-2 ps-2 font-xsss text-grey-600 fw-500 border-light-md "   >
-                     <option   v-for="item in plan" v-bind:key="item.id" value="" >{{item.name}} For {{item.plan_validity_text}} (Rs.{{item.countries.pivot.amount}}/-)</option>
-                       </select> -->
-                  <!-- <select name="LeaveType" @change="onChange($event)" v-model="plan[1].name"  class="form-select  rounded-xxxxl p-2 ps-2 font-xsss text-grey-600 fw-500 border-light-md "   >
-                     <option   v-for="item in plan" v-bind:key="item.id" :value="plan[1].name" >{{item.name}} For {{item.plan_validity_text}} (Rs.{{item.countries.pivot.amount}}/-)</option>
-                       </select> -->
+                
                </b-form-group>
                <a v-on:click="isHidden = !isHidden" class="btn p-0 m-0">
                   <u v-if="!couponerr">I have a promo code</u>
@@ -103,25 +88,23 @@
                      class="  rounded-xxxxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md  "
                      id="name-input" placeholder="Rs.999.00/-" autocomplete="off" v-else v-model="amount_pay" disabled></b-form-input>
                </b-form-group>
-               <!-- <b-button type="submit" style="background-color: #004898!important" class="  fw-700 ps-3 pe-3 lh-32  mt-3 mb-4 rounded-xxxxl ls-2 bg-success d-inline-block text-white me-1 ms-auto w-100">Create Payment</b-button> -->
+             
             </form>
-            <form   method='POST' class="pl-5 pr-5" id="paymentForm" action='https://secure.payu.in/_payment'>
+            <form   method='POST' class="pl-5 pr-5" id="paymentForm" action='https://test.payu.in/_payment'>
                <input type="hidden" name="key" v-model="mkey"  size="64" />
                <input type="hidden" name="txnid"  v-model="txnid" size="64" />
                <input type="hidden" name="amount" v-model="amount_pay" size="64" />
                <input type="hidden" name="productinfo"  v-model="productInfo"  size="64" />
                <input type="hidden" name="firstname"  v-model="users.first_name"   size="64"/>
                <input type="hidden" name="service_provider" value="payu_paisa" size="64" /> 
-               <input type="hidden" name="email" v-model="email"  size="64"/>
-               <input type="hidden" name="phone" v-model="mobile_no"   size="64"/>
+               <input type="hidden" name="email" v-model="users.email"  size="64"/>
+               <input type="hidden" name="phone" v-model="users.mobile_no"   size="64"/>
                <input type="hidden" name="lastname"  v-model="users.last_name"  size="64"/>
                <input type="hidden" name="surl" v-model="surl" />
                <input type="hidden" name="furl" v-model="furl"  />
                <input type="hidden" name="hash" id="hash" v-model="hash" size="64">
-               <!-- <div class="pay-now-button-outer">
-                  <button class="btn btn-primary fontBold" @click="paymentcreate();signInButtonPressed();" type="button" target="_blank">PAY NOW</button>
-                  </div> -->
-               <b-button @click="paymentcreate($event);updateProfile($event)" style="background-color: #004898!important" class="  fw-400 ps-3 pe-3 lh-32 mt-3 mb-4 rounded-xxxxl ls-2 bg-success d-inline-block text-white me-1 ms-auto w-100">{{loading ? "Processing..." : "Create Payment"}}</b-button>
+               
+               <b-button @click="updateProfile($event)" style="background-color: #004898!important" class="  fw-400 ps-3 pe-3 lh-32 mt-3 mb-4 rounded-xxxxl ls-2 bg-success d-inline-block text-white me-1 ms-auto w-100">{{loading ? "Processing..." : "Create Payment"}}</b-button>
             </form>
             </b-modal>
          </div>
@@ -130,6 +113,7 @@
 </template>
 <script>
 import axios from "axios";
+import { mapGetters } from "vuex";
 
 export default {
   Name: "Search",
@@ -142,35 +126,26 @@ export default {
       key: '',
       isHidden: false,
       users: '',
-      bussines: "Coco Cola",
-      fullName: "Rahul Kumar",
-      mobile: "7897954794",
-      email: "rajukumar@gmail.com",
+      bussines: "",
+      fullName: "",
+      email: '',
       productInfo: "1 Year Plan",
       total: "10",
-      country: "India",
-      state: "Gujrat",
-      city: "Surat",
       gst: '',
       coupon_code: '',
       coupon: '',
       amount_pay: "999",
       couponerr: '',
-      // subscribe: '',
       subscribest: [],
-
       message: "Everyone come and see how good I look!",
-      mkey: "nxpvv9VZ",
-      //productInfo: "Verification order",
+      mkey: "rjQUPktU",
       txnid: this.makeid(),
-      //amount: 1,
-      id: "2222222",
-      // email: "test@test.com",
+      id: "",
       mobile_no: '',
       lastName: "Kumar",
       firstName: "Sonu",
-      surl: "https://garba.info/home/User/Success",
-      furl: "https://garba.info/home/User/Fail",
+      surl: "http://localhost:3000/home/User/Success",
+      furl: "http://localhost:3000/home/User/Fail",
       hash: this.hash,
       loading: '',
       failMsg: '',
@@ -194,7 +169,7 @@ export default {
     },
 
     onChange(event) {
-      console.log("all data", event);
+      console.log(event);
     },
 
     reset() {
@@ -209,34 +184,46 @@ export default {
     },
 
     updateProfile() {
-      axios.post("users/" + this.users.id, { first_name: "test" });
+       this.loading = true;  
+       const UpdateProfile = new FormData();
+       UpdateProfile.append("first_name", this.users.first_name);
+      UpdateProfile.append("last_name", this.users.last_name);
+      UpdateProfile.append("mobile_no", this.user.mobile_no);
+      UpdateProfile.append("country_id", this.user.country_id);
+      UpdateProfile.append("state_id", this.user.state_id);
+      UpdateProfile.append("city_id", this.user.city_id);
+      UpdateProfile.append("address", this.user.address);
+       const response = axios.post('users/'+this.users.id, UpdateProfile)
+          .then((result) => {
+          if (result.data.status_code == 200) {
+                   this.signInButtonPressed();
+         setTimeout(  function (scope) {
+                    scope.loading = false; },  5000, this);
+          }
+        }) .catch((error) => {
+           this.failMsg = error.response.data.message + 'Please Update Profile!!!'
+           this.loading = false;
+
+        })
+        
+       console.log(response); 
     },
 
     signInButtonPressed() {
-      var data =
-        this.mkey +
-        "|" +
-        this.txnid +
-        "|" +
-        this.amount_pay +
-        "|" +
-        this.productInfo +
-        "|" +
-        this.users.first_name +
-        "|" +
-        this.email +
-        "|||||||||||";
-
+      var data = this.mkey + "|" + this.txnid + "|" + this.amount_pay + "|" + this.productInfo + "|" + this.users.first_name + "|" + this.users.email + "|||||||||||";
       var sha512 = require("js-sha512");
-      var salt = "3oFxUMtWG2";
+      var salt = "e5iIg1jwi8";
       var hash = sha512(data + salt);
       if (hash) {
         require("../../../app/route.js")();
+         localStorage.setItem("hash", hash);
+         localStorage.setItem("expireSession", 'sesion12dgtdb');
       }
       console.log(hash);
       console.log(data);
-      document.getElementById("hash").value = hash;
 
+      document.getElementById("hash").value = hash;
+     
       document.getElementById("paymentForm").submit();
     },
     applyCoupon() {
@@ -249,8 +236,8 @@ export default {
           this.amount_pay = response.data.data.amount_pay;
 
           this.couponerr = this.coupon.message;
-
-          console.log("data", response.data);
+          localStorage.setItem("copondetails", JSON.stringify(response.data.data));
+ 
         })
         .catch((error) => {
           if (error.response.data.status_code == 422) {
@@ -261,57 +248,19 @@ export default {
           console.log(error);
         });
     },
-    async paymentcreate() {
-      this.loading = true;
-      const response = await axios
-        .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
-        .then((result) => {
-          if (result.data.status_code == 201) {
-            localStorage.setItem("subscribe", JSON.stringify(result.data.data));
-            this.signInButtonPressed();
-            this.loading = false;
-          }
-        })
-
-        .catch((error) => {
-          if (error) {
-            setTimeout(
-              function (scope) {
-                scope.loading = false;
-              },
-              1000,
-              this
-            );
-            this.subscribest = error.response.data.status_code;
-            this.failMsg =
-              "Your subscription process is in progress. Please try After 5 Minutes";
-            return;
-          }
-
-          console.log(error);
-        });
-
-      console.log(response);
-    },
+  
   },
   mounted() {
-    this.hash =
-      this.mkey +
-      "|" +
-      this.txnid +
-      "|" +
-      this.amount_pay +
-      "|" +
-      this.productInfo +
-      "|" +
-      this.users.first_name +
-      "|" +
-      this.email +
-      "|||||||||||";
+    
     this.users = JSON.parse(localStorage.getItem("UserDetails"));
-   //  this.subscribe = JSON.parse(localStorage.getItem("UserDetails"));
+    
 
     this.getData();
+  },
+   computed: {
+    ...mapGetters({
+      user: "user",
+    }),
   },
 };
 </script>

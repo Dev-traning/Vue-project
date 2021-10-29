@@ -1,9 +1,11 @@
 <template>
    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
       <div class="container">
-         <div class="card login-card">
-            <div class="row no-gutters">
-               <div class="col-md-5"> <img src="../assets/logo-5.png" alt="login" class="login-card-img"/> </div>
+         <div class="card login-card rounded">
+            <div class="row no-gutters ml-1 p-3  ">
+               <div class="col-md-5 shadow-sm"> 
+                  <img src="../assets/pexels-dids-5360447.jpg" alt="login" class="login-card-img "/> 
+               </div>
                <div class="col-md-7">
                   <div class="card-body">
                     
