@@ -1,6 +1,6 @@
 <template >
 <div>
- 
+
  
    
    <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3" v-for="(item,itemIndex) in post" v-bind:key="item.id">
@@ -59,7 +59,14 @@
          </button>
          
             <button class="btn p-1 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="commentshow(item.id)">{{item.comments_count}} Comments</button>
-        
+ 
+       
+
+
+   
+ 
+
+
          <a href="#" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"> </a> 
          <div>
             <b-button variant="outline-primary  fw-600 text-light-900 text-light lh-26 font-xssss btn btn-primary" v-on:click="likepost(item,index)" v-if="item.is_liked">Liked</b-button>
@@ -69,15 +76,28 @@
                    <b-button variant="outline-warning fw-600 text-grey-900 text-dark lh-26 font-xssss">Share</b-button>
                   </template>
 
-               <b-dropdown-item href="#">
-                  <a href="#" class="btn-round-sm bg-facebook"><i class="font-xs ti-facebook text-white"></i></a>
+               <b-dropdown-item :href="'https://www.facebook.com/sharer/sharer.php?u='+getPath+'/posts/'+item.id" target="_blank" >
+                  <a  class="btn-round-sm bg-facebook"><i class="font-xs ti-facebook text-white"></i></a>
+                  
                   </b-dropdown-item>
-               <!-- <b-dropdown-item href="#"><a href="#" class="btn-round-sm bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></b-dropdown-item>
-               <b-dropdown-item href="#"><a href="#" class="btn-round-sm bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></b-dropdown-item> -->
+               <b-dropdown-item :href="'https://twitter.com/intent/tweet?text='+getPath+'/posts/'+item.id" target="_blank" ><a  class="btn-round-sm bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></b-dropdown-item>
+
+
+               <b-dropdown-item :href="'https://www.linkedin.com/sharing/share-offsite/?url='+getPath+'/posts/'+item.id" target="_blank" ><a   class="btn-round-sm bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></b-dropdown-item>
+
+                 <b-dropdown-item :href="'https://api.whatsapp.com/send?text='+getPath+'/posts/'+item.id" target="_blank" data-action="share/whatsapp/share">
+                   <a   class="btn-round-sm "><img class="font-xs"  src="../../assets/imageedit_3_6192029673.png" alt=""> </a>
+                   
+                   </b-dropdown-item>
+
             </b-dropdown>
          </div>
-
          
+ 
+
+
+
+
       </div>
    
       
@@ -138,7 +158,17 @@
 
  
  </div>
+ 
       <div v-if="post.length" v-observe-visibility="handleScrolledToBottom"></div>
+        <div class="card w-100 text-center shadow-xss rounded-xxl border-0 p-2 mb-3 mt-0 ">
+
+    <div  class="d-flex justify-content-center">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div> 
+                            </div>
+      
         <b-modal scrollable show-close="ftrue" hide-footer id="likeshome" centered ref="modal" size="60">
             <button @click="modelClose()" type="button" class="closee" right='22' top='8' data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true ">&times;</span>
@@ -225,6 +255,7 @@ export default {
   data() {
     return {
       post: [],
+      getPath:'',
        moment: moment,
        seen: true,
      
@@ -253,6 +284,8 @@ export default {
     };
   },
   methods: {
+
+   
  modelClose(){
           this.$refs['modal'].hide()
        },
@@ -461,6 +494,7 @@ export default {
   },
 
   mounted() {
+    this.getPath = window.location.origin
     this.getData();
   },
 };

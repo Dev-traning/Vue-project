@@ -1,5 +1,5 @@
 // AMD support (Thanks to @FagnerMartinsBrack)
-;(function(factory) {
+(function(factory) {
   'use strict';
 
   if (typeof define === 'function' && define.amd) {

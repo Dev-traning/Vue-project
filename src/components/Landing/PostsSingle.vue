@@ -10,13 +10,13 @@
                   <div class="col-xl-3 col-xxl-2 col-lg-3 ps-lg-0">
                    
                     
-                     <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 ml-3">
+                     <!-- <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 ml-3">
                         <div class="card-body d-flex align-items-center p-3">
                            <h4 class="fw-700 mb-0 font-xssss text-grey-900"> Manpower </h4>
                            <a href="default-member.html" class="fw-600 ms-auto font-xssss text-primary" >See all</a > 
                         </div>
-                     </div>
-                     <div class="row">
+                     </div> -->
+                     <!-- <div class="row">
                         <div class="container">
                            <div class="row">
                               <div class="col-12">
@@ -44,6 +44,7 @@
                            </div>
                         </div>
                      </div>
+                      -->
                   </div>
                   <div class="col-xl-6 col-xxl-6 col-lg-6">
 
@@ -97,11 +98,17 @@
             <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">{{postSingle.description}}</p>
          </div>
          <div class="p-0 card-body d-flex">
-            <b-button variant="link" class="text-decoration-none emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2 p-0" v-b-modal.likes v-on:click="likeShow(item.id)">{{postSingle.likes_count}} Likes</b-button>
+            <b-button variant="link" class="text-decoration-none emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2 p-0" v-b-modal.likes v-on:click="likeShow">{{postSingle.likes_count}} Likes</b-button>
             <a class=" d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"> <span class="d-none-xss">{{postSingle.comments_count}}</span></a> <button type="button" class="btn p-1 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="commentshow(postSingle.id)">Comments</button> 
             <div class=" ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss">
-               <b-button variant="outline-primary fw-600 text-light-900 text-light lh-26 font-xssss btn btn-primary" v-on:click="likepost(item,index)" v-if="postSingle.is_liked">Liked </b-button>
-               <b-button variant="outline-primary fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="likepost(item,index)" v-if="!postSingle.is_liked">Like</b-button>
+
+
+
+               <b-button variant="outline-primary fw-600 text-light-900 text-light lh-26 font-xssss btn btn-primary" v-on:click="likepost" v-if="postSingle.is_liked">Liked </b-button>
+               
+               <b-button variant="outline-primary fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="likepost" v-if="!postSingle.is_liked">Like</b-button>
+ 
+               
                <b-dropdown right size="sm" variant="link" toggle-class="text-decoration-none pr-0" no-caret>
                   <template #button-content>
                      <b-button variant="outline-warning fw-600 text-grey-900 text-dark lh-26 font-xssss">Share</b-button>
@@ -115,7 +122,7 @@
             </div>
          </div>
          <div v-for="commentsshow in comments" v-bind:key="commentsshow.id" class=" mb-0 mt-2">
-            <div v-if="commentsshow.commentable_id==item.id">
+           
                <div>
                   <ul class="list-unstyled">
                      <li class="mb-2 media">
@@ -149,12 +156,12 @@
                         </div>
                      </li>
                   </ul>
-               </div>
+               
             </div>
          </div>
-         <form ref="anyName" v-on:submit.prevent="postcomment(item.id,item,index,itemIndex)"  >
+         <form ref="anyName" v-on:submit.prevent="postcomment()"  >
             <div class="input-group ">
-               <input v-model="body[itemIndex]" type="text" class="form-control form-control-sm text-grey-900 text-dark" placeholder="Write Comments..." aria-label="Comments" aria-describedby="basic-addon2"> 
+               <input v-model="body" type="text" class="form-control form-control-sm text-grey-900 text-dark" placeholder="Write Comments..." aria-label="Comments" aria-describedby="basic-addon2"> 
                <div class="input-group-append "> 
                   <button class="btn btn-outline-dark btn-sm mt-1" type="submit">Post</button> 
                </div>
@@ -288,7 +295,8 @@
                   
                   </div>
                   <div class="col-xl-3 col-xxl-2 col-lg-3 ps-lg-0">
-                     <div class="row">
+
+                     <!-- <div class="row">
                         <div class="container">
                            <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3" >
                               <div class="card-body d-flex align-items-center p-3">
@@ -322,7 +330,8 @@
                            </div>
                         </div>
                   
-                     </div>
+                     </div> -->
+
                   </div>
                </div>
             </div>
@@ -454,13 +463,14 @@ export default {
         this.post.splice(index, 1);
       });
     },
-    likepost(id, index) {
-      axios.post("posts/like/" + id.id).then((result) => {
-        var nItem = id;
-        nItem.is_liked = !id.is_liked;
-        nItem.likes_count = result.data.data.likes_count;
+    likepost() {
+   
+      axios.post('posts/like/' + this.$route.params.id)
+      .then((result) => {
 
-        this.post[index] = nItem;
+         this.postSingle.likes_count = result.data.data.likes_count
+         this.postSingle.is_liked = !this.postSingle.is_liked
+ 
  
       });
     },
@@ -470,7 +480,7 @@ export default {
         this.likeuser.splice(index, 1);
       } 
       axios
-        .get("posts/like/" + id)
+        .get("posts/like/" + this.$route.params.id)
 
         .then((result) => {
           //this.likeuser.splice(0)
@@ -498,9 +508,9 @@ export default {
 
                    },
 
-    commentshow(id) {
+    commentshow() {
       axios
-        .get("posts/comment/" + id)
+        .get("posts/comment/" + this.$route.params.id)
 
         .then((result) => {
           this.comments = result.data.data;
@@ -508,24 +518,24 @@ export default {
           console.warn("commentshow APi Call", result);
         });
     },
-    commentedit(id) {
+    commentedit() {
       axios
-        .get("comments/" + id)
+        .get("comments/" + this.$route.params.id)
 
         .then((result) => {
           this.singlecomment = result.data.data;
         });
     },
     deletecomment(_, id, index, itemindex) {
-      axios.delete("comments/" + id).then(() => {
+      axios.delete("comments/" + this.$route.params.id).then(() => {
         this.comments.splice(index, 1);
         let count = this.comments.length;
          this.post[this.post[itemindex].comments_count--].comments_count = count;
         });
     },
 
-    async commentupdate(id) {
-      const response = axios.post("comments/" + id, {body: this.singlecomment.body})
+    async commentupdate() {
+      const response = axios.post("comments/" + this.$route.params.id, {body: this.singlecomment.body})
        .then((result) => {
         
           this.comments.push(result.data.data);
@@ -540,22 +550,15 @@ export default {
        return !this.comments.length
     },
 
-     postcomment(_, id, index, itemindex) {
-    
-      if (this.body) {
-        this.body.forEach((value, index) => {
-          this.indadd = this.body[index];
-          this.body[index] = "";
-          this.$refs.anyName[index].reset();
-        });
-      }
-
+     postcomment() {
+     
+ 
       axios
-        .post("posts/comment/" + id.id, { body: this.indadd })
+        .post("posts/comment/" +this.$route.params.id, { body: this.body })
         .then((result) => {
             this.comments.push(result.data.data);
-             let count = this.comments.length;
-             this.post[this.post[itemindex].comments_count++].comments_count = count;
+      this.comments.length;
+             
         });
 
        

@@ -26,10 +26,10 @@
         </button>
          <div class="text-center p-4">
             <h2 class="text-danger text-danger-800 fw-800 h1" style=" font-family:Original Surfer,Regular"><u>Subscribe to our website</u></h2>
-            <h4 class="  pl-4 pr-4 pt-2"><b>Be the first exclusive offers and the latest news<br /> of our services directly on your screen</b></h4>
-            <p class="  text-justify fw-500 fs-5 text-grey-900 pt-1 pb-4 "  >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, perferendis aut reiciendis eum adipisci harum nulla distinctio reprehenderit unde dolorum rerum inventore minima sed architecto totam voluptatum consequatur nisi consequuntur corrupti laudantium dicta voluptas quo facilis dolor. Recusandae maxime provident culpa? At vero eum quae consequuntur perspiciatis sapiente mollitia harum delectus dolorem, qui quia placeat nulla odio culpa excepturi quaerat eius officia eligendi quas. Architecto illum placeat inventore in excepturi distinctio fugit dignissimos, earum iusto obcaecati delectus veritatis autem, optio qui. Atque doloribus mollitia veniam laborum similique rerum dolore, pariatur eligendi. Odio quo earum enim ut saepe culpa omnis dignissimos.</p>
+            <h4 class="  pl-4 pr-4 pt-2"><b>Please make this an Elite Account to View All</b></h4>
+            <p class="  text-justify fw-500 fs-5 text-grey-900 pt-1 pb-4 "  >Greetings..!! Your Account is not an Elite Account. Please convert you account as an Elite Account to get best services and get connected with everyone at the Restaurant Industry across the globe.</p>
             <div  >
-               <b-button type="submit" style="background-color: #004898 !important" class="w-100 font-xss fw-500 ps-3  pe-3   mt-1 mb-0   rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto" @click="close()" v-b-modal.subscribe>Subscribe Now</b-button>
+               <b-button type="submit" style="background-color: #004898 !important" class="w-100 font-xss fw-500 ps-3  pe-3   mt-1 mb-0   rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto" @click="close()" v-b-modal.subscribe>Make this account an Elite Account</b-button>
            
                <button class="btn pt-3 text-grey-900" @click="close()"><u><b>No, Thanks</b></u></button>
             </div>

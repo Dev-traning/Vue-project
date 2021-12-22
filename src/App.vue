@@ -24,7 +24,10 @@ export default {
   } , 
   async created() {
         // var toakne = "Bearer "
-        const response = await axios.get('user');
+
+    
+        const response = await axios.get('user')
+      
       //  this.users = response.data;
       this.$store.dispatch('user', response.data)
     }

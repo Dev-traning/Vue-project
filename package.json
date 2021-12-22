@@ -8,7 +8,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@syncfusion/ej2-vue-dropdowns": "^19.2.57",
     "axios": "^0.21.1",
     "base64-img": "^1.0.4",
     "body-parser": "^1.19.0",

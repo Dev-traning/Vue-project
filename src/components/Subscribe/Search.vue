@@ -2,7 +2,7 @@
    <div style="background-color: hsl(32deg 100% 50%);" class="card w-100 shadow-xss rounded-xxl border-0 ps-4   pe-4   mb-3 subscribe">
       <div class="row">
          <div class="col-8">
-            <p class="mb-0 mt-1 text-white font-xsss fw-500 ">Coupon Code: RWFIRST</p>
+            <p class="mb-0 mt-1 text-white font-xsss fw-500 ">Coupon Code: RESTFREE</p>
          </div>
          <div class="col-4 text-right">
             <a   v-b-modal.subscribe class="font-xsss w-100 fw-500 text-center lh-28 mt-1 mb-1 rounded-3 ls-2 bg-suscribe d-inline-block text-white me-1 ms-auto">Make this an Elite Account</a>
@@ -69,15 +69,13 @@
                <div v-if="isHidden" class="promo-box">
                   <div class="input-group ">
                      <input ref="removecou" v-model="coupon_code" type="text" class="form-control" placeholder="Enter Coupon Code" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                     <div class="input-group-append" v-if="!coupon">
+                     <div class="input-group-append" >
                         <b-button class="subscribe-button"  v-on:click="applyCoupon($event)">Apply</b-button>
                      </div>
-                     <div class="input-group-append" v-else>
-                        <button type="button" class="btn btn-danger remove-button"  @click="reset()">Remove</button>
-                     </div>
+                     
                   </div>
                </div>
-               <b-form-group class="   mb-1 mt-0"
+               <!-- <b-form-group class="   mb-1 mt-0"
                   label="Total Payable amount"
                   label-for="name-input"
                   invalid-feedback="Name is required">
@@ -87,10 +85,18 @@
                   <b-form-input
                      class="  rounded-xxxxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md  "
                      id="name-input" placeholder="Rs.999.00/-" autocomplete="off" v-else v-model="amount_pay" disabled></b-form-input>
-               </b-form-group>
+               </b-form-group> -->
+
+                   <div class="form-group mt-2 mb-0"> 
+                       
+               
+
+                            <p class="border p-1 rounded mb-0 pb-0" >{{symbol}} {{amount_payPrint}}</p>
+                           
+                          </div>
              
             </form>
-            <form   method='POST' class="pl-5 pr-5" id="paymentForm" action='https://test.payu.in/_payment'>
+            <form   method='POST' class="pl-5 pr-5" id="paymentForm" :action='payuUrl'>
                <input type="hidden" name="key" v-model="mkey"  size="64" />
                <input type="hidden" name="txnid"  v-model="txnid" size="64" />
                <input type="hidden" name="amount" v-model="amount_pay" size="64" />
@@ -128,6 +134,8 @@ export default {
       users: '',
       bussines: "",
       fullName: "",
+      symbol:'',
+      amount_payPrint:'',
       email: '',
       productInfo: "1 Year Plan",
       total: "10",
@@ -138,14 +146,30 @@ export default {
       couponerr: '',
       subscribest: [],
       message: "Everyone come and see how good I look!",
-      mkey: "rjQUPktU",
+
+
+// testing Mode
+
+      // payuUrl:'https://test.payu.in/_payment',
+      // mkey: "rjQUPktU",
+      // saltKey:'e5iIg1jwi8',
+      // surl: "https://garba.info/home/User/Success",
+      // furl: "https://garba.info/home/User/Fail",
+
+// secure Mode
+
+       payuUrl:'https://secure.payu.in/_payment',
+       mkey: "nxpvv9VZ",
+       saltKey:'3oFxUMtWG2',
+       surl: "https://www.restroworld.com/home/User/Success",
+       furl: "https://www.restroworld.com/home/User/Fail",
+
       txnid: this.makeid(),
       id: "",
       mobile_no: '',
       lastName: "Kumar",
       firstName: "Sonu",
-      surl: "http://localhost:3000/home/User/Success",
-      furl: "http://localhost:3000/home/User/Fail",
+     
       hash: this.hash,
       loading: '',
       failMsg: '',
@@ -177,8 +201,13 @@ export default {
     },
 
     getData() {
-      axios.get("user/plan").then((result) => {
-        this.plan = result.data.data;
+      axios.get('user/plan', {
+                    params: {  country_id: this.user.country_id }  })
+                    .then((result) => {
+                        this.plan = result.data.data;
+                        this.amount_pay =result.data.data[0].countries.pivot.amount
+                        this.symbol= result.data.data[0].countries.currency_symbol
+                        this.amount_payPrint=result.data.data[0].countries.pivot.amount
        
       });
     },
@@ -212,15 +241,14 @@ export default {
     signInButtonPressed() {
       var data = this.mkey + "|" + this.txnid + "|" + this.amount_pay + "|" + this.productInfo + "|" + this.users.first_name + "|" + this.users.email + "|||||||||||";
       var sha512 = require("js-sha512");
-      var salt = "e5iIg1jwi8";
+      var salt = this.saltKey;
       var hash = sha512(data + salt);
       if (hash) {
-        require("../../../app/route.js")();
          localStorage.setItem("hash", hash);
          localStorage.setItem("expireSession", 'sesion12dgtdb');
       }
-      console.log(hash);
-      console.log(data);
+      // console.log(hash);
+      // console.log(data);
 
       document.getElementById("hash").value = hash;
      
@@ -229,11 +257,13 @@ export default {
     applyCoupon() {
       axios
         .get("apply-coupon/1", {
-          params: { coupon_code: this.coupon_code },
+          params: {country_id:this.user.country_id,
+              coupon_code: this.coupon_code, },
         })
         .then((response) => {
           this.coupon = response.data;
           this.amount_pay = response.data.data.amount_pay;
+          this.amount_payPrint=response.data.data.amount_pay
 
           this.couponerr = this.coupon.message;
           localStorage.setItem("copondetails", JSON.stringify(response.data.data));

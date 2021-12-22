@@ -15,62 +15,193 @@
 
                   <p class="font-xs fw-500 text-grey-500 text-center mb-3 "><u>Below are my details</u></p>
 
+                     <b-alert v-model="suuualert" variant="success" dismissible>
+     {{succses}}
+    </b-alert>
+
+            <b-alert class="p-1" v-model="showDismissibleAlert" variant="danger" dismissible>
+      {{errmsg}}
+    </b-alert>
+
              <form @submit.prevent="handalSubmit" enctype="multipart/form-data">
   
   
    
   
    <div class="row">
-       <div class="col-lg-4 ">
+       <div class="col-lg-6 ">
          <div class="">
-            <label class="mont-font fw-600 font-xsss">business name </label>
-            <input type="text" class="form-control" value="pending api">
+            <label class="mont-font fw-600 font-xsss">User Name </label>
+            <input type="text" class="form-control"  v-model="name">
+         </div>
+      </div>
+      <div class="col-lg-6 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Bussiness Name </label>
+            <input type="text" class="form-control"   v-model="business_name">
+         </div>
+      </div>
+      
+   </div>
+    <div class="row mt-2">
+         <div class="col-lg-4 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Email</label>
+            <input type="text" class="form-control"  v-model="email" >
          </div>
       </div>
       <div class="col-lg-4 ">
          <div class="">
-            <label class="mont-font fw-600 font-xsss">Name </label>
-            <input type="text" class="form-control" v-model="users.first_name" >
+            <label class="mont-font fw-600 font-xsss">Mobile</label>
+            <input type="text" class="form-control"  v-model="mobile_no" >
          </div>
       </div>
         <div class="col-lg-4 ">
          <div class="">
-            <label class="mont-font fw-600 font-xsss">Contact No</label>
-            <input type="text" class="form-control" v-model="users.mobile_no" >
-         </div>
-      </div>
-   </div>
-    <div class="row">
-      <div class="col-lg-6 ">
-         <div class="">
-            <label class="mont-font fw-600 font-xsss">Email</label>
-            <input type="text" class="form-control" v-model="users.email" >
-         </div>
-      </div>
-        <div class="col-lg-6 ">
-         <div class="">
             <label class="mont-font fw-600 font-xsss">GST No.</label>
-            <input type="text" class="form-control" value="pending api">
+            <input type="text" class="form-control"  v-model="gst_no">
          </div>
       </div>
    </div>
    
-     <div class="row">
+
+
+
+      <div class="row mt-2">
       <div class="col-lg-6 ">
          <div class="">
-            <label class="mont-font fw-600 font-xsss">City</label>
-            <input type="text" class="form-control" value="pending api">
+            <label class="mont-font fw-600 font-xsss">business Address</label>
+            <input type="text" class="form-control"  v-model="business_address">
+         </div>
+      </div>
+
+         <div class="col-lg-6 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Parmanent Address</label>
+            <input type="text" class="form-control"  v-model="address">
+         </div>
+      </div>
+      
+   </div>
+
+
+   
+     <div class="row mt-2">
+      <div class="col-lg-6 ">
+         <div class="">
+
+           
+                              
+            <label class="mont-font fw-600 font-xsss">State</label>
+        <select style="padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem;" class="form-select" aria-required="true" aria-invalid="false" v-model="state_id" @change="getCity()" >
+                                 <option value="" disabled selected>State </option>
+                                 <option v-for="item in state" :value="item.id" v-bind:key="item.id">{{item.name}}</option>
+                              </select>
          </div>
       </div>
         <div class="col-lg-6 ">
          <div class="">
-            <label class="mont-font fw-600 font-xsss">State</label>
-            <input type="text" class="form-control" value="pending api">
+            <label class="mont-font fw-600 font-xsss">City</label>
+            <select style="padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem;" class="form-select" aria-required="true" aria-invalid="false" v-model="city_id" >
+                                 <option value="" disabled selected>City</option>
+                                 <option v-for="item in city" :value="item.id" v-bind:key="item.id">{{item.name}}</option>
+                              </select>
+         </div>
+      </div>
+   </div>
+   
+
+     <div class="row mt-2">
+      <div class="col-lg-4 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Current Occupation</label>
+            <input type="text" class="form-control"  v-model="current_occupation">
+         </div>
+      </div>
+        <div class="col-lg-8 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Net Annual Income INR 
+               
+                 
+    <input type="checkbox" v-model="is_checked" >
+ 
+
+ 
+  
+   <small id="emailHelp" class="text-muted"> (I declear that my annual income is less than Rs.3 LPA)</small></label>
+            <input type="text" class="form-control"   v-model="net_annual_income">
          </div>
       </div>
    </div>
 
-    <div class="row mt-2">
+
+
+     <div class="row mt-2">
+      <div class="col-lg-6 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Education (Please Specify)</label>
+            <input type="text" class="form-control"  v-model="education">
+         </div>
+      </div>
+        <div class="col-lg-6 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Upload Highest Digree Certificate </label>
+          
+               <b-form-file     @change="onFileSelected"></b-form-file>
+          
+         </div>
+      </div>
+   </div>
+
+
+   <div class="row ">
+      <div class="col-lg-6 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Adhar Card Number</label>
+            <input type="text" class="form-control"  v-model="aadharcard_number">
+         </div>
+      </div>
+        <div class="col-lg-6 ">
+       <div class="">
+            <label class="mont-font fw-600 font-xsss">Upload Adhar Card Photo </label>
+           <b-form-file     @change="adharpro"></b-form-file>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div class="row ">
+
+      
+ <div class="col-lg-6 ">
+         <div class="">
+            <label class="mont-font fw-600 font-xsss">Pancard Number</label>
+            <input type="text" class="form-control"  v-model="pancard_number">
+         </div>
+      </div>
+
+      <div class="col-lg-6 ">
+       <label class="mont-font fw-600 font-xsss">Upload PanCard</label>
+        <b-form-file      @change="pancardselect" ></b-form-file>
+      </div>
+        <div class="col-lg-12 ">
+     <div class="">
+            <label class="mont-font fw-600 font-xsss">Upload GST Certificate</label>
+          <b-form-file       @change="gstcrt" ></b-form-file>
+         </div>
+
+      </div>
+   </div>
+
+ 
+
+      
+
+         
+
+
+    <!-- <div class="row mt-2">
       <div class="col-lg-12 ">
          <div class="">
             <label class="mont-font fw-600 font-xsss">Select No. Of Code Your Requirment(50-500)</label>
@@ -127,16 +258,16 @@
 </div>
   
 
-   </div>
+   </div> -->
 
 
      <div class="row">
-      <div class="col-lg-12 mt-0 text-center">
+      <div class="col-lg-12 mt-2 text-center">
          <b-button  
             type="submit"
             style="background-color: #004898 !important"
             class=" font-xsssss fw-600  ps-3   pe-3 lh-32 mt-1 mb-0   rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto "
-            >{{loading ? "Processing..." : "Pay Now"}}</b-button>
+            >{{loading ? "Processing..." : "Submit"}}</b-button>
       
       </div>
    </div>
@@ -145,21 +276,7 @@
 
 
 
-    <form   method='POST' class="pl-5 pr-5" id="paymentForm" action='https://secure.payu.in/_payment'>
-               <input type="hidden"  name="key" v-model="mkey"  size="64" />
-               <input type="hidden"  name="txnid"  v-model="txnid" size="64" />
-               <input type="hidden"  name="amount"   size="64" :value="+noOfcoupon * +mrp / 100 * 18 + +noOfcoupon * +mrp"/>
-               <input type="hidden"  name="productinfo"  v-model="productInfo"  size="64" />
-               <input type="hidden"  name="firstname"  v-model="users.first_name"   size="64"/>
-               <input type="hidden"  name="service_provider" value="payu_paisa" size="64" /> 
-               <input type="hidden"  name="email" v-model="email"  size="64"/>
-               <input type="hidden"  name="phone" v-model="mobile_no"   size="64"/>
-               <input type="hidden"  name="lastname"  v-model="users.last_name"  size="64"/>
-               <input type="hidden"  name="surl" v-model="surl" />
-               <input type="hidden"  name="furl" v-model="furl"  />
-               <input type="hidden"  name="hash" id="hash" v-model="hash" size="64">
-               
-            </form>
+ 
 
 
             </div>
@@ -171,106 +288,136 @@
 </div>
 </template>
 <script>
+   import axios from "axios";
+
 export default {
     Name:'Atmnirbhar',
     data() {
     return {
-       noOfcoupon:'',
-       mrp: '200',
-       users:'',
-       loading: '',
-        message: "Everyone come and see how good I look!",
-      mkey: "nxpvv9VZ",
-       productInfo: "1 Year Plan",
-      txnid: this.makeid(),
-       mobile: "7897954794",
-      email: "rajukumar@gmail.com",
-       id: "2222222",
-       mobile_no: '',
-      lastName: "Kumar",
-      firstName: "Sonu",
-      surl: "https://www.restroworld.com/home/User/AtmPaySuc",
-      furl: "https://www.restroworld.com/home/User/Fail",
-      hash: this.hash,
-      amount_pay: '',
+      check:'',
+      errmsg:'',
+      state:'',
+      city:'',
+      valuCo:'',
+      name:'',
+      email:'',
+      mobile_no:'',
+      address:'',
+      state_id:'',
+      city_id:'',
+      business_name:'',
+      business_address:'',
+      current_occupation:'',
+      net_annual_income:'',
+      country_id:'',
+      education:'',
+      education_certificate:'',
+      pancard_number:'',
+      pancard_doc:'',
+      aadharcard_number:'',
+      aadharcard_doc:'',
+      gst_no:'',
+      gst_no_proof_doc:'',
+      showDismissibleAlert: false,
       }},
 
       methods:{
+ onFileSelected(event){
+       this.education_certificate = event.target.files[0]
+        },
+        pancardselect(event){
+       this.pancard_doc = event.target.files[0]
+        },
+          gstcrt(event){
+       this.gst_no_proof_doc = event.target.files[0]
+        },
 
-   makeid() {
-      var text = "";
-      var possible =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      for (var i = 0; i < 20; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
+          adharpro(event){
+       this.aadharcard_doc = event.target.files[0]
+        },  
 
-      return text;
-    },
 
-          signInButtonPressed() {
-
-             this.amount_pay = +this.noOfcoupon * +this.mrp / 100 * 18 + +this.noOfcoupon * +this.mrp
-
-      var data =
-        this.mkey + "|" + this.txnid +  "|" +  this.amount_pay +  "|" + this.productInfo + "|" + this.users.first_name + "|" + this.email + "|||||||||||";
-
-      var sha512 = require("js-sha512");
-      var salt = "3oFxUMtWG2";
-      var hash = sha512(data + salt);
-      if (hash) {
-        require("../../../app/route.js")();
-      }
-      console.log(hash);
-      console.log(data);
-      document.getElementById("hash").value = hash;
+// handalSubmit(){
  
-      document.getElementById("paymentForm").submit();
-    },
+//     if(this.check==true){
+//        this.valuCo='1'
+//     }else if(this.check==false){
+//        this.valuCo='0'
+//     }
 
-         handalSubmit(){
-          
+//     console.log( this.photo)
   
- 
-              this.loading = true;
-            if(this.noOfcoupon > 49 && this.noOfcoupon < 501){
- 
- this.signInButtonPressed();
-this.$swal.fire({
-  position: 'top-end',
-  icon: 'success',
-  title: 'Api Pending',
-  showConfirmButton: false,
-  timer: 4500
-})
- 
+// },
 
-            }else {
 
-               this.$swal.fire({
-  icon: 'error',
-  title: 'Oops...',
-  text: 'Are you select '+ this.noOfcoupon  + ' Coupon Plz Select coupon 50-500!',
-  confirmButtonText: 'Try Again',
-   
-})
-  setTimeout(
-              function (scope) {
-                scope.loading = false;
-              },
-              1000,
-              this
-            );
-
-               // alert('Are you select '+ this.noOfcoupon  + ' Coupon Plz Select coupon 50-500')
-            }
-            
-         }
-      },
-
-        mounted() {
-           
+   async handalSubmit() {
      
-    this.users = JSON.parse(localStorage.getItem("UserDetails"));
+             const atmnirbhar = new FormData();
+             atmnirbhar.append('name', this.name)
+             atmnirbhar.append('email', this.email)
+             atmnirbhar.append('mobile_no', this.mobile_no)
+             atmnirbhar.append('address', this.address)
+             atmnirbhar.append('state_id', this.state_id)
+             atmnirbhar.append('city_id', this.city_id)
+             atmnirbhar.append('business_name', this.business_name)
+             atmnirbhar.append('business_address', this.business_address)
+             atmnirbhar.append('current_occupation', this.current_occupation)
+             atmnirbhar.append('net_annual_income', this.net_annual_income)
+             atmnirbhar.append('country_id', '101')
+             atmnirbhar.append('education', this.education)
+             atmnirbhar.append('education_certificate', this.education_certificate)
+             atmnirbhar.append('pancard_number', this.pancard_number)
+             atmnirbhar.append('pancard_doc', this.pancard_doc)
+             atmnirbhar.append('aadharcard_number', this.aadharcard_number)
+             atmnirbhar.append('aadharcard_doc', this.aadharcard_doc)
+             atmnirbhar.append('gst_no', this.gst_no)
+             atmnirbhar.append('gst_no_proof_doc', this.gst_no_proof_doc)
+             atmnirbhar.append('is_checked', this.is_checked)
+
+             
+
+             const response = await axios.post('dsa/dsas',atmnirbhar)
+            .then((response) => {
+               this.errmsg=''
+              this.succses = response.data.message;
+              })
+             .catch((error) => {
+                this.errmsg=''
+                this.succses=''
+              this.errmsg = error.response.data.message
+              console.log(error);
+            this.showDismissibleAlert=true
+          });
+           console.log(response);
+           
+           
+         
+       },
+     getCity(){
+                     axios.get('cities_of_state?is_light=1'+this.state_id, {
+                    params: {  state_id: this.state_id  }  })
+                     .then((result)=>{
+                        this.city=result.data.data;
+                      })}
+
+  
+      },
+ 
+        mounted() {
+           this.usersOldData = JSON.parse(localStorage.getItem("UserDetails"));
+              this.state_id= this.usersOldData.state.id
+              this.city_id= this.usersOldData.city.id
+           axios.get('states_of_country?is_light=1', {
+                    params: {  country_id:'101'  }  })
+                     .then((result)=>{
+                        this.state=result.data.data;
+                         if(this.state_id){
+                           this.getCity()
+                       }
+                           
+                      })
+           
+      
   
   },
 

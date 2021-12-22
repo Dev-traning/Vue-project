@@ -5230,7 +5230,7 @@ fieldset:disabled .btn {
 	top: 100%;
 	z-index: 1000;
 	display: none;
-	min-width: 10rem;
+	min-width: 4rem;
 	padding: .5rem 0;
 	margin: 0;
 	font-size: 1rem;
@@ -16787,7 +16787,7 @@ body {
 	object-fit: cover;
   }
   .login-card .card-body {
-	  padding: 50px 60px 50px;
+	padding: 24px 25px 25px;
   }
   @media (max-width: 422px) {
 	.login-card .card-body {

@@ -97,6 +97,8 @@
                </div>
             </div>
             <div class="row">
+
+             
                <div class="col-lg-12 mb-0"> <label class="mont-font fw-600 font-xsss">List Your Product With Rates</label> </div>
                <!-- <div class="row" v-for="(input,k, index) in vendor.product_name" :key="k==index"> <input type="text" v-model="input.name"/> </div>--> 
                <div class="row" v-for="(input,k,) in vendor.product_name" :key="k">
@@ -165,7 +167,7 @@ export default {
         resume: "",
         product_name: [
           {
-            name: [],
+            name: ['sonu'],
             rate: [],
           },
         ],
@@ -178,6 +180,16 @@ export default {
       this.$router.push({ name: "/home" });
     }
     const result = await axios.get("vendor/profile");
+    if(result.data.data.product_name==false){
+        result.data.data.product_name= [
+            {
+                "name": null,
+                "rate": null
+            }
+        ]
+    }
+
+
 
     this.vendor = result.data.data;
     this.getData();

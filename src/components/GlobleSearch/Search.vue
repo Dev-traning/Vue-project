@@ -48,7 +48,26 @@ export default {
         .then((result) => {
           this.allusers = result.data.data;
        
-        });
+        })
+          .catch(error=>{
+          if(error.response.data.status_code =='401'){
+
+                 axios.get("logout")
+                 localStorage.clear();
+                 this.$store.dispatch('user',null);
+                  this.$router.push('/');
+//               this.$swal.fire({
+//   icon: 'warning',
+//   title: 'Oops...',
+//   text: 'Something went wrong Please Login Again!',
+//   confirmButtonColor: '#0048a5',
+//   confirmButtonPadding: '10px'
+ 
+// })
+          
+          }
+
+           })
     },
   },
 

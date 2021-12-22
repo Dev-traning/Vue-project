@@ -13,22 +13,23 @@
 
 
       <div class="modal-top text-center " >
-              <img class="modal-icon u-imgResponsive" src="../assets/contrs.png" alt="Trophy" />
-            <div class="modal-header text-center">
-              <h1 class=" text-dark font-xxl w-200 fw-600">
-Congrats!
-              </h1>
+              <!-- <img class="modal-icon u-imgResponsive" src="../assets/contrs.png" alt="Trophy" /> -->
+            <div class="modal-header text-center ">
+             
+
+              <h2 class="text-danger text-danger-800 fw-800 h1 mb-5" style="font-family: &quot;Original Surfer&quot;, Regular;"><u>Congratulations..!!</u></h2>
             </div>
           
-                <h1 style="font-size: 50px!important; " class="coponCode modal-subheader mb-4 mt-1   text-success font-xxl w-200 fw-600">
+                <h1 style="font-size: 30px!important;" class="coponCode modal-subheader mb-4 text-success font-xxl w-200 fw-600">
                     RWFIRST
               </h1>
           
-        
+ 
 
           
                 <h1 style="color: #000000bf!important;" class=" text-success font-xss w-200 fw-400 pl-4 pr-4">
-                 You've successfully reached the goal, and a  <b class="text-success">200Rs</b> Discount will be Applied Make An elite account. Just Hang tight while we active all Manpower ,Restaurant ,vendors.
+                  You are eligible for Sign Up at only <b class="text-success">1 Rs</b> for Elite Account. Just use coupon code - "RWFIRST" while Elite Sign Up and you will only need to pay Rs 1.. So Hurry Up..!! Elite Sign Up now..!! And Join the club of Elites of Restaurant Industry..!!
+                 <!-- You've successfully reached the goal, and a  <b class="text-success">1Rs</b> Discount will be Applied Make An elite account. Just Hang tight while we active all Manpower ,Restaurant ,vendors. -->
               </h1>
           <a @click="closeModel()" v-b-modal.subscribe class="font-xsss w-50 fw-500 text-center lh-28 mt-1 mb-1 rounded-3 ls-2 bg-suscribe d-inline-block text-white me-1 ms-auto">Make this an Elite Account</a>
 
@@ -70,13 +71,16 @@ closeModel(){
     },
 
   mounted() {
+    // alert(this.user.get_free_subscribed == '0')
+
  
- 
-        setTimeout(() => {
-      
-         this.basketAddSuccess = true;   
+ if(this.user.get_free_subscribed == '1'){
+ setTimeout(() => {
+          this.basketAddSuccess = true;   
           this.$refs['modal'].show()
-        }, 10000000);
+        }, 10000);
+ }
+       
 
     if (!localStorage.getItem("token")) {
       this.$router.push("/")

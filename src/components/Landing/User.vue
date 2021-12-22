@@ -51,7 +51,8 @@
                               <div class="pb-3 text-center card-body d-block w-100 ps-4 pe-4" >                              
 
                                  <div class="clearfix"></div>
-                                 <p class="mt-0 mb-2 text-left fw-500 font-xssss text-grey-500">"Lorem ipsddddddum pa molest ddddod? Minus doloribus doloremque ad iusto dicta corrupti, fu  accusantium unde?"</p>
+                                 <p class="mt-0 mb-1 text-left fw-600 font-xsss text-grey-600 p-1">Billions of Restaurants, Vendors, Chefs, Captains
+                                                                            are waiting for you at Restroworld.</p>
                                  <div class="clearfix mb-2"></div>
                               </div>
                            </div>
@@ -99,7 +100,9 @@
                                     <footer class="font-xssss fw-500 text-grey-500 text-center text-decoration-none">
                         <div>
                            <router-link to="#" class="font-xssss fw-500 text-grey-500">About Us</router-link>
-                           <router-link to="/home/User/Atmnirbhar" class="ml-3 font-xssss fw-500 text-grey-500">Atmnirbhar</router-link>
+ 
+                           <router-link to="/home/User/Atmnirbhar" class="ml-3 font-xssss fw-500 text-grey-500" v-if="usersOldData.country.id=='101' && usersOldData.is_dsa=='0'">Atmnirbhar</router-link>
+                           <router-link to="#" class="ml-3 font-xssss fw-500 text-grey-500" v-else><span  @click="panlel">Atmnirbhar Panel</span></router-link>
                         </div>
                         <div>
                            <router-link to="#" class="font-xssss fw-500 text-grey-500">Franchisee</router-link>
@@ -154,9 +157,13 @@ export default {
           data() { 
              return { 
                       users:[],
+                      usersOldData:''
          
             }},
               methods: {
+                 panlel(){
+                    alert('comming Soon')
+                 },
     onFileChangee(e) {
      
       this.photo = e.target.files[0];
@@ -194,7 +201,7 @@ export default {
   },
 
   async mounted() {
-     
+      this.usersOldData = JSON.parse(localStorage.getItem("UserDetails"));
     let user = localStorage.getItem("token");
     this.users = JSON.parse(localStorage.getItem("UserDetails"));
     if (!user) {
