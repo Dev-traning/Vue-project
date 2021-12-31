@@ -70,8 +70,8 @@
           
 <b-alert class="p-1 text-center" v-if="otpFail" :show="dismissCountDown" dismissible variant="warning" @dismissed="dismissCountDown=0"  @dismiss-count-down="countDownChanged" >{{otpFail}}</b-alert>
       <img src="../../assets/1622832_documents_email_envelope_feed_letter_icon.svg" width="170px" class="mx-auto rounded d-block" alt="" style="margin:auto;">
-      <h2 class="p-2 text-center login_heading text-uppercase fw-500">OTP Verification</h2>
-      <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter your registered email and we will send your password reset instruction to this email.</p>
+      <h4 class="p-2 text-center login_heading text-uppercase fw-500">Verify Your E-mail - Please Enter the OTP</h4>
+      <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter the OTP that we have sent to your registered E-Mail Id to verify your account.</p>
       <form  class="p-1 m-4 mb-0 text-center d-block form-group" @submit.prevent="handalSubmit">
    
         
@@ -82,8 +82,8 @@
              <!-- <button @click="$refs['modal'].hide()" type="button" class="btn shadow-none btn-dark fw-500 font-xss text-dark-500  p-1 ml-3">Cancel</button> -->
          </div>
       </form>
-       <p class="mt-0 text-center">Don't receive OTP? <button v-on:click="resend()"  class=" btn p-0 m-0 text-reset fw-bolder"
-                  >Resend</button>
+       <p class="mt-0 text-center">Don't receive OTP? <button v-on:click="resend()"  class=" btn p-0 m-0 text-reset fw-bolder">
+          Resend</button>
             </p>
    </div>
 
@@ -110,6 +110,7 @@
         displaySuccess: false,
           check:'',
           dismissSecs: 5,
+          resOTPMsf:'',
         dismissCountDown: 0,
           email_otp:'',
           otpFail:'',
@@ -134,6 +135,15 @@
        };
      },
      methods: {
+            async resend(){
+           
+               const respodnse = await axios.post('resend-email-otp', {email:this.email })
+               .then(() => {
+                  this.resOTPMsf='Otp resend to your email successfully.'
+               })
+               
+                console.log(respodnse)
+          },
 
     oTpVerify(){
              this.loading = true;

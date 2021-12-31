@@ -1,8 +1,8 @@
 <template>
    <div class="mont-font">
       <img src="../../assets/1622832_documents_email_envelope_feed_letter_icon.svg" width="170px" class="mx-auto rounded d-block" alt="" style="margin:auto;">
-      <h2 class="p-2 text-center login_heading text-uppercase fw-500">OTP Verification</h2>
-      <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter your registered email and we will send your password reset instruction to this email.</p>
+      <h2 class="p-2 text-center login_heading text-uppercase fw-500">Verify Your E-mail - Please Enter the OTP</h2>
+      <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter the OTP that we have sent to your registered E-Mail Id to verify your account.</p>
       <form  class="p-1 m-4 mb-0 text-center d-block form-group" @submit.prevent="handalSubmit">
           <error v-if="error" :error="error" />
         
