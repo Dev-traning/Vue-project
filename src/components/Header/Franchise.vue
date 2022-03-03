@@ -21,7 +21,7 @@
                                   ></i>
                                 </div>
                               </div>
-                              <div class="content">
+                              <div class="content pl-3 pr-3">
                                 <h1 class="text-left font-xss  fw-500">
                                   Franchise
                                 </h1>

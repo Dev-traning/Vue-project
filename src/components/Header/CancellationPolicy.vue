@@ -21,190 +21,46 @@
                                   ></i>
                                 </div>
                               </div>
-                              <div class="content">
+                              <div class="content pl-3 pr-3">
                                 <h1 class="text-left font-xss  fw-500">
                                   Cancellation Policy
                                 </h1>
                                 <p
                                   class="  font-xssss  fw-500 text-justify mb-1"
                                 >
-                                  By disagreeing with our protocols we have the
-                                  right to hide our services and conditions from
-                                  you so that you'll not be in the efficient
-                                  mode of enjoying our benefits.
-                                </p>
-                                <p class="  font-xssss  fw-500 text-justify ">
-                                  In addition to this, the privacy policy of
-                                  RESTROWORLD covers the confidential
-                                  information we collect from our visitors and
-                                  users of (site URL) and also our related
-                                  research and reviews system. You're free to
-                                  switch your click if you're not agreed with
-                                  our services and concerning agreements.
-                                </p>
-
-                                <h1 class="text-left font-xss  fw-500 p-0">
-                                  Your Rights
-                                </h1>
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  You're the owner of the market, therefore, you
-                                  have certain rights to take your quick
-                                  decision if you find any negative vibes while
-                                  sharing your confidential info to our website
-                                  under the General Data Protection Regulation
-                                  (GDPR). For your preference here's the list of
-                                  our queries:
-                                </p>
-                                <h1 class="text-left font-xsss  fw-500 m-0 p-0">
-                                  Information about you
-                                </h1>
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  While glancing at your interest we generally
-                                  ask about your participation to use our
-                                  services, such as
+                                  1. By disagreeing with our protocols we have
+                                  the right to hide our services and conditions
+                                  from you so that you'll not be in the
+                                  efficient mode of enjoying our benefits.
                                 </p>
                                 <p
                                   class="  font-xssss  fw-500 text-justify mb-1"
                                 >
-                                  At the time of creating your account you're
-                                  asked to provide us your name, address, and
-                                  email address, plus to use our website
-                                  location friendly we ask to provide additional
-                                  information such as your location, bio,
-                                  industry, picture, and cellphone number, also
-                                  if you feel someone by your information has
-                                  created your account you can ask us to delete
-                                  it.
-                                </p>
-
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  For the review procedure, we'll ask for the
-                                  company's name, address, official mail
-                                  address, and this information will not be
-                                  public.
+                                  2. In case, the customer has paid excess money
+                                  than the prescribed/given amount due to any
+                                  technical issues he/she will get a refund of
+                                  the excess amount.
                                 </p>
                                 <p
                                   class="  font-xssss  fw-500 text-justify mb-1"
                                 >
-                                  If you're interested in purchasing our
-                                  services then after your general interest
-                                  we'll display your brand's name as a client at
-                                  our website
-                                </p>
-
-                                <h1 class="text-left font-xsss  fw-500 m-0 p-0">
-                                  Information about others
-                                </h1>
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  By information about others we mean to provide
-                                  your clients or business partner's information
-                                  such as name, address, email address, contact
-                                  number to support our reference check, the
-                                  info is only asked for review procedure in the
-                                  future.
-                                </p>
-
-                                <h1 class="text-left font-xss  fw-500 p-0 ">
-                                  How Do We Use Your Information
-                                </h1>
-                                <p class="  font-xssss  fw-500 text-justify">
-                                  The automated system is accessible to collect
-                                  your information after your provided
-                                  information to customize our website. We
-                                  collect the same for your convenience as
-                                  you're once registered you're free from
-                                  disturbances pings, the details are used to
-                                  offer you stand out services, provide you the
-                                  effective content, to communicate you via
-                                  email or verbal mode, plus sends you
-                                  imperative emails to make you aware about
-                                  efficient features and services lists, and a
-                                  lot more.
-                                </p>
-                                <h1 class="text-left font-xsss  fw-500 m-0 p-0">
-                                  Communications exchange
-                                </h1>
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  When you registered yourself as our member
-                                  we'll be sharing all qualitative and
-                                  beneficiary details for your study to
-                                  stimulate your keen interest via email. You're
-                                  free to change your personal details while
-                                  visiting our website or contacting us at
-                                  (email address).
-                                </p>
-
-                                <h1 class="text-left font-xsss  fw-500 m-0 p-0">
-                                  Shares the information by Facebook and Google
-                                </h1>
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  If you allow for PII (Personally Identifiable
-                                  Information) with third parties which is said
-                                  as a lookalike audience marketing then we may
-                                  share your business information for this type
-                                  of marketing including Facebook, Google
-                                  Analytics, Google Search Console, Google
-                                  AdWords, or any other Google tools.
-                                </p>
-
-                                <h1 class="text-left font-xss  fw-500 p-0">
-                                  Security
-                                </h1>
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  Your personal data information is our
-                                  responsibility hence we conduct several
-                                  parameters for the security but ensure that no
-                                  security measures are 100% accurate or
-                                  healthier and no method of transmission is
-                                  transparent. We do a lot to secure your
-                                  details but as we said nothing is accurate or
-                                  we cannot provide you any warranty so do it at
-                                  your own risk.
-                                </p>
-
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-1"
-                                >
-                                  You're free to report security violations to
-                                  us at our mail ID (address).
+                                  3. In case of any Payment Error, due to any
+                                  network communication/connectivity problems,
+                                  if your registration/confirmation form does
+                                  not get registered and the amount of USD/INR
+                                  has been debited from your account, the same
+                                  will not be refunded back to your account.
+                                  Instead, you'll receive a mail for the
+                                  successful subscription to our portal.
                                 </p>
                                 <p
                                   class="  font-xssss  fw-500 text-justify mb-1"
                                 >
-                                  Our Email Policy: We'll not send, sell, or
-                                  trade your email address to a third party
-                                  without your permission so feel safe with us.
-                                  If you receive an email from RESTROWORLD
-                                  asking for your credit cards, banking details,
-                                  or any other financial information, just
-                                  neglect and ignore the mail as we never ask
-                                  via email for this information
-                                </p>
-
-                                <h1 class="text-left font-xss  fw-500 p-0">
-                                  How To Reach Us For Privacy Concerns
-                                </h1>
-                                <p
-                                  class="  font-xssss  fw-500 text-justify mb-2"
-                                >
-                                  If you've any query regarding the procedures,
-                                  practices, or in the use of our website, or
-                                  would like to bring in any changes then feel
-                                  free to contact us via mail or phone.
+                                  4. If the customer uses the discount coupon
+                                  code while subscribing and due to any
+                                  technical issues he/she didn't receive the
+                                  discount. The discount will be credited to the
+                                  customer's account.
                                 </p>
                                 <router-link to="/home/user"
                                   >Go to Home</router-link
