@@ -475,10 +475,10 @@ export default {
           this.coponerr = "";
           this.couponSuMsg = "Coupon Apply successfully";
 
-          this.couponData = res.data.data;
-          this.amount_pay = res.data.data.amount_pay;
+          this.couponData = res.data;
+          this.amount_pay = res.data.payable_amount;
           localStorage.setItem("copondetails", JSON.stringify(res.data.data));
-          this.amount_payPrint = res.data.data.amount_pay;
+          this.amount_payPrint = res.data.payable_amount;
           // this.calculate=this.amount_payPrint/100*90
 
           //    var remov= parseFloat(this.calculate).toFixed(0)
