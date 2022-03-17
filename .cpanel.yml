@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/redjinni/public_html/consultant.redjinni.com
+    - /bin/cp -r dist/* $DEPLOYPATH
+    - /bin/cp  index.html $DEPLOYPATH
