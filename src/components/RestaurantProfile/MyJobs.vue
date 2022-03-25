@@ -1,5 +1,5 @@
 <template>
-  <div class="franchise border-info-md">
+  <div class="franchise border-info-md rounded-lg shadow-md mt-2">
     <div class="pl-4 border-0 card-body w-100 bg-success d-flex rounded-3">
       <h4 class="mb-0 text-white font-xs fw-600 ms-4">
         My Jobs

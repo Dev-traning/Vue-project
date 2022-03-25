@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="p-4 mb-3 mt-3 border-0 card w-100 shadow-xss rounded-xxl"
+      class="p-4 mb-3 mt-3 border-0 card w-100 shadow-md rounded-lg"
       v-for="(item, itemIndex) in post"
       v-bind:key="item.id"
     >

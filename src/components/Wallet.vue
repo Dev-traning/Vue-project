@@ -3,8 +3,8 @@
     <Nav />
     <!-- <div style="  margin-top: 100px;">{{ wallet.total_amount }} Rs</div> -->
     <!-- <div class="bg-white mt-3 ">{{ message }}</div> -->
-    <div v-if="isAmount">
-      <div class="bg-white mt-3 p-4">
+    <div v-if="isAmount" class="rounded-lg shadow-md">
+      <div class="bg-white mt-3 p-4 rounded-lg">
         <span class="text-primary font-weight-bolder">Total Balance</span><br />
         <div class="text-primary font-weight-bolder">
           <span>Rs.</span>
@@ -33,10 +33,10 @@
         </table>
       </div>
     </div>
-    <div v-if="isNotAmount">
-      <div class="bg-white mt-3 p-4">
+    <div v-if="isNotAmount" class="rounded-lg shadow-md">
+      <div class="bg-white mt-3 p-4 rounded-lg">
         <div class="text-primary font-weight-bolder">
-          <span>Your wallet is Eempty</span>
+          <span>Your wallet is Empty</span>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <body class="text-center mont-font">
+    <body class="text-center mont-font" style="background-color: #FAFAFA;">
       <main class="form-signin">
-        <div class="card w-100 shadow-sm rounded border-0 mb-3 ">
+        <div class="card w-100 shadow-md rounded-lg border-0 mb-3 ">
           <b-img
             style="height: 111px;width: auto;margin-top: 6rem !important; margin-bottom: 2rem !important;"
             center

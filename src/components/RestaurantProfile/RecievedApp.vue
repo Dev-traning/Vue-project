@@ -1,5 +1,5 @@
 <template>
-  <div class="franchise border-info-md">
+  <div class="franchise border-info-md mt-2 rounded-lg shadow-md">
     <div class="pl-4 border-0 card-body w-100 bg-success d-flex rounded-3">
       <h4 class="mb-0 text-white font-xs fw-600 ms-4">
         Recieved Application for Create Job

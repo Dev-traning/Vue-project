@@ -1,15 +1,20 @@
 <template>
   <div>
-    <div class="main-content right-chat-active">
-      <div class="middle-sidebar-left">
+    <div
+      class="main-content right-chat-active"
+      style="background-color: #FAFAFA;"
+    >
+      <div class="middle-sidebar-left" style="background-color: #FAFAFA;">
         <div class="row">
           <div class="col-sm-12">
-            <div class="card-body w-100 bg-success border-0 text-center">
+            <div
+              class="card-body w-100 bg-success border-0 text-center rounded-lg shadow-md mb-3"
+            >
               <h4 class="font-xss text-white fw-600  mb-0 ">
                 ATMANIRBHAR
               </h4>
             </div>
-            <div class="card w-100 shadow-xss rounded-xxl border-0 p-4">
+            <div class="card w-100 shadow-md rounded-lg border-0 p-4">
               <p class="font-xsss fw-500 text-grey-500 text-center mb-2">
                 I hereby apply for becoming <b>Atmnirbhar</b>
               </p>

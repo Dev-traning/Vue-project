@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-2"
+      class="card w-100 shadow-md rounded-lg border-0 p-4 mb-3"
       v-for="(item, itemIndex) in post"
       v-bind:key="item.id"
     >
@@ -711,6 +711,7 @@ export default {
         .get(`posts?page=${this.page}&per_page=10`)
 
         .then((result) => {
+          console.log(result.data);
           this.post.push(...result.data.data);
           this.lastPage = result.data.last_page;
         });

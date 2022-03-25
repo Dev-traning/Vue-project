@@ -1,17 +1,20 @@
 <template>
-  <body class="color-theme-blue mont-font">
+  <body class="color-theme-blue mont-font" style="background-color: #FAFAFA;">
     <div>
       <!-- navigation left -->
       <!-- <Nav /> -->
       <!-- navigation left -->
       <!-- main content -->
-      <div class="main-content right-chat-active">
-        <div class="middle-sidebar-bottom">
+      <div
+        class="main-content right-chat-active"
+        style="background-color: #FAFAFA;"
+      >
+        <div class="middle-sidebar-bottom" style="background-color: #FAFAFA;">
           <div class="middle-sidebar-left">
             <div class="row">
               <div class="col-lg-12">
                 <div
-                  class="p-0 bg-white border-0 card w-100 shadow-xss rounded-xxl"
+                  class="p-0 bg-white border-0 card w-100 shadow-md rounded-lg"
                 >
                   <div
                     class="p-0 m-3 overflow-hidden card-body h250 rounded-xxl"
@@ -187,7 +190,10 @@
                            </div>
                         </div>
                      </div> -->
-              <div class="col-xl-4 col-xxl-12 col-lg-8">
+              <div
+                class="col-xl-4 col-xxl-12 col-lg-8"
+                style="padding-right: 0px;"
+              >
                 <!-- <MyPost /> -->
                 <Wallet />
               </div>

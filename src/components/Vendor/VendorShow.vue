@@ -2,7 +2,7 @@
   <div>
     <div v-if="vendor">
       <div
-        class="card w-100 shadow-xss rounded-xxxl border-0 p-3 mb-3"
+        class="card w-100 shadow-md rounded-lg border-0 p-3 mb-3"
         v-for="item in vendor"
         v-bind:key="item.id"
       >

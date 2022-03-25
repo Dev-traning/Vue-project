@@ -1,14 +1,17 @@
 <template>
   <div>
-    <div class="main-wrapper" style="">
-      <div class="main-content right-chat-active">
+    <div class="main-wrapper">
+      <div
+        class="main-content right-chat-active"
+        style="background-color: #FAFAFA;"
+      >
         <div class="middle-sidebar-bottom">
           <div class="middle-sidebar-left">
             <div class="row">
               <div>
                 <div class="row">
                   <div class="col-sm-12 text-center">
-                    <div class="card w-100 shadow-xss rounded-xxl border-0">
+                    <div class="card w-100 shadow-md rounded-lg border-0">
                       <div>
                         <div class="row">
                           <div class=" p-4 pt-0">

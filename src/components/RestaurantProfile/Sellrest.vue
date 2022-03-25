@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="rounded-lg shadow-md mt-2">
     <div class="card-body pl-4 w-100 bg-success border-0 d-flex rounded-3 ">
       <h4 class="font-xs text-white fw-600 ms-4 mb-0 mt-2">
         Sale My Restaurant

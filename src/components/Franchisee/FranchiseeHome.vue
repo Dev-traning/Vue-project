@@ -1,6 +1,6 @@
 <template>
   <div v-if="this.users.user_type === '6'">
-    <div class="card w-100 shadow-xss rounded-0 border-0 mb-3 ">
+    <div class="card w-100 shadow-md rounded-lg border-0 mb-3 ">
       <div class="card-body d-flex align-items-center p-3 ">
         <h4 class="fw-700 mb-0 font-xssss text-grey-900">Franchise Provider</h4>
         <router-link
@@ -27,7 +27,7 @@
             v-bind:key="item.id"
           >
             <div
-              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-xss rounded-xxl"
+              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-md rounded-lg"
             >
               <div class="card-image w-100">
                 <img
@@ -49,9 +49,7 @@
                 />
               </div>
               <div class="pb-0  mt-1 ps-0 pe-0">
-                <div
-                  class="p-0 bg-greylight border-light-md rounded-xxl theme-dark-bg"
-                >
+                <div class="p-0 rounded-xxl theme-dark-bg">
                   <h4
                     class="pl-3 mb-0 fw-700 font-xss ls-3 lh-27 text-grey-800"
                   >

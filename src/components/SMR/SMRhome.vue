@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card w-100 shadow-xss rounded-0 border-0 mb-3 ml-3 sticky-top">
+    <div class="card w-100 shadow-md rounded-lg border-0 mb-3 ml-3 sticky-top">
       <div class="card-body d-flex align-items-center p-3 ">
         <h4
           class="fw-700 mb-0 font-xssss text-grey-900"
@@ -60,7 +60,7 @@
             v-bind:key="item.id"
           >
             <div
-              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-xss rounded-xxl"
+              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-sm rounded-lg"
             >
               <div class="card-image w-100">
                 <img
@@ -133,7 +133,7 @@
             v-bind:key="item.id"
           >
             <div
-              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-xss rounded-xxl"
+              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-md rounded-lg"
             >
               <div class="card-image w-100">
                 <img
@@ -206,7 +206,7 @@
             v-bind:key="item.id"
           >
             <div
-              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-xss rounded-xxl"
+              class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-md rounded-lg"
             >
               <div class="card-image w-100">
                 <img

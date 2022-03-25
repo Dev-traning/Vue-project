@@ -1,22 +1,25 @@
 <template>
-  <body class="color-theme-blue mont-font">
+  <body class="color-theme-blue mont-font" style="background-color: #FAFAFA;">
     <div class="">
       <!-- navigation left -->
       <Nav />
       <!-- navigation left -->
       <!-- main content -->
-      <div class="main-content right-chat-active">
-        <div class="middle-sidebar-bottom">
+      <div
+        class="main-content right-chat-active"
+        style="background-color: #FAFAFA;"
+      >
+        <div class="middle-sidebar-bottom" style="background-color: #FAFAFA;">
           <div class="middle-sidebar-left">
             <div class="row">
               <div class="col-xl-3 col-xxl-2 col-lg-3 pe-0">
-                <nav class="navigation scroll-bar">
+                <nav class="navigation scroll-bar ">
                   <div class="container ps-0 pe-0">
                     <div class="bg-white theme-dark-bg">
                       <div
-                        class="card-body  w-100 bg-success border-0   rounded-3"
+                        class="card-body  w-100 bg-success border-0 rounded-3"
                       >
-                        <h4 class="font-xs text-white fw-600  mb-0 text-center">
+                        <h4 class="font-xs text-white fw-600 mb-0 text-center">
                           Main Manu
                         </h4>
                       </div>

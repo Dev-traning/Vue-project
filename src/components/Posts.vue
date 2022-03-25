@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-3 pe-4 pb-3 mb-3"
+    class="card w-100 shadow-md rounded-lg border-0 ps-3 pt-3 pe-3 pb-3 mb-3"
   >
     <div class="card-body p-0 mt-0 position-relative">
       <figure class="avatar position-absolute ms-2 mt-1 top-5">
@@ -10,6 +10,7 @@
           height="30"
           class="shadow-sm rounded  w30"
           v-if="user.profile_photo"
+          style="margin-top: 5px; margin-left: 5px;"
         />
         <img
           src="../assets/profile-no-img.png"
@@ -17,18 +18,20 @@
           height="30"
           class="shadow-sm rounded  w30"
           v-else
+          style="margin-top: 5px; margin-left: 5px;"
         />
       </figure>
       <b-button
         @click="displayModal = !displayModal"
         name="message"
-        class="h150 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg"
+        class="h150 bor-0 w-100 rounded-lg p-2 ps-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg"
         cols="30"
         rows="10"
         placeholder="What's on your mind?"
+        style="border-left-width: 0px; border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px;"
       >
         <p
-          style="    float: left; margin-bottom: 100px;     color: rgb(33 37 41 / 60%);"
+          style="float: left; margin-bottom: 100px; color: rgb(33 37 41 / 60%); margin-left: 5px;margin-top: 5px;"
         >
           Please Share Your Restroworld Stories!
         </p>

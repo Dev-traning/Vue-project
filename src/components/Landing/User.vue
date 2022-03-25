@@ -1,18 +1,21 @@
 <template>
   <div>
-    <div class="main-wrapper">
-      <div class="main-content right-chat-active">
-        <div class="middle-sidebar-bottom">
+    <div class="main-wrapper" style="background-color: #FAFAFA;">
+      <div
+        class="main-content right-chat-active"
+        style="background-color: #FAFAFA;"
+      >
+        <div class="middle-sidebar-bottom" style="background-color: #FAFAFA;">
           <div class="middle-sidebar-left">
             <div class="row">
               <div class="col-xl-3 col-xxl-2 col-lg-3 ps-lg-0">
                 <div
-                  class="card w-100 shadow-xss rounded-xxl border-0 mb-3 ml-3"
+                  class="card w-100 shadow-xss rounded-lg border-0 mb-3 ml-3"
                 >
                   <div class="item">
-                    <div class="overflow-hidden rounded-xxl">
+                    <div class="overflow-hidden rounded-xxl shadow-md">
                       <div
-                        class="p-2 border-bottom card-body position-relative h130 bg-image-cover bg-image-center"
+                        class="pl-2 pr-2 pt-2 pb-3 border-bottom card-body position-relative h130 bg-image-cover bg-image-center"
                       >
                         <div class="d-flex row">
                           <div class="col-lg-4">
@@ -31,7 +34,7 @@
                                   :src="`${user.profile_photo}`"
                                   width="90px"
                                   height="90px"
-                                  class="overflow-hidden shadow-sm rounded-xxxl"
+                                  class="overflow-hidden shadow-md rounded-xxxl"
                                   alt="Change Profile Photo"
                                   v-if="user.profile_photo"
                                 />
@@ -39,7 +42,7 @@
                                   src="../../assets/profile-no-img.png"
                                   width="90px"
                                   height="90px"
-                                  class="overflow-hidden shadow-sm rounded-xxxl"
+                                  class="overflow-hidden shadow-md rounded-xxxl"
                                   v-else
                                 />
 
@@ -93,7 +96,7 @@
                 <div
                   v-else
                   style="background-color: hsl(32deg 100% 50%);"
-                  class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pe-4 mb-3 subscribe"
+                  class="card w-100 shadow-md rounded-lg border-0 ps-4 pe-4 mb-3 subscribe"
                 >
                   <div class="row text-center">
                     <div class="  ">

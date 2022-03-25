@@ -1,11 +1,14 @@
 <template>
-  <body class="color-theme-blue mont-font">
+  <body class="color-theme-blue mont-font" style="background-color: #FAFAFA;">
     <div class="">
       <!-- navigation left -->
       <Nav />
       <!-- navigation left -->
       <!-- main content -->
-      <div class="main-content right-chat-active">
+      <div
+        class="main-content right-chat-active"
+        style="background-color: #FAFAFA;"
+      >
         <div class="middle-sidebar-bottom">
           <div class="middle-sidebar-left">
             <div class="row">

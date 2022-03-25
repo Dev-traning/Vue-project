@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <div class="card-body  w-100 bg-success border-0 d-flex rounded-3">
+  <div class="rounded-lg shadow-md">
+    <div
+      class="card-body w-100 bg-success border-0 d-flex rounded-lg"
+      style="margin-top: 5px;"
+    >
       <h4 class="font-xs text-white fw-600  mb-0 ">Update Profile</h4>
     </div>
     <div class="card-body p-lg-3 p-4 w-100 border-0 ">

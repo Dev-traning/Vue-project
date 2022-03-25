@@ -46,11 +46,19 @@
       </div>
     </div>
   </div> -->
-  <div class="main-wrapper rounded-xxl shadow-xss">
-    <div class="main-content right-chat-active">
+  <div
+    class="main-wrapper rounded-lg shadow-md"
+    style="background-color: #FAFAFA;"
+  >
+    <div
+      class="main-content right-chat-active"
+      style="background-color: #FAFAFA;"
+    >
       <div class="middle-sidebar-bottom">
         <div class="middle-sidebar-left">
-          <div class="card card-outline-secondary">
+          <div
+            class="card card-outline-secondary rounded-lg shadow-md border-0"
+          >
             <div class="card-header">
               <h3 class="mb-0 text-white p-1">Change Password</h3>
             </div>

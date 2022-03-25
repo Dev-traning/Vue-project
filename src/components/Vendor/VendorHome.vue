@@ -10,7 +10,7 @@
         v-bind:key="item.id"
       >
         <div
-          class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-xss rounded-xxl"
+          class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-md rounded-lg"
         >
           <div class="card-image w-100">
             <img
@@ -32,9 +32,7 @@
             />
           </div>
           <div class="pb-0  mt-1 ps-0 pe-0">
-            <div
-              class="p-0 bg-greylight border-light-md rounded-xxl theme-dark-bg"
-            >
+            <div class="p-0 rounded-xxl theme-dark-bg">
               <h4 class="pl-3 mb-0 fw-700 font-xss ls-3 lh-27 text-grey-800">
                 {{ item.name }}
                 <span class=" ls-3 d-block font-xsssss text-grey-500 fw-500"
@@ -77,7 +75,7 @@
         v-bind:key="item.id"
       >
         <div
-          class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-xss rounded-xxl"
+          class="p-1 mb-3 overflow-hidden bg-white border-0 card w-100 hover-card shadow-md rounded-lg"
         >
           <div class="card-image w-100">
             <img
