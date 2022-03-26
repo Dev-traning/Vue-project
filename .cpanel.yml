@@ -1,6 +1,12 @@
 ---
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/garba/public_html/restrofront/
-    - /bin/cp -r dist/* $DEPLOYPATH
-    - /bin/cp  index.html $DEPLOYPATH
+      tasks:
+       - export DEPLOYPATH=/home/garba/public_html/restroworld
+       - export REPOPATH=/home/garba/repositories/restroworld-New-FrontEnd-Project
+       - /bin/rm -Rf ${DEPLOYPATH}
+       - /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
+       - /bin/chmod 755 ${DEPLOYPATH}
+       - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
+       - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
+       - /bin/cp -R dist/* $DEPLOYPATH
+
