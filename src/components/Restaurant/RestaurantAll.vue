@@ -94,6 +94,25 @@ export default {
     };
   },
   methods: {
+    // alertSubscribe() {
+    //   Swal.fire({
+    //     title:
+    //       "<h1 style='color: red; font-weight: bolder;'>Haven't Subscribed Yet?</h1>",
+    //     text:
+    //       "Subscribe Now! With Awesome Offers And Grow Your Business With Restroworld Community! ",
+    //     iconHtml:
+    //       '<img src="https://media.istockphoto.com/vectors/subscribe-button-icon-for-social-media-subscribe-icon-button-vector-vector-id1255742741" style="height: 150px; width: 150px;">',
+
+    //     confirmButtonColor: "#012A71",
+
+    //     confirmButtonText:
+    //       "<span style='font-weight: bolder;'>Make this Account an Elite Account!</span>",
+    //   }).then((result) => {
+    //     if (result.isConfirmed) {
+    //       Swal.fire("Deleted!", "Your file has been deleted.", "success");
+    //     }
+    //   });
+    // },
     close() {
       this.$refs["modal"].hide();
     },

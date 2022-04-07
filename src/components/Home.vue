@@ -91,7 +91,7 @@ export default {
   mounted() {
     // alert(this.user.get_free_subscribed == '0')
 
-    if (this.user.get_free_subscribed == "1") {
+    if (this.user.get_free_subscribed == "0") {
       setTimeout(() => {
         this.basketAddSuccess = true;
         this.$refs["modal"].show();
