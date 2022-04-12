@@ -4,11 +4,7 @@
       <div class="card login-card rounded">
         <div class="row no-gutters ml-1 p-3  ">
           <div class="col-md-5 shadow-sm">
-            <img
-              src="../assets/regestration.svg"
-              alt="login"
-              class="login-card-img "
-            />
+            <img :src="regestration" alt="login" class="login-card-img " />
           </div>
           <div class="col-md-7">
             <div class="card-body">
@@ -21,12 +17,18 @@
   </main>
 </template>
 <script>
+import regestration from "../assets/regestration.svg";
 // import axios from "axios";
 // import Error from "./Error.vue";
 export default {
   name: "Register",
   components: {
     //  Error,
+  },
+  data() {
+    return {
+      regestration,
+    };
   },
   //   data() {
   //     return {
