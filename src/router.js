@@ -7,7 +7,7 @@ import Router from "vue-router";
 import Home from "./components/Home.vue";
 import PageNotFound from "./components/PageNotFound.vue";
 
-import Register from "./components/Register.vue";
+import Register from "./components/Auth/Register.vue";
 
 import MailVerify from "./components/Auth/MailVerify.vue";
 import UserStore from "./components/Auth/UserStore.vue";
