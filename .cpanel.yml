@@ -1,7 +1,7 @@
 ---
 deployment:
       tasks:
-       - export DEPLOYPATH=/home/restroworld/public_html/restroworld.com
+       - export DEPLOYPATH=/home/restroworld/public_html/
        - export REPOPATH=/home/restroworld/repositories/Restroworld-Frontend
        - /bin/rm -Rf ${DEPLOYPATH}
        - /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
