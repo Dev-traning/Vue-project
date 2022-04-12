@@ -7,7 +7,6 @@ deployment:
        - /bin/rm -Rf ${DEPLOYPATH/css}
        - /bin/rm -Rf ${DEPLOYPATH/fonts}
        - /bin/rm -Rf ${DEPLOYPATH/js}
-       - /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
        - /bin/chmod 755 ${DEPLOYPATH}
        - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
        - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
