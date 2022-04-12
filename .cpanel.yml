@@ -10,5 +10,5 @@ deployment:
        - /bin/chmod 755 ${DEPLOYPATH}
        - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
        - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
-       - /bin/cp -R DEPLOYPATH REPOPATH
+       - /bin/cp -R export DEPLOYPATH export REPOPATH
        - /bin/cp -R dist/* $DEPLOYPATH
