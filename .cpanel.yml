@@ -1,1 +1,9 @@
-
+---
+deployment:
+      tasks:
+       - export DEPLOYPATH=/home/restroworld/public_html/
+       - /bin/rm -Rf ${DEPLOYPATH/dist/*}
+       - /bin/chmod 755 ${DEPLOYPATH}
+       - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
+       - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
+       - /bin/cp -R dist/* $DEPLOYPATH
