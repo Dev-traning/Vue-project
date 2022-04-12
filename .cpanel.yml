@@ -4,6 +4,9 @@ deployment:
        - export DEPLOYPATH=/home/restroworld/public_html/
        - export REPOPATH=/home/restroworld/repositories/Restroworld-Frontend
        - /bin/rm -Rf ${DEPLOYPATH/img}
+       - /bin/rm -Rf ${DEPLOYPATH/css}
+       - /bin/rm -Rf ${DEPLOYPATH/fonts}
+       - /bin/rm -Rf ${DEPLOYPATH/js}
        - /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
        - /bin/chmod 755 ${DEPLOYPATH}
        - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
