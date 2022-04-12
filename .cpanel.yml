@@ -3,11 +3,12 @@ deployment:
       tasks:
        - export DEPLOYPATH=/home/restroworld/public_html/
        - export REPOPATH=/home/restroworld/repositories/Restroworld-Frontend
-       - /bin/rm -Rf ${DEPLOYPATH/img}
-       - /bin/rm -Rf ${DEPLOYPATH/css}
-       - /bin/rm -Rf ${DEPLOYPATH/fonts}
-       - /bin/rm -Rf ${DEPLOYPATH/js}
+       - /bin/rmdir -Rf ${DEPLOYPATH/img}
+       - /bin/rmdir -Rf ${DEPLOYPATH/css}
+       - /bin/rmdir -Rf ${DEPLOYPATH/fonts}
+       - /bin/rmdir -Rf ${DEPLOYPATH/js}
        - /bin/chmod 755 ${DEPLOYPATH}
        - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
        - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
+       - /bin/cp -R ${REPOPATH}/ ${DEPLOYPATH}
        - /bin/cp -R dist/* $DEPLOYPATH
