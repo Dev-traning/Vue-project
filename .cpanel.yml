@@ -6,5 +6,5 @@ deployment:
        - /bin/chmod 755 ${DEPLOYPATH}
        - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
        - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
-       - /bin/rsync -aP --progress ${REPOPATH}/ ${DEPLOYPATH} --delete-after
+       - /bin/rsync -aP --progress ${REPOPATH}/ ${DEPLOYPATH} 
        - /bin/cp -R dist/* $DEPLOYPATH
