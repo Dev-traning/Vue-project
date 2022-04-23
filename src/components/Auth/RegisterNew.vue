@@ -257,6 +257,7 @@
 import axios from "axios";
 import CheckboxAccept from "./CheckboxAccept";
 //    import Error from "../Error.vue";
+// check
 export default {
   name: "Register",
   components: {
