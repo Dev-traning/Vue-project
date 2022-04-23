@@ -155,11 +155,11 @@
                       >
                     </div>
                     <div>
-                      <router-link
+                      <!-- <router-link
                         to="User/Franchise"
                         class="font-xssss fw-500 text-grey-500"
                         >Franchisee</router-link
-                      >
+                      > -->
                       <router-link
                         to="User/privecy"
                         class="ml-3 font-xssss fw-500 text-grey-500"

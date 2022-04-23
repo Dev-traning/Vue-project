@@ -30,7 +30,7 @@
         </div>
         <div class="d-flex">
           <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">
-            {{ item.user.first_name }} {{ item.user.last_name }}
+            {{ item.name }}
           </p>
           <div class="ml-auto">
             <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">27-08-2021</p>
@@ -153,6 +153,7 @@ export default {
 
       axios.get("mp/manpowers").then((result) => {
         this.manpower = result.data.data;
+        console.log(this.manpower);
       });
     },
   },

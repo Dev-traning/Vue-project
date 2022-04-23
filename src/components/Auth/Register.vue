@@ -5,7 +5,7 @@
         <div class="row no-gutters ml-1 p-3  ">
           <div class="col-md-5 shadow-sm">
             <img
-              src="../../assets/images/regtest.svg"
+              src="../../assets/images/pexels-dids-5360447.jpg"
               alt="login"
               class="login-card-img "
             />
