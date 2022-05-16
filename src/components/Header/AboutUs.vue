@@ -41,6 +41,13 @@
                                   The mission is to connect these people and
                                   help them grow in the hospitality industry.
                                 </p>
+                                <br />
+                                <p
+                                  class="  font-xssss  fw-500 text-justify mb-2"
+                                >
+                                  Operational Address: 504, Luxuria Business
+                                  Hub, Nr. VR Mall, Vesu, Surat, Gujarat 395007
+                                </p>
                                 <router-link to="/home/user"
                                   >Go to Home</router-link
                                 >
