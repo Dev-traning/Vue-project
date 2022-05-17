@@ -45,8 +45,9 @@
                                 <p
                                   class="  font-xssss  fw-500 text-justify mb-2"
                                 >
-                                  Operational Address: 504, Luxuria Business
-                                  Hub, Nr. VR Mall, Vesu, Surat, Gujarat 395007
+                                  <u>Operational Address: </u><br />
+                                  504, Luxuria Business Hub, Nr. VR Mall, Vesu,
+                                  Surat, Gujarat 395007
                                 </p>
                                 <router-link to="/home/user"
                                   >Go to Home</router-link
