@@ -4,6 +4,7 @@ deployment:
     - export DEPLOYPATH=/home/restroworld/public_html/
     - export REPOPATH=/home/restroworld/repositories/public_html/Prod-Restroworld-Frontend
     - /bin/chmod 755 ${DEPLOYPATH}
+    - /bin/rmdir -Rf ${DEPLOYPATH/test.txt}
     - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
     - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
     - /bin/rsync -aP --progress ${REPOPATH}/ ${DEPLOYPATH}
