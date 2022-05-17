@@ -435,16 +435,13 @@ export default {
         })
         .then((response) => {
           this.coupon = response.data;
-          this.amount_pay = response.data.data.amount_pay;
-          this.amount_payPrint = response.data.data.amount_pay;
-
+          this.amount_pay = response.data.payable_amount;
+          this.amount_payPrint = response.data.payable_amount;
           this.couponerr = this.coupon.message;
-          localStorage.setItem(
-            "copondetails",
-            JSON.stringify(response.data.data)
-          );
+          localStorage.setItem("copondetails", JSON.stringify(response.data));
         })
         .catch((error) => {
+          console.log(error);
           if (error.response.data.status_code == 422) {
             this.couponerr = error.response.data.message;
             this.coupon_code = "";
