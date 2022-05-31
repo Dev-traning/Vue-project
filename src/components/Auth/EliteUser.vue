@@ -440,7 +440,7 @@ export default {
     cuponCopy() {
       var copyDat = this.plansData[0].coupon_code;
       navigator.clipboard.writeText(copyDat);
-
+  
       if (copyDat) {
         const Toast = this.$swal.mixin({
           toast: true,
