@@ -26,7 +26,7 @@
                 Welcome to the First <br />
                 Global Resturant Community <br />Join Billions of Resturant &
                 Hotel<br />
-                across the globe
+                Across the globe
               </p>
             </b-card-text>
           </b-col>
