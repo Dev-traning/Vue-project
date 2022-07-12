@@ -1,131 +1,123 @@
 <template>
-  <div>
-    <body class="text-center mont-font" style="background-color: #FAFAFA;">
-      <main class="form-signin">
-        <div class="card w-100 shadow-md rounded-lg border-0 mb-3 ">
-          <b-img
-            style="height: 111px;width: auto;margin-top: 6rem !important; margin-bottom: 2rem !important;"
-            center
-            src="../../assets/paymentsuses.png"
-            alt="Center image"
-          ></b-img>
+ <div>
+  <body class="text-center mont-font">
+    
+<main class="form-signin">
 
-          <h1
-            class="text-success fw-600 text-danger-600 font-xl"
-            style="color: #00a00b!important;"
-          >
-            Your Payment Was Successful !
-          </h1>
-          <p class="pl-5 pr-5 ml-5 mr-5 fw-300 text-danger-300 font-xssss mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            laboriosam eligendi laudantium numquam itaque! Asperiores ex soluta
-            quaerat, reiciendis ab autem modi voluptates odio cum. Rem atque ab
-            quam aliquid, possimus non eius nisi ullam aliquam, est molestiae
-            voluptate voluptatibus vitae fuga, et commodi tenetur ipsum culpa!
-            Accusamus impedit earum consequuntur a nisi laborum nobis laudantium
-            nulla fuga vel, eni!
-          </p>
 
-          <a
-            v-bind:href="'/home'"
-            style="margin-bottom: 6rem !important;"
-            class="text-dark font-xsss fw-600"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-arrow-left"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-              />
-            </svg>
-            Go to Home</a
-          >
-        </div>
-      </main>
-    </body>
-  </div>
+<div class="card w-100 shadow-sm rounded border-0 mb-3 ">
+   <b-img style="height: 111px;width: auto;margin-top: 6rem !important; margin-bottom: 2rem !important;" center src="../../assets/paymentsuses.png" alt="Center image"></b-img>
+                                                
+                                                <h1 class="text-success fw-600 text-danger-600 font-xl" style="color: #00a00b!important;" >Your Payment Was Successful !</h1>
+                                                <p class="pl-5 pr-5 ml-5 mr-5 fw-300 text-danger-300 font-xssss mb-4" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laboriosam eligendi laudantium numquam itaque! Asperiores ex soluta quaerat, reiciendis ab autem modi voluptates odio cum. Rem atque ab quam aliquid, possimus non eius nisi ullam aliquam, est molestiae voluptate voluptatibus vitae fuga, et commodi tenetur ipsum culpa! Accusamus impedit earum consequuntur a nisi laborum nobis laudantium nulla fuga vel, eni!</p>
+                                           
+                                                <a v-bind:href="'/home'" style="margin-bottom: 6rem !important;" class="text-dark font-xsss fw-600"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg> Go to Home</a>
+</div>
+   
+</main>
+
+
+    
+  </body>
+ </div>
+ 
+   
 </template>
 <script>
 import axios from "axios";
 export default {
-  Name: "Success",
-  data() {
+    Name:'Success',
+    data() {
     return {
-      errormas: "",
-    };
-  },
-  methods: {},
+        errormas:'',
+        
+    }},
+      methods: {
 
-  mounted() {
-    this.subscribe = JSON.parse(localStorage.getItem("subscribe"));
+      },
 
-    const response = axios
-      .post("payment/" + this.subscribe.id, {
-        payment_status: "1",
-      })
-      .catch((error) => {
-        if (error) {
-          this.errormas = error.response.data.message;
-        }
+        mounted() {
+             this.subscribe = JSON.parse(localStorage.getItem("subscribe"));
+         
+              const response = axios.post('payment/'+this.subscribe.id,{
+                  payment_status:'1'
+              })
+                .catch(error =>{
+                              if(error){this.errormas=error.response.data.message} 
 
-        console.log(error);
-      });
+                              console.log(error)
+                           })
 
-    if (response.data.status_code == "200") {
-      this.$router.go(this.$router.currentRoute);
-      localStorage.removeItem("subscribe");
+                             if (response.data.status_code == '200') {
+                               this.$router.go(this.$router.currentRoute)
+                                localStorage.removeItem('subscribe');
     }
 
-    console.log(response);
-  },
-};
+                            
+              console.log(response)
+                
+         
+     },
+
+
+
+}
 </script>
 
+
 <style scoped>
+ 
+
 body {
   display: flex;
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
+  
 }
 
 .form-signin {
   width: 100%;
   max-width: 674px;
-
+  
   margin: auto;
 }
 
+ 
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
+ 
+  
 
-.content {
-  text-align: center;
-}
+    
+    .content 
+        {
+            text-align:center;
+        }
 
-.content h1 {
-  font-size: 25px;
-  padding-top: 25px;
-}
+        .content  h1
+        {
+            font-size:25px;
+            padding-top:25px;
+        }
 
-.content a {
-  width: 200px;
-  height: 35px;
-  color: #fff;
-  border-radius: 30px;
-  padding: 5px 10px;
-  background: #f01b1b;
-  transition: all ease-in-out 0.3s;
-}
+        .content a
+        {
+            width:200px;
+            height:35px;
+            color:#fff;
+            border-radius:30px;
+            padding:5px 10px;
+            background:#f01b1b;
+            transition:all ease-in-out 0.3s;
+        }
 
-.content a:hover {
-  text-decoration: none;
-  background: #000;
-}
+        .content a:hover
+        {
+            text-decoration:none;
+            background:#000;
+        }
 </style>

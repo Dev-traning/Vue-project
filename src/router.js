@@ -7,11 +7,11 @@ import Router from "vue-router";
 import Home from "./components/Home.vue";
 import PageNotFound from "./components/PageNotFound.vue";
 
-import Register from "./components/Auth/Register.vue";
+import Register from "./components/Register.vue";
 
 import MailVerify from "./components/Auth/MailVerify.vue";
 import UserStore from "./components/Auth/UserStore.vue";
-import Login from "./components/Auth/Login.vue";
+import Login_modify from "./components/Auth/Login_modify.vue";
 import PasswordReset from "./components/Auth/PasswordReset.vue";
 
 //Register
@@ -35,7 +35,6 @@ import Profile from "./components/RestaurantProfile/Profile.vue";
 import PostReq from "./components/RestaurantProfile/PostReq.vue";
 import EditProfile from "./components/RestaurantProfile/EditProfile.vue";
 import CreateJob from "./components/RestaurantProfile/CreateJob.vue";
-import MyJobs from "./components/RestaurantProfile/MyJobs.vue";
 import ViewEnquiry from "./components/RestaurantProfile/ViewEnquiry.vue";
 import ShowRequirment from "./components/RestaurantProfile/ShowRequirment.vue";
 import RecievedQuote from "./components/RestaurantProfile/RecievedQuote.vue";
@@ -79,11 +78,7 @@ import Success from "./components/Subscribe/Success.vue";
 //Header
 import Help from "./components/Header/Help.vue";
 import Privecy from "./components/Header/Privecy.vue";
-import AboutUs from "./components/Header/AboutUs.vue";
-import CancellationPolicy from "./components/Header/CancellationPolicy.vue";
 import Setting from "./components/Header/Setting.vue";
-import TC from "./components/Header/TC.vue";
-import Franchise from "./components/Header/Franchise.vue";
 
 // atmnirbhar
 import Atmnirbhar from "./components/Atmnirbhar/Atmnirbhar.vue";
@@ -121,7 +116,7 @@ export default new Router({
   routes: [
     {
       path: "/",
-      component: Login,
+      component: Login_modify,
 
       children: [
         {
@@ -192,22 +187,6 @@ export default new Router({
         {
           path: "/home/User/privecy",
           component: Privecy,
-        },
-        {
-          path: "/home/User/AboutUs",
-          component: AboutUs,
-        },
-        {
-          path: "/home/User/CancellationPolicy",
-          component: CancellationPolicy,
-        },
-        {
-          path: "/home/User/T&C",
-          component: TC,
-        },
-        {
-          path: "/home/User/Franchise",
-          component: Franchise,
         },
         {
           path: "/home/User/setting",
@@ -360,10 +339,6 @@ export default new Router({
         {
           path: "/CreateJob",
           component: CreateJob,
-        },
-        {
-          path: "/MyJobs",
-          component: MyJobs,
         },
         {
           path: "/PostReq",
