@@ -146,7 +146,7 @@
     </div>
     <div class="howwork">
       <h1 class="h1">How Restroworld Work</h1>
-      <img class="img" src="../../assets/Group 50.png" />
+      <img class="img" src="../../../src/assets/Group 50.png" />
       <p class="p">
         Billions of Restaurants, Vendors,Chefs, Captains and many more are<br />
         waiting for you at Restroworld.
@@ -390,7 +390,7 @@ if(localStorage.getItem('token'))
 </script>
 <style scoped>
 .mainContainer {
-  background-image: url("../../assets/slide_bg_pattern.png");
+  background-image: url("../../../src/assets/slide_bg_pattern.png");
   position: relative;
   background-repeat: repeat-x(8);
   /* height: 100%; */
