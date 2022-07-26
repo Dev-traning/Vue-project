@@ -380,8 +380,8 @@ resend(){
          localStorage.setItem("hash", hash);
          localStorage.setItem("expireSession", 'sesion12dgtdb');
       }
-      // console.log(hash);
-      // console.log(data);
+      console.log(hash);
+      console.log(data);
 
       document.getElementById("hash").value = hash;
      
@@ -428,24 +428,26 @@ if(result.data.status_code=='200'){
          //   console.log(response);
 
         },
+
+
        async handalSubmit() {
         
-  this.paynowbtn = true;
-          await axios.post('users/elight-signup', {
-             business_name: this.business_name,
-              mobile_no: this.mobile_no,
-             first_name: this.first_name,
-             last_name: this.last_name,
-             gst_no:this.gst_no,
-             email: this.email,
-             plan_id:'1',
-             password: this.password,
-             password_confirmation: this.password_confirmation,
-             user_type: this.user_type,
-             country_id: this.country_id,
-             state_id: this.state_id,
-             city_id: this.city_id,
-             coupon_code:this.coupon_code
+            this.paynowbtn = true;
+            await axios.post('users/elight-signup', {
+            business_name: this.business_name,
+            mobile_no: this.mobile_no,
+            first_name: this.first_name,
+            last_name: this.last_name,
+            gst_no:this.gst_no,
+            email: this.email,
+            plan_id:'1',
+            password: this.password,
+            password_confirmation: this.password_confirmation,
+            user_type: this.user_type,
+            country_id: this.country_id,
+            state_id: this.state_id,
+            city_id: this.city_id,
+            coupon_code:this.coupon_code
            }).then((res) => {
                this.failMsg=''
                
@@ -473,14 +475,7 @@ if(result.data.status_code=='200'){
            this.paynowbtn = false;
          
      
-        })
-
-         
-              
-              
-         //   console.log(response);
-          
-       },
+        })},
        
    
    
