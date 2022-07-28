@@ -390,7 +390,7 @@ if(localStorage.getItem('token'))
 </script>
 <style scoped>
 .mainContainer {
-  background-image: url("../../../src/assets/slide_bg_pattern.png");
+  background-image: url("../../assets/slide_bg_pattern.png");
   position: relative;
   background-repeat: repeat-x(8);
   /* height: 100%; */
