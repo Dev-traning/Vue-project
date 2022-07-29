@@ -17,17 +17,14 @@
                                 
                                  <div class="d-flex row">
                                     
-                                   <div class="col-lg-4">
+                                   <!-- <div class="col-lg-4">
                                       
 
 
                                        <div class="w-100">
                                                    <input title="Change Profile Photo" type="file" name="file" id="file" class="input-file"  @change="onFileChangee"  /> 
                                                    <label for="file">
- 
-                                               
-                                                           <img  title="Change Profile Photo"   :src='`{{user.profile_photo}}`' width="90px" height="90px" class="overflow-hidden shadow-sm rounded-xxxl" alt="Profile Photo" v-if="user.profile_photo">
-                                                        <img src="../../assets/profile-no-img.png" width="90px" height="90px" class="overflow-hidden shadow-sm rounded-xxxl" v-else>
+                                                         <img src="" />
                                                     
                                                          <div style="position: absolute;right: -13px;  top: 65px;">
                                                          <i class="mt-2 text-white feather-edit large-icon me-2 d-block"></i>
@@ -37,7 +34,7 @@
 
 
  
-                                   </div>
+                                   </div> -->
 
                                    <div class="col-lg-8">
                                       <h3 class="mt-1 mb-2 ml-1 text-dark fw-500">{{user.full_name}}</h3>
