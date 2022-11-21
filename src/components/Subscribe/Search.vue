@@ -312,9 +312,9 @@ export default {
       payuUrl: "https://secure.payu.in/_payment",
       mkey: "nxpvv9VZ",
       saltKey: "3oFxUMtWG2",
-      surl: "https://www.restroworld.com/home/User/Success",
+      // surl: "https://uat.restroworld.com/home/User/Success",
+      surl: "https://uat.restroworld.com/home/User/Success",
       furl: "https://www.restroworld.com/home/User/Fail",
-
       txnid: this.makeid(),
       id: "",
       mobile_no: "",
