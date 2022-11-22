@@ -1,4 +1,5 @@
 <template>
+   
 <div>
    <div class="card w-100 shadow-xss rounded-0 border-0 mb-3 ">
       <div class="card-body d-flex align-items-center p-3 ">
@@ -100,6 +101,7 @@
           ...mapGetters(['user'])
         },
          mounted() {
+            alert(this.item.user_type_text);
     this.getData();
   },
         

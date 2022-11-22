@@ -25,6 +25,7 @@
     "moment": "^2.29.1",
     "sha512": "0.0.1",
     "vue": "^2.6.11",
+    "vue-analytics": "^5.22.1",
     "vue-observe-visibility": "^1.0.0",
     "vue-router": "^3.5.2",
     "vue-sweetalert2": "^5.0.2",
