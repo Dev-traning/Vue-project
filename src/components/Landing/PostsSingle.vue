@@ -381,6 +381,9 @@ export default {
     };
   },
   methods: {
+   mounted(){
+      alert("update");
+   },
     onCancel() {
       console.log("CANCEL SUBMIT");
       this.show = false;
