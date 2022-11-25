@@ -13,7 +13,7 @@
                      <!-- <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 ml-3">
                         <div class="card-body d-flex align-items-center p-3">
                            <h4 class="fw-700 mb-0 font-xssss text-grey-900"> Manpower </h4>
-                           <a href="default-member.html" class="fw-600 ms-auto font-xssss text-primary" >See all</a > 
+                           <a href="default-member.html" class="fw-600 ms  -auto font-xssss text-primary" >See all</a > 
                         </div>
                      </div> -->
                      <!-- <div class="row">

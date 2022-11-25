@@ -7,10 +7,10 @@
          
            <h4 class="fw-700 mb-0 font-xssss text-grey-900" v-if="this.users.user_type === '7'">Restaurant</h4>
 
-
-           
-         <!-- <router-link  class="fw-600 ms-auto font-xssss text-primary"  v-if="is_subscribed === user.is_subscribed" to="/ManpowerShow" >See All </router-link>
-         <a   class="fw-600 ms-auto font-xssss text-primary"  v-b-modal.subscribealert v-else>See All</a >   -->
+         
+           <h4 class=" fw-700 mb-0 font-xssss text-grey-900" style="width:79%"> Manpower </h4>
+         <router-link  class="fw-600 ms-auto font-xssss text-primary"  v-if="is_subscribed === user.is_subscribed" to="/ManpowerShow" >See All </router-link>
+         <a   class="fw-600 ms-auto font-xssss text-primary"  v-b-modal.subscribealert v-else>See All</a >  
 
 
             <div class="fw-600 ms-auto font-xssss text-primary"  v-if="is_subscribed === user.is_subscribed">

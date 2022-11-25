@@ -13,7 +13,7 @@ import { library} from '@fortawesome/fontawesome-svg-core'
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
+import Notifications from 'vue-notification'
 
 import './assets/css/style.css';
 import './assets/css/feather.css';
@@ -33,7 +33,7 @@ Vue.config.productionTip = false
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 library.add(faCircleCheck, faCircleXmark)
 
-
+Vue.use(Notifications)
 
 new Vue({
   router,
