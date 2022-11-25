@@ -313,7 +313,7 @@ export default {
       mkey: "nxpvv9VZ",
       saltKey: "3oFxUMtWG2",
       // surl: "https://uat.restroworld.com/home/User/Success",
-      surl: "https://uat.restroworld.com/home/User/Success",
+      surl: "https://restroworld.com/home/User/Success",
       furl: "https://www.restroworld.com/home/User/Fail",
       txnid: this.makeid(),
       id: "",
