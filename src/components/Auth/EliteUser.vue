@@ -294,7 +294,7 @@
 })
 
 Toast.fire({
-  icon: 'success',
+  icon: 'Success',
   title: 'Copied ' + this.plansData[0].coupon_code
 })
 

@@ -66,7 +66,8 @@ export default {
       phone: 9999999999,
       lastName: "Kumar",
       firstName: "Sonu",
-      surl: "https://www.restroworld.com/",
+      surl: "https://restroworld.com/home/User",
+      furl: "https://restroworld.com/Home/User/Success",
       hash: this.hash,
     };
   },
@@ -101,7 +102,7 @@ export default {
  
     let user = localStorage.getItem("token");
     if (!user) {
-      this.$router.push({ name: "/" });
+      this.$router.push({ name: "/home" });
     }
     this.getData();
   },
