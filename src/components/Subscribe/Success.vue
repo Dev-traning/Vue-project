@@ -98,7 +98,7 @@ export default {
         localStorage.removeItem("expireSession");
       }, 10000);
     } else if (!localStorage.getItem("expireSession")) {
-      this.$router.push("/home");
+      this.$router.push("/Home");
     }
 
     // .catch((error) => {

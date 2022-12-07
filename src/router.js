@@ -129,12 +129,12 @@ export default new Router({
     { path: "/reset-password", component: PasswordReset },
     { path: "*", component: PageNotFound },
     {
-      path: "/Home",
+      path: "/home",
       component: Home,
-      redirect: "/Home/User",
+      redirect: "/home/User",
       children: [
         {
-          path: "/Home/User",
+          path: "/home/User",
           component: User,
         },
         // { path: "*", component: PageNotFound },
