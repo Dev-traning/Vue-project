@@ -129,12 +129,12 @@ export default new Router({
     { path: "/reset-password", component: PasswordReset },
     { path: "*", component: PageNotFound },
     {
-      path: "/home",
+      path: "/Home",
       component: Home,
-      redirect: "/home/User",
+      redirect: "/Home/User",
       children: [
         {
-          path: "/home/User",
+          path: "/Home/User",
           component: User,
         },
         // { path: "*", component: PageNotFound },
@@ -175,6 +175,7 @@ export default new Router({
           path: "/home/User/Success",
           component: Success,
         },
+        
         {
           path: "/home/User/AtmPaySuc",
           component: AtmPaySuc,

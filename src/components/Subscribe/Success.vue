@@ -94,11 +94,13 @@ export default {
     }
 
     if (localStorage.getItem("expireSession")) {
+      console.log("expireSession Hai!")
       setTimeout(() => {
         localStorage.removeItem("expireSession");
       }, 10000);
     } else if (!localStorage.getItem("expireSession")) {
-      this.$router.push("/home");
+      console.log("expireSession Nahi Hai!")
+      this.$router.push("/Home");
     }
 
     // .catch((error) => {

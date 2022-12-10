@@ -395,7 +395,7 @@ export default {
       phone: 9999999999,
       lastName: "Kumar",
       firstName: "Sonu",
-      surl: "https://www.restroworld.com/",
+      surl: "https://restroworld.com/home/User/Success",
       furl: "",
       hash: this.hash,
     };
