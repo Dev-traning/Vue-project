@@ -1,7 +1,7 @@
-import { default as axios } from "axios";
+const { default: axios } = require("axios");
 
  
-export default function () {
+module.exports = function () {
   
     axios.post('/payment/60',{
 
@@ -10,5 +10,5 @@ export default function () {
  
  
     
-}
+};
  

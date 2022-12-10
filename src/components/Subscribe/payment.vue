@@ -368,7 +368,7 @@ export default {
       phone: 9999999999,
       lastName: "Kumar",
       firstName: "Sonu",
-      surl: "https://www.restroworld.com/home/User",
+      surl: "https://www.restroworld.com/",
       furl: "http://localhost:3000/PaymentStatus",
       hash: this.hash,
     };
