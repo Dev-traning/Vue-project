@@ -17,7 +17,7 @@
             class="text-success fw-600 text-danger-600 font-xl"
             style="color: #00a00b!important;"
           >
-            Your Payment Was Successfuleeeeeeeee !
+            Your Payment Was Successful !
           </h1>
           <p class="pl-5 pr-5 ml-5 mr-5 fw-300 text-danger-300 font-xssss mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
@@ -67,6 +67,7 @@ export default {
   methods: {},
 
   mounted() {
+    
     this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
     if (this.subscribe) {
       this.coupon_code = this.subscribe.applied_coupon;
@@ -84,17 +85,26 @@ export default {
             axios
               .post("payment/" + result.data.data.id, { payment_status: "1" })
               .then((result) => {
+           
+                console.log(result.data.status_code);
 
                 if (result.data.status_code == "201")
-                alert("response_Sccess");
+                alert("response_Sccess")
                   this.$router.go(this.$router.currentRoute);
                 localStorage.removeItem("hash");
                 localStorage.removeItem("copondetails");
               });
           }
-        });
-    }
 
+          
+        })
+        .catch((error) => {
+          console.log(error.data.status_code);
+          
+        });
+
+    }
+    
     if (localStorage.getItem("expireSession")) {
       console.log("expireSession Hai!")
       setTimeout(() => {
@@ -102,10 +112,12 @@ export default {
         localStorage.removeItem("expireSession");
       }, 10000);
     } else if (!localStorage.getItem("expireSession")) {
-      alert("expireSession Nahi Hai!")
+      //alert("expireSession Nahi Hai!")
+      console.log();
+      
       //this.$router.push("/Home");
     }
-
+    
     // .catch((error) => {
     //     this.errormas = error.response.data.message;
 
