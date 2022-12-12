@@ -67,7 +67,6 @@ export default {
   methods: {},
 
   mounted() {
-    
     this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
     if (this.subscribe) {
       this.coupon_code = this.subscribe.applied_coupon;
@@ -85,39 +84,24 @@ export default {
             axios
               .post("payment/" + result.data.data.id, { payment_status: "1" })
               .then((result) => {
-           
-                console.log(result.data.status_code);
-
-                if (result.data.status_code == "201")
-                alert("response_Sccess")
-                  this.$router.go(this.$router.currentRoute);
-                localStorage.removeItem("hash");
-                localStorage.removeItem("copondetails");
+                if (result.data.status_code == "200")
+                //   this.$router.go(this.$router.currentRoute);
+                // localStorage.removeItem("hash");
+                // localStorage.removeItem("copondetails");
+                console.log("hello");
               });
           }
-
-          
-        })
-        .catch((error) => {
-          console.log(error.data.status_code);
-          
         });
+    }
 
-    }
-    
-    if (localStorage.getItem("expireSession")) {
-      console.log("expireSession Hai!")
-      setTimeout(() => {
-        alert("expireSession ")
-        localStorage.removeItem("expireSession");
-      }, 10000);
-    } else if (!localStorage.getItem("expireSession")) {
-      //alert("expireSession Nahi Hai!")
-      console.log();
-      
-      //this.$router.push("/Home");
-    }
-    
+    // if (localStorage.getItem("expireSession")) {
+    //   setTimeout(() => {
+    //     localStorage.removeItem("expireSession");
+    //   }, 10000);
+    // } else if (!localStorage.getItem("expireSession")) {
+    //   this.$router.push("/home");
+    // }
+
     // .catch((error) => {
     //     this.errormas = error.response.data.message;
 
