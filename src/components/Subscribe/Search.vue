@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-8">
         <p class="mb-0 mt-1 text-white font-xsss fw-500 ">
-          Coupon Code: REST500
+          Coupon Code: REST501
         </p>
       </div>
       <div class="col-4 text-right">
