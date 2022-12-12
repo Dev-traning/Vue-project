@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-8">
         <p class="mb-0 mt-1 text-white font-xsss fw-500 ">
-          Coupon Code: REST501
+          Coupon Code: REST500
         </p>
       </div>
       <div class="col-4 text-right">
@@ -312,11 +312,8 @@ export default {
       payuUrl: "https://secure.payu.in/_payment",
       mkey: "nxpvv9VZ",
       saltKey: "3oFxUMtWG2",
-       //surl: "https://uat.restroworld.com/home/User/Success",
+      // surl: "https://uat.restroworld.com/home/User/Success",
       surl: "https://restroworld.com/home/User/Success",
-
-
-      
       furl: "https://www.restroworld.com/home/User/Fail",
       txnid: this.makeid(),
       id: "",
