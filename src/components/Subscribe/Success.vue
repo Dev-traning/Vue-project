@@ -84,7 +84,9 @@ export default {
             axios
               .post("payment/" + result.data.data.id, { payment_status: "1" })
               .then((result) => {
-                if (result.data.status_code == "200")
+
+                if (result.data.status_code == "201")
+                alert("response_Sccess");
                   this.$router.go(this.$router.currentRoute);
                 localStorage.removeItem("hash");
                 localStorage.removeItem("copondetails");
@@ -96,11 +98,12 @@ export default {
     if (localStorage.getItem("expireSession")) {
       console.log("expireSession Hai!")
       setTimeout(() => {
+        alert("expireSession ")
         localStorage.removeItem("expireSession");
       }, 10000);
     } else if (!localStorage.getItem("expireSession")) {
-      console.log("expireSession Nahi Hai!")
-      this.$router.push("/Home");
+      alert("expireSession Nahi Hai!")
+      //this.$router.push("/Home");
     }
 
     // .catch((error) => {
