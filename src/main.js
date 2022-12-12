@@ -1,4 +1,3 @@
-import VueAnalytics from 'vue-analytics';
 import '@babel/polyfill'
 import 'mutationobserver-shim'
 import Vue from 'vue'
@@ -23,10 +22,7 @@ import './assets/js/scripts.js'
 import 'sweetalert2/dist/sweetalert2.min.css';
 import VueObserveVisibility from 'vue-observe-visibility'
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-Vue.use(VueAnalytics, {
-  id: 'G-64FRJ0RXXW',
-  router
-});
+ 
 Vue.use(VueSweetalert2);
 Vue.use(VueObserveVisibility)
 Vue.config.productionTip = false

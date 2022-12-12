@@ -1,20 +1,9 @@
 <template>
   <div id="app" v-cloak>
-   <head>
-    <meta name="keywords" content="restaurant software,
-restaurant solution,
-restaurant jobs,
-chef restaurant,
-waiter restaurant,
-restaurant staff,
-restaurant marketing,
-social media marketing for restaurant , 
-restaurant supply and equipment,
-restaurants in surat,
-">
-  </head>
+   
+     
+
       <!-- Begin page content -->
-      
     <main  >
      
   <router-view/>
@@ -46,6 +35,7 @@ export default {
 }
 </script>
  
+<<<<<<< HEAD
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-64FRJ0RXXW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -80,6 +70,8 @@ export default {
 
 
 </style>
+=======
+>>>>>>> parent of 7f1f2c3 (update restro 22-11-2022)
  
  
 

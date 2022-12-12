@@ -43,6 +43,117 @@
                         </div>
                      </div>
                       -->
+<<<<<<< HEAD
+=======
+                  </div>
+                  <div class="col-xl-6 col-xxl-6 col-lg-6">
+
+
+
+
+                         <div>
+      <div class="p-4  border-0 card w-100 shadow-xss rounded-xxl"  >
+          
+            <div class="d-flex">
+      <div class="p-0 card-body d-flex">
+     <figure class="avatar me-3"  > 
+                <img :src="`${postSingle.user.profile_photo}`" alt="image" height="45" class="shadow-sm rounded-circle w45" v-if="postSingle.user.profile_photo" > 
+                  <img src="../../assets/profile-no-img.png" alt="image" class="shadow-sm rounded-circle w45" v-else > 
+               </figure>
+             
+     
+               <h4 class="fw-700 text-grey-900 font-xssss mt-1">{{postSingle.user.full_name}}<span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{ moment(postSingle.created_at).fromNow()}}</span> 
+               </h4>
+      </div>
+      <div class="ml-auto ">
+ 
+        <b-dropdown right size="sm" id="dropdownMenu5" variant="link" toggle-class="text-decoration-none" style="margin: -4px -9px 0px 0px" no-caret>
+               <template #button-content> 
+                  
+                          <i class="ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss" ></i >
+               </template>
+               
+               <b-dropdown-item href="#">
+                  <div class="p-0 mt-2 card-body d-flex">
+                     <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss me-4">Copy Link</h4>
+                  </div>
+               </b-dropdown-item>
+               <b-dropdown-item href="#">
+                  <div class="p-0 mt-2 card-body d-flex"> <button type="button" class="btn pl-4 mt-0 fw-600 text-grey-900 font-xss me-4 pt-0" v-on:click="deletePosts(item.id,index)">Delete</button> </div>
+               </b-dropdown-item>
+            </b-dropdown> 
+      </div>
+ </div>
+          
+         
+         <div class="row ps-2 pe-2" >
+  <div class="col-xs col-sm p-1" v-for="(item,i) in postSingle.medias" v-bind:key="item.id">
+                           <a data-lightbox="roadtri" class="position-relative d-block"> 
+                               <img :src="`${item.path}`" class="rounded-3 w-100" alt="image"  /> 
+                               <span class="img-count font-sm text-white ls-3 fw-600" v-if="i==2" > <b>+{{i+0}}</b></span ></a> 
+                               </div>
+         </div>
+            <div class="card-body p-0 me-lg-3">
+            <p class="fw-700 text-grey-700 lh-10 font-xssss w-100 mb-0 font-weight-bold">{{postSingle.title}}</p>
+            <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">{{postSingle.description}}</p>
+         </div>
+         <div class="p-0 card-body d-flex">
+            <b-button variant="link" class="text-decoration-none emoji-bttn d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss me-2 p-0" v-b-modal.likes v-on:click="likeShow">{{postSingle.likes_count}} Likes</b-button>
+            <a class=" d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"> <span class="d-none-xss">{{postSingle.comments_count}}</span></a> <button type="button" class="btn p-1 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="commentshow(postSingle.id)">Comments</button> 
+            <div class=" ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss">
+
+
+
+               <b-button variant="outline-primary fw-600 text-light-900 text-light lh-26 font-xssss btn btn-primary" v-on:click="likepost" v-if="postSingle.is_liked">Liked </b-button>
+               
+               <b-button variant="outline-primary fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="likepost" v-if="!postSingle.is_liked">Like</b-button>
+ 
+               
+               <b-dropdown right size="sm" variant="link" toggle-class="text-decoration-none pr-0" no-caret>
+                  <template #button-content>
+                     <b-button variant="outline-warning fw-600 text-grey-900 text-dark lh-26 font-xssss">Share</b-button>
+                  </template>
+                  <b-dropdown-item href="#">
+                     <a href="#" class="btn-round-sm bg-facebook"><i class="font-xs ti-facebook text-white"></i></a>
+                  </b-dropdown-item>
+                  <!-- <b-dropdown-item href="#"><a href="#" class="btn-round-sm bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></b-dropdown-item>
+                     <b-dropdown-item href="#"><a href="#" class="btn-round-sm bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></b-dropdown-item> -->
+               </b-dropdown>
+            </div>
+         </div>
+         <div v-for="commentsshow in comments" v-bind:key="commentsshow.id" class=" mb-0 mt-2">
+           
+               <div>
+                  <ul class="list-unstyled">
+                     <li class="mb-2 media">
+                        <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" :src="commentsshow.user.profile_photo" alt="Generic placeholder image" v-if="commentsshow.user.profile_photo"> 
+                        <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" src="../../assets/profile-no-img.png" alt="Generic placeholder image" v-else> 
+                        <div class="p-1 media-body bg-lightgrey fw-500">
+                           <div class="d-flex justify-content-between me-0">
+                              <h3 class="mt-3 fw-700 text-grey-900 font-xsss mb-0">{{commentsshow.user.full_name}}</h3>
+                              <h5 class="mr-0 font-xsss text-grey-500 fw-500 align-items-end">
+                                 11:45 PM 
+                                 <b-dropdown right size="sm" id="dropdownMenu5" variant="link" toggle-class="text-decoration-none" class="ms-auto" no-caret>
+                                    <template #button-content> <a href="#" class="ms-auto" data-bs-toggle="dropdown" aria-expanded="false" ><i class="mt-0 ti-more text-grey-900 bg-greylight"></i></a> </template>
+                                    <b-dropdown-item v-on:click="commentedit(commentsshow.id)">Edit</b-dropdown-item>
+                                    <b-dropdown-item v-on:click="deletecomment(item,commentsshow.id,index,itemIndex)">Delete</b-dropdown-item>
+                                 </b-dropdown>
+                              </h5>
+                           </div>
+                           <div>
+                              <p class="font-xsss" id="comment">{{commentsshow.body}}</p>
+                              <div v-if="singlecomment.id==commentsshow.id">
+                               
+                                 <form  v-if="seen" ref='hide'  v-on:submit.prevent="commentupdate(commentsshow.id)" id='update'>
+                                    <textarea  class="mb-0 form-control form-control-lg w-100" rows="3" placeholder="Large textarea" v-model="singlecomment.body" ></textarea>
+                                    <div class="col-lg-12 mt-0">
+                                       <b-button type="button" style="background-color: rgb(136 143 150 / 88%) !important;" class=" font-xsssss fw-600 ps-3 p-2 pe-3 lh-32 mt-1 mb-0 rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto float-right" id="app" v-on:click="seen = !seen">Cancel</b-button>
+                                       <b-button type="submit" style="background-color: #004898 !important" class=" font-xsssss fw-600 ps-3 p-2 pe-3 lh-32 mt-1 mb-0 rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto float-right">Update </b-button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+>>>>>>> parent of 7f1f2c3 (update restro 22-11-2022)
                         </div>
                         <div class="col-xl-6 col-xxl-6 col-lg-6">
 
