@@ -17,7 +17,7 @@
             class="text-success fw-600 text-danger-600 font-xl"
             style="color: #00a00b!important;"
           >
-            Your Payment Was Successful !
+            Your Payment Was Successfuleeeeeeeee !
           </h1>
           <p class="pl-5 pr-5 ml-5 mr-5 fw-300 text-danger-300 font-xssss mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
