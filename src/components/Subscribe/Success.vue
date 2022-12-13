@@ -85,10 +85,12 @@ export default {
               .post("payment/" + result.data.data.id, { payment_status: "1" })
               .then((result) => {
                 if (result.data.status_code == "200")
-                //   this.$router.go(this.$router.currentRoute);
-                // localStorage.removeItem("hash");
-                // localStorage.removeItem("copondetails");
-                console.log("hello");
+                  this.$router.go(this.$router.currentRoute);
+                 //localStorage.removeItem("hash");
+                    //localStorage.removeItem("copondetails");
+                console.log("#hash");
+                console.log(this.$router.currentRoute)
+
               });
           }
         });
@@ -98,7 +100,8 @@ export default {
     //   setTimeout(() => {
     //     localStorage.removeItem("expireSession");
     //   }, 10000);
-    // } else if (!localStorage.getItem("expireSession")) {
+    // } 
+    // else if (!localStorage.getItem("expireSession")) {
     //   this.$router.push("/home");
     // }
 
