@@ -143,56 +143,34 @@
           </b-col>
         </b-row>
       </b-card>
-                                <!-- <div class="mont-font">
+      <b-modal no-close-on-backdrop scrollable show-close="ftrue" hide-footer id="modal-centerd" centered ref="modal" size="60">
+        <button @click="$refs['modal'].hide()" type="button" class="closee" right='22' top='1' data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true ">&times;</span>
+        </button>
+        <div>
 
-                          <b-alert class="p-1 text-center" v-if="otpFail" :show="dismissCountDown" dismissible variant="warning" @dismissed="dismissCountDown=0" @dismiss-count-down="countDownChanged">{{otpFail}}</b-alert>
-                          <img src="../../assets/1622832_documents_email_envelope_feed_letter_icon.svg" width="170px" class="mx-auto rounded d-block" alt="" style="margin:auto;">
-                          <h4 class="p-2 text-center login_heading text-uppercase fw-500">Verify Your E-mail - Please Enter the OTP</h4>
-                          <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter the OTP that we have sent to your registered E-Mail Id to verify your account.</p>
-                          <form class="p-1 m-4 mb-0 text-center d-block form-group" @submit.prevent="handalSubmit">
+            <div class="mont-font">
 
-                              <input id="partitioned" type="text" maxlength="6" autocomplete="off" v-model="email_otp" />
-                              <div class="justify-content-center align-items-center mt-4">
+                <b-alert class="p-1 text-center" v-if="otpFail" :show="dismissCountDown" dismissible variant="warning" @dismissed="dismissCountDown=0" @dismiss-count-down="countDownChanged">{{otpFail}}</b-alert>
+                <img src="../../assets/1622832_documents_email_envelope_feed_letter_icon.svg" width="170px" class="mx-auto rounded d-block" alt="" style="margin:auto;">
+                <h4 class="p-2 text-center login_heading text-uppercase fw-500">Verify Your E-mail - Please Enter the OTP</h4>
+                <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter the OTP that we have sent to your registered E-Mail Id to verify your account.</p>
+                <form class="p-1 m-4 mb-0 text-center d-block form-group" @submit.prevent="handalSubmit">
 
-                                  <button type="button" class="btn shadow-none btn-primary fw-500 font-xss text-light-500  p-1" @click="oTpVerify">{{loading ? "Processing..." : "Verify"}}</button>
-                                 
-                              </div>
-                          </form>
-                          <p class="mt-0 text-center">Don't receive OTP? <button v-on:click="resend()" class=" btn p-0 m-0 text-reset fw-bolder">
-                                  Resend</button>
-                          </p>
-                          </div> -->
-                          <b-modal no-close-on-backdrop scrollable show-close="ftrue" hide-footer id="modal-centerd" centered ref="modal" size="60">
-                        <button @click="$refs['modal'].hide()" type="button" class="closee" right='22' top='1' data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true ">&times;</span>
-                        </button>
+                    <input id="partitioned" type="text" maxlength="6" autocomplete="off" v-model="email_otp" />
+                    <div class="justify-content-center align-items-center mt-4">
 
+                        <button type="button" class="btn shadow-none btn-primary fw-500 font-xss text-light-500  p-1" @click="oTpVerify">{{loading ? "Processing..." : "Verify"}}</button>
+                        <!-- <button @click="$refs['modal'].hide()" type="button" class="btn shadow-none btn-dark fw-500 font-xss text-dark-500  p-1 ml-3">Cancel</button> -->
+                    </div>
+                </form>
+                <p class="mt-0 text-center">Don't receive OTP? <button v-on:click="resend()" class=" btn p-0 m-0 text-reset fw-bolder">
+                        Resend</button>
+                </p>
+            </div>
 
-                        
-                        <div>
-
-                            <div class="mont-font">
-
-                                <b-alert class="p-1 text-center" v-if="otpFail" :show="dismissCountDown" dismissible variant="warning" @dismissed="dismissCountDown=0" @dismiss-count-down="countDownChanged">{{otpFail}}</b-alert>
-                                <img src="../../assets/1622832_documents_email_envelope_feed_letter_icon.svg" width="170px" class="mx-auto rounded d-block" alt="" style="margin:auto;">
-                                <h4 class="p-2 text-center login_heading text-uppercase fw-500">Verify Your E-mail - Please Enter the OTP</h4>
-                                <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter the OTP that we have sent to your registered E-Mail Id to verify your account.</p>
-                                <form class="p-1 m-4 mb-0 text-center d-block form-group" @submit.prevent="handalSubmit">
-
-                                    <input id="partitioned" type="text" maxlength="6" autocomplete="off" v-model="email_otp" />
-                                    <div class="justify-content-center align-items-center mt-4">
-
-                                        <button type="button" class="btn shadow-none btn-primary fw-500 font-xss text-light-500  p-1" @click="oTpVerify">{{loading ? "Processing..." : "Verify"}}</button>
-                                        <!-- <button @click="$refs['modal'].hide()" type="button" class="btn shadow-none btn-dark fw-500 font-xss text-dark-500  p-1 ml-3">Cancel</button> -->
-                                    </div>
-                                </form>
-                                <p class="mt-0 text-center">Don't receive OTP? <button v-on:click="resend()" class=" btn p-0 m-0 text-reset fw-bolder">
-                                        Resend</button>
-                                </p>
-                            </div>
-
-                        </div>
-                    </b-modal>
+        </div>
+    </b-modal>
     </div>
     <div class="howwork">
       <h1 class="h1">How Restroworld Work</h1>
@@ -286,10 +264,8 @@
 <script>
 import axios from "axios";
 
-
 export default {
     name: "Login_modify",
-   
     data() {
         return {
             image: { backgroundImg: "url('/src/assets/slide_bg_pattern.png')" },
@@ -308,33 +284,34 @@ export default {
         };
     },
      methods: {
-      oTpVerify() {
-            this.loading = true;
-            const response = axios.post('verify-email', {
-                email: this.email,
-                email_otp: this.email_otp
-            }).then(() => {
+                   
 
-                this.$refs['modal'].hide()
-                this.email_otp = ''
-                this.verySucc = 'Email Verify Plz select SignUp or Elite Account!!!'
-                localStorage.setItem("token", this.tokenData);
-                this.$router.push("/home");
-                location.reload()
+                oTpVerify() {
+                this.loading = true;
+                const response = axios.post('verify-email', {
+                    email: this.email,
+                    email_otp: this.email_otp
+                }).then(() => {
 
-            }).catch((error) => {
-                this.otpFail = error.response.data.message
-                this.loading = false;
-                this.email_otp = ''
-                this.dismissCountDown = this.dismissSecs
-                this.loading = false;
+                    this.$refs['modal'].hide()
+                    this.email_otp = ''
+                    this.verySucc = 'Email Verify Plz select SignUp or Elite Account!!!'
+                    localStorage.setItem("token", this.tokenData);
+                    this.$router.push("/home/User");
+                    location.reload()
 
-            })
-            console.log(response);
+                }).catch((error) => {
+                    this.otpFail = error.response.data.message
+                    this.loading = false;
+                    this.email_otp = ''
+                    this.dismissCountDown = this.dismissSecs
+                    this.loading = false;
 
-        },
-     
-        async handalSubmit() {
+                })
+                console.log(response);
+
+                },
+      async handalSubmit() {
             if (!this.termsAccepted) {
                 this.displayWarning = true;
             } else {
@@ -495,10 +472,10 @@ export default {
      
 
  
-// if(localStorage.getItem('token')) 
-// {
-//  this.$router.push("/home");
-// } 
+if(localStorage.getItem('token')) 
+{
+ this.$router.push("/home");
+} 
   },
     // components: { LandingPage }
 };
@@ -557,37 +534,6 @@ export default {
   
   
 }
-.active {
-    background-color: #0048a5;
-    padding: 6px !important;
-}
-
-a.active {
-    text-decoration: none;
-    outline: 0;
-    color: #ffffff !important;
-}
-
-a {
-    color: #0048a5 !important;
-}
-
-.modal .modal-content .closee {
-    right: 7px !important;
-    top: 7px !important;
-}
-
-#partitioned {
-    padding-left: 9px;
-    letter-spacing: 37px;
-    border: 0;
-    background-image: linear-gradient(to left, #36353530 70%, rgba(255, 255, 255, 0) 0%);
-    background-position: bottom;
-    background-size: 46px 1px;
-    background-repeat: round;
-    background-position-x: 78px;
-    width: 270px;
-}
 
 .tbl{
   display: grid;
@@ -623,10 +569,34 @@ td, th {
 tr:nth-child(even) {
   /* background-color: #dddddd; */
 }
-
+#partitioned {
+    padding-left: 9px;
+    letter-spacing: 37px;
+    border: 0;
+    background-image: linear-gradient(to left, #36353530 70%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 46px 1px;
+    background-repeat: round;
+    background-position-x: 78px;
+    width: 270px;
+}
 .fotter {
   grid-row: 4/5;
   text-align: center;
+}
+a.active {
+    text-decoration: none;
+    outline: 0;
+    color: #ffffff !important;
+}
+
+a {
+    color: #0048a5 !important;
+}
+
+.modal .modal-content .closee {
+    right: 7px !important;
+    top: 7px !important;
 }
 
 .fotter p{

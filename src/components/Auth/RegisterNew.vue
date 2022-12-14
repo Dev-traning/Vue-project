@@ -46,7 +46,7 @@
 
         </div>
 
-        <button type="submit" class="btn shadow-none btn-primary fw-500 font-xss text-primary-500 w-100 mb-2">{{loadingAccc ? "Verify..." : "Sign Up"}}</button>
+        <button type="submit" class="btn shadow-none btn-primary fw-500 font-xss text-primary-500 w-100 mb-2">{{loadingAc ? "Verify..." : "Sign Up"}}</button>
     </form>
     <p class="login-card-footer-text">
         Have an account?
@@ -57,9 +57,6 @@
         <button @click="$refs['modal'].hide()" type="button" class="closee" right='22' top='1' data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true ">&times;</span>
         </button>
-
-
-        
         <div>
 
             <div class="mont-font">

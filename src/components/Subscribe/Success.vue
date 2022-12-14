@@ -86,24 +86,20 @@ export default {
               .then((result) => {
                 if (result.data.status_code == "200")
                   this.$router.go(this.$router.currentRoute);
-                 //localStorage.removeItem("hash");
-                    //localStorage.removeItem("copondetails");
-                console.log("#hash");
-                console.log(this.$router.currentRoute)
-
+                localStorage.removeItem("hash");
+                localStorage.removeItem("copondetails");
               });
           }
         });
     }
 
-    // if (localStorage.getItem("expireSession")) {
-    //   setTimeout(() => {
-    //     localStorage.removeItem("expireSession");
-    //   }, 10000);
-    // } 
-    // else if (!localStorage.getItem("expireSession")) {
-    //   this.$router.push("/home");
-    // }
+    if (localStorage.getItem("expireSession")) {
+      setTimeout(() => {
+        localStorage.removeItem("expireSession");
+      }, 10000);
+    } else if (!localStorage.getItem("expireSession")) {
+      this.$router.push("/home");
+    }
 
     // .catch((error) => {
     //     this.errormas = error.response.data.message;

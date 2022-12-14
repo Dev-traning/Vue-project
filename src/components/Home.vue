@@ -21,14 +21,14 @@
             </div>
           
                 <h1 style="font-size: 30px!important;" class="coponCode modal-subheader mb-4 text-success font-xxl w-200 fw-600">
-                    RWFIRST
+                    REST99
               </h1>
           
  
 
           
                 <h1 style="color: #000000bf!important;" class=" text-success font-xss w-200 fw-400 pl-4 pr-4">
-                  You are eligible for Sign Up at only <b class="text-success">1 Rs</b> for Elite Account. Just use coupon code - "RWFIRST" while Elite Sign Up and you will only need to pay Rs 1.. So Hurry Up..!! Elite Sign Up now..!! And Join the club of Elites of Restaurant Industry..!!
+                  You are eligible for Sign Up at only <b class="text-success">10 Rs</b> for Elite Account. Just use coupon code - "REST99" while Elite Sign Up and you will only need to pay Rs 10.. So Hurry Up..!! Elite Sign Up now..!! And Join the club of Elites of Restaurant Industry..!!
                  <!-- You've successfully reached the goal, and a  <b class="text-success">1Rs</b> Discount will be Applied Make An elite account. Just Hang tight while we active all Manpower ,Restaurant ,vendors. -->
               </h1>
           <a @click="closeModel()" v-b-modal.subscribe class="font-xsss w-50 fw-500 text-center lh-28 mt-1 mb-1 rounded-3 ls-2 bg-suscribe d-inline-block text-white me-1 ms-auto">Make this an Elite Account</a>
