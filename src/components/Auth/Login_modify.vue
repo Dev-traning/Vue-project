@@ -4,7 +4,7 @@
       <b-card
         no-body
         class="overflow-hidden"
-        style="max-width: 70%; margin-left: 15%;  height: 22rem; padding-top: 2.5rem;  border-radius: 10px;"
+        style="max-width: 70%; margin-left: 15%;  height: fit-content; padding-top: 1.5rem;  border-radius: 10px;"
       >
         <b-row no-gutters>
           <b-col
