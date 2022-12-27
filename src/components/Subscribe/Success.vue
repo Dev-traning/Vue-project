@@ -67,15 +67,24 @@ export default {
   methods: {},
 
   mounted() {
+    
     this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
     if (this.subscribe) {
       this.coupon_code = this.subscribe.applied_coupon;
+      alert(this.coupon_code);
     } else {
       this.coupon_code = "";
     }
-    axios
+    
+
+    if (localStorage.getItem("hash")) {
+      
+      this.errormas =
+        "Your subscription process is in progress. Do not refresh or leave page";
+      axios
         .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
         .then((result) => {
+          alert(result.data.data.id);
           if (result.data.status_code == 201) {
             axios
               .post("payment/" + result.data.data.id, { payment_status: "1" })
@@ -84,38 +93,17 @@ export default {
                   this.$router.go(this.$router.currentRoute);
                 localStorage.removeItem("hash");
                 localStorage.removeItem("copondetails");
-                console.log('helooo',result.data.data);
-                
               });
           }
         });
+    }
 
-    
-
-    // if (localStorage.getItem("hash")) {
-    //   this.errormas =
-    //     "Your subscription process is in progress. Do not refresh or leave page";
-    //   axios
-    //     .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
-    //     .then((result) => {
-    //       if (result.data.status_code == 201) {
-    //         axios
-    //           .post("payment/" + result.data.data.id, { payment_status: "1" })
-    //           .then((result) => {
-    //             if (result.data.status_code == "200")
-    //               this.$router.go(this.$router.currentRoute);
-    //             localStorage.removeItem("hash");
-    //             localStorage.removeItem("copondetails");
-    //           });
-    //       }
-    //     });
-    // }
-
-    // if (localStorage.getItem("expireSession")) {
-    //   setTimeout(() => {
-    //     localStorage.removeItem("expireSession");
-    //   }, 10000);
-    // } else if (!localStorage.getItem("expireSession")) {
+    if (localStorage.getItem("expireSession")) {
+      setTimeout(() => {
+        localStorage.removeItem("expireSession");
+      }, 10000);
+    } 
+    // else if (!localStorage.getItem("expireSession")) {
     //   this.$router.push("/home");
     // }
 
