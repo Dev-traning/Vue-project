@@ -213,7 +213,7 @@
        payuUrl:'https://secure.payu.in/_payment',
        mkey: "nxpvv9VZ",
        saltKey:'3oFxUMtWG2', 
-       surl: window.location.origin + "/home/User/Success",
+       surl: "https://restroworld.com/Home/User/Success",
        furl: window.location.origin + "/home/User/Fail",
 
 
@@ -326,7 +326,7 @@ couponApply(){
                // this.amount_pay=res.data.data.amount_pay
                localStorage.setItem("copondetails", JSON.stringify(res.data.data));
                this.amount_payPrint = res.data.payable_amount;
-
+               this.amount_pay = this.amount_payPrint;
 
 
 
@@ -383,10 +383,14 @@ resend(){
     },
 
    signInButtonPressed() {
+
+      
+      
       var data = this.mkey + "|" + this.txnid + "|" + this.amount_pay + "|" + this.productInfo + "|" + this.first_name + "|" + this.email + "|||||||||||";
       var sha512 = require("js-sha512");
       var salt = this.saltKey;
       var hash = sha512(data + salt);
+      
       if (hash) {
         
          localStorage.setItem("hash", hash);
@@ -402,16 +406,20 @@ resend(){
 
 
              planfor(){
-         
+               
                      axios.get('user/plan', {
                     params: {  country_id: this.country_id  }  })
                      .then((result)=>{
                         this.coupon_code=''
                         this.couponSuMsg=''
                         this.plansData=result.data.data;
-                        this.amount_pay =result.data.data[0].countries.pivot.amount
-                        this.symbol= result.data.data[0].countries.currency_symbol
-                        this.amount_payPrint=result.data.data[0].countries.pivot.amount
+
+
+                        // // this.amount_pay =result.data.data[0].countries.pivot.amount
+                        // this.amount_pay = 1
+                        // this.symbol= result.data.data[0].countries.currency_symbol
+                        // // this.amount_payPrint=result.data.data[0].countries.pivot.amount
+                        // this.amount_payPrint=20000
                      
                             })},
 
