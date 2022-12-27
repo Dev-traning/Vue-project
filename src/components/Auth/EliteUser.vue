@@ -306,7 +306,7 @@ Toast.fire({
 
  
 couponApply(){
-   
+     
       axios.get('apply-coupon/1', {
          params:{
             country_id:this.country_id,
@@ -316,13 +316,26 @@ couponApply(){
              
              
            }).then((res) => {
+            // console.log("heloooo",res.data.payable_amount);
+            // console.log(res.data);
+            // console.log(this.amount_payPrint);
               this.coponerr=''
               this.couponSuMsg= 'Coupon Apply successfully'
           
                this.couponData=res.data.data;
-               this.amount_pay=res.data.data.amount_pay
+               // this.amount_pay=res.data.data.amount_pay
                localStorage.setItem("copondetails", JSON.stringify(res.data.data));
-               this.amount_payPrint=res.data.data.amount_pay
+               this.amount_payPrint = res.data.payable_amount;
+
+
+
+
+
+
+               // this.amount_payPrint = 2;
+
+
+               // alert("lock",this.couponSuMsg);
                // this.calculate=this.amount_payPrint/100*90
 
                //    var remov= parseFloat(this.calculate).toFixed(0)
@@ -334,9 +347,8 @@ couponApply(){
         }).catch((error) => {
            this.couponSuMsg=''
            this.coupon_code=''
-           var payuammo= this.amount_payPrint
-           this.amount_payPrint=payuammo
-           this.amount_pay= this.amount_payPrint
+           
+          
            this.coponerr = error.response.data.message
            this.loading = false;
 

@@ -172,7 +172,7 @@ export default new Router({
           component: Fail,
         },
         {
-          path: "/home/User/Success",
+          path: "/PaymentSuccess",
           component: Success,
         },
         
