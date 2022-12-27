@@ -71,7 +71,7 @@ export default {
     this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
     if (this.subscribe) {
       this.coupon_code = this.subscribe.applied_coupon;
-      alert(this.coupon_code);
+      
     } else {
       this.coupon_code = "";
     }
@@ -85,7 +85,6 @@ export default {
       axios
         .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
         .then((result) => {
-          
           if (result.data.status_code == 201) {
             axios
               .post("payment/" + result.data.data.id, { payment_status: "1" })
