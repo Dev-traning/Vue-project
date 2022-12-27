@@ -75,7 +75,7 @@ export default {
 
     if (localStorage.getItem("hash")) {
       
-      alert(this.coupon_code);
+      // alert(this.coupon_code);
       this.errormas =
         "Your subscription process is in progress. Do not refresh or leave page";
       axios
