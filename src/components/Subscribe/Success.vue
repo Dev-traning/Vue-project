@@ -71,12 +71,11 @@ export default {
     this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
     if (this.subscribe) {
       this.coupon_code = this.subscribe.applied_coupon;
-    } else {
-      this.coupon_code = "";
-    }
+    } 
+
     if (localStorage.getItem("hash")) {
       
-      
+      alert(this.coupon_code);
       this.errormas =
         "Your subscription process is in progress. Do not refresh or leave page";
       axios
