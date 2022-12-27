@@ -71,12 +71,9 @@ export default {
     this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
     if (this.subscribe) {
       this.coupon_code = this.subscribe.applied_coupon;
-      
     } else {
       this.coupon_code = "";
     }
-    
-
     if (localStorage.getItem("hash")) {
       
       
@@ -90,7 +87,7 @@ export default {
               .post("payment/" + result.data.data.id, { payment_status: "1" })
               .then((result) => {
                 if (result.data.status_code == "200")
-                  this.$router.go(this.$router.currentRoute);
+                 // this.$router.go(this.$router.currentRoute);
                 localStorage.removeItem("hash");
                 localStorage.removeItem("copondetails");
               });
@@ -98,11 +95,11 @@ export default {
         });
     }
 
-    if (localStorage.getItem("expireSession")) {
-      setTimeout(() => {
-        localStorage.removeItem("expireSession");
-      }, 10000);
-    } 
+    // if (localStorage.getItem("expireSession")) {
+    //   setTimeout(() => {
+    //     localStorage.removeItem("expireSession");
+    //   }, 10000);
+    // } 
     // else if (!localStorage.getItem("expireSession")) {
     //   this.$router.push("/home");
     // }
