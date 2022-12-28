@@ -47,9 +47,10 @@ export default {
     methods: {},
 
     mounted() {
-
+      
         this.users = JSON.parse(localStorage.getItem("UserDetails"));
-
+        alert("hello");
+        alert("hello",this.users.subscription.id);
         axios
                             .post("payment/" + this.users.subscription.id, {
                                 payment_status: "1"
