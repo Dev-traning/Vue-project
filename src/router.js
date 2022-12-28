@@ -18,6 +18,7 @@ import PasswordReset from "./components/Auth/PasswordReset.vue";
 import RegisterNew from "./components/Auth/RegisterNew.vue";
 import OtpVery from "./components/Auth/OtpVery.vue";
 import EliteUser from "./components/Auth/EliteUser.vue";
+import SuccessElitePage from "./components/Auth/SuccessElitePage";
 
 import Forgot from "./components/Auth/Forgot.vue";
 import Posts from "./components/Posts.vue";
@@ -174,6 +175,11 @@ export default new Router({
         {
           path: "/Home/User/Success",
           component: Success,
+        },
+
+        {
+          path: "/Home/User/SuccessElitePage",
+          component: SuccessElitePage,
         },
         
         {

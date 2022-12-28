@@ -213,7 +213,7 @@
        payuUrl:'https://secure.payu.in/_payment',
        mkey: "nxpvv9VZ",
        saltKey:'3oFxUMtWG2', 
-       surl: "https://restroworld.com/Home/User/Success",
+       surl: "https://restroworld.com/Home/User/SuccessElitePage",
        furl: window.location.origin + "/home/User/Fail",
 
 
@@ -413,7 +413,8 @@ resend(){
                         this.coupon_code=''
                         this.couponSuMsg=''
                         this.plansData=result.data.data;
-
+                        this.symbol= result.data.data[0].countries.currency_symbol
+                        this.amount_payPrint=result.data.data[0].countries.pivot.amount
 
                         // // this.amount_pay =result.data.data[0].countries.pivot.amount
                         // this.amount_pay = 1
