@@ -86,7 +86,12 @@ export default {
                                 //   localStorage.removeItem("hash");
                                 //   localStorage.removeItem("copondetails");
 
-                            });
+                            })
+                            .catch((error) => {
+                                                this.errormas = error.response.data.message;
+                                        console.log("thisiserror",error);
+                                        console.log("thisiserror1",this.errormas);
+                                    });
                     // }
                 // });
         }
