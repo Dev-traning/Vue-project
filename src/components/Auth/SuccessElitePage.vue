@@ -69,9 +69,16 @@
     mounted() {
       
       this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
+      this.id  = this.$route.params.id;
+      this.users = JSON.parse(localStorage.getItem("UserDetails"));
+             console.log(this.users.subscription.id);
+
       if (this.subscribe) {
-        this.coupon_code = this.subscribe.applied_coupon;
+        this.coupon_code = this.subscribe.subscription.id;
         alert(this.coupon_code);
+        console.log(this.coupon_code);
+        
+
       } 
   
       if (localStorage.getItem("hash")) {
@@ -91,7 +98,7 @@
             
             if (result.data.status_code == 201) {
               axios
-                .post("payment/" + result.data.subscription.id, { payment_status: "1" })
+                .post("payment/" + this.users.subscription.id, { payment_status: "1" })
                 .then((result) => {
                   if (result.data.status_code == "200")
                    // this.$router.go(this.$router.currentRoute);

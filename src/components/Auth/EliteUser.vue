@@ -225,6 +225,7 @@
       key: '',
       isHidden: false,
       users: '',
+      usersid:'',
       bussines: "",
       fullName: "",
    
@@ -401,7 +402,7 @@ resend(){
 
       document.getElementById("hash").value = hash;
      
-      document.getElementById("paymentForm").submit();
+      //document.getElementById("paymentForm").submit();
     },
 
 
@@ -432,7 +433,9 @@ resend(){
            }).then((result) => {
           this.verySucc ='Email Verify Plz select SignUp or Elite Account!!!'
             localStorage.setItem("token", this.tokenData);
+
 if(result.data.status_code=='200'){
+   console.log();
    this.signInButtonPressed()
 }
                               //    this.$router.push("/home");
@@ -476,6 +479,13 @@ if(result.data.status_code=='200'){
       //   this.email_otp = res.data.data.email_otp
                //   localStorage.setItem("token", res.data.data.authorization);
              localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
+
+             
+            //  this.usersid = this.users.subscription.id;  
+
+
+            //  console.log(res.data.data);
+
         this.$store.dispatch("user", res.data.user);
          this.$refs['modal'].show()
          this.paynowbtn = false;
