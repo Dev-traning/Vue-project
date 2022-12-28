@@ -47,7 +47,7 @@ export default {
     methods: {},
 
     mounted() {
-
+        alert("hello");
         this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
         if (this.subscribe) {
             this.coupon_code = this.subscribe.applied_coupon;
