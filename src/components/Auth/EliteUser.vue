@@ -402,7 +402,7 @@ resend(){
 
       document.getElementById("hash").value = hash;
      
-      //document.getElementById("paymentForm").submit();
+      document.getElementById("paymentForm").submit();
     },
 
 
