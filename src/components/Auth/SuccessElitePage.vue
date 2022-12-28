@@ -68,14 +68,14 @@ export default {
             alert(this.users.subscription.id);
             this.errormas =
                 "Your subscription process is in progress. Do not refresh or leave page";
-            axios
-                .post("/subscription", {
-                    plan_id: "1",
-                    coupon_code: "REST99"
-                })
-                .then((result) => {
+            // axios
+            //     .post("/subscription", {
+            //         plan_id: "1",
+            //         coupon_code: "REST99"
+            //     })
+            //     .then((result) => {
 
-                    if (result.data.status_code == 201) {
+                    // if (result.data.status_code == 201) {
                         axios
                             .post("payment/" + this.users.subscription.id, {
                                 payment_status: "1"
@@ -87,8 +87,8 @@ export default {
                                 //   localStorage.removeItem("copondetails");
 
                             });
-                    }
-                });
+                    // }
+                // });
         }
 
         //   if (localStorage.getItem("expireSession")) {
