@@ -71,7 +71,7 @@ export default {
             axios
                 .post("/subscription", {
                     plan_id: "1",
-                    coupon_code: this.coupon_code
+                    coupon_code: "REST99"
                 })
                 .then((result) => {
 
