@@ -47,36 +47,10 @@ export default {
     methods: {},
 
     mounted() {
-        alert("hello");
-        this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
-        if (this.subscribe) {
-            this.coupon_code = this.subscribe.applied_coupon;
-            alert(this.coupon_code);
-            console.log(this.coupon_code);
-        }
-        //   this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
-       
+
         this.users = JSON.parse(localStorage.getItem("UserDetails"));
-        console.log(this.users.subscription.id);
 
-        if (localStorage.getItem("hash")) {
-            if (localStorage.getItem('token')) {
-               
-                alert("token is not found");
-            }
-
-            alert(this.users.subscription.id);
-            this.errormas =
-                "Your subscription process is in progress. Do not refresh or leave page";
-            // axios
-            //     .post("/subscription", {
-            //         plan_id: "1",
-            //         coupon_code: "REST99"
-            //     })
-            //     .then((result) => {
-
-                    // if (result.data.status_code == 201) {
-                        axios
+        axios
                             .post("payment/" + this.users.subscription.id, {
                                 payment_status: "1"
                             })
@@ -92,9 +66,57 @@ export default {
                                         console.log("thisiserror",error);
                                         console.log("thisiserror1",this.errormas);
                                     });
-                    // }
-                // });
-        }
+
+
+
+        alert("hello");
+        // this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
+        // if (this.subscribe) {
+        //     this.coupon_code = this.subscribe.applied_coupon;
+        //     alert(this.coupon_code);
+        //     console.log(this.coupon_code);
+        // }
+        // //   this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
+       
+        // this.users = JSON.parse(localStorage.getItem("UserDetails"));
+        // console.log(this.users.subscription.id);
+
+        // if (localStorage.getItem("hash")) {
+        //     if (localStorage.getItem('token')) {
+               
+        //         alert("token is not found");
+        //     }
+
+        //     alert(this.users.subscription.id);
+        //     this.errormas =
+        //         "Your subscription process is in progress. Do not refresh or leave page";
+        //     // axios
+        //     //     .post("/subscription", {
+        //     //         plan_id: "1",
+        //     //         coupon_code: "REST99"
+        //     //     })
+        //     //     .then((result) => {
+
+        //             // if (result.data.status_code == 201) {
+        //                 axios
+        //                     .post("payment/" + this.users.subscription.id, {
+        //                         payment_status: "1"
+        //                     })
+        //                     .then((result) => {
+        //                         if (result.data.status_code == "200")
+        //                             this.$router.go(this.$router.currentRoute);
+        //                         //   localStorage.removeItem("hash");
+        //                         //   localStorage.removeItem("copondetails");
+
+        //                     })
+        //                     .catch((error) => {
+        //                                         this.errormas = error.response.data.message;
+        //                                 console.log("thisiserror",error);
+        //                                 console.log("thisiserror1",this.errormas);
+        //                             });
+        //             // }
+        //         // });
+        // }
 
         //   if (localStorage.getItem("expireSession")) {
         //     setTimeout(() => {
