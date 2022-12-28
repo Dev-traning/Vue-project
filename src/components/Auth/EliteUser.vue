@@ -416,6 +416,7 @@ resend(){
                         this.plansData=result.data.data;
                         this.symbol= result.data.data[0].countries.currency_symbol
                         this.amount_payPrint=result.data.data[0].countries.pivot.amount
+                        localStorage.setItem("copondetails", JSON.stringify(res.data.data));
 
                         // // this.amount_pay =result.data.data[0].countries.pivot.amount
                         // this.amount_pay = 1
