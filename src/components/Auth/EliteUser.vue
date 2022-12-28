@@ -477,8 +477,11 @@ if(result.data.status_code=='200'){
                
         this.tokenData = res.data.data.authorization
       //   this.email_otp = res.data.data.email_otp
-               //   localStorage.setItem("token", res.data.data.authorization);
-             localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
+            //  localStorage.setItem("token", res.data.data.authorization);
+            //  localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
+             localStorage.setItem("token", res.data.data.authorization);
+        localStorage.setItem('user_id', res.data.data['id']);
+        localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
 
              
             //  this.usersid = this.users.subscription.id;  
@@ -557,7 +560,7 @@ if(result.data.status_code=='200'){
                      //  alert(this.surl)
                       this.getData()
                       
-
+                     
                        
  
 if(localStorage.getItem('token')) 
