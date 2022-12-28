@@ -54,7 +54,7 @@
     </div>
   </template>
   <script>
-//   import axios from "axios";
+  import axios from "axios";
   export default {
     Name: "SuccessElitePage",
     data() {
@@ -67,6 +67,7 @@
     methods: {},
   
     mounted() {
+
       
       this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
       this.id  = this.$route.params.id;
@@ -86,27 +87,23 @@
         
         
          alert(this.users.subscription.id);
-        // this.errormas =
-        //   "Your subscription process is in progress. Do not refresh or leave page";
-        // axios
-        //   .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
-        //   .then((result) => {
-        //     console.log(result.data.data.id);
-        //     console.log(result.data);
-        //     alert(result.data.data.id);
-        //     alert(result.data);
+        this.errormas =
+          "Your subscription process is in progress. Do not refresh or leave page";
+        axios
+          .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
+          .then((result) => {
             
-        //     if (result.data.status_code == 201) {
-        //       axios
-        //         .post("payment/" + this.users.subscription.id, { payment_status: "1" })
-        //         .then((result) => {
-        //           if (result.data.status_code == "200")
-        //            // this.$router.go(this.$router.currentRoute);
-        //           localStorage.removeItem("hash");
-        //           localStorage.removeItem("copondetails");
-        //         });
-        //     }
-        //   });
+            if (result.data.status_code == 201) {
+              axios
+                .post("payment/" + this.users.subscription.id, { payment_status: "1" })
+                .then((result) => {
+                  if (result.data.status_code == "200")
+                   // this.$router.go(this.$router.currentRoute);
+                  localStorage.removeItem("hash");
+                  localStorage.removeItem("copondetails");
+                });
+            }
+          });
       }
   
       // if (localStorage.getItem("expireSession")) {

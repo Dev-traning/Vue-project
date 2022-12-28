@@ -483,7 +483,7 @@ if(result.data.status_code=='200'){
         localStorage.setItem('user_id', res.data.data['id']);
         localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
 
-             
+        
             //  this.usersid = this.users.subscription.id;  
 
 
