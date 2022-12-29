@@ -76,7 +76,7 @@
         //                 this.$router.push("/home");
         //                 alert("hello");
         //                 }
-      alert("hello");
+      
       this.tokenvalue = localStorage.getItem('token');
       console.log(this.tokenvalue);
       this.userdata = localStorage.getItem('User_ids');
