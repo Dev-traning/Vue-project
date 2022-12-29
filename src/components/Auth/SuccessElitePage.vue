@@ -67,27 +67,25 @@
     methods: {},
   
     mounted() {
-        if(localStorage.getItem('token')) 
-                        {
-                        this.$router.push("/home");
-                        alert("hello");
-                        }
+        // if(localStorage.getItem('token')) 
+        //                 {
+        //                 this.$router.push("/home");
+        //                 alert("hello");
+        //                 }
       this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
       if (this.subscribe) {
         this.coupon_code = this.subscribe.applied_coupon;
       } else {
-        this.coupon_code = "";
+        this.coupon_code = "RESTTEST";
       }
   
       if (localStorage.getItem("hash")) {
         this.errormas =
           "Your subscription process is in progress. Do not refresh or leave page";
         axios
-          .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
-          .then((result) => {
-            if (result.data.status_code == 201) {
+          
                                         axios
-                                            .post("payment/" + result.data.data.id, { payment_status: "1" })
+                                            .post("payment/" + 2111, { payment_status: "1" })
                                             .then((result) => {
                                             if (result.data.status_code == "200")
                                                 this.$router.go(this.$router.currentRoute);
@@ -96,8 +94,8 @@
                                             });
   
                                         }
-          });
-      }
+                        
+      
   
       if (localStorage.getItem("expireSession")) {
         setTimeout(() => {

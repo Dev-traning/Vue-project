@@ -560,6 +560,7 @@
            this.amount_pay = result.data.data[0].countries.pivot.amount;
            this.symbol = result.data.data[0].countries.currency_symbol;
            this.amount_payPrint = result.data.data[0].countries.pivot.amount;
+        
          });
      },
  
