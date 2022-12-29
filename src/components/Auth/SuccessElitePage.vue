@@ -81,27 +81,27 @@
       console.log(this.tokenvalue);
       alert(this.tokenvalue);
       this.userdata = localStorage.getItem('UserDetails');
-      console.log(this.userdata);
+      console.log(this.userdata.subscribers.id);
+      console.log(this.userdata.subscribers);
+
       alert(this.userdata);
 
             
 
 
 
-      if (this.subscribe) {
-        this.coupon_code = this.subscribe.applied_coupon;
-      } else {
-        this.coupon_code = "RESTTEST";
-      }
+    //   if (this.subscribe) {
+    //     this.coupon_code = this.subscribe.applied_coupon;
+    //   } else {
+    //     this.coupon_code = "RESTTEST";
+    //   }
   
       if (localStorage.getItem("hash")) {
-        this.errormas =
-          "Your subscription process is in progress. Do not refresh or leave page";
-        axios
-          
-                                        axios
-                                            .post("payment/"+this.userdata.subscribers.id , { payment_status: "1" })
+        
+        axios.post("payment/"+this.userdata.subscribers.id , { payment_status: "1" })
                                             .then((result) => {
+                                                this.errormas =
+          "Your subscription process is in progress. Do not refresh or leave page";
                                             if (result.data.status_code == "200")
                                                 this.$router.go(this.$router.currentRoute);
                                                 alert("apierror");
