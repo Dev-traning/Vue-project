@@ -377,7 +377,7 @@
        payuUrl: "https://secure.payu.in/_payment",
        mkey: "nxpvv9VZ",
        saltKey: "3oFxUMtWG2",
-       surl: window.location.origin + "/Home/User/Success",
+       surl: window.location.origin + "/Home/User/SuccessElitePage",
        furl: window.location.origin + "/home/User/Fail",
  
        plan: { name: "Plan 3" },
@@ -423,6 +423,7 @@
        first_name: "",
        last_name: "",
        email: "",
+       uaserAuthid: "",
        password: "",
        password_confirmation: "",
        user_type: "",
@@ -544,7 +545,7 @@
  
        document.getElementById("hash").value = hash;
  
-       document.getElementById("paymentForm").submit();
+      // document.getElementById("paymentForm").submit();
      },
  
      planfor() {
@@ -572,6 +573,7 @@
          .then((result) => {
            this.verySucc = "Email Verify Plz select SignUp or Elite Account!!!";
            localStorage.setItem("token", this.tokenData);
+           
            if (result.data.status_code == "200") {
              this.signInButtonPressed();
            }
@@ -610,9 +612,11 @@
  
            this.tokenData = res.data.data.authorization;
            //   this.email_otp = res.data.data.email_otp
-           //   localStorage.setItem("token", res.data.data.authorization);
+         //   localStorage.setItem("token", res.data.data.authorization);
            localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
            this.$store.dispatch("user", res.data.user);
+           this.uaserAuthid  =   localStorage.getItem("UserDetails");
+           console.log(this.uaserAuthid.id);
            this.$refs["modal"].show();
            this.paynowbtn = false;
            //  if (localStorage.getItem('oldMAil')) {
