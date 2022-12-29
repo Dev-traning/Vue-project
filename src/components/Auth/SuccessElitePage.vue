@@ -79,9 +79,9 @@
       alert("hello");
       this.tokenvalue = localStorage.getItem('token');
       console.log(this.tokenvalue);
-      alert(this.tokenvalue);
       this.userdata = localStorage.getItem('User_ids');
-      alert(this.userdata);
+      console.log(this.userdata);
+      
 
             
 
@@ -101,13 +101,13 @@
           "Your subscription process is in progress. Do not refresh or leave page";
                                             if (result.data.status_code == "200")
                                                 this.$router.go(this.$router.currentRoute);
-                                                alert("apierror");
+                                               
                                             localStorage.removeItem("hash");
                                             localStorage.removeItem("copondetails");
                                             }).catch(error =>{
 
+                                                console.log(error);
 
-                                                alert(error,"apicantbereached");
                                             }
                                             );
   
