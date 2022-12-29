@@ -85,7 +85,7 @@
         axios
           
                                         axios
-                                            .post("payment/" + 2111, { payment_status: "1" })
+                                            .post("payment/" + 2114, { payment_status: "1" })
                                             .then((result) => {
                                             if (result.data.status_code == "200")
                                                 this.$router.go(this.$router.currentRoute);
