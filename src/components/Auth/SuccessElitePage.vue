@@ -70,13 +70,13 @@
     methods: {},
   
     mounted() {
+        
         // if(localStorage.getItem('token')) 
         //                 {
         //                 this.$router.push("/home");
         //                 alert("hello");
         //                 }
-      this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
-
+      alert("hello");
       this.tokenvalue = localStorage.getItem('token');
       console.log(this.tokenvalue);
       alert(this.tokenvalue);
