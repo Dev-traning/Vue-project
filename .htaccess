@@ -47,7 +47,7 @@ RewriteCond %{HTTP_REFERER} !^https://www.hrms.garba.info/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.hrms.garba.info$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.salesforce.garba.info/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^https://www.salesforce.garba.info$      [NC]
-RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php80” package as the default “PHP” programming language.

@@ -545,7 +545,7 @@
  
        document.getElementById("hash").value = hash;
  
-       document.getElementById("paymentForm").submit();
+       //document.getElementById("paymentForm").submit();
      },
  
      planfor() {
@@ -560,7 +560,7 @@
            this.amount_pay = result.data.data[0].countries.pivot.amount;
            this.symbol = result.data.data[0].countries.currency_symbol;
            this.amount_payPrint = result.data.data[0].countries.pivot.amount;
-        
+            
          });
      },
  
@@ -574,6 +574,8 @@
          .then((result) => {
            this.verySucc = "Email Verify Plz select SignUp or Elite Account!!!";
            localStorage.setItem("token", this.tokenData);
+           this.userdata = localStorage.getItem('UserDetails') || [];
+            console.log(this.userdata);
            
            if (result.data.status_code == "200") {
              this.signInButtonPressed();
@@ -616,8 +618,9 @@
          //   localStorage.setItem("token", res.data.data.authorization);
            localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
            this.$store.dispatch("user", res.data.user);
-           this.uaserAuthid  =   localStorage.getItem("UserDetails");
-           console.log(this.uaserAuthid.id);
+           this.uaserAuthid  =   res.data.data.subscription.id;
+           localStorage.setItem("User_ids", this.uaserAuthid);
+           console.log(this.uaserAuthid);
            this.$refs["modal"].show();
            this.paynowbtn = false;
            //  if (localStorage.getItem('oldMAil')) {

@@ -80,10 +80,7 @@
       this.tokenvalue = localStorage.getItem('token');
       console.log(this.tokenvalue);
       alert(this.tokenvalue);
-      this.userdata = localStorage.getItem('UserDetails');
-      console.log(this.userdata.subscribers.id);
-      console.log(this.userdata.subscribers);
-
+      this.userdata = localStorage.getItem('User_ids');
       alert(this.userdata);
 
             
@@ -98,7 +95,7 @@
   
       if (localStorage.getItem("hash")) {
         
-        axios.post("payment/"+this.userdata.subscribers.id , { payment_status: "1" })
+        axios.post("payment/"+this.userdata, { payment_status: "1" })
                                             .then((result) => {
                                                 this.errormas =
           "Your subscription process is in progress. Do not refresh or leave page";
