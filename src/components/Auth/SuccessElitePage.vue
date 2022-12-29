@@ -62,6 +62,9 @@
         errormas: "",
         coupon_code: "",
         errormasss: "",
+        subscribe:"",
+        tokenvalue:"",
+        userdata:""
       };
     },
     methods: {},
@@ -73,6 +76,18 @@
         //                 alert("hello");
         //                 }
       this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
+
+      this.tokenvalue = localStorage.getItem('token');
+      console.log(this.tokenvalue);
+      alert(this.tokenvalue);
+      this.userdata = localStorage.getItem('UserDetails');
+      console.log(this.userdata);
+      alert(this.userdata);
+
+            
+
+
+
       if (this.subscribe) {
         this.coupon_code = this.subscribe.applied_coupon;
       } else {
@@ -85,13 +100,19 @@
         axios
           
                                         axios
-                                            .post("payment/" + 2114, { payment_status: "1" })
+                                            .post("payment/"+this.userdata.subscribers.id , { payment_status: "1" })
                                             .then((result) => {
                                             if (result.data.status_code == "200")
                                                 this.$router.go(this.$router.currentRoute);
+                                                alert("apierror");
                                             localStorage.removeItem("hash");
                                             localStorage.removeItem("copondetails");
-                                            });
+                                            }).catch(error =>{
+
+
+                                                alert(error,"apicantbereached");
+                                            }
+                                            );
   
                                         }
                         
