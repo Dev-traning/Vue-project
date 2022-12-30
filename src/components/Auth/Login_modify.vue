@@ -24,7 +24,7 @@
                   "
               >
                 Welcome to the First <br />
-                Global Resturant Community <br />Join Billions of Resturant &
+                Global Restaurant Community <br />Join Billions of Restaurants &
                 Hotel<br />
                 Across the globe
               </p>
@@ -174,9 +174,9 @@
     </div>
     <div class="howwork">
       <h1 class="h1">How Restroworld Work</h1>
-      <img class="img" src="../../../src/assets/Group 50.png" />
+      <img class="" style="align-items: center; justify-content: center;" src="../../../src/assets/Group 50.png" />
       <p class="p">
-        Billions of Restaurants, Vendors,Chefs, Captains and many more are<br />
+        Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
         waiting for you at Restroworld.
       </p>
     </div>
@@ -242,7 +242,7 @@
                 <span style="color: #c41e16;font-size: 74px;">world</span>
             </b>
 
-            <p>Feturing a Platform where you can find all the requirements for your Resturant</p>
+            <p>Featuring a Platform where you can find all the requirements for your Resturant</p>
 
                 </div>
       <div class="white">
