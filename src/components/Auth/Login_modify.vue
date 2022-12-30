@@ -635,7 +635,7 @@ a {
   .howwork img {
     position: absolute;
     height: 370px;
-    margin-top: 54%;
+    margin-top: 50%;
     width: 116%;
     margin-left: -59%;
 
