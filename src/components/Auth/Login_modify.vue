@@ -3,8 +3,8 @@
             <div class="form">
               <b-card
                 no-body
-                class="overflow-hidden"
-                style="max-width: 70%; margin-left: 15%;  height: fit-content; padding-top: 1.5rem;  border-radius: 10px;"
+                class="overflow-hidden upper"
+                style=""
               >
                 <b-row no-gutters>
                   <b-col
@@ -492,6 +492,12 @@ if(localStorage.getItem('token'))
   /* background-color: '##F9F9F9'; */
 }
 
+.upper{
+
+  max-width: 70%; margin-left: 15%;  height: fit-content; padding-top: 1.5rem;  border-radius: 10px;
+
+}
+
 .form {
   grid-row: 1/2;
   margin-top: 10rem;
@@ -627,11 +633,31 @@ a {
     width: 97%;
     }
 
+  .upper{
+
+    max-width: 92%;
+    margin-left: 4%;
+    height: fit-content;
+    padding-top: 1.5rem;
+    border-radius: 10px;
+
+    }
+
 
 }
 
 @media screen and (min-width:0px) and (max-width: 400.98px)
 {
+  .upper{
+
+max-width: 92%;
+margin-left: 4%;
+height: fit-content;
+padding-top: 1.5rem;
+border-radius: 10px;
+
+}
+
   .howwork img {
     position: absolute;
     height: 370px;
@@ -645,6 +671,8 @@ a {
     width: 96%;
     margin-left: 0%; */
 }
+
+
 
 
 }
