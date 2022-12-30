@@ -174,8 +174,10 @@
             </div>
             <div class="howwork">
               <h1 class="h1">How Restroworld Work</h1>
-              <!-- <img class="img " style="align-items: center; justify-content: center;" src="../../../src/assets/Group 50.png" /> -->
-              <p class="p" >
+              <div style="align-items: center; justify-content: center;">
+              <img class="img "  src="../../../src/assets/Group 50.png" />
+            </div>
+              <p class="p">
                 Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
                 waiting for you at Restroworld.
               </p>
@@ -509,20 +511,20 @@ if(localStorage.getItem('token'))
   color: #4d4d4d;
 }
 
-/* .howwork img {
+.howwork img {
   grid-row: 2/3;
-  position:fixed;
+  position:absolute;
   height: 370px;
-  margin-left: 30%;
-  margin-top: 40px;
-} */
+  margin-top: 3%; 
+  margin-left: -20%;
+  width: 40%;
+}
 
 .howwork p {
-  grid-row: 2/3;
+  grid-row: 3/4;
   font-weight: 600;
   color: #707070;
   margin-top: 0px;
-  
 }
 .expolre {
   grid-row: 3/4;
@@ -614,6 +616,37 @@ a {
 .white h5{
   margin-left: 1.5625rem;
   display: inline-block;
+}
+@media screen and (min-width:0px) and (max-width: 767.98px){
+
+  .howwork img {
+    position: absolute;
+    height: 370px;
+    margin-top: 23%;
+    margin-left: -49%;
+    width: 97%;
+    }
+
+
+}
+
+@media screen and (min-width:0px) and (max-width: 400.98px)
+{
+  .howwork img {
+    position: absolute;
+    height: 370px;
+    margin-top: 54%;
+    width: 116%;
+    margin-left: -59%;
+
+  /* position:absolute;
+  
+  margin-top: 34%;
+    width: 96%;
+    margin-left: 0%; */
+}
+
+
 }
 /*
 .logoSide{
