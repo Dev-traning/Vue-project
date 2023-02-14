@@ -24,18 +24,18 @@
             <div class="content">
 
                <h1 class="text-left font-xss  fw-500">Privacy Policy</h1>
-                <p class="  font-xssss  fw-500 text-justify mb-1">The privacy policy contains personal information collected on our website, it's not used by any third party or doesn't apply on any other site. It's a legal statement that justifies the limitless information gathered at a particular point of time and is secured. By accessing the website, you're agreed with our professional and personal care services, moreover, believe in our non-disclosure policies.</p>
+                <p class="  font-xssss  fw-500 text-justify mb-1">The privacy policy contains personal information collected on our website, it's not used by any third party or doesn't apply to any other site. It's a legal statement that justifies the limitless information gathered at a particular point in time and is secured. By accessing the website, you're agreed with our professional and personal care services, moreover, believe in our non-disclosure policies.</p>
                    <p class="  font-xssss  fw-500 text-justify mb-1">Furthermore, you're agreed to the terms contained in our statements or any document incorporated by reference, it does not matter if you're registered with a digital agency network or not.</p>
                     <p class="  font-xssss  fw-500 text-justify mb-1">By disagreeing with our protocols we have the right to hide our services and conditions from you so that you'll not be in the efficient mode of enjoying our benefits.</p>
                      <p class="  font-xssss  fw-500 text-justify ">In addition to this, the privacy policy of RESTROWORLD covers the confidential information we collect from our visitors and users of (site URL) and also our related research and reviews system. You're free to switch your click if you're not agreed with our services and concerning agreements.</p>
 
                      <h1 class="text-left font-xss  fw-500 p-0">Your Rights</h1>
-                <p class="  font-xssss  fw-500 text-justify mb-1">You're the owner of the market, therefore, you have certain rights to take your quick decision if you find any negative vibes while sharing your confidential info to our website under the General Data Protection Regulation (GDPR). For your preference here's the list of our queries:</p>
+                <p class="  font-xssss  fw-500 text-justify mb-1">You're the owner of the market, therefore, you have certain rights to take your quick decision if you find any negative vibes while sharing your confidential info on our website under the General Data Protection Regulation (GDPR). For your preference here's the list of our queries:</p>
                 <h1 class="text-left font-xsss  fw-500 m-0 p-0">Information about you</h1>
                    <p class="  font-xssss  fw-500 text-justify mb-1">While glancing at your interest we generally ask about your participation to use our services, such as</p>
                     <p class="  font-xssss  fw-500 text-justify mb-1">At the time of creating your account you're asked to provide us your name, address, and email address, plus to use our website location friendly we ask to provide additional information such as your location, bio, industry, picture, and cellphone number, also if you feel someone by your information has created your account you can ask us to delete it.</p>
 
-                     <p class="  font-xssss  fw-500 text-justify mb-1">For the review procedure, we'll ask for the company's name, address, official mail address, and this information will not be public.</p>
+                     <p class="  font-xssss  fw-500 text-justify mb-1">For the review procedure, we'll ask for the company's name, address, and official mail address, and this information will not be public.</p>
                      <p class="  font-xssss  fw-500 text-justify mb-1">If you're interested in purchasing our services then after your general interest we'll display your brand's name as a client at our website</p>
 
                          <h1 class="text-left font-xsss  fw-500 m-0 p-0">Information about others</h1>

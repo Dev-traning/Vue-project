@@ -59,13 +59,6 @@
          </button>
          
             <button class="btn p-1 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="commentshow(item.id)">{{item.comments_count}} Comments</button>
- 
-       
-
-
-   
- 
-
 
          <a href="#" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"> </a> 
          <div>
