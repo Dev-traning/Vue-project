@@ -295,7 +295,7 @@ photo.append("resume", this.manpower.resume);
       photo.append("current_city_id", this.manpower.current_city.id);
 
       const response = await axios.post(
-        "users/" + itemId,
+        "mp/manpowers/" + itemId,
         photo,
         {
           onUploadProgress: (uploadEvent) => {

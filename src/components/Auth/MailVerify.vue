@@ -45,7 +45,7 @@
            console.log(response)
            this.$router.push("/");
         } catch (e) {
-        this.error = "OTP Verify Fail";
+        this.error = "otp Verify Fail";
       }
           },
          async resend(){

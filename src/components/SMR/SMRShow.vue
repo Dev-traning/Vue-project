@@ -144,8 +144,6 @@ export default {
       axios.get("restaurants/requirement")
         .then((result) => {
           this.reurment = result.data.data;
-          console.log(this.reurment);
-            alert(this.reurment);
            })}
          
          },
@@ -160,8 +158,6 @@ export default {
   },
   mounted() {
     this.getData();
-    console.log("he;loooooooooooooooooooooooooooooooooooooo",this.smr);
-    
   },
 };
 </script>

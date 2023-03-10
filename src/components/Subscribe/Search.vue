@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-8">
         <p class="mb-0 mt-1 text-white font-xsss fw-500 ">
-          Coupon Code: REST500
+          Coupon Code: RESTFREE
         </p>
       </div>
       <div class="col-4 text-right">
@@ -172,6 +172,7 @@
             <div v-if="isHidden" class="promo-box">
               <div class="input-group ">
                 <input
+                  id="Coupes"
                   ref="removecou"
                   v-model="coupon_code"
                   type="text"
@@ -312,7 +313,7 @@ export default {
       payuUrl: "https://secure.payu.in/_payment",
       mkey: "nxpvv9VZ",
       saltKey: "3oFxUMtWG2",
-      surl: "https://restroworld.com/Home/User/Success",
+      surl: "https://uat.restroworld.com/Home/User/Success",
       // surl: "https://restroworld.com/home/User/Success",
       furl: "https://www.restroworld.com/home/User/Fail",
       txnid: this.makeid(),
@@ -425,6 +426,7 @@ export default {
       document.getElementById("paymentForm").submit();
     },
     applyCoupon() {
+      
       axios
         .get("apply-coupon/1", {
           params: {
@@ -436,8 +438,12 @@ export default {
           this.coupon = response.data;
           this.amount_pay = response.data.payable_amount;
           this.amount_payPrint = response.data.payable_amount;
+          
+          
           this.couponerr = this.coupon.message;
           localStorage.setItem("copondetails", JSON.stringify(response.data));
+          localStorage.setItem("coponde",this.coupon_code);
+
         })
         .catch((error) => {
           console.log(error);

@@ -263,7 +263,7 @@ this.dataOld =''
                                     photo.append('native_city_id', this.restaurant.native_city.id)
                                      photo.append('current_city_id', this.restaurant.current_city.id)
 
-           const response = await axios.post("users/"+itemId, 
+           const response = await axios.post("restaurants/restaurants/"+itemId, 
               photo, {
               onUploadProgress: uploadEvent =>{
                 console.log('Upload Progress: ' + Math.round(uploadEvent.loaded / uploadEvent.total * 100) + '%' )

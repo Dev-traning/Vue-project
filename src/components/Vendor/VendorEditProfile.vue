@@ -209,15 +209,9 @@ export default {
       this.vendor.product_name.splice(index, 1);
     },
 
-    onFileSelected(event,fileList) {
+    onFileSelected(event) {
       this.vendor.photo = event.target.files[0];
-      // this.imurl = window.URL.createObjectURL(event.target.files[0]);
-      this.singlepost.images.forEach((value, index) => {
-        var indadd = window.URL.createObjectURL(fileList[index]);
-        this.url.push(indadd);
-        console.log(this.url);
-      });
-
+      this.imurl = window.URL.createObjectURL(event.target.files[0]);
     },
 
     async handalSubmit() {
@@ -255,7 +249,7 @@ export default {
         //  photo[myRates] = value2
       });
 
-      const response = await axios.post("users/" + itemId, photo, {
+      const response = await axios.post("vendor/vendor/" + itemId, photo, {
         onUploadProgress: (uploadEvent) => {
           console.log(
             "Upload Progress: " +

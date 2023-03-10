@@ -68,9 +68,9 @@ export default {
 
   mounted() {
     
-    this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
+    this.subscribe = JSON.parse(localStorage.getItem("coponde"));
     if (this.subscribe) {
-      this.coupon_code = this.subscribe.applied_coupon;
+      this.coupon_code = this.subscribe;
     } 
 
     if (localStorage.getItem("hash")) {
@@ -80,7 +80,7 @@ export default {
       this.errormas =
         "Your subscription process is in progress. Do not refresh or leave page";
       axios
-        .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
+        .post("subscription", { plan_id: "1", coupon_code: this.coupon_code })
         .then((result) => {
           if (result.data.status_code == 201) {
             axios

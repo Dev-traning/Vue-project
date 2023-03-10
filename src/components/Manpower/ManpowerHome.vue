@@ -1,5 +1,4 @@
 <template>
-   
 <div>
    <div class="card w-100 shadow-xss rounded-0 border-0 mb-3 ">
       <div class="card-body d-flex align-items-center p-3 ">
@@ -7,10 +6,10 @@
          
            <h4 class="fw-700 mb-0 font-xssss text-grey-900" v-if="this.users.user_type === '7'">Restaurant</h4>
 
-         
-           <h4 class=" fw-700 mb-0 font-xssss text-grey-900" style="width:79%"> Manpower </h4>
-         <router-link  class="fw-600 ms-auto font-xssss text-primary"  v-if="is_subscribed === user.is_subscribed" to="/ManpowerShow" >See All </router-link>
-         <a   class="fw-600 ms-auto font-xssss text-primary"  v-b-modal.subscribealert v-else>See All</a >  
+
+           
+         <!-- <router-link  class="fw-600 ms-auto font-xssss text-primary"  v-if="is_subscribed === user.is_subscribed" to="/ManpowerShow" >See All </router-link>
+         <a   class="fw-600 ms-auto font-xssss text-primary"  v-b-modal.subscribealert v-else>See All</a >   -->
 
 
             <div class="fw-600 ms-auto font-xssss text-primary"  v-if="is_subscribed === user.is_subscribed">
@@ -101,7 +100,6 @@
           ...mapGetters(['user'])
         },
          mounted() {
-            alert(this.item.user_type_text);
     this.getData();
   },
         

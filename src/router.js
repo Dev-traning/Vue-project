@@ -18,7 +18,6 @@ import PasswordReset from "./components/Auth/PasswordReset.vue";
 import RegisterNew from "./components/Auth/RegisterNew.vue";
 import OtpVery from "./components/Auth/OtpVery.vue";
 import EliteUser from "./components/Auth/EliteUser.vue";
-import SuccessElitePage from "./components/Auth/SuccessElitePage.vue";
 
 import Forgot from "./components/Auth/Forgot.vue";
 import Posts from "./components/Posts.vue";
@@ -130,12 +129,12 @@ export default new Router({
     { path: "/reset-password", component: PasswordReset },
     { path: "*", component: PageNotFound },
     {
-      path: "/Home",
+      path: "/home",
       component: Home,
-      redirect: "/Home/User",
+      redirect: "/home/User",
       children: [
         {
-          path: "/Home/User",
+          path: "/home/User",
           component: User,
         },
         // { path: "*", component: PageNotFound },
@@ -173,15 +172,9 @@ export default new Router({
           component: Fail,
         },
         {
-          path: "/Home/User/Success",
+          path: "/home/User/Success",
           component: Success,
         },
-
-        {
-          path: "/Home/User/SuccessElitePage",
-          component: SuccessElitePage,
-        },
-        
         {
           path: "/home/User/AtmPaySuc",
           component: AtmPaySuc,

@@ -9,7 +9,7 @@
          <div v-for="(value, key) in item.user" :key="key.id" >
            <figure class="avatar me-2" v-if="key==='profile_photo'"> 
                   <img :src="`${value}`" alt="image" class="shadow-sm  rounded w45" height="45"  v-if="value"> 
-                  <img src="https://restroworld.com./img/profile-no-img.99d6b3a5.png" alt="image" class="shadow-sm  rounded w45" height="45" v-if="!value"> 
+                  <img src="../../assets/profile-no-img.png" alt="image" class="shadow-sm  rounded w45" height="45" v-if="!value"> 
                </figure>
          </div>
          <div>
@@ -59,6 +59,13 @@
          </button>
          
             <button class="btn p-1 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="commentshow(item.id)">{{item.comments_count}} Comments</button>
+ 
+       
+
+
+   
+ 
+
 
          <a href="#" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"> </a> 
          <div>

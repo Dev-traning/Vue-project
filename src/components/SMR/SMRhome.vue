@@ -32,7 +32,6 @@
    </div>
 
    <div class="row" v-if="this.users.user_type === '6'" >
-      
                         <div class="container">
                            <div class="row">
                              
