@@ -9,7 +9,7 @@
          <div v-for="(value, key) in item.user" :key="key.id" >
            <figure class="avatar me-2" v-if="key==='profile_photo'"> 
                   <img :src="`${value}`" alt="image" class="shadow-sm  rounded w45" height="45"  v-if="value"> 
-                  <img src="../../assets/profile-no-img.png" alt="image" class="shadow-sm  rounded w45" height="45" v-if="!value"> 
+                  <img src="https://restroworld.com./img/profile-no-img.99d6b3a5.png" alt="image" class="shadow-sm  rounded w45" height="45" v-if="!value"> 
                </figure>
          </div>
          <div>

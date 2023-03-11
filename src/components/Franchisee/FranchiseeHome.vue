@@ -4,9 +4,7 @@
       <div class="card-body d-flex align-items-center p-3 ">
          <h4 class="fw-700 mb-0 font-xssss text-grey-900"> Franchise Provider </h4>
          <router-link  class="fw-600 ms-auto font-xssss text-primary"  v-if="is_subscribed === user.is_subscribed" to="/FranchiseeShow" >See All </router-link>
-         <a   class="fw-600 ms-auto font-xssss text-primary"  v-b-modal.subscribealert v-else>See All</a >  
-         
-        
+         <a   class="fw-600 ms-auto font-xssss text-primary"  v-b-modal.subscribealert v-else>See All</a >   
       </div>
 
  

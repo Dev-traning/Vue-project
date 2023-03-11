@@ -1,3 +1,4 @@
+import VueAnalytics from 'vue-analytics';
 import '@babel/polyfill'
 import 'mutationobserver-shim'
 import Vue from 'vue'
@@ -12,7 +13,7 @@ import { library} from '@fortawesome/fontawesome-svg-core'
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
+import Notifications from 'vue-notification'
 
 import './assets/css/style.css';
 import './assets/css/feather.css';
@@ -22,14 +23,17 @@ import './assets/js/scripts.js'
 import 'sweetalert2/dist/sweetalert2.min.css';
 import VueObserveVisibility from 'vue-observe-visibility'
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
- 
+Vue.use(VueAnalytics, {
+  id: 'G-64FRJ0RXXW',
+  router
+});
 Vue.use(VueSweetalert2);
 Vue.use(VueObserveVisibility)
 Vue.config.productionTip = false
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 library.add(faCircleCheck, faCircleXmark)
 
-
+Vue.use(Notifications)
 
 new Vue({
   router,

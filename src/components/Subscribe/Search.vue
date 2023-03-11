@@ -418,12 +418,15 @@ export default {
         localStorage.setItem("hash", hash);
         localStorage.setItem("expireSession", "sesion12dgtdb");
       }
-      // console.log(hash);
-      // console.log(data);
+       console.log(hash);
+       console.log(data);
 
       document.getElementById("hash").value = hash;
-
-      document.getElementById("paymentForm").submit();
+      if(hash){
+   
+        document.getElementById("paymentForm").submit();
+   
+      }
     },
     applyCoupon() {
       

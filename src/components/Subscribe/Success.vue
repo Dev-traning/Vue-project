@@ -67,15 +67,16 @@ export default {
   methods: {},
 
   mounted() {
-    
-    this.subscribe = JSON.parse(localStorage.getItem("coponde"));
-    if (this.subscribe) {
-      this.coupon_code = this.subscribe;
-    } 
-
+      
+    this.coupon_code = localStorage.getItem("coponde");
+    // if (this.subscribe) {
+    //   this.coupon_code = this.subscribe;
+    //   alert(this.coupon_code);
+    // } 
+      alert("hello",this.coupon_code);
     if (localStorage.getItem("hash")) {
       
-      
+
       // alert(this.coupon_code);
       this.errormas =
         "Your subscription process is in progress. Do not refresh or leave page";
@@ -94,7 +95,9 @@ export default {
           }
         });
     }
-
+    else{
+      alert("hash no her");
+    }
     // if (localStorage.getItem("expireSession")) {
     //   setTimeout(() => {
     //     localStorage.removeItem("expireSession");
