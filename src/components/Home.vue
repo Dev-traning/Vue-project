@@ -75,11 +75,11 @@ closeModel(){
     // alert(this.user.get_free_subscribed == '0')
 
  
- if(this.user.is_subscribed== false){
+ if(this.user.is_subscribed == false){
  setTimeout(() => {
           this.basketAddSuccess = true;   
           this.$refs['modal'].show()
-        }, 10000);
+        }, 100);
  }
        
 
