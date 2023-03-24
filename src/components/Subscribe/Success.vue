@@ -20,13 +20,8 @@
             Your Payment Was Successful !
           </h1>
           <p class="pl-5 pr-5 ml-5 mr-5 fw-300 text-danger-300 font-xssss mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            laboriosam eligendi laudantium numquam itaque! Asperiores ex soluta
-            quaerat, reiciendis ab autem modi voluptates odio cum. Rem atque ab
-            quam aliquid, possimus non eius nisi ullam aliquam, est molestiae
-            voluptate voluptatibus vitae fuga, et commodi tenetur ipsum culpa!
-            Accusamus impedit earum consequuntur a nisi laborum nobis laudantium
-            nulla fuga vel, eni!
+            Congratulations! Your payment has been processed successfully! As a result, you are now an elite member, which entitles you to exclusive benefits that are not available to non-members.
+We appreciate your decision to become an elite member, and we are confident that you will find it a valuable investment in yourself and your future. Thank you for choosing us as your partner in your journey towards success.
           </p>
 
           <a
@@ -67,20 +62,21 @@ export default {
   methods: {},
 
   mounted() {
-    
-    this.subscribe = JSON.parse(localStorage.getItem("copondetails"));
-    if (this.subscribe) {
-      this.coupon_code = this.subscribe.applied_coupon;
-    } 
-
+      
+    this.coupon_code = localStorage.getItem("coponde");
+    // if (this.subscribe) {
+    //   this.coupon_code = this.subscribe;
+    //   alert(this.coupon_code);
+    // } 
+      // alert("hello",this.coupon_code);
     if (localStorage.getItem("hash")) {
       
-      
+
       // alert(this.coupon_code);
       this.errormas =
         "Your subscription process is in progress. Do not refresh or leave page";
       axios
-        .post("/subscription", { plan_id: "1", coupon_code: this.coupon_code })
+        .post("subscription", { plan_id: "1", coupon_code: this.coupon_code })
         .then((result) => {
           if (result.data.status_code == 201) {
             axios
@@ -94,7 +90,10 @@ export default {
           }
         });
     }
-
+    else{
+      this.$router.push("/home");
+    }
+    
     // if (localStorage.getItem("expireSession")) {
     //   setTimeout(() => {
     //     localStorage.removeItem("expireSession");

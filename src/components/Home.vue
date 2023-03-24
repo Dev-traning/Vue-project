@@ -17,19 +17,20 @@
             <div class="modal-header text-center ">
              
 
-              <h2 class="text-danger text-danger-800 fw-800 h1 mb-5" style="font-family: &quot;Original Surfer&quot;, Regular;"><u>Congratulations..!!</u></h2>
+              <h2 class="text-danger text-danger-800 fw-800 h1 mb-5" style="font-family: &quot;Original Surfer&quot;, Regular;"><u style="font-size: 2.2rem;">Congratulations...!!!</u></h2>
             </div>
           
                 <h1 style="font-size: 30px!important;" class="coponCode modal-subheader mb-4 text-success font-xxl w-200 fw-600">
-                    REST99
+                    REST500
               </h1>
           
  
 
           
                 <h1 style="color: #000000bf!important;" class=" text-success font-xss w-200 fw-400 pl-4 pr-4">
-                  You are eligible for Sign Up at only <b class="text-success">10 Rs</b> for Elite Account. Just use coupon code - "REST99" while Elite Sign Up and you will only need to pay Rs 10.. So Hurry Up..!! Elite Sign Up now..!! And Join the club of Elites of Restaurant Industry..!!
-                 <!-- You've successfully reached the goal, and a  <b class="text-success">1Rs</b> Discount will be Applied Make An elite account. Just Hang tight while we active all Manpower ,Restaurant ,vendors. -->
+                  <!-- You are eligible for Sign Up at only <b class="text-success">499 Rs</b> for Elite Account. Just use coupon code - "REST500" while Elite Sign Up and you will only need to pay Rs 499.. So Hurry Up..!! Elite Sign Up now..!! And Join the club of Elites of Restaurant Industry..!! -->
+                  Join the Elite Club of the Restaurant Industry now and get <b style="color: red;"> 50% OFF </b>on your Elite Account sign-up! Use coupon code <b style="color: red;">"REST500"</b> to take advantage of this limited time offer. Don't miss out on exclusive resources and networking opportunities to elevate your game in the industry.<b style="color: red;">Sign up today!</b> 
+                  <!-- You've successfully reached the goal, and a  <b class="text-success">1Rs</b> Discount will be Applied Make An elite account. Just Hang tight while we active all Manpower ,Restaurant ,vendors. -->
               </h1>
           <a @click="closeModel()" v-b-modal.subscribe class="font-xsss w-50 fw-500 text-center lh-28 mt-1 mb-1 rounded-3 ls-2 bg-suscribe d-inline-block text-white me-1 ms-auto">Make this an Elite Account</a>
 
@@ -74,7 +75,7 @@ closeModel(){
     // alert(this.user.get_free_subscribed == '0')
 
  
- if(this.user.get_free_subscribed == '1'){
+ if(this.user.is_subscribed== false){
  setTimeout(() => {
           this.basketAddSuccess = true;   
           this.$refs['modal'].show()

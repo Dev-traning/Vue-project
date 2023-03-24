@@ -172,6 +172,7 @@
             <div v-if="isHidden" class="promo-box">
               <div class="input-group ">
                 <input
+                  id="Coupes"
                   ref="removecou"
                   v-model="coupon_code"
                   type="text"
@@ -417,14 +418,18 @@ export default {
         localStorage.setItem("hash", hash);
         localStorage.setItem("expireSession", "sesion12dgtdb");
       }
-      // console.log(hash);
-      // console.log(data);
+       console.log(hash);
+       console.log(data);
 
       document.getElementById("hash").value = hash;
-
-      document.getElementById("paymentForm").submit();
+      if(hash){
+   
+        document.getElementById("paymentForm").submit();
+   
+      }
     },
     applyCoupon() {
+      
       axios
         .get("apply-coupon/1", {
           params: {
@@ -436,8 +441,12 @@ export default {
           this.coupon = response.data;
           this.amount_pay = response.data.payable_amount;
           this.amount_payPrint = response.data.payable_amount;
+          
+          
           this.couponerr = this.coupon.message;
           localStorage.setItem("copondetails", JSON.stringify(response.data));
+          localStorage.setItem("coponde",this.coupon_code);
+
         })
         .catch((error) => {
           console.log(error);

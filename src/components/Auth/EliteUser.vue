@@ -479,6 +479,7 @@
            this.couponData = res.data;
            this.amount_pay = res.data.payable_amount;
            localStorage.setItem("copondetails", JSON.stringify(res.data.data));
+           localStorage.setItem("coponde",this.coupon_code);
            this.amount_payPrint = res.data.payable_amount;
            // this.calculate=this.amount_payPrint/100*90
  
