@@ -73,10 +73,10 @@ closeModel(){
 
   mounted() {
     // alert(this.user.get_free_subscribed == '0')
-    console.log('Model');
+    
  
- if(this.user.is_subscribed == false){
-
+ if(this.user.get_free_subscribed == '0'){
+  console.log('Model Is Expired');
   setTimeout(() => {
           this.basketAddSuccess = true;
             
