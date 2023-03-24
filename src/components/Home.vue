@@ -79,7 +79,6 @@ closeModel(){
   alert("model is visible"); 
   setTimeout(() => {
           this.basketAddSuccess = true;
-            
           this.$refs['modal'].show()
         }, 100);
  }
