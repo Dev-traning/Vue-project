@@ -76,8 +76,10 @@ closeModel(){
 
  
  if(this.user.is_subscribed == false){
- setTimeout(() => {
-          this.basketAddSuccess = true;   
+  alert("model is visible"); 
+  setTimeout(() => {
+          this.basketAddSuccess = true;
+            
           this.$refs['modal'].show()
         }, 100);
  }
