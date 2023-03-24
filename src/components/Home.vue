@@ -73,14 +73,15 @@ closeModel(){
 
   mounted() {
     // alert(this.user.get_free_subscribed == '0')
-
+    console.log('Model');
  
  if(this.user.is_subscribed == false){
-  alert("model is visible"); 
+
   setTimeout(() => {
           this.basketAddSuccess = true;
+            
           this.$refs['modal'].show()
-        }, 100);
+        }, 10000);
  }
        
 
