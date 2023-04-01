@@ -73,13 +73,15 @@ closeModel(){
 
   mounted() {
     // alert(this.user.get_free_subscribed == '0')
-
+    
  
- if(this.user.is_subscribed == false){
- setTimeout(() => {
-          this.basketAddSuccess = true;   
+ if(this.user.get_free_subscribed == '0'){
+  console.log('Model Is Expired');
+  setTimeout(() => {
+          this.basketAddSuccess = true;
+            
           this.$refs['modal'].show()
-        }, 100);
+        }, 10000);
  }
        
 
