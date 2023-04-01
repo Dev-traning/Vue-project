@@ -132,16 +132,16 @@ export default {
       var getPath = this.$route.params.user_type
    
         if(getPath === '6'){
-      axios.get("restaurants/sell-my-restaurant")
+      axios.get("restaurants/sell-my-restaurant?sort=id&order_by=desc")
         .then((result) => {
           this.smr = result.data.data;
           this.restaurantType()
          })}  if(getPath === '8'||getPath === '7'){
-      axios.get("restaurants/restaurants")
+      axios.get("restaurants/restaurants?sort=id&order_by=desc")
         .then((result) => {
           this.restraRea = result.data.data;
            })}if(this.$route.params.user_type === 'requirement'){
-      axios.get("restaurants/requirement")
+      axios.get("restaurants/requirement?sort=id&order_by=desc")
         .then((result) => {
           this.reurment = result.data.data;
           console.log(this.reurment);
