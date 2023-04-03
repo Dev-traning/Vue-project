@@ -3,7 +3,7 @@
     <div class="card-body p-0 mt-0 position-relative">
         <figure class="avatar position-absolute ms-2 mt-1 top-5">
             <img :src="`${user.profile_photo}`" alt="image" height="30" class="shadow-sm rounded  w30" v-if="user.profile_photo" />
-            <img src="https://restroworld.com./img/profile-no-img.99d6b3a5.png" alt="image" height="30" class="shadow-sm rounded  w30" v-else />
+            <img src="../assets/img/profile-no-img.99d6b3a5.png" alt="image" height="30" class="shadow-sm rounded  w30" v-else />
         </figure>
         <b-button v-b-modal.modal-center name="message" class="h150 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg" cols="30" rows="10" placeholder="What's on your mind?">
             <p style="    float: left; margin-bottom: 100px;     color: rgb(33 37 41 / 60%);">Please Share Your Restroworld Stories!</p>

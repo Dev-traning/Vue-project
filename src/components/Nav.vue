@@ -28,7 +28,7 @@
                         <template #button-content>
                            <a  class="p-0 ms-1 menu-icon rounded-xxl">
                               <img :src="user.profile_photo" alt="user" height="40" class="w40 rounded" v-if="user.profile_photo">
-                              <img src="https://restroworld.com./img/profile-no-img.99d6b3a5.png" alt="user" height="40 rounded" class="w40" v-else>
+                              <img src="../assets/img/profile-no-img.99d6b3a5.png" alt="user" height="40 rounded" class="w40" v-else>
                           </a>
                         </template>
                         <b-dropdown-item v-bind:href="'/EditProfile/'+users.restaurant.id" v-if="users.restaurant">My Account</b-dropdown-item>
