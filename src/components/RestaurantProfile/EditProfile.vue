@@ -226,10 +226,11 @@ export default {
  
         
        
+         
 
-
-         var itemId = this.$route.params.id;
-
+         // var itemId = this.$route.params.id;
+         var itemId = localStorage.getItem('user_id');
+         // alert(itemId);
          if(this.restaurant.restaurant_type_id==1){
             
 this.dataOld =this.restaurant.restaurant_type
@@ -249,6 +250,7 @@ this.dataOld =''
            photo.append('name', this.restaurant.name)
              photo.append('email', this.restaurant.email)
                photo.append('address', this.restaurant.address)
+               photo.append('mobile_no', this.restaurant.mobile_no)
                  photo.append('gst_no', this.restaurant.gst_no)
                    photo.append('facbook_url', this.restaurant.facbook_url)
                      photo.append('linkedin_url', this.restaurant.linkedin_url)
