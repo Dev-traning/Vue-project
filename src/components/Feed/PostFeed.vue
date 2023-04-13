@@ -1,8 +1,11 @@
 <template >
 <div>
 
- 
-   
+    <div class="LayerImg" @click.self="hidePopup"  v-if="Imagepromet">
+        <img style=" height:60vh; margin-top: 5%; max-width: 90%; " :src="ImagesUrlPopup" />
+
+    </div>
+
    <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3" v-for="(item,itemIndex) in post" v-bind:key="item.id">
       <div class="card-body p-0 d-flex">
       
@@ -46,7 +49,7 @@
          </b-dropdown>
       </div>
       <div class="row ps-2 pe-2" >
-         <div class="col-xs col-sm p-1" v-for="(item,i) in item.medias.slice(0,3)" v-bind:key="item.id"> <a data-lightbox="roadtri" class="position-relative d-block"> <img :src="`${item.path}`" class="rounded-3 w-100" alt="image"  /> <span class="img-count font-sm text-white ls-3 fw-600" v-if="i==2" > <b>+{{i+0}}</b></span ></a> </div>
+         <div class="col-xs col-sm p-1" v-for="(item,i) in item.medias.slice(0,3)" v-bind:key="item.id"> <a data-lightbox="roadtri" class="position-relative d-block"> <img :src="`${item.path}`" @click="ImgPopup(item.path)" class="rounded-3 w-100" alt="image"  /> <span class="img-count font-sm text-white ls-3 fw-600" v-if="i==2" > <b>+{{i+0}}</b></span ></a> </div>
       </div>
       <div class="card-body p-0 me-lg-3">
            <p class="fw-700 text-grey-700 lh-10 font-xssss w-100 mb-0 font-weight-bold">{{item.title}}</p>
@@ -280,7 +283,10 @@ export default {
         title: "",
         description: "",
         images: [],
+        url:''
       },
+      Imagepromet: false,
+      ImagesUrlPopup:""
     };
   },
   methods: {
@@ -491,6 +497,23 @@ export default {
       console.log();
  
     },
+    async ImgPopup(url){
+
+      // alert(url);
+      this.ImagesUrlPopup = url;
+      this.Imagepromet = true;
+
+
+    },
+    hidePopup(){
+
+      this.Imagepromet = false;
+
+    }
+
+
+
+
   },
 
   mounted() {
@@ -530,4 +553,20 @@ export default {
   right: -12px;
   z-index: 100;
 }
+
+
+.LayerImg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1021;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 </style>
