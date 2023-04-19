@@ -435,7 +435,8 @@
        list: [],
        state: [],
        city: [],
-     };
+        currency1:""
+      };
    },
    methods: {
      cuponCopy() {
@@ -520,34 +521,103 @@
        return text;
      },
  
+
+    //  WHEN YOU TRY TO PAUMONEY USE PLEASE REPLACE THIS COMMENT CODE NOT CHANGE ANY OTHER WORD
      signInButtonPressed() {
-       var data =
-         this.mkey +
-         "|" +
-         this.txnid +
-         "|" +
-         this.amount_pay +
-         "|" +
-         this.productInfo +
-         "|" +
-         this.first_name +
-         "|" +
-         this.email +
-         "|||||||||||";
-       var sha512 = require("js-sha512");
-       var salt = this.saltKey;
-       var hash = sha512(data + salt);
-       if (hash) {
-         localStorage.setItem("hash", hash);
-         localStorage.setItem("expireSession", "sesion12dgtdb");
-       }
-       // console.log(hash);
-       // console.log(data);
+          // alert(this.currency1);
+      // Payumoney Code integared 
+      // var data =
+      //    this.mkey +
+      //    "|" +
+      //    this.txnid +
+      //    "|" +
+      //    this.amount_pay +
+      //    "|" +
+      //    this.productInfo +
+      //    "|" +
+      //    this.first_name +
+      //    "|" +
+      //    this.email +
+      //    "|||||||||||";
+      //  var sha512 = require("js-sha512");
+      //  var salt = this.saltKey;
+      //  var hash = sha512(data + salt);
+      //  if (hash) {
+      //    localStorage.setItem("hash", hash);
+      //    localStorage.setItem("expireSession", "sesion12dgtdb");
+      //  }
+      //  // console.log(hash);
+      //  // console.log(data);
  
-       document.getElementById("hash").value = hash;
+      //  document.getElementById("hash").value = hash;
  
-       document.getElementById("paymentForm").submit();
-     },
+      //  document.getElementById("paymentForm").submit();
+
+      var options = {
+        key: "rzp_live_tazg9e4O5sAPdQ",
+        // key: "rzp_test_EpNayKPHUEGLMY",
+        amount: this.amount_pay * 100,
+
+        currency: this.currency1,
+        //  currency: 'USD', 
+        name: this.first_name,
+        description: "Restroworld Transection",
+        image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
+        handler: function (response) {
+          this.paymentId = response.razorpay_payment_id;
+          this.orderId = response.razorpay_order_id;
+          this.signature = response.razorpay_signature;
+
+          if (response.razorpay_payment_id) {
+          
+                // alert("PaymentSuccess");
+                // window.location.href =  window.location.origin + "/Home/User/PaymentSuccess";
+                var data =
+                              this.mkey +
+                              "|" +
+                              this.txnid +
+                              "|" +
+                              this.amount_pay +
+                              "|" +
+                              this.productInfo +
+                              "|" +
+                              this.first_name +
+                              "|" +
+                              this.email +
+                              "|||||||||||";
+                            var sha512 = require("js-sha512");
+                            var salt = this.saltKey;
+                            var hash = sha512(data + salt);
+                            if (hash) {
+                              localStorage.setItem("hash", hash);
+                              localStorage.setItem("expireSession", "sesion12dgtdb");
+                            } 
+                window.location.href = "https://restroworld.com/Home/User/PaymentSuccess"
+
+          } 
+          else {
+            
+            window.location.href = "https://restroworld.com/Home/User/Fail"
+
+          }
+        }.bind(this),
+        prefill: {
+          name: this.first_name,
+          email: this.email,
+        },
+        notes: {
+          address: "Razorpay Corporate Office",
+        },
+        theme: {
+          color: "#F37254",
+        },
+      };
+      var rzp1 = new window.Razorpay(options);
+      rzp1.open();
+    },    
+        
+
+      
  
      planfor() {
        axios
@@ -577,8 +647,10 @@
            localStorage.setItem("token", this.tokenData);
            this.userdata = localStorage.getItem('UserDetails') || [];
             console.log(this.userdata);
+            
            
            if (result.data.status_code == "200") {
+           
              this.signInButtonPressed();
            }
            //    this.$router.push("/home");
@@ -594,7 +666,12 @@
      },
      async handalSubmit() {
        this.paynowbtn = true;
-       await axios
+       this.getcurrency();
+      
+
+        if(this.coupon_code){
+
+          await axios
          .post("users/elight-signup", {
            business_name: this.business_name,
            mobile_no: this.mobile_no,
@@ -613,7 +690,7 @@
          })
          .then((res) => {
            this.failMsg = "";
- 
+            
            this.tokenData = res.data.data.authorization;
            //   this.email_otp = res.data.data.email_otp
          //   localStorage.setItem("token", res.data.data.authorization);
@@ -624,6 +701,7 @@
            console.log(this.uaserAuthid);
            this.$refs["modal"].show();
            this.paynowbtn = false;
+          
            //  if (localStorage.getItem('oldMAil')) {
            //                      this.$router.push("/home");
            //                       location.reload()
@@ -639,6 +717,46 @@
            this.failMsg = error.response.data.message;
            this.paynowbtn = false;
          });
+
+        }
+        else{
+         
+          await axios
+         .post("users/elight-signup", {
+           business_name: this.business_name,
+           mobile_no: this.mobile_no,
+           first_name: this.first_name,
+           last_name: this.last_name,
+           gst_no: this.gst_no,
+           email: this.email,
+           plan_id: "1",
+           password: this.password,
+           password_confirmation: this.password_confirmation,
+           user_type: this.user_type,
+           country_id: this.country_id,
+           state_id: this.state_id,
+           city_id: this.city_id,
+         })
+         .then((res) => {
+           this.failMsg = "";
+ 
+           this.tokenData = res.data.data.authorization;
+           localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
+           this.$store.dispatch("user", res.data.user);
+           this.uaserAuthid  =   res.data.data.subscription.id;
+           localStorage.setItem("User_ids", this.uaserAuthid);
+           console.log(this.uaserAuthid);
+           this.$refs["modal"].show();
+           this.paynowbtn = false;
+
+         })
+         .catch((error) => {
+           this.failMsg = error.response.data.message;
+           this.paynowbtn = false;
+         });
+        }
+
+      
  
        //   console.log(response);
      },
@@ -646,10 +764,12 @@
      getData() {
        axios.get("countries?is_light=true").then((result) => {
          this.list = result.data.data;
- 
-         if (this.country_id) {
+        
+         if (this.country_id) 
+         { 
            this.getState();
-         }
+           this.getcurrency();
+          }
        });
      },
  
@@ -679,9 +799,22 @@
            this.city = result.data.data;
          });
      },
+
+     getcurrency(){
+      
+        axios.get('countries/' + this.country_id).then( (result) => {
+
+          console.log(result.data.data.currency);
+          this.currency1  = result.data.data.currency;
+
+        })
+
+
+     }
    },
  
    mounted() {
+    this.getcurrency();
      //  this.surl=window.location.origin + "/home/User/Success",
      //  alert(this.surl)
      this.getData();
