@@ -464,12 +464,12 @@ export default {
                               localStorage.setItem("hash", hash);
                               localStorage.setItem("expireSession", "sesion12dgtdb");
                             } 
-                window.location.href = "http://uat.restroworld.com/Home/User/PaymentSuccess"
+                window.location.href = "http://restroworld.com/Home/User/PaymentSuccess"
 
           } 
           else {
             
-            window.location.href = "https://uat.restroworld.com/Home/User/Fail"
+            window.location.href = "https://restroworld.com/Home/User/Fail"
 
           }
         }.bind(this),
