@@ -421,13 +421,79 @@ export default {
        console.log(hash);
        console.log(data);
 
-      document.getElementById("hash").value = hash;
-      if(hash){
+      document.getElementById("hash").value = hash;// document.getElementById("paymentForm").submit();
    
-        document.getElementById("paymentForm").submit();
+      if(hash){
+        // document.getElementById("paymentForm").submit();    <<-- only this line un commented and another line Un comment To Payumoney start
+        var options = {
+        key: "rzp_live_tazg9e4O5sAPdQ",
+        // key: "rzp_test_EpNayKPHUEGLMY",
+        amount: this.amount_pay * 100,
+
+        currency: this.currency1,
+        //  currency: 'INR', 
+        name: this.first_name,
+        description: "Restroworld Transection",
+        image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
+        handler: function (response) {
+          this.paymentId = response.razorpay_payment_id;
+          this.orderId = response.razorpay_order_id;
+          this.signature = response.razorpay_signature;
+
+          if (response.razorpay_payment_id) {
+          
+                // alert("PaymentSuccess");
+                // window.location.href =  window.location.origin + "/Home/User/PaymentSuccess";
+                var data =
+                              this.mkey +
+                              "|" +
+                              this.txnid +
+                              "|" +
+                              this.amount_pay +
+                              "|" +
+                              this.productInfo +
+                              "|" +
+                              this.first_name +
+                              "|" +
+                              this.email +
+                              "|||||||||||";
+                            var sha512 = require("js-sha512");
+                            var salt = this.saltKey;
+                            var hash = sha512(data + salt);
+                            if (hash) {
+                              localStorage.setItem("hash", hash);
+                              localStorage.setItem("expireSession", "sesion12dgtdb");
+                            } 
+                window.location.href = "http://restroworld.com/Home/User/PaymentSuccess"
+
+          } 
+          else {
+            
+            window.location.href = "https://restroworld.com/Home/User/Fail"
+
+          }
+        }.bind(this),
+        prefill: {
+          name: this.first_name,
+          email: this.email,
+        },
+        notes: {
+          address: "Razorpay Corporate Office",
+        },
+        theme: {
+          color: "#F37254",
+        },
+      };
+      var rzp1 = new window.Razorpay(options);
+      rzp1.open();
+
+
+      
+          // document.getElementById("paymentForm").submit();
    
       }
     },
+
     applyCoupon() {
       
       axios
@@ -458,10 +524,23 @@ export default {
           console.log(error);
         });
     },
+
+    getcurrency(){
+      
+      axios.get('countries/' + this.users.country.id).then( (result) => {
+
+        console.log(result.data.data.currency);
+        this.currency1  = result.data.data.currency;
+
+      })
+
+
+   }
   },
   mounted() {
     this.users = JSON.parse(localStorage.getItem("UserDetails"));
-
+    this.getcurrency();
+    // console.log("name",this.users.country.id);
     this.getData();
   },
   computed: {
