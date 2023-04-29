@@ -247,7 +247,7 @@
      </form>
      <p class="login-card-footer-text">
        Have an account?
-       <router-link to="/" class="text-reset">Login</router-link>
+       <router-link to="/login" class="text-reset">Login</router-link>
      </p>
  
      <b-modal
@@ -560,7 +560,7 @@
 
         currency: this.currency1,
         //  currency: 'USD', 
-        name: this.first_name,
+        // name: 'Redjinni ind. pvt.',
         description: "Restroworld Transection",
         image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
         handler: function (response) {

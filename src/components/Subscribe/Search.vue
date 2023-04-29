@@ -432,7 +432,7 @@ export default {
 
         currency: this.currency1,
         //  currency: 'INR', 
-        name: this.first_name,
+        // name: this.first_name,
         description: "Restroworld Transection",
         image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
         handler: function (response) {
