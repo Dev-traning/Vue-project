@@ -41,7 +41,7 @@
                </div>
             </div>
             <div class="d-flex">
-               <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">{{item.user.full_name}}}</p>
+               <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">{{item.title  }}</p>
                <div class="ml-auto">
                   <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">27-08-2021</p>
                </div>
@@ -49,8 +49,8 @@
             <hr class="mb-2 mt-0" >
             <table  >
                <tr>
-                  <td class="fw-600 text-primary text-primary-600 w-50 lh-0 font-xxs">Restaurant Name</td>
-                  <td class="fw-400 text-primary text-primary-500 w-50 lh-0 font-xss">{{item.restaurant.business_name}}</td>
+                  <td class="fw-600 text-primary text-primary-600 w-50 lh-0 font-xxs">Job title</td>
+                  <td class="fw-400 text-primary text-primary-500 w-50 lh-0 font-xss">{{item.title}}</td>
                </tr>
                <tr>
                   <td class="fw-600 text-primary text-primary-600 w-50 lh-0 font-xxs">Position</td>
@@ -89,6 +89,7 @@ export default {
       axios.get('restaurants/job')
        .then((result) => {
           this.MpJobs = result.data.data;
+         console.log (this.MpJobs[0]);
        })}
 
        

@@ -524,40 +524,46 @@
 
     //  WHEN YOU TRY TO PAUMONEY USE PLEASE REPLACE THIS COMMENT CODE NOT CHANGE ANY OTHER WORD
      signInButtonPressed() {
-          // alert(this.currency1);
-      // Payumoney Code integared 
-      // var data =
-      //    this.mkey +
-      //    "|" +
-      //    this.txnid +
-      //    "|" +
-      //    this.amount_pay +
-      //    "|" +
-      //    this.productInfo +
-      //    "|" +
-      //    this.first_name +
-      //    "|" +
-      //    this.email +
-      //    "|||||||||||";
-      //  var sha512 = require("js-sha512");
-      //  var salt = this.saltKey;
-      //  var hash = sha512(data + salt);
-      //  if (hash) {
-      //    localStorage.setItem("hash", hash);
-      //    localStorage.setItem("expireSession", "sesion12dgtdb");
-      //  }
-      //  // console.log(hash);
-      //  // console.log(data);
- 
-      //  document.getElementById("hash").value = hash;
- 
-      //  document.getElementById("paymentForm").submit();
 
-      var options = {
+      if(this.country_id == '101')
+      
+      {
+
+        // alert(this.currency1);
+      // Payumoney Code integared 
+      var data =
+         this.mkey +
+         "|" +
+         this.txnid +
+         "|" +
+         this.amount_pay +
+         "|" +
+         this.productInfo +
+         "|" +
+         this.first_name +
+         "|" +
+         this.email +
+         "|||||||||||";
+       var sha512 = require("js-sha512");
+       var salt = this.saltKey;
+       var hash = sha512(data + salt);
+       if (hash) {
+         localStorage.setItem("hash", hash);
+         localStorage.setItem("expireSession", "sesion12dgtdb");
+       }
+       // console.log(hash);
+       // console.log(data);
+ 
+       document.getElementById("hash").value = hash;
+ 
+       document.getElementById("paymentForm").submit();
+
+      }
+      else{
+        var options = {
         key: "rzp_live_tazg9e4O5sAPdQ",
         // key: "rzp_test_EpNayKPHUEGLMY",
         amount: this.amount_pay * 100,
-
         currency: this.currency1,
         //  currency: 'USD', 
         // name: 'Redjinni ind. pvt.',
@@ -614,6 +620,11 @@
       };
       var rzp1 = new window.Razorpay(options);
       rzp1.open();
+
+
+      }
+          
+     
     },    
         
 
