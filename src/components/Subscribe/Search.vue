@@ -399,32 +399,44 @@ export default {
 
     signInButtonPressed() {
       var data =
-        this.mkey +
-        "|" +
-        this.txnid +
-        "|" +
-        this.amount_pay +
-        "|" +
-        this.productInfo +
-        "|" +
-        this.users.first_name +
-        "|" +
-        this.users.email +
-        "|||||||||||";
-      var sha512 = require("js-sha512");
-      var salt = this.saltKey;
-      var hash = sha512(data + salt);
-      if (hash) {
-        localStorage.setItem("hash", hash);
-        localStorage.setItem("expireSession", "sesion12dgtdb");
-      }
-       console.log(hash);
-       console.log(data);
+                          this.mkey +
+                          "|" +
+                          this.txnid +
+                          "|" +
+                          this.amount_pay +
+                          "|" +
+                          this.productInfo +
+                          "|" +
+                          this.users.first_name +
+                          "|" +
+                          this.users.email +
+                          "|||||||||||";
+                        var sha512 = require("js-sha512");
+                        var salt = this.saltKey;
+                        var hash = sha512(data + salt);
+                        if (hash) {
+                          localStorage.setItem("hash", hash);
+                          localStorage.setItem("expireSession", "sesion12dgtdb");
+                        }
+                        console.log(hash);
+                        console.log(data);
 
-      document.getElementById("hash").value = hash;// document.getElementById("paymentForm").submit();
-   
+                        document.getElementById("hash").value = hash;
+      if(this.user.country_id == '101')
+            {
+                       // document.getElementById("paymentForm").submit();
+                        document.getElementById("paymentForm").submit();  
+                          //  <<-- only this line un commented and another line Un comment To Payumoney start
+        
+
+
+      }
+      
+      else{
+        
+     
       if(hash){
-        // document.getElementById("paymentForm").submit();    <<-- only this line un commented and another line Un comment To Payumoney start
+       
         var options = {
         key: "rzp_live_tazg9e4O5sAPdQ",
         // key: "rzp_test_EpNayKPHUEGLMY",
@@ -486,7 +498,7 @@ export default {
       };
       var rzp1 = new window.Razorpay(options);
       rzp1.open();
-
+    }
 
       
           // document.getElementById("paymentForm").submit();
