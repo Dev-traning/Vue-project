@@ -213,9 +213,10 @@ export default {
         localStorage.setItem('user_id', response.data.data['id']);
         localStorage.setItem("UserDetails", JSON.stringify(response.data.data));
         this.$store.dispatch("user", response.data.user);
-
-             if (localStorage.getItem('useremail')) {
-                                 this.$router.push("/home");
+        
+             if (localStorage.getItem('token')) {
+               alert("you clicked mee");
+                                 this.$router.push("/Home");
                                   location.reload()
                          localStorage.removeItem('useremail');
                           localStorage.removeItem('password');

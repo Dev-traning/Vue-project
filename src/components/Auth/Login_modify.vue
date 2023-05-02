@@ -111,7 +111,7 @@
 
                           <!-- <button class="btn btn-block login-btn mb-4" type="submit">{{loading ? "Loading..." : "Sign In"}}</button>  -->
                           <button
-                            type="submit"
+                            type="submit" 
                             style="border-radius: 10px;"
                             class="
                                 btn
@@ -431,19 +431,27 @@ export default {
          this.loading=false;
 
         localStorage.setItem("token", response.data.data.authorization);
+        localStorage.setItem("token", response.data.data.authorization);
         localStorage.setItem('user_id', response.data.data['id']);
         localStorage.setItem("UserDetails", JSON.stringify(response.data.data));
         this.$store.dispatch("user", response.data.user);
 
-             if (localStorage.getItem('useremail')) {
-                                 this.$router.push("/home");
-                                  location.reload()
-                         localStorage.removeItem('useremail');
+             if (localStorage.getItem('UserDetails')) {
+              localStorage.setItem("token", response.data.data.authorization);
+                                 setTimeout(function() {
+                                  localStorage.setItem("token", response.data.data.authorization);
+                                  this.$router.push("/Home");
+                                      }, 1000);
+                                 location.reload();
+
+                        //  localStorage.removeItem('useremail');
                           localStorage.removeItem('password');
                           localStorage.removeItem('email_otp');
             } else {
+              alert("2");
                this.$router.push("/home");
-                location.reload()  }
+                // location.reload() 
+               }
       
         
       } catch (e) {
