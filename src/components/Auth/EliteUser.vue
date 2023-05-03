@@ -377,7 +377,7 @@
        payuUrl: "https://secure.payu.in/_payment",
        mkey: "nxpvv9VZ",
        saltKey: "3oFxUMtWG2",
-       surl: window.location.origin + "/Home/User/SuccessElitePage",
+       surl: window.location.origin + "/Home/User/PaymentSuccess",
        furl: window.location.origin + "/home/User/Fail",
  
        plan: { name: "Plan 3" },
