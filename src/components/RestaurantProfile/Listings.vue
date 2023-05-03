@@ -61,6 +61,7 @@
 
                                         <li class="mt-1 mb-1"><router-link active-class="active" to="/SellrestEdit" class="theme-dark-bg p-2 w-100 border-0 rounded-3 text-dark text-grey-600 text-left fw-600 font-xsss d-flex align-items-center text-wrap badge"><i class="feather-circle font-md btn-round-sm me-2 p-0"></i>Want to sell My Restaurant</router-link></li>
 
+                                        <li class="mt-1 mb-1"><router-link active-class="active" to="/DownloadInvoice" class="theme-dark-bg p-2 w-100 border-0 rounded-3 text-dark text-grey-600 text-left fw-600 font-xsss d-flex align-items-center text-wrap badge"><i class="feather-circle font-md btn-round-sm me-2 p-0"></i>Download Invoice</router-link></li>
 
                                     <li class="mt-1 mb-1" @click="logOut()"><a href="#" class="theme-dark-bg p-2 w-100 border-0 rounded-3 text-dark text-grey-600 text-left fw-600 font-xsss d-flex align-items-center"><i class="feather-lock font-md btn-round-sm me-2 p-0"></i> Logout</a></li>
                                  
