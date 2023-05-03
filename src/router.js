@@ -46,6 +46,7 @@ import Franchisee from "./components/RestaurantProfile/Franchisee.vue";
 import Sellrest from "./components/RestaurantProfile/Sellrest.vue";
 import SellrestEdit from "./components/RestaurantProfile/SellrestEdit.vue";
 import SmrEdit from "./components/RestaurantProfile/SmrEdit.vue";
+import DownloadInvoice from "./components/RestaurantProfile/DownloadInvoice.vue";
 
 // SMR
 
@@ -62,6 +63,7 @@ import ManpowerEditProfile from "./components/Manpower/ManpowerEditProfile.vue";
 import MyAppliedJobs from "./components/Manpower/MyAppliedJobs.vue";
 import JobsList from "./components/Manpower/JobsList.vue";
 import ManpowerShow from "./components/Manpower/ManpowerShow.vue";
+import DownloadManpowerInvoice from "./components/Manpower/DownloadManpowerInvoice.vue"
 
 // Vendor
 import VendorListing from "./components/Vendor/VendorListing.vue";
@@ -69,7 +71,7 @@ import VendorEditProfile from "./components/Vendor/VendorEditProfile.vue";
 import Enquiries from "./components/Vendor/Enquiries.vue";
 import requirements from "./components/Vendor/Requirements.vue";
 import VendorShow from "./components/Vendor/VendorShow.vue";
-
+import DownloadVendorInvoice from "./components/Vendor/DownloadVendorInvoice.vue";
 // Suscribe
 
 import Search from "./components/Subscribe/Search.vue";
@@ -347,6 +349,10 @@ export default new Router({
           path: "/VendorListing/requirements",
           component: requirements,
         },
+        {
+          path: "/VendorListing/DownloadVendorInvoice",
+          component: DownloadVendorInvoice,
+        },
       ],
     },
     {
@@ -365,6 +371,10 @@ export default new Router({
         {
           path: "/ManpowerListings/JobsList",
           component: JobsList,
+        },
+        {
+          path: "/ManpowerListings/DownloadInvoiceManpower",
+          component: DownloadManpowerInvoice,
         },
       ],
     },
@@ -424,6 +434,10 @@ export default new Router({
         {
           path: "/SmrEdit",
           component: SmrEdit,
+        },
+        {
+          path: "/DownloadInvoice",
+          component: DownloadInvoice,
         },
       ],
     },
