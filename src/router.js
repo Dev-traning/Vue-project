@@ -111,7 +111,7 @@ import Followers from "./components/Following/Followers.vue";
 import Following from "./components/Following/Following.vue";
 import Request from "./components/Following/Request.vue";
 import Follow from "./components/Following/Follow.vue";
-
+import DeletePolicy from './components/DeletePolicy.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -441,5 +441,9 @@ export default new Router({
         },
       ],
     },
+    {
+      path: "/deletionPolicy",
+      component: DeletePolicy,
+    }
   ],
 });
