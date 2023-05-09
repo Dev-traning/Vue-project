@@ -5,163 +5,206 @@
         <img style=" height:60vh; margin-top: 5%; max-width: 90%; " :src="ImagesUrlPopup" />
 
     </div>
-
-   <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3" v-for="(item,itemIndex) in post" v-bind:key="item.id">
-      <div class="card-body p-0 d-flex">
+    <div v-for="(item,itemIndex) in post" v-bind:key="item.id"> 
       
-         <div v-for="(value, key) in item.user" :key="key.id" >
-           <figure class="avatar me-2" v-if="key==='profile_photo'"> 
-                  <img :src="`${value}`" alt="image" class="shadow-sm  rounded w45" height="45"  v-if="value"> 
-                  <img src="../../assets/img/profile-no-img.99d6b3a5.png" alt="image" class="shadow-sm  rounded w45" height="45" v-if="!value"> 
-               </figure>
-         </div>
-         <div>
-            <h4 class="fw-700 text-grey-900 font-xssss mt-1" v-for="(value, key) in item.user" :key="key.id">
-               <div v-if="key==='full_name'">{{value}}</div>
-            </h4>
-            <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{ moment(item.created_at).fromNow()}}</span> 
-         </div>
-         <a href="#" class="ms-auto" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false"> </a> 
-         <b-dropdown right size="sm" style="margin: -13px 0px 0px 0px;"  id="dropdownMenu5" variant="link" toggle-class="text-decoration-none p-0" no-caret >
-            <template #button-content> 
-               <a href="#" class="ms-auto p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="p-0 ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i>
-                  </a> 
-            </template>
-           
-             
-  <b-dropdown-item v-if="item.user.id == userid" v-b-modal.homepageedit v-on:click="updatePostid(item.id,itemIndex)">
+      <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3" >
+          <div class="card-body p-0 d-flex">
+          
+            <div v-for="(value, key) in item.user" :key="key.id" >
+              <figure class="avatar me-2" v-if="key==='profile_photo'"> 
+                      <img :src="`${value}`" alt="image" class="shadow-sm  rounded w45" height="45"  v-if="value"> 
+                      <img src="../../assets/img/profile-no-img.99d6b3a5.png" alt="image" class="shadow-sm  rounded w45" height="45" v-if="!value"> 
+                  </figure>
+            </div>
+            <div>
+                <h4 class="fw-700 text-grey-900 font-xssss mt-1" v-for="(value, key) in item.user" :key="key.id">
+                  <div v-if="key==='full_name'">{{value}}</div>
+                </h4>
+                <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{ moment(item.created_at).fromNow()}}</span> 
+            </div>
+            <a href="#" class="ms-auto" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false"> </a> 
+            <b-dropdown right size="sm" style="margin: -13px 0px 0px 0px;"  id="dropdownMenu5" variant="link" toggle-class="text-decoration-none p-0" no-caret >
+                <template #button-content> 
+                  <a href="#" class="ms-auto p-0 m-0" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="p-0 ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss"></i>
+                      </a> 
+                </template>
               
-                     <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss me-4">Edit</h4>
-               
-               </b-dropdown-item>
-               
-               <b-dropdown-item  @click="copyDoiToClipboard(item.id)">
-               
-                     <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss">Copy Link</h4>
-                     
-            
-               </b-dropdown-item>
-               <b-dropdown-item  v-if="item.user.id == userid">
-                   
-                     <button type="button" class="btn pl-4 mt-0 fw-600 text-grey-900 font-xss me-4 pt-0" v-on:click="deletePosts(item.id,itemIndex)" >Delete</button>  
-               </b-dropdown-item>
-         </b-dropdown>
-      </div>
-      <div class="row ps-2 pe-2" >
-         <div class="col-xs col-sm p-1" v-for="(item,i) in item.medias.slice(0,3)" v-bind:key="item.id"> <a data-lightbox="roadtri" class="position-relative d-block"> <img :src="`${item.path}`" @click="ImgPopup(item.path)" class="rounded-3 w-100" alt="image"  /> <span class="img-count font-sm text-white ls-3 fw-600" v-if="i==2" > <b>+{{i+0}}</b></span ></a> </div>
-      </div>
-      <div class="card-body p-0 me-lg-3">
-           <p class="fw-700 text-grey-700 lh-10 font-xssss w-100 mb-0 font-weight-bold">{{item.title}}</p>
-           <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">{{item.description}}</p>
-      </div>
-      <div class="card-body d-flex p-0">
-         <button  class="btn p-0 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-b-modal.likeshome v-on:click="likeShow(item.id)">
-         
-            {{item.likes_count}} Likes
-         </button>
-         
-            <button class="btn p-1 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="commentshow(item.id)">{{item.comments_count}} Comments</button>
- 
-       
-
-
-   
- 
-
-
-         <a href="#" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"> </a> 
-         <div>
-            <b-button variant="outline-primary  fw-600 text-light-900 text-light lh-26 font-xssss btn btn-primary" v-on:click="likepost(item,index)" v-if="item.is_liked">Liked</b-button>
-            <b-button variant="outline-primary  fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="likepost(item,index)" v-if="!item.is_liked">Like</b-button>
-            <b-dropdown right size="sm" variant="link" toggle-class="text-decoration-none pr-0" no-caret>
-               <template #button-content>
-                   <b-button variant="outline-warning fw-600 text-grey-900 text-dark lh-26 font-xssss">Share</b-button>
-                  </template>
-
-               <b-dropdown-item :href="'https://www.facebook.com/sharer/sharer.php?u='+getPath+'/posts/'+item.id" target="_blank" >
-                  <a  class="btn-round-sm bg-facebook"><i class="font-xs ti-facebook text-white"></i></a>
+                
+      <b-dropdown-item v-if="item.user.id == userid" v-b-modal.homepageedit v-on:click="updatePostid(item.id,itemIndex)">
+                  
+                        <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss me-4">Edit</h4>
                   
                   </b-dropdown-item>
-               <b-dropdown-item :href="'https://twitter.com/intent/tweet?text='+getPath+'/posts/'+item.id" target="_blank" ><a  class="btn-round-sm bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></b-dropdown-item>
-
-
-               <b-dropdown-item :href="'https://www.linkedin.com/sharing/share-offsite/?url='+getPath+'/posts/'+item.id" target="_blank" ><a   class="btn-round-sm bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></b-dropdown-item>
-
-                 <b-dropdown-item :href="'https://api.whatsapp.com/send?text='+getPath+'/posts/'+item.id" target="_blank" data-action="share/whatsapp/share">
-                   <a   class="btn-round-sm "><img class="font-xs"  src="../../assets/imageedit_3_6192029673.png" alt=""> </a>
-                   
-                   </b-dropdown-item>
-
+                  
+                  <b-dropdown-item  @click="copyDoiToClipboard(item.id)">
+                  
+                        <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss">Copy Link</h4>
+                        
+                
+                  </b-dropdown-item>
+                  <b-dropdown-item  v-if="item.user.id == userid">
+                      
+                        <button type="button" class="btn pl-4 mt-0 fw-600 text-grey-900 font-xss me-4 pt-0" v-on:click="deletePosts(item.id,itemIndex)" >Delete</button>  
+                  </b-dropdown-item>
             </b-dropdown>
-         </div>
-         
- 
+          </div>
+          <div class="row ps-2 pe-2" >
+            <div class="col-xs col-sm p-1" v-for="(item,i) in item.medias.slice(0,3)" v-bind:key="item.id"> <a data-lightbox="roadtri" class="position-relative d-block"> <img :src="`${item.path}`" @click="ImgPopup(item.path)" class="rounded-3 w-100" alt="image"  /> <span class="img-count font-sm text-white ls-3 fw-600" v-if="i==2" > <b>+{{i+0}}</b></span ></a> </div>
+          </div>
+          <div class="card-body p-0 me-lg-3">
+              <p class="fw-700 text-grey-700 lh-10 font-xssss w-100 mb-0 font-weight-bold">{{item.title}}</p>
+              <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">{{item.description}}</p>
+          </div>
+          <div class="card-body d-flex p-0">
+            <button  class="btn p-0 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-b-modal.likeshome v-on:click="likeShow(item.id)">
+            
+                {{item.likes_count}} Likes
+            </button>
+            
+                <button class="btn p-1 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="commentshow(item.id)">{{item.comments_count}} Comments</button>
+    
+          
 
 
-
-
-      </div>
-   
       
-      <div v-for="(commentsshow,comentInde) in comments" v-bind:key="commentsshow.id" class="mb-0 mt-2">
-         <div v-if="commentsshow.commentable_id == item.id">
-        <div>
-                  <ul class="list-unstyled">
-                     <li class="mb-2 media">
-                        <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" :src="commentsshow.user.profile_photo" alt="Generic placeholder image" v-if="commentsshow.user.profile_photo"> 
+    
 
-                          <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" src="../../assets/profile-no-img.png" alt="Generic placeholder image" v-else>
 
-                        <div class="p-1 media-body bg-lightgrey fw-500">
-                           <div class="d-flex justify-content-between me-0">
-                              <h3 class="mt-3 fw-700 text-grey-900 font-xsss mb-0">{{commentsshow.user.full_name}}</h3>
-                              <h5 class="mr-2 font-xsss text-grey-500 fw-500 align-items-end">
-                               {{ moment(commentsshow.updated_at).fromNow()}}  
-                                 <b-dropdown v-if="commentsshow.user.id == userid" right size="sm" id="dropdownMenu5" variant="link" toggle-class="text-decoration-none" class="ms-auto" no-caret>
-                                    <template #button-content>
-                                       <a   class="ms-auto" data-bs-toggle="dropdown" aria-expanded="false" >
-                                         <i class="mt-0 ti-more text-grey-900 bg-greylight"></i></a> 
-                                    </template>
-                                    <b-dropdown-item v-on:click="commentedit(commentsshow.id,comentInde,seen = !seen)"  >Edit</b-dropdown-item>
-                                    <b-dropdown-item  v-on:click="deletecomment(item,commentsshow.id,index,itemIndex)">Delete</b-dropdown-item>
-                                 </b-dropdown>
-                              </h5>
-                           </div>
-                           <div>
-                              <p class="font-xsss" id="comment">{{commentsshow.body}}</p>
-                              <div v-if="singlecomment.id==commentsshow.id">
-                                 <form v-on:submit.prevent="commentupdate(commentsshow.id)" v-if="!seen" > 
+            <a href="#" class="ms-auto d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss"> </a> 
+            <div>
+                <b-button variant="outline-primary  fw-600 text-light-900 text-light lh-26 font-xssss btn btn-primary" v-on:click="likepost(item,index)" v-if="item.is_liked">Liked</b-button>
+                <b-button variant="outline-primary  fw-600 text-grey-900 text-dark lh-26 font-xssss" v-on:click="likepost(item,index)" v-if="!item.is_liked">Like</b-button>
+                <b-dropdown right size="sm" variant="link" toggle-class="text-decoration-none pr-0" no-caret>
+                  <template #button-content>
+                      <b-button variant="outline-warning fw-600 text-grey-900 text-dark lh-26 font-xssss">Share</b-button>
+                      </template>
 
-         
+                  <b-dropdown-item :href="'https://www.facebook.com/sharer/sharer.php?u='+getPath+'/posts/'+item.id" target="_blank" >
+                      <a  class="btn-round-sm bg-facebook"><i class="font-xs ti-facebook text-white"></i></a>
+                      
+                      </b-dropdown-item>
+                  <b-dropdown-item :href="'https://twitter.com/intent/tweet?text='+getPath+'/posts/'+item.id" target="_blank" ><a  class="btn-round-sm bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></b-dropdown-item>
 
-                                    <textarea class="mb-0 form-control form-control-lg w-100" rows="3" placeholder="Large textarea" v-model="singlecomment.body"></textarea>
-                                    <div class="col-lg-12 mt-0">
-                                       <b-button type="button" style="background-color: rgb(136 143 150 / 88%) !important;" class=" font-xsssss fw-600 ps-3 p-2 pe-3 lh-32 mt-1 mb-0 rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto float-right" v-on:click="seen = !seen">Cancel</b-button>
-                                       <b-button type="submit" style="background-color: #004898 !important" class=" font-xsssss fw-600 ps-3 p-2 pe-3 lh-32 mt-1 mb-0 rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto float-right">Update </b-button>
-                                    </div>
-                                 </form>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-         </div>
-      </div>
-         <form ref="anyName" v-on:submit.prevent="postcomment(item.id,item,index,itemIndex)" >
-         <div class="input-group   ">
-            <input v-model="body[itemIndex]"   type="text" class="form-control form-control-sm    text-grey-900 text-dark" placeholder="Write Comments..." aria-label="Comments" aria-describedby="basic-addon2">
-            <div class="input-group-append ">
-               <button class="btn btn-outline-dark btn-sm mt-1" type="submit">Post</button>
+
+                  <b-dropdown-item :href="'https://www.linkedin.com/sharing/share-offsite/?url='+getPath+'/posts/'+item.id" target="_blank" ><a   class="btn-round-sm bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></b-dropdown-item>
+
+                    <b-dropdown-item :href="'https://api.whatsapp.com/send?text='+getPath+'/posts/'+item.id" target="_blank" data-action="share/whatsapp/share">
+                      <a   class="btn-round-sm "><img class="font-xs"  src="../../assets/imageedit_3_6192029673.png" alt=""> </a>
+                      
+                      </b-dropdown-item>
+
+                </b-dropdown>
             </div>
-         </div>
-      </form>
+            
+    
 
- 
- </div>
- 
+
+
+
+          </div>
+      
+          
+          <div v-for="(commentsshow,comentInde) in comments" v-bind:key="commentsshow.id" class="mb-0 mt-2">
+            <div v-if="commentsshow.commentable_id == item.id">
+            <div>
+                      <ul class="list-unstyled">
+                        <li class="mb-2 media">
+                            <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" :src="commentsshow.user.profile_photo" alt="Generic placeholder image" v-if="commentsshow.user.profile_photo"> 
+
+                              <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" src="../../assets/profile-no-img.png" alt="Generic placeholder image" v-else>
+
+                            <div class="p-1 media-body bg-lightgrey fw-500">
+                              <div class="d-flex justify-content-between me-0">
+                                  <h3 class="mt-3 fw-700 text-grey-900 font-xsss mb-0">{{commentsshow.user.full_name}}</h3>
+                                  <h5 class="mr-2 font-xsss text-grey-500 fw-500 align-items-end">
+                                  {{ moment(commentsshow.updated_at).fromNow()}}  
+                                    <b-dropdown v-if="commentsshow.user.id == userid" right size="sm" id="dropdownMenu5" variant="link" toggle-class="text-decoration-none" class="ms-auto" no-caret>
+                                        <template #button-content>
+                                          <a   class="ms-auto" data-bs-toggle="dropdown" aria-expanded="false" >
+                                            <i class="mt-0 ti-more text-grey-900 bg-greylight"></i></a> 
+                                        </template>
+                                        <b-dropdown-item v-on:click="commentedit(commentsshow.id,comentInde,seen = !seen)"  >Edit</b-dropdown-item>
+                                        <b-dropdown-item  v-on:click="deletecomment(item,commentsshow.id,index,itemIndex)">Delete</b-dropdown-item>
+                                    </b-dropdown>
+                                  </h5>
+                              </div>
+                              <div>
+                                  <p class="font-xsss" id="comment">{{commentsshow.body}}</p>
+                                  <div v-if="singlecomment.id==commentsshow.id">
+                                    <form v-on:submit.prevent="commentupdate(commentsshow.id)" v-if="!seen" > 
+
+            
+
+                                        <textarea class="mb-0 form-control form-control-lg w-100" rows="3" placeholder="Large textarea" v-model="singlecomment.body"></textarea>
+                                        <div class="col-lg-12 mt-0">
+                                          <b-button type="button" style="background-color: rgb(136 143 150 / 88%) !important;" class=" font-xsssss fw-600 ps-3 p-2 pe-3 lh-32 mt-1 mb-0 rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto float-right" v-on:click="seen = !seen">Cancel</b-button>
+                                          <b-button type="submit" style="background-color: #004898 !important" class=" font-xsssss fw-600 ps-3 p-2 pe-3 lh-32 mt-1 mb-0 rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto float-right">Update </b-button>
+                                        </div>
+                                    </form>
+                                    
+                                  </div>
+                              </div>
+                            </div>
+                        </li>
+                      </ul>
+                  </div>
+            </div>
+          </div>
+            <form ref="anyName" v-on:submit.prevent="postcomment(item.id,item,index,itemIndex)" >
+            <div class="input-group   ">
+                <input v-model="body[itemIndex]"   type="text" class="form-control form-control-sm    text-grey-900 text-dark" placeholder="Write Comments..." aria-label="Comments" aria-describedby="basic-addon2">
+                <div class="input-group-append ">
+                  <button class="btn btn-outline-dark btn-sm mt-1" type="submit">Post</button>
+                </div>
+            </div>
+          </form>
+
+    
+        
+        </div>
+
+        <div class="card w-100 shadow-xss rounded-xxl border-0 p-2 mb-3" v-if="(itemIndex + 1) % 2 === 0 && (itemIndex + 1) % 4 !== 0"  >
+
+        <div class="container  " ref="container">
+          <div class="cards h-100 " ref="cards" :style="{ transform: `translateX(${translateX}px)` }" style="">
+            <div class="card1 h-100 " ref="card1" v-for="(card, index) in cards" :key="index" @mousedown="handleMouseDown">
+              <img class="promoImg " src="./../img/no-image.7c10e1d3.jpg" alt="./../img/no-image.7c10e1d3.jpg" />
+              <div class="card_content ">
+                <p>Restroworld is the fist global community</p>
+                <button style="" >Inquire now</button>
+              </div>
+             
+            </div>
+            
+          </div>
+      
+          
+        </div>
+                 <button style="display: flex; align-items:center; justify-content:center; margin-top:2% ;background-color:#ffff ;border-radius: 2px 2px 2px 2px ; color:#0048a5; border: 2px solid #0048a5; font-weight:500;">View more</button>
+        </div>
+
+                  <div class="card w-100 shadow-xss rounded-xxl border-0 p-2 mb-3" v-if="(itemIndex + 1) % 4 === 0"  >
+
+          <div class="container  " ref="container">
+            <div class="cards h-100 " ref="cards" :style="{ transform: `translateX(${translateX}px)` }" style="">
+              <div class="card1 h-100 " ref="card1" v-for="(card, index) in cards" :key="index" @mousedown="handleMouseDown">
+                <img class="promoImg " src="../../assets/logo-2.jpg" alt="./../img/no-image.7c10e1d3.jpg" />
+                <div class="card_content ">
+                  <p>Restroworld is the fist global community</p>
+                  <button style="" >Inquire now</button>
+                </div>
+              
+              </div>
+              
+            </div>
+
+            
+          </div>
+                  <button style="display: flex; align-items:center; justify-content:center; margin-top:2% ;background-color:#ffff ;border-radius: 2px 2px 2px 2px ;color:#0048a5; border: 2px solid #0048a5; font-weight:500;">View more</button>
+          </div>
+        
+    </div>
       <div v-if="post.length" v-observe-visibility="handleScrolledToBottom"></div>
         <div class="card w-100 text-center shadow-xss rounded-xxl border-0 p-2 mb-3 mt-0 ">
 
@@ -257,6 +300,11 @@ export default {
 
   data() {
     return {
+      cards: [1, 2, 3, 4, 5, 6, 7],
+      isDragging: false,
+      lastX: 0,
+      translateX: 0,
+      maxTranslateX: 0,
       post: [],
       getPath:'',
        moment: moment,
@@ -291,6 +339,18 @@ export default {
   },
   methods: {
 
+
+      promotionShow(){
+        
+          axios.get('').then( (response)=>{
+
+
+            console.log(response.data);
+
+          })
+
+
+      },
    
  modelClose(){
           this.$refs['modal'].hide()
@@ -509,21 +569,191 @@ export default {
 
       this.Imagepromet = false;
 
-    }
+    },
+    handleMouseDown(event) {
+      event.preventDefault();
+      this.isDragging = true;
+      this.lastX = event.clientX;
+      window.addEventListener('mousemove', this.handleMouseMove);
+      window.addEventListener('mouseup', this.handleMouseUp);
+    },
+    handleMouseMove(event) {
+  if (!this.isDragging) return;
+  const offsetX = event.clientX - this.lastX;
+  this.lastX = event.clientX;
+  const newTranslateX = this.translateX + offsetX;
 
-
+  const boundary = this.getBoundary();
+  if (newTranslateX < boundary.min) {
+    this.translateX = boundary.min;
+  } else if (newTranslateX > boundary.max) {
+    this.translateX = boundary.max;
+  } else {
+    this.translateX = newTranslateX;
+  }
+}
+,
+        getBoundary() {
+          const min = -780;
+          const max = 0;
+          return { min, max };
+        },
+    handleMouseUp() {
+      this.isDragging = false;
+      window.removeEventListener('mousemove', this.handleMouseMove);
+      window.removeEventListener('mouseup', this.handleMouseUp);
+    },
 
 
   },
-
+  created() {
+  this.boundary = this.getBoundary();
+  },
   mounted() {
     this.getPath = window.location.origin
     this.getData();
+    this.containerWidth = this.$refs.container.offsetWidth;
+    this.cardWidth = this.$refs.card.offsetWidth;
+    this.cardsWidth = this.cardWidth * this.cards.length;
+    this.minTranslateX = this.containerWidth - this.cardsWidth;
+    this.maxTranslateX = 0;
   },
 };
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
+}
+
+.cards {
+  display: flex;
+  padding: 5px;
+  gap: 10px;
+  margin-left: -5%;
+  justify-content: center;
+
+}
+
+.card1 {
+  flex: 0 0 auto;
+  width: 180px;
+  
+  height: 200px;
+  background-color: #ffff;
+  box-shadow: 0px 2px 10px rgba(128, 128, 128, 0.3);
+  /* border-radius: 10px; */
+  /* padding: 20px; */
+  scroll-snap-align: center;
+  
+}
+
+.card1:active {
+  cursor: grabbing;
+}
+
+.promoImg {
+  height: 16vh;
+  /* max-height: 100%; */
+  width: 100%;
+  padding: 0;
+}
+
+.card_content p {
+  font-size: 0.75rem;
+  background-color: white;
+  font-weight: 300 bold;
+  width: 80%;
+  margin-left: 10%;  
+  text-align: center;
+  
+}
+.card_content button   {
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  font-size: 1rem;
+  background-color: #0048a5;
+  font-weight: 500;
+  color: #ffff;
+  margin-bottom: 4%;
+  margin-top: -5%;
+  border: transparent;
+  display:flex; 
+  border-radius: 2px 2px 2px 2px ;
+
+  width: 95%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2%;
+  
+}
+
+@media only screen and (max-width: 1008px) {
+   .container {
+     display: flex;
+     overflow-x: scroll;
+     max-width: 100%;
+     -webkit-overflow-scrolling: touch;
+     scroll-behavior: smooth;
+   }
+ 
+   .card1s {
+     width: fit-content;
+     padding: 0 0px;
+     gap: 10px;
+    
+   }
+ 
+   .card1 {
+     width: calc(100vw - 30px);
+     max-width: 210px;
+     height: auto;
+   }
+   .card1:active {
+     cursor: grabbing;
+   }
+ }
+ 
+
+@media only screen and (max-width: 768px) {
+   .container {
+     display: flex;
+     overflow-x: scroll;
+     max-width: 100%;
+     -webkit-overflow-scrolling: touch;
+     scroll-behavior: smooth;
+   }
+ 
+   .card1s {
+     width: fit-content;
+     padding: 0 10px;
+     gap: 10px;
+   }
+ 
+   .card1 {
+     width: calc(100vw - 30px);
+     max-width: 210px;
+     height: auto;
+   }
+   .card1:active {
+     cursor: grabbing;
+   }
+   .cards {
+  display: flex;
+  padding: 25px;
+  gap: 20px;
+  margin-left: -15.5%;
+
+}
+ }
+ 
 .closed {
   
     border: 0;
@@ -534,7 +764,7 @@ export default {
     z-index: 2;
     width: 17px;
     width: 23px;
-    eight: 24px;
+    height: 24px;
     border-radius: 20px;
     display: inline-block;
     line-height: 10px;
