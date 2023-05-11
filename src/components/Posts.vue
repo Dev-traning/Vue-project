@@ -118,7 +118,7 @@ export default {
                     }, 1000, this);
                     console.log(err)
 
-                    alert('One Fild Is Requerd')
+                    alert('One Field Is Required too')
                 })
 
                 console.log(response);

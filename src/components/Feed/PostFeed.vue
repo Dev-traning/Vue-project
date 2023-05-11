@@ -163,15 +163,18 @@
     
         
         </div>
-
-        <div class="card w-100 shadow-xss rounded-xxl border-0 p-2 mb-3" v-if="(itemIndex + 1) % 2 === 0 && (itemIndex + 1) % 4 !== 0"  >
-
+        <div v-if=" cards.length  == 0 "></div>
+        <div v-else>  
+        <div class="card w-100 shadow-xss rounded-xxl border-0 p-2 mb-3" v-if="(cards && cards.length > 0 && itemIndex != null) && ((itemIndex + 1) % 2 === 0 && (itemIndex + 1) % 4 !== 0)">
+  <!-- Your content here -->
         <div class="container  " ref="container">
           <div class="cards h-100 " ref="cards" :style="{ transform: `translateX(${translateX}px)` }" style="">
             <div class="card1 h-100 " ref="card1" v-for="(card, index) in cards" :key="index" @mousedown="handleMouseDown">
-              <img class="promoImg " src="./../img/no-image.7c10e1d3.jpg" alt="./../img/no-image.7c10e1d3.jpg" />
+              <img class="promoImg " v-if="card.photo" :src="card.photo" alt="" />
+              <img class="promoImg " v-else src="./../img/no-image.7c10e1d3.jpg" alt="" />
               <div class="card_content ">
-                <p>Restroworld is the fist global community</p>
+                <p v-if="card.business_name">{{card.business_name}}</p>
+                <p v-else>{{card.first_name}}</p>
                 <button style="" >Inquire now</button>
               </div>
              
@@ -181,18 +184,23 @@
       
           
         </div>
-                 <button style="display: flex; align-items:center; justify-content:center; margin-top:2% ;background-color:#ffff ;border-radius: 2px 2px 2px 2px ; color:#0048a5; border: 2px solid #0048a5; font-weight:500;">View more</button>
+                  <button style="display: flex; align-items:center; justify-content:center; margin-top:2% ;background-color:#ffff ;border-radius: 2px 2px 2px 2px ;color:#0048a5; border: 2px solid #0048a5; font-weight:500;"> <router-link to="/VendorShow/6" style="color:#0048a5; ">View more</router-link></button>
         </div>
 
+        </div>
+        <div v-if=" cards1.length  == 0 "></div>
+        <div v-else>          
                   <div class="card w-100 shadow-xss rounded-xxl border-0 p-2 mb-3" v-if="(itemIndex + 1) % 4 === 0"  >
 
           <div class="container  " ref="container">
             <div class="cards h-100 " ref="cards" :style="{ transform: `translateX(${translateX}px)` }" style="">
-              <div class="card1 h-100 " ref="card1" v-for="(card, index) in cards" :key="index" @mousedown="handleMouseDown">
-                <img class="promoImg " src="../../assets/logo-2.jpg" alt="./../img/no-image.7c10e1d3.jpg" />
-                <div class="card_content ">
-                  <p>Restroworld is the fist global community</p>
-                  <button style="" >Inquire now</button>
+              <div class="card1 h-100 " ref="card1" v-for="(card, index) in cards1" :key="index" @mousedown="handleMouseDown">
+                <img class="promoImg " v-if="card.photo" :src="card.photo" alt="" />
+              <img class="promoImg " v-else src="./../img/no-image.7c10e1d3.jpg" alt="" />
+              <div class="card_content ">
+                <p v-if="card.business_name">{{card.business_name}}</p>
+                <p v-else>{{card.first_name}}</p>
+                <button style="" >Inquire now</button>
                 </div>
               
               </div>
@@ -201,8 +209,9 @@
 
             
           </div>
-                  <button style="display: flex; align-items:center; justify-content:center; margin-top:2% ;background-color:#ffff ;border-radius: 2px 2px 2px 2px ;color:#0048a5; border: 2px solid #0048a5; font-weight:500;">View more</button>
+                  <button style="display: flex; align-items:center; justify-content:center; margin-top:2% ;background-color:#ffff ;border-radius: 2px 2px 2px 2px ;color:#0048a5; border: 2px solid #0048a5; font-weight:500;"> <router-link to="/VendorShow/6" style="color:#0048a5; ">View more</router-link></button>
           </div>
+        </div>
         
     </div>
       <div v-if="post.length" v-observe-visibility="handleScrolledToBottom"></div>
@@ -300,7 +309,10 @@ export default {
 
   data() {
     return {
-      cards: [1, 2, 3, 4, 5, 6, 7],
+      cards: [],
+      cards1:[],
+      titlehead:"",
+      titlehead1:"",
       isDragging: false,
       lastX: 0,
       translateX: 0,
@@ -309,7 +321,7 @@ export default {
       getPath:'',
        moment: moment,
        seen: true,
-     
+       userDetail:[],
       LikeShow: [],
       comment: [],
       userid: "",
@@ -340,17 +352,10 @@ export default {
   methods: {
 
 
-      promotionShow(){
-        
-          axios.get('').then( (response)=>{
+    
 
 
-            console.log(response.data);
-
-          })
-
-
-      },
+      
    
  modelClose(){
           this.$refs['modal'].hide()
@@ -386,7 +391,7 @@ export default {
     },
     getData() {
       this.userid = JSON.parse(localStorage.getItem("user_id"));
-
+      this.userDetail = JSON.parse(localStorage.getItem("UserDetails"));
       axios
         .get(`posts?page=${this.page}&per_page=10`)
 
@@ -395,6 +400,68 @@ export default {
           this.lastPage = result.data.last_page;
  
         });
+
+
+        if(this.userDetail.user_type_text == 'Restaurant'){
+
+        console.log("im Resturant");
+        axios.get('vendor/promotevendors?per_page=5&page=1').then((response)=>{
+
+            console.log(response.data);
+            this.cards = response.data.data;
+            this.titlehead = "omchevli";
+
+        });
+
+        axios.get('mp/promotemanpowers?per_page=5&page=1').then((response)=>{
+
+            console.log(response.data);
+            this.cards1 = response.data.data;
+            this.titlehead1 = "omchevli1";
+
+            });
+
+        }
+        else if(this.userDetail.user_type_text == 'Vendor')
+        {
+          console.log("im Vendor");
+          axios.get('restaurants/promoterestaurants?per_page=5&page=1').then((response)=>{
+
+                console.log(response.data);
+                this.cards = response.data.data;
+                this.titlehead = "omchevli";
+
+              });
+
+              axios.get('mp/promotemanpowers?per_page=5&page=1').then((response)=>{
+
+                  console.log(response.data);
+                  this.cards1 = response.data.data;
+                  this.titlehead1 = "omchevli1";
+
+                  });
+          
+        }
+        else if(this.userDetail.user_type_text == 'Manpower'){
+          console.log("im Manpower");
+          axios.get('restaurants/promoterestaurants?per_page=5&page=1').then((response)=>{
+
+            console.log(response.data);
+            this.cards = response.data.data;
+            this.titlehead = "omchevli";
+
+            });
+            axios.get('vendor/promotevendors?per_page=5&page=1').then((response)=>{
+
+              console.log(response.data);
+              this.cards1 = response.data.data;
+              this.titlehead = "omchevli";
+
+              });
+        }
+        else{
+          console.log("None");
+        }
     },
         followlike(id,folloind){
      
@@ -554,7 +621,7 @@ export default {
         });
 
        
-      console.log();
+   
  
     },
     async ImgPopup(url){
@@ -593,11 +660,21 @@ export default {
   }
 }
 ,
-        getBoundary() {
-          const min = -780;
-          const max = 0;
-          return { min, max };
-        },
+getBoundary() {
+  const max = 0;
+  let min = -400; // Default value
+  if (this.cards.length === 4) {
+    min = -210; // Change the min value if there are 4 cards
+  } else if (this.cards.length === 5) {
+    min = -400; // Change the min value if there are 5 cards
+  }
+  else if (this.cards.length === 3) {
+    min = -100; // Change the min value if there are 5 cards
+  }
+  
+  return { min, max };
+},
+
     handleMouseUp() {
       this.isDragging = false;
       window.removeEventListener('mousemove', this.handleMouseMove);
@@ -695,7 +772,7 @@ export default {
   
 }
 
-@media only screen and (max-width: 1008px) {
+@media only screen and (max-width: 1608px) {
    .container {
      display: flex;
      overflow-x: scroll;
@@ -717,6 +794,9 @@ export default {
      height: auto;
    }
    .card1:active {
+     cursor: grabbing;
+   }
+   .card1 {
      cursor: grabbing;
    }
  }
