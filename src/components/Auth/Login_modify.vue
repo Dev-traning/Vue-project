@@ -457,7 +457,10 @@ export default {
       } catch (e) {
          if(e.response.data.status_code=='405'){
             this.notVery = e.response.data.message +'url'
-         }else if(e.response.data.status_code=='422'){
+          }else if(e.response.data.message=='No route / path / url available.'){
+                this.error = "Your Account Is Deleted "
+         }
+         else if(e.response.data.status_code=='422'){
                 this.error = e.response.data.message
          }
       
