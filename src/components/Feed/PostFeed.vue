@@ -164,7 +164,7 @@
         
         </div>
         <!-- //PromotionCode -->
-        <div v-if=" cards.length  == 0 "></div>
+        <!-- <div v-if=" cards.length  == 0 "></div>
         <div v-else>  
         <div class="card w-100 shadow-xss rounded-xxl border-0 p-2 mb-3" v-if="(cards && cards.length > 0 && itemIndex != null) && ((itemIndex + 1) % 2 === 0 && (itemIndex + 1) % 4 !== 0)">
         <div class="container  " ref="container">
@@ -211,7 +211,7 @@
           </div>
                   <button style="display: flex; align-items:center; justify-content:center; margin-top:2% ;background-color:#ffff ;border-radius: 2px 2px 2px 2px ;color:#0048a5; border: 2px solid #0048a5; font-weight:500;"> <router-link to="/VendorShow/6" style="color:#0048a5; ">View more</router-link></button>
           </div>
-        </div> 
+        </div>  -->
         
     </div>
       <div v-if="post.length" v-observe-visibility="handleScrolledToBottom"></div>
