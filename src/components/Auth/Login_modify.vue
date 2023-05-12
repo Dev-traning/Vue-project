@@ -458,7 +458,7 @@ export default {
          if(e.response.data.status_code=='405'){
             this.notVery = e.response.data.message +'url'
           }else if(e.response.data.message=='No route / path / url available.'){
-                this.error = "Your Account Is Deleted "
+                this.error = "Incorrect username and password. "
          }
          else if(e.response.data.status_code=='422'){
                 this.error = e.response.data.message
