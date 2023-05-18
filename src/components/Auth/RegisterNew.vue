@@ -244,7 +244,12 @@ export default {
     },
 
     mounted() {
-        this.getData()
+        window.otpless = (otplessUser) => {
+                alert(JSON.stringify(otplessUser));
+
+            };
+            console.log(this.otplessUser);
+        this.getData();
 
         // let user = localStorage.getItem('token');
         // if(user)
