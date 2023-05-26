@@ -22,10 +22,14 @@
                         <img src="../../assets/blank.png"  class="w-100 rounded-3" v-else/> -->
 
                           <div v-if="!imurl">
-                            <img :src="manpower.photo" class="w-100 rounded-3" v-if="manpower.photo"/> 
+                            <img :src="manpower.user.profile_photo" class="w-100 rounded-3" v-if="manpower.user.profile_photo"/> 
+                            <img src="../../assets/blank.png" class="w-100 rounded-3" v-else/> 
+
                              </div>
                              <img :src="imurl" class="w-100 rounded-3" v-else-if="imurl" /> 
                               <img src="../../assets/blank.png" class="w-100 rounded-3" v-else/>
+                              <!-- <img :src="`${manpower.profile_photo}`" class="w-100 rounded-3" v-if="manpower.photo">
+                <img src="../../assets/profile-no-img.png" class="w-100 rounded-3" v-else/> -->
 
                         <div style="position: absolute; right: 19px; top: 5px">
                            <i class="feather-edit large-icon me-2 d-block text-white mt-2"></i>
@@ -197,7 +201,7 @@
           <span aria-hidden="true">&times;</span>
         </button> 
          <div class="modal-header pl-4 m-0 pb-0">
-            <h2 class="modal-title  text-center mt-2" ><ins>{{manpower.name}}</ins></h2>
+            <h2 class="modal-title  text-center mt-2" ><ins>{{manpower.user.full_name}}</ins></h2>
          </div>
       
 
@@ -228,7 +232,9 @@ export default {
        showDismissibleAlert: false,
 
       manpower: {
-         
+              user:{
+                full_name:" "
+              },
         name: "",
         email: "",
         mobile_no: "",
@@ -244,7 +250,9 @@ export default {
         qualification:'',
         experience:'',
         resume:'' ,
-        uploadPercentage: 0
+        uploadPercentage: 0,
+        checkMobileNo:"",
+        
     
       },
     };
@@ -257,6 +265,7 @@ export default {
     const result = await axios.get("mp/manpowers/my-profile");
 
     this.manpower = result.data.data;
+    this.checkMobileNo =  this.manpower.mobile_no;
     this.getData();
   },
   methods: {
@@ -271,8 +280,9 @@ export default {
     },
 
     async handalSubmit() {
-      
-      var itemId = this.$route.params.id;
+      var itemId = localStorage.getItem('user_id');
+       var itemId2 = this.$route.params.id;
+      const photo2 = new FormData();
       const photo = new FormData();
        if(this.manpower.photo.name){
       photo.append("photo", this.manpower.photo, this.manpower.photo.name)}
@@ -281,19 +291,23 @@ photo.append("resume", this.manpower.resume);
       }
        
         
-     
-      photo.append("mobile_no", this.manpower.mobile_no);
-      photo.append("name", this.manpower.name);
-      photo.append("email", this.manpower.email);
-      photo.append("address", this.manpower.address);
-      photo.append("gst_no", this.manpower.gst_no);
-      photo.append("comments", this.manpower.comments);
-      photo.append("type", this.manpower.type);
-      photo.append("country_id", this.manpower.country.id);
-      photo.append("state_id", this.manpower.state.id);
-      photo.append("native_city_id", this.manpower.native_city.id);
-      photo.append("current_city_id", this.manpower.current_city.id);
-
+      if(this.checkMobileNo == this.manpower.mobile_no){
+        console.log();
+      }else{
+        photo.append("mobile_no", this.manpower.mobile_no);
+      }
+      
+      photo2.append("name", this.manpower.name);
+    
+      photo2.append("email", this.manpower.email);
+      photo2.append("address", this.manpower.address);
+      photo2.append("gst_no", this.manpower.gst_no);
+      photo2.append("comments", this.manpower.comments);
+      photo2.append("type", this.manpower.type);
+      photo2.append("country_id", this.manpower.country.id);
+      photo2.append("state_id", this.manpower.state.id);
+      photo2.append("native_city_id", this.manpower.native_city.id);
+      photo2.append("current_city_id", this.manpower.current_city.id);
       const response = await axios.post(
         "users/" + itemId,
         photo,
@@ -313,7 +327,9 @@ photo.append("resume", this.manpower.resume);
       ).then((response) => {
           
           this.succses = response.data.message;
-this.suuualert=true
+          this.suuualert=true;
+  
+
            
         })
         .catch((error) => {
@@ -321,8 +337,14 @@ this.suuualert=true
           console.log(error);
            this.showDismissibleAlert=true
         });
+
+        const response2 = await axios.post(
+        "mp/manpowers/" + itemId2,
+        photo2).then((res)=>{
+          console.log(res.data);
+        })
       
-      console.log(response);
+      console.log(response,response2);
       
     },
 
