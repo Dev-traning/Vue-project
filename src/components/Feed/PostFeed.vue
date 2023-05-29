@@ -273,7 +273,8 @@
                      <label class="file">
                      <i class="font-md text-success feather-image me-2"></i>
                      <span class="d-none-xs">Photo</span>
-                     <input  type="file" class="images[]" name="images"  id="file-small"  @change="imageupload($event.target.name, $event.target.files)" multiple accept="image/*">
+                     <!-- <input  type="file" class="images[]" name="images"  id="file-small"  @change="imageupload($event.target.name, $event.target.files)" multiple accept="image/*"> -->
+                     <input type="file" class="images[]" name="images" id="file-small" @change="imageupload('images', $event.target.files)" multiple accept="image/*">
                      </label>      
                   </div>
                </a>
@@ -343,8 +344,10 @@ export default {
         title: "",
         description: "",
         images: [],
-        url:''
+        url:'',
+        name:[]
       },
+      
       Imagepromet: false,
       ImagesUrlPopup:""
     };
@@ -369,16 +372,29 @@ export default {
 
    
         
-    imageupload(images, fileList) {
-      this.singlepost.images = fileList;
-      this.singlepost.images.forEach((value, index) => {
-        var indadd = window.URL.createObjectURL(fileList[index]);
-        this.url.push(indadd);
-        console.log(this.url);
-      });
+    // imageupload(images, fileList) {
+    //   this.singlepost.images = fileList;
+    //   this.singlepost.images.forEach((value, index) => {
+    //     var indadd = window.URL.createObjectURL(fileList[index]);
+    //     this.url.push(indadd);
+    //     console.log(this.url);
+    //   });
 
-      console.log(this.singlepost.images);
-    },
+    //   console.log(this.singlepost.images);
+    // },
+    imageupload(name, fileList) {
+  this.singlepost[name] = fileList;
+  this.url = [];
+
+  for (let i = 0; i < fileList.length; i++) {
+    let fileURL = URL.createObjectURL(fileList[i]);
+    this.url.push(fileURL);
+  }
+
+  console.log(this.url);
+  console.log(this.singlepost[name]);
+},
+
 
     removeImage(index) {
       this.url.splice(index, 1);
@@ -500,29 +516,54 @@ export default {
       });
     },
 
-    updatepost() {
-      let comId = JSON.parse(localStorage.getItem("updatePostid"));
+    // updatepost() {
+    //   let comId = JSON.parse(localStorage.getItem("updatePostid"));
 
-      const postCreate = new FormData();
-      if (this.singlepost.images) {
-        this.singlepost.images.forEach((value, index) => {
-          var img = `medias`;
-          var ind = `[${index}]`;
-          postCreate.append(img + ind, value);
-        });
-      }
-      postCreate.append("description", this.singlepost.description);
-      postCreate.append("title", this.singlepost.title);
-      postCreate.append("tags", this.singlepost.tags);
-      const response = axios.post("posts/" + comId, postCreate)
-       .then((result) => {
+    //   const postCreate = new FormData();
+    //   if (this.singlepost.images) {
+    //     this.singlepost.images.forEach((value, index) => {
+    //       var img = `medias`;
+    //       var ind = `[${index}]`;
+    //       postCreate.append(img + ind, value);
+    //     });
+    //   }
+    //   postCreate.append("description", this.singlepost.description);
+    //   postCreate.append("title", this.singlepost.title);
+    //   postCreate.append("tags", this.singlepost.tags);
+    //   const response = axios.post("posts/" + comId, postCreate)
+    //    .then((result) => {
           
-             this.post[this.itemInd] =result.data.data
-              this.post.push();
+    //          this.post[this.itemInd] =result.data.data
+    //           this.post.push();
         
-        });
-      console.log(response);
-    },
+    //     });
+    //   console.log(response);
+    // },
+    updatepost() {
+  let comId = JSON.parse(localStorage.getItem("updatePostid"));
+
+  const postCreate = new FormData();
+  if (this.singlepost.images) {
+    for (let i = 0; i < this.singlepost.images.length; i++) {
+      postCreate.append("medias[]", this.singlepost.images[i]);
+    }
+  }
+  postCreate.append("description", this.singlepost.description);
+  postCreate.append("title", this.singlepost.title);
+  postCreate.append("tags", this.singlepost.tags);
+
+  axios
+    .post("posts/" + comId, postCreate)
+    .then((result) => {
+      this.post[this.itemInd] = result.data.data;
+      this.post.push();
+    })
+    .catch((error) => {
+      console.error(error);
+      // Handle the error here
+    });
+},
+
     deletePosts(id,itemIndex) {
       axios.delete("posts/" + id).then(() => {
         this.post.splice(itemIndex, 1);
