@@ -50,7 +50,7 @@
     </form>
     <p class="login-card-footer-text">
         Have an account?
-        <router-link to="/" class="text-reset">Login</router-link>
+        <router-link to="/login" class="text-reset">Login</router-link>
     </p>
 
     <b-modal no-close-on-backdrop scrollable show-close="ftrue" hide-footer id="modal-centerd" centered ref="modal" size="60">
