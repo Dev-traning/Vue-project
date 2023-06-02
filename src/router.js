@@ -251,7 +251,7 @@ export default new Router({
           name: "UserStore",
           path: "/UserStore",
           component: UserStore,
-          redirect: "/EliteUser",
+          redirect: "/RegisterNew",
           children: [
             {
               name: "RegisterNew",
