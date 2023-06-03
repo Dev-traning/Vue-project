@@ -50,6 +50,7 @@
 import Nav from "../components/Nav.vue";
 
 import { mapGetters } from "vuex";
+import axios from 'axios';
 export default {
   name: "Home",
   components: {
@@ -73,17 +74,18 @@ closeModel(){
 
   mounted() {
     // alert(this.user.get_free_subscribed == '0')
-    
+
+    axios.get();
  
- if(this.user.get_free_subscribed == '0'){
-  console.log('Model Is Expired');
-  setTimeout(() => {
-          this.basketAddSuccess = true;
+      if(this.user.get_free_subscribed == '0'){
+        console.log('Model Is Expired');
+        setTimeout(() => {
+                this.basketAddSuccess = true;
+                  
+                this.$refs['modal'].show()
+              }, 10000);
+      }
             
-          this.$refs['modal'].show()
-        }, 10000);
- }
-       
 
     if (!localStorage.getItem("token")) {
       this.$router.push("/")

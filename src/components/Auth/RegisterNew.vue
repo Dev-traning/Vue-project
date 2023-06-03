@@ -138,17 +138,17 @@ export default {
             console.log(respodnse)
         },
 
-        oTpVerify() {
+      async  oTpVerify() {
             this.loading = true;
             const response = axios.post('verify-email', {
                 email: this.email,
                 email_otp: this.email_otp
-            }).then(() => {
+            }).then(   ()  =>  {
 
-                this.$refs['modal'].hide()
-                this.email_otp = ''
-                this.verySucc = 'Email Verify Plz select SignUp or Elite Account!!!'
-                localStorage.setItem("token", this.tokenData);
+                this.$refs['modal'].hide();
+                this.email_otp = '';
+                this.verySucc = 'Email Verify Plz select SignUp or Elite Account!!!';
+                localStorage.setItem('token', this.tokenData);
                 this.$router.push("/home");
                 location.reload()
 
@@ -187,8 +187,8 @@ export default {
                     city_id: this.city_id
                 }).then((res) => {
                     this.failMsg = ''
-                    this.tokenData = res.data.data.authorization
-
+                    this.tokenData = res.data.data.authorization;
+                    // localStorage.setItem("token", res.data.data.authorization);
                     localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
                     this.$store.dispatch("user", res.data.user);
                     this.$refs['modal'].show()
@@ -244,10 +244,15 @@ export default {
     },
 
     mounted() {
-        window.otpless = (otplessUser) => {
-                // alert(JSON.stringify(otplessUser));
-                console.log("otpless",otplessUser);
-            };
+        if(localStorage.getItem('token')) 
+                    {
+                    this.$router.push("/home");
+                    } 
+                    
+        // window.otpless = (otplessUser) => {
+        //         // alert(JSON.stringify(otplessUser));
+        //         console.log("otpless",otplessUser);
+        //     };
           
         this.getData();
 
