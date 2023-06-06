@@ -425,7 +425,7 @@ export default {
 
             console.log(response.data);
             this.cards = response.data.data;
-            this.titlehead = "omchevli";
+            this.titlehead = "nothing";
 
         });
 
@@ -433,7 +433,7 @@ export default {
 
             console.log(response.data);
             this.cards1 = response.data.data;
-            this.titlehead1 = "omchevli1";
+            this.titlehead1 = "nothing1";
 
             });
 
@@ -445,7 +445,7 @@ export default {
 
                 console.log(response.data);
                 this.cards = response.data.data;
-                this.titlehead = "omchevli";
+                this.titlehead = "nothing";
 
               });
 
@@ -453,7 +453,7 @@ export default {
 
                   console.log(response.data);
                   this.cards1 = response.data.data;
-                  this.titlehead1 = "omchevli1";
+                  this.titlehead1 = "nothing1";
 
                   });
           
@@ -464,14 +464,14 @@ export default {
 
             console.log(response.data);
             this.cards = response.data.data;
-            this.titlehead = "omchevli";
+            this.titlehead = "nothing";
 
             });
             axios.get('vendor/promotevendors?per_page=5&page=1').then((response)=>{
 
               console.log(response.data);
               this.cards1 = response.data.data;
-              this.titlehead = "omchevli";
+              this.titlehead = "nothing";
 
               });
         }
