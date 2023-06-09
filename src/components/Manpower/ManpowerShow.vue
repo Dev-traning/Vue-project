@@ -63,6 +63,16 @@
      <router-link  type="button" class="btn btn-link text-decoration-none m-0 p-0" v-if="is_subscribed === user.is_subscribed" :to="'/read-more/'+'requirement'+'/'+item.id" tag="button">Read More</router-link>
       </div>
         </div>
+          <div v-if="manpower.length" v-observe-visibility="handleScrolledToBottom"></div>
+      <div class="card w-100 text-center shadow-xss rounded-xxl border-0 p-2 mb-3 mt-0 ">
+
+         <div  class="d-flex justify-content-center">
+         <div class="spinner-border text-primary" role="status">
+         <span class="sr-only">Loading...</span>
+         </div>
+         </div>
+         </div>
+
    </div>
 </template>
 
@@ -75,21 +85,50 @@ export default {
   data() {
     return {
       manpower: [],
-      requiMent:''
+      requiMent:'',
+      page:'1'
       
     };
   },
   methods: {
+
+   
+             handleScrolledToBottom(isVisible) {
+               if (!isVisible) {
+                  return;
+               }
+               if (this.page >= this.lastPage) {
+                  return;
+               }
+               this.page++;
+               console.log(this.page);
+               this.getData();
+               },
+
+               
+
     getData() {
-         //  var getPath = this.$route.params.user_type
+   //       //  var getPath = this.$route.params.user_type
            
           
-           axios.get("mp/manpowers")
-          .then((result) => {
-          this.manpower = result.data.data;
-         //  console.log(result.data.data);
-          }) 
-    },
+   //         axios.get(`mp/manpowers?page=${this.page}&per_page=10`)
+   //        .then((result) => {
+   //        this.manpower == [...this.manpower, ...result.data.data];   
+   //      this.lastPage = result.data.last_page;
+   //       //  console.log(result.data.data);
+   //        }) 
+   
+   axios.get(`mp/manpowers?sort=id&order_by=desc&page=${this.page}&per_page=10`)
+  .then((result) => {
+    this.manpower = [...this.manpower, ...result.data.data]
+    this.lastPage = result.data.last_page;
+  })
+
+      .catch((error) => {
+        console.error(error);
+      });
+
+},
   },
   mounted() {
     this.getData();
