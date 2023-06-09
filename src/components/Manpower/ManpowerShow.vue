@@ -10,7 +10,7 @@
          <div class="d-flex">
             <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">{{item.name}}</p>
             <div class="ml-auto">
-               <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">27-08-2021</p>
+               <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">{{ moment(item.created_at).fromNow()}}</p>
             </div>
          </div>
          <hr class="mb-2 mt-0" >
@@ -78,7 +78,7 @@
 
 <script>
 import axios from "axios";
-
+import moment from 'moment'
 export default {
   name: "PostFeed",
 
@@ -86,7 +86,8 @@ export default {
     return {
       manpower: [],
       requiMent:'',
-      page:'1'
+      page:'1',
+      moment: moment,
       
     };
   },
