@@ -543,6 +543,7 @@ export default {
     mounted() {
         this.getData();
         if (!localStorage.getItem("token")) {
+            
             this.$router.push('/login')
         }
 
