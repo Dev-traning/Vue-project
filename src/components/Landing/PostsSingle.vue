@@ -53,7 +53,7 @@
                                         <div class="p-0 card-body d-flex">
                                             <figure class="avatar me-3">
                                                 <img :src="`${postSingle.user.profile_photo}`" alt="image" height="45" class="shadow-sm rounded-circle w45" v-if="postSingle.user.profile_photo">
-                                                <img href="../../assets/img/profile-no-img.99d6b3a5.png" alt="image" class="shadow-sm rounded-circle w45" v-else>
+                                                <img src="../../assets/profile-no-img.png"  alt="image" class="shadow-sm rounded-circle w45" v-else>
                                             </figure>
 
                                             <h4 class="fw-700 text-grey-900 font-xssss mt-1">{{postSingle.user.full_name}}<span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{ moment(postSingle.created_at).fromNow()}}</span>
@@ -116,7 +116,7 @@
                                         <div>
                                             <ul class="list-unstyled">
                                                 <li class="mb-2 media">
-                                                    <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" :src="commentsshow.user.profile_photo" alt="Generic placeholder image" v-if="commentsshow.user.profile_photo">
+                                                    <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" :src="commentsshow.user.profile_photo"  v-if="commentsshow.user.profile_photo">
                                                     <img class="p-1 mr-3 shadow rounded-xxl" width="50px" height="50px" src="../../assets/profile-no-img.png" alt="Generic placeholder image" v-else>
                                                     <div class="p-1 media-body bg-lightgrey fw-500">
                                                         <div class="d-flex justify-content-between me-0">
@@ -543,7 +543,8 @@ export default {
     mounted() {
         this.getData();
         if (!localStorage.getItem("token")) {
-            this.$router.push('/')
+            
+            this.$router.push('/login')
         }
 
     },

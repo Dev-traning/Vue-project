@@ -205,8 +205,20 @@ export default new Router({
         {
           path: "/posts/:id",
           component: PostsSingle,
-        },
-        {
+          beforeEnter: (to, from, next) => {
+            const token = localStorage.getItem('token');
+      
+            if (!token) {
+              next('/login');
+            } else {
+              next();
+            }
+          }
+        
+        },      
+          
+          
+          {
           path: "/read-more/:user_type_text/:id",
           component: ReadMore,
         },
