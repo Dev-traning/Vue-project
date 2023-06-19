@@ -53,8 +53,22 @@
             <div class="col-xs col-sm p-1" v-for="(item,i) in item.medias.slice(0,3)" v-bind:key="item.id"> <a data-lightbox="roadtri" class="position-relative d-block"> <img :src="`${item.path}`" @click="ImgPopup(item.path)" class="rounded-3 w-100" alt="image"  /> <span class="img-count font-sm text-white ls-3 fw-600" v-if="i==2" > <b>+{{i+0}}</b></span ></a> </div>
           </div>
           <div class="card-body p-0 me-lg-3">
-              <p class="fw-700 text-grey-700 lh-10 font-xssss w-100 mb-0 font-weight-bold">{{item.title}}</p>
-              <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">{{item.description}}</p>
+              <p class="fw-700 text-grey-700 lh-10 font-xss w-100 mb-0 font-weight-bold">{{item.title}}</p>
+              <!-- <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">{{item.description}}</p> -->
+           
+              
+              <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2" ref="postDescription">
+                <span v-if="!isContentExpanded || (isContentExpanded && item.id !== expandedPostId)">
+  {{ decodeURIComponent(item.description).replace(/%0A/g, '\n').replace(/%20/g, ' ') }}
+</span>
+<span v-if="item.description.length > 200">
+  <span v-if="!isContentExpanded || (isContentExpanded && item.id !== expandedPostId)" @click="expandContent(item.id)" class="read-more-link">...Read More</span>
+</span>
+</p>
+<p v-if="isContentExpanded && item.id === expandedPostId" class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">
+  {{ decodeURIComponent(item.description).replace(/%0A/g, '\n').replace(/%20/g, ' ') }}
+  <span v-if="isContentExpanded && item.id === expandedPostId" @click="collapseContent()" class="read-more-link">...Less</span>
+</p>
           </div>
           <div class="card-body d-flex p-0">
             <button  class="btn p-0 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-b-modal.likeshome v-on:click="likeShow(item.id)">
@@ -349,15 +363,72 @@ export default {
       },
       
       Imagepromet: false,
-      ImagesUrlPopup:""
+      ImagesUrlPopup:"",
+      isContentExpanded: false,
+      expandedPostId: null
     };
   },
+  computed: {
+    
+ 
+  
+    getDescriptionSnippet() {
+      return (item) => {
+        const decodedString = decodeURIComponent(item.description);
+        const formattedString = decodedString.replace(/:n/g, '<br>');
+        return formattedString.substring(0, 200);
+      };
+    },
+    getDescriptionFull() {
+      return (item) => {
+        const decodedString = decodeURIComponent(item.description);
+        const formattedString = decodedString.replace(/:n/g, '<br>');
+        return formattedString;
+      };
+    },
+    },
   methods: {
 
+    formatDescriptionSnippet(description) {
+    const truncatedDescription = description.substring(0, 200);
+    return this.processContent(truncatedDescription);
+  },
+  formatDescriptionFull(description) {
+    return this.processContent(description);
+  },
+  processContent(content) {
+    const encodedContent = content
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
 
-    
+    const lineBreaksHandled = encodedContent.replace(/\n/g, '<br>');
 
-
+    return lineBreaksHandled;
+  },
+  //   collapseContent() {
+  //   this.isContentExpanded = false;
+  //   this.scrollToReadMore();
+  // },
+  // scrollToReadMore() {
+  //   const readMoreElement = this.$refs.postDescription.querySelector('.read-more-link');
+  //   if (readMoreElement) {
+  //     readMoreElement.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // },
+  //   expandContent() {
+  //   this.isContentExpanded = true;
+  // },
+  expandContent(postId) {
+      this.isContentExpanded = true;
+      this.expandedPostId = postId;
+    },
+    collapseContent() {
+      this.isContentExpanded = false;
+      this.expandedPostId = null;
+    },
       
    
  modelClose(){

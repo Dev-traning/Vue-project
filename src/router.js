@@ -104,6 +104,7 @@ import CommentShow from "./components/RestaurantProfile/CommentShow.vue";
 import User from "./components/Landing/User.vue";
 import PostsSingle from "./components/Landing/PostsSingle.vue";
 import ReadMore from "./components/Landing/ReadMore.vue";
+import NotAuthPostsingle from "./components/Landing/NotAuthPostsingle.vue";
 
 // Followers
 
@@ -131,6 +132,10 @@ export default new Router({
     },
     { path: "/reset-password", component: PasswordReset },
     { path: "*", component: PageNotFound },
+    {
+      path: "/postsnotAuth/:id",
+      component: NotAuthPostsingle,
+    }, 
     {
       path: "/Home",
       component: Home,
@@ -206,16 +211,16 @@ export default new Router({
           path: "/posts/:id",
           component: PostsSingle,
           beforeEnter: (to, from, next) => {
-            const token = localStorage.getItem('token');
-      
+            const token = localStorage.getItem("token");
+            const id = to.params.id;
+    
             if (!token) {
-              next('/login');
+              next(`/postsnotAuth/${id}`); // Redirect to "/another-route/:id" if token is not found
             } else {
-              next();
+              next(); // Proceed with the navigation
             }
-          }
-        
-        },      
+          },
+        },     
           
           
           {

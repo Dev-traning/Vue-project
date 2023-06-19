@@ -1,5 +1,7 @@
 <template>
 <div>
+    
+
     <div class="main-wrapper">
         <div class="main-content right-chat-active">
             <div class="middle-sidebar-bottom">
@@ -354,9 +356,7 @@ export default {
         };
     },
     methods: {
-        mounted() {
-            alert("update");
-        },
+       
         onCancel() {
             console.log("CANCEL SUBMIT");
             this.show = false;
@@ -393,7 +393,7 @@ export default {
 
                 .then((result) => {
                     this.postSingle = result.data.data;
-
+                    
                 });
         },
 
@@ -542,10 +542,11 @@ export default {
 
     mounted() {
         this.getData();
-        if (!localStorage.getItem("token")) {
+        
+        // if (!localStorage.getItem("token")) {
             
-            this.$router.push('/login')
-        }
+        //     this.$router.push('/login')
+        // }
 
     },
 };
