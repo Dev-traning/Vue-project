@@ -103,7 +103,7 @@ export default {
                 var ind = `[${index}]`
                 postCreate.append(img + ind, value);
             });
-            postCreate.append('description', encodeURIComponent(this.description))
+            postCreate.append('description',this.description);
             postCreate.append('title', this.title)
             postCreate.append('tags', this.tags)
             try {

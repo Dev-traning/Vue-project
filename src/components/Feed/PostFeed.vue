@@ -56,19 +56,19 @@
               <p class="fw-700 text-grey-700 lh-10 font-xss w-100 mb-0 font-weight-bold">{{item.title}}</p>
               <!-- <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">{{item.description}}</p> -->
            
-              
-              <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2" ref="postDescription">
-                <span v-if="!isContentExpanded || (isContentExpanded && item.id !== expandedPostId)">
-  {{ decodeURIComponent(item.description).replace(/%0A/g, '\n').replace(/%20/g, ' ') }}
-</span>
-<span v-if="item.description.length > 200">
-  <span v-if="!isContentExpanded || (isContentExpanded && item.id !== expandedPostId)" @click="expandContent(item.id)" class="read-more-link">...Read More</span>
-</span>
-</p>
-<p v-if="isContentExpanded && item.id === expandedPostId" class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">
-  {{ decodeURIComponent(item.description).replace(/%0A/g, '\n').replace(/%20/g, ' ') }}
-  <span v-if="isContentExpanded && item.id === expandedPostId" @click="collapseContent()" class="read-more-link">...Less</span>
-</p>
+                <p class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2" ref="postDescription">
+          <span v-if="!isContentExpanded || (isContentExpanded && item.id !== expandedPostId)">
+            {{ isContentExpanded && item.id === expandedPostId ? item.description : item.description.substring(0, 200) + '...' }}
+          </span>
+          <span v-if="item.description.length > 200">
+            <span v-if="!isContentExpanded || (isContentExpanded && item.id !== expandedPostId)" @click="expandContent(item.id)" class="read-more-link">Read More</span>
+          </span>
+        </p>
+        <p v-if="isContentExpanded && item.id === expandedPostId" class="fw-500 text-grey-500 lh-26 font-xssss w-100 mb-2">
+          {{ item.description }}
+          <span v-if="isContentExpanded && item.id === expandedPostId" @click="collapseContent()" class="read-more-link">Less</span>
+        </p>
+
           </div>
           <div class="card-body d-flex p-0">
             <button  class="btn p-0 d-none-xss d-flex align-items-center fw-600 text-grey-900 text-dark lh-26 font-xssss" v-b-modal.likeshome v-on:click="likeShow(item.id)">
@@ -368,46 +368,9 @@ export default {
       expandedPostId: null
     };
   },
-  computed: {
-    
- 
-  
-    getDescriptionSnippet() {
-      return (item) => {
-        const decodedString = decodeURIComponent(item.description);
-        const formattedString = decodedString.replace(/:n/g, '<br>');
-        return formattedString.substring(0, 200);
-      };
-    },
-    getDescriptionFull() {
-      return (item) => {
-        const decodedString = decodeURIComponent(item.description);
-        const formattedString = decodedString.replace(/:n/g, '<br>');
-        return formattedString;
-      };
-    },
-    },
   methods: {
 
-    formatDescriptionSnippet(description) {
-    const truncatedDescription = description.substring(0, 200);
-    return this.processContent(truncatedDescription);
-  },
-  formatDescriptionFull(description) {
-    return this.processContent(description);
-  },
-  processContent(content) {
-    const encodedContent = content
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
 
-    const lineBreaksHandled = encodedContent.replace(/\n/g, '<br>');
-
-    return lineBreaksHandled;
-  },
   //   collapseContent() {
   //   this.isContentExpanded = false;
   //   this.scrollToReadMore();
