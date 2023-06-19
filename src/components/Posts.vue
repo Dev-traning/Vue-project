@@ -24,8 +24,9 @@
                 <b-form-group class=" mb-2 mt-0" label="Location" label-for="name-input" invalid-feedback="Name is required">
                     <b-form-input class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0" id="name-input" v-model="location"></b-form-input>
                 </b-form-group>
-                <b-form-group class="mb-0 " label="Description" label-for="name-input" invalid-feedback="Name is required"> <textarea name="message" v-model="description" class="h100 bor-0 w-100 rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg" cols="30" rows="10" placeholder="What's on your mind?"></textarea> </b-form-group>
-
+                <b-form-group class="mb-0" label="Description" label-for="name-input" invalid-feedback="Name is required">
+      <textarea name="message" v-model="description" class="h100 bor-0 w-100 rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg" cols="30" rows="10" placeholder="What's on your mind?"></textarea>
+    </b-form-group>
                 <div class="card-body d-flex p-0 mt-2 mb-2">
                     <a href="#" class="d-flex align-items-center font-xssss fw-600 ls-1 text-grey-700 text-dark pe-4">
                         <div class="left">
@@ -102,7 +103,7 @@ export default {
                 var ind = `[${index}]`
                 postCreate.append(img + ind, value);
             });
-            postCreate.append('description', this.description)
+            postCreate.append('description', encodeURIComponent(this.description))
             postCreate.append('title', this.title)
             postCreate.append('tags', this.tags)
             try {
