@@ -43,7 +43,7 @@
             <div class="d-flex">
                <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">{{item.title  }}</p>
                <div class="ml-auto">
-                  <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">27-08-2021</p>
+                  <p class="fw-500 text-grey-500 lh-0 font-xssss mb-2">{{moment(item.created_at).fromNow()}}</p>
                </div>
             </div>
             <hr class="mb-2 mt-0" >
@@ -59,25 +59,50 @@
             </table>
             <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+item.user_type_text.id+'/'+item.id" tag="button">Read More</router-link >
          </div>
-      </div>
+         
+       
+     </div>
+     <div v-if="MpJobs.length" v-observe-visibility="handleScrolledToBottom"></div>
+      <div class="card w-100 text-center shadow-xss rounded-xxl border-0 p-2 mb-3 mt-0 ">
+
+         <div  class="d-flex justify-content-center">
+         <div class="spinner-border text-primary" role="status">
+         <span class="sr-only">Loading...</span>
+         </div>
+         </div>
+         </div>
    </div>
 </template>
 
 <script>
-import axios from "axios";
 
+import axios from "axios";
+import moment from 'moment'
 export default {
   name: "PostFeed",
 
   data() {
     return {
       vendor:[],
-      MpJobs:''
-      
+      MpJobs:'',
+      moment: moment,
+      page:'1',
     };
   },
   methods: {
-    
+      
+   handleScrolledToBottom(isVisible) {
+               if (!isVisible) {
+                  return;
+               }
+               if (this.page >= this.lastPage) {
+                  return;
+               }
+               this.page++;
+               // alert(this.page);
+               this.getData();
+               },
+
 
     getData() {
       var getPath = this.$route.params.user_type
@@ -85,11 +110,15 @@ export default {
       axios.get("vendor/vendor")
        .then((result) => {
           this.vendor = result.data.data;
-       })} if(getPath === '8'){
-      axios.get('restaurants/job')
+          alert('hello');
+       })}
+       
+       if(getPath === '8'){
+      axios.get(`restaurants/job?sort=id&order_by=desc&page=${this.page}&per_page=10`)
        .then((result) => {
-          this.MpJobs = result.data.data;
-         console.log (this.MpJobs[0]);
+          this.MpJobs = [...this.MpJobs, ...result.data.data];
+          this.lastPage = result.data.last_page;
+console.log (this.MpJobs[0]);
        })}
 
        

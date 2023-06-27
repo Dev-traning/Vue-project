@@ -250,7 +250,7 @@ export default {
                     } 
                     
         // window.otpless = (otplessUser) => {
-        //         // alert(JSON.stringify(otplessUser));
+        //         //  console.log(JSON.stringify(otplessUser));
         //         console.log("otpless",otplessUser);
         //     };
           
