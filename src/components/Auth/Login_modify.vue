@@ -74,18 +74,29 @@
                               v-model="email"
                             />
                           </div>
-                          <div class="form-group mb-4">
+                          <div class="form-group mb-2">
                             <label for="Password" class="sr-only">Password</label>
                             <input
-                            style="height:3rem; width:20rem; border-radius: 10px;"
-                              type="password"
-                              name="password"
-                              id="password"
-                              class="form-control mb-1"
-                              placeholder="Password"
-                              v-model="password"
-                            />
-
+                                          style="height:3rem; width:20rem; border-radius: 10px;"
+                                          type="password"
+                                          name="password"
+                                          id="password"
+                                          class="form-control mb-1"
+                                          placeholder="Password"
+                                          v-model="password"
+                                          @input="togglePassword"
+                                        />
+                                        <button type="button"  style="
+                                          background: transparent;
+                                          border: none;
+                                          position: absolute;
+                                          margin-left: -2rem;
+                                          margin-top: 0.7rem;
+                                      " @click="togglePassword">
+                                          <i  class=" eyebutton fa fa-eye" style="font-size: 1.2rem;"></i>
+                                        </button>
+                                        </div>
+                                        <div class="form-group mb-0">
                             <div class="d-flex">
                               <div style="font-size:15px; margin-top: auto;">
                                 <!-- <b-form-checkbox class="p-0 m-0 " v-model="remember_me"    value="1"  unchecked-value="0" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remember me </b-form-checkbox> -->
@@ -282,7 +293,19 @@ export default {
         };
     },
      methods: {
-                   
+      togglePassword() {
+  var password = document.getElementById("password");
+  var eyebutton = document.querySelector(".eyebutton");
+  if (password.type === "password") {
+    password.type = "text";
+    eyebutton.classList.add("fa-eye");
+    eyebutton.classList.remove("fa-eye-slash");
+  } else {
+    password.type = "password";
+    eyebutton.classList.add("fa-eye-slash");
+    eyebutton.classList.remove("fa-eye");
+  }
+    },
 
                 oTpVerify() {
                 this.loading = true;
