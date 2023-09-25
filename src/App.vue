@@ -26,7 +26,7 @@ restaurants in surat,
 <script>
  
  import axios from 'axios'
- 
+ import { gapi } from "gapi-script";
 
 export default {
   name: 'App',
@@ -41,7 +41,14 @@ export default {
         const response = await axios.get('user')
       
       //  this.users = response.data;
-      this.$store.dispatch('user', response.data)
+      this.$store.dispatch('user', response.data);
+      gapi.load("client:auth2", () => {
+  gapi.client.init({
+    clientId:
+      "650798214852-1mcjn6fcle8ug6sgj3ukc4icip7jq2s4.apps.googleusercontent.com",
+    plugin_name: "chat",
+  });
+}); 
     }
 }
 </script>
