@@ -74,18 +74,29 @@
                               v-model="email"
                             />
                           </div>
-                          <div class="form-group mb-4">
+                          <div class="form-group mb-2">
                             <label for="Password" class="sr-only">Password</label>
                             <input
-                            style="height:3rem; width:20rem; border-radius: 10px;"
-                              type="password"
-                              name="password"
-                              id="password"
-                              class="form-control mb-1"
-                              placeholder="Password"
-                              v-model="password"
-                            />
-
+                                          style="height:3rem; width:20rem; border-radius: 10px;"
+                                          type="password"
+                                          name="password"
+                                          id="password"
+                                          class="form-control mb-1"
+                                          placeholder="Password"
+                                          v-model="password"
+                                          @input="togglePassword"
+                                        />
+                                        <button type="button"  style="
+                                          background: transparent;
+                                          border: none;
+                                          position: absolute;
+                                          margin-left: -2rem;
+                                          margin-top: 0.7rem;
+                                      " @click="togglePassword">
+                                          <i  class=" eyebutton fa fa-eye" style="font-size: 1.2rem;"></i>
+                                        </button>
+                                        </div>
+                                        <div class="form-group mb-0">
                             <div class="d-flex">
                               <div style="font-size:15px; margin-top: auto;">
                                 <!-- <b-form-checkbox class="p-0 m-0 " v-model="remember_me"    value="1"  unchecked-value="0" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remember me </b-form-checkbox> -->
@@ -183,7 +194,7 @@
               </p>
             </div>
               <div class="expolre">
-                <h1>Explore Restroworld</h1>
+                <h1>Discover Restroworld</h1>
                 <div class="tbl">
                 <!-- <LandingPage/> -->
                 <table >
@@ -193,12 +204,12 @@
               color: white;
               text-align: center;
               border-radius: 26px;
-              ">Free Sign-up</th>
+              ">Free Registration</th>
               <th style="background-color: #4d4d4d;
               color: white;
               text-align: center;
               border-radius: 26px;
-              ">Elite Sign-up</th>
+              ">Elite Membership</th>
             </tr>
             <tr>
               <td>Can do sign-up</td>
@@ -216,22 +227,27 @@
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Can view  all Vendors</td>
+              <td>Restaurant job board</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Can view all Manpower</td>
+              <td>Restaurant vendor directory</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Can provide Franchisee</td>
+              <td>Restaurant manpower directory</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Purchase and sale of old Restaurant Equipment/Scraps</td>
+              <td>Restaurant franchise opportunities</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
+            </tr>
+            <tr>
+              <td>Buy and sell used restaurant equipment</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
             </tr>
@@ -282,7 +298,19 @@ export default {
         };
     },
      methods: {
-                   
+      togglePassword() {
+  var password = document.getElementById("password");
+  var eyebutton = document.querySelector(".eyebutton");
+  if (password.type === "password") {
+    password.type = "text";
+    eyebutton.classList.add("fa-eye");
+    eyebutton.classList.remove("fa-eye-slash");
+  } else {
+    password.type = "password";
+    eyebutton.classList.add("fa-eye-slash");
+    eyebutton.classList.remove("fa-eye");
+  }
+    },
 
                 oTpVerify() {
                 this.loading = true;

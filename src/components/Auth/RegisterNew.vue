@@ -47,6 +47,7 @@
         </div>
 
         <button type="submit" class="btn shadow-none btn-primary fw-500 font-xss text-primary-500 w-100 mb-2">{{loadingAc ? "Verify..." : "Sign Up"}}</button>
+        <!-- <GoogleLogin :params="params" :onSuccess="onSuccess" :onFailure="onFailure" style="width: 100%;">Login</GoogleLogin> -->
     </form>
     <p class="login-card-footer-text">
         Have an account?
@@ -87,15 +88,24 @@
 <script>
 import axios from "axios";
 import CheckboxAccept from './CheckboxAccept';
+// import {GoogleLogin} from 'vue-google-login';
 //    import Error from "../Error.vue";
 export default {
     name: "Register",
     components: {
-        CheckboxAccept
+        CheckboxAccept,
+        // GoogleLogin
         //    Error,
     },
     data() {
+        
         return {
+            
+            params:{
+
+                client_id:"650798214852-1mcjn6fcle8ug6sgj3ukc4icip7jq2s4.apps.googleusercontent.com"
+            },
+           
             termsAccepted: false,
             displayWarning: false,
             displaySuccess: false,
@@ -126,6 +136,19 @@ export default {
         };
     },
     methods: {
+        onSuccess(googleUser) {
+            console.log(JSON.stringify(googleUser));
+ 
+            // This only gets the user information: id, name, imageUrl and email
+            // console.log(googleUser.getBasicProfile());
+        },
+        onFailure(googleUser) {
+            console.log(JSON.stringify(googleUser));
+            console.log(googleUser);
+ 
+            // This only gets the user information: id, name, imageUrl and email
+            console.log(googleUser.getBasicProfile());
+        },
         async resend() {
 
             const respodnse = await axios.post('resend-email-otp', {
@@ -250,7 +273,7 @@ export default {
                     } 
                     
         // window.otpless = (otplessUser) => {
-        //         // alert(JSON.stringify(otplessUser));
+        //         //  console.log(JSON.stringify(otplessUser));
         //         console.log("otpless",otplessUser);
         //     };
           

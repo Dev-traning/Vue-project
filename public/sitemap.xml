@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.restroworld.com/</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.restroworld.com/login</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Us Page -->
+  <url>
+    <loc>https://www.restroworld.com/Home/User</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- About Us Page -->
+  <url>
+    <loc>https://www.restroworld.com/Profile/:id</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://www.restroworld.com/home/User/Atmnirbhar</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- More URLs... -->
+   <url>
+    <loc>https://www.restroworld.com/home/User/privecy</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- More URLs... -->
+   <url>
+    <loc>https://www.restroworld.com/home/User/setting</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+    <!-- More URLs... -->
+   <url>
+    <loc>https://www.restroworld.com/ManpowerShow</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+    <!-- More URLs... -->
+   <url>
+    <loc>https://www.restroworld.com/UserStore</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+   <url>
+    <loc>https://www.restroworld.com/RegisterNew</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>   <url>
+    <loc>https://www.restroworld.com/EliteUser</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>   <url>
+    <loc>https://www.restroworld.com/Register</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>   <url>
+    <loc>https://www.restroworld.com/RestaurantAll</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>   <url>
+    <loc>https://www.restroworld.com/FranchiseeShow</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>   <url>
+    <loc>https://www.restroworld.com/VendorListing/VendorEditProfile</loc>
+    <lastmod>2023-09-19T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url> 
+</urlset>
