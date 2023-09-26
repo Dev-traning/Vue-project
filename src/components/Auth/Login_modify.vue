@@ -194,7 +194,7 @@
               </p>
             </div>
               <div class="expolre">
-                <h1>Explore Restroworld</h1>
+                <h1>Discover Restroworld</h1>
                 <div class="tbl">
                 <!-- <LandingPage/> -->
                 <table >
@@ -204,12 +204,12 @@
               color: white;
               text-align: center;
               border-radius: 26px;
-              ">Free Sign-up</th>
+              ">Free Registration</th>
               <th style="background-color: #4d4d4d;
               color: white;
               text-align: center;
               border-radius: 26px;
-              ">Elite Sign-up</th>
+              ">Elite Membership</th>
             </tr>
             <tr>
               <td>Can do sign-up</td>
@@ -227,22 +227,27 @@
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Can view  all Vendors</td>
+              <td>Restaurant job board</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Can view all Manpower</td>
+              <td>Restaurant vendor directory</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Can provide Franchisee</td>
+              <td>Restaurant manpower directory</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
             </tr>
             <tr>
-              <td>Purchase and sale of old Restaurant Equipment/Scraps</td>
+              <td>Restaurant franchise opportunities</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
+            </tr>
+            <tr>
+              <td>Buy and sell used restaurant equipment</td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
               <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
             </tr>
