@@ -8,8 +8,9 @@
 
                         <div class="row mb-3">
                          <div class="btn-group " role="group" aria-label="Basic example">
-  <router-link active-class="active" to="/RegisterNew" type="button" class="btn   shadow-none fw-500  font-xss  btn-outline-primary">SignUp</router-link>
-  <router-link active-class="active" to="/EliteUser" type="button" class="btn shadow-none fw-500 font-xss text-primary-500 btn-outline-primary">Elite Account</router-link>
+  <!-- <router-link active-class="active" to="/RegisterNew" type="button" class="btn   shadow-none fw-500  font-xss  btn-outline-primary">SignUp</router-link>
+  <router-link active-class="active" to="/EliteUser" type="button" class="btn shadow-none fw-500 font-xss text-primary-500 btn-outline-primary">Elite Account</router-link> -->
+   <router-link active-class="active" to="/RegisterNew" type="button" class="btn   shadow-none fw-500  font-xss  btn-outline-primary">FREE  &nbsp;Sign&nbsp;Up</router-link>
    
 </div>
                       </div> 

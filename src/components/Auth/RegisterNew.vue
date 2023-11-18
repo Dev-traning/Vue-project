@@ -17,6 +17,8 @@
             <div class="form-group col-md-6"> <input type="text" class="form-control" placeholder="First Name" v-model="first_name" required> </div>
             <div class="form-group col-md-6"> <input type="Text" class="form-control" placeholder="Last Name" v-model="last_name" required> </div>
         </div>
+        <div class="form-group col-md-12 p-0"> <input type="Text" class="form-control" placeholder="Phone no." v-model="mobile_no" required> </div>
+       
         <div class="form-row">
             <div class="form-group col-md-4">
                 <select style="padding: 0.375rem 1.75rem 0.375rem 0.75rem; font-size: 1rem;" class="form-select" aria-required="true" aria-invalid="false" v-model="country_id" @change="getState()" required>
@@ -120,6 +122,7 @@ export default {
             loadingAc: '',
             selected: '',
             business_name: '',
+            mobile_no:'',
             first_name: '',
             last_name: '',
             email: '',
@@ -161,7 +164,7 @@ export default {
             console.log(respodnse)
         },
 
-      async  oTpVerify() {
+        oTpVerify() {
             this.loading = true;
             const response = axios.post('verify-email', {
                 email: this.email,
@@ -171,9 +174,27 @@ export default {
                 this.$refs['modal'].hide();
                 this.email_otp = '';
                 this.verySucc = 'Email Verify Plz select SignUp or Elite Account!!!';
-                localStorage.setItem('token', this.tokenData);
-                this.$router.push("/home");
-                location.reload()
+                localStorage.setItem("token", this.tokenData);
+                    axios.post("payment/"+this.user_subscription_id, { payment_status: "1" } , 
+                    {
+                        headers: {
+                        Authorization: `Bearer `+ this.tokenData,
+                        // Replace YOUR_ACCESS_TOKEN with the actual token value
+
+                        },
+                    }
+                    )
+                                            .then((result) => {
+                                                console.log(result.data);
+                                                // alert('helo');
+                                                localStorage.setItem('token', this.tokenData);
+                                                 this.$router.push("/home");
+                                                location.reload()
+                                            });
+
+            
+               
+                
 
             }).catch((error) => {
                 this.otpFail = error.response.data.message
@@ -186,6 +207,7 @@ export default {
             console.log(response);
 
         },
+        
         processCheckboxAccept(accepted) {
             this.termsAccepted = accepted;
             this.displayWarning = false;
@@ -196,12 +218,14 @@ export default {
             } else {
                 this.loadingAc = true;
 
-                const response = await axios.post("users", {
-
+                // const response = await axios.post("users", {
+                const response = await axios.post("users/elight-signup", {
+                    plan_id:"1",
                     business_name: this.business_name,
                     first_name: this.first_name,
                     last_name: this.last_name,
                     email: this.email,
+                    mobile_no: this.mobile_no,
                     password: this.password,
                     password_confirmation: this.password_confirmation,
                     user_type: this.user_type,
@@ -212,6 +236,8 @@ export default {
                     this.failMsg = ''
                     this.tokenData = res.data.data.authorization;
                     // localStorage.setItem("token", res.data.data.authorization);
+
+                    this.user_subscription_id = res.data.data.subscription.id;
                     localStorage.setItem("UserDetails", JSON.stringify(res.data.data));
                     this.$store.dispatch("user", res.data.user);
                     this.$refs['modal'].show()
