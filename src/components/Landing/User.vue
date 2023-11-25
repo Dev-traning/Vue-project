@@ -87,7 +87,7 @@
 
                                 <footer class="font-xssss fw-500 text-grey-500 text-center text-decoration-none">
                                     <div>
-                                        <router-link to="#" class="font-xssss fw-500 text-grey-500">About Us</router-link>
+                                        <router-link to="/about_us" class="font-xssss fw-500 text-grey-500">About Us</router-link>
 
                                         <router-link to="/home/User/Atmnirbhar" class="ml-3 font-xssss fw-500 text-grey-500" v-if="usersOldData.country.id=='101' && usersOldData.is_dsa=='0'">Atmnirbhar</router-link>
                                         <router-link to="#" class="ml-3 font-xssss fw-500 text-grey-500" v-else><span @click="panlel">Atmnirbhar Panel</span></router-link>

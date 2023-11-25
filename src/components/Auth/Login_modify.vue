@@ -506,6 +506,11 @@ export default {
      
         this.email = localStorage.getItem('useremail');
         this.password = localStorage.getItem('password');
+        var password1 = document.getElementById("password");
+  var eyebutton = document.querySelector(".eyebutton");
+  password1.type = "password";
+    eyebutton.classList.add("fa-eye-slash");
+    eyebutton.classList.remove("fa-eye");
      
 
  
