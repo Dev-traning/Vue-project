@@ -114,6 +114,10 @@ import Request from "./components/Following/Request.vue";
 import Follow from "./components/Following/Follow.vue";
 import DeletePolicy from './components/DeletePolicy.vue';
 import privacypolicy from './components/privacypolicy.vue';
+
+//about us
+import about_us from './components/AboutUs/about_us.vue'
+
 Vue.use(Router);
 
 export default new Router({
@@ -146,7 +150,7 @@ export default new Router({
           path: "/Home/User",
           component: User,
         },
-        // { path: "*", component: PageNotFound },
+         { path: "/about_us", component: about_us },
 
         {
           path: "/Profile/:id",
