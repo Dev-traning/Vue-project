@@ -56,6 +56,7 @@
                                             <figure class="avatar me-3">
                                                 <img :src="`${postSingle.user.profile_photo}`" alt="image" height="45" class="shadow-sm rounded-circle w45" v-if="postSingle.user.profile_photo">
                                                 <img src="../../assets/profile-no-img.png"  alt="image" class="shadow-sm rounded-circle w45" v-else>
+       
                                             </figure>
 
                                             <h4 class="fw-700 text-grey-900 font-xssss mt-1">{{postSingle.user.full_name}}<span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{ moment(postSingle.created_at).fromNow()}}</span>

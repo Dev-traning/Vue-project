@@ -280,7 +280,7 @@ export default {
     },
 
     async handalSubmit() {
-      var itemId = localStorage.getItem('user_id');
+      var itemId = '3315';
        var itemId2 = this.$route.params.id;
       const photo2 = new FormData();
       const photo = new FormData();

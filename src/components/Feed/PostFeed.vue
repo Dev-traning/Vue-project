@@ -14,7 +14,9 @@
               <figure class="avatar me-2" v-if="key==='profile_photo'"> 
                       <img :src="`${value}`" alt="image" class="shadow-sm  rounded w45" height="45"  v-if="value"> 
                       <img src="../../assets/img/profile-no-img.99d6b3a5.png" alt="image" class="shadow-sm  rounded w45" height="45" v-if="!value"> 
-                  </figure>
+                      <!-- <img v-if="item.user.value.restaurant.user.blue_tick == '1'" style=" position: absolute;top:16px;left: 48px;width: 47%; max-width: 20px;" src="./../../assets/img/bluetick_small_icone.png" alt="Blue Tick Icon" class="text-primary ms-2"> -->
+                    
+                     </figure>
             </div>
             <div>
                 <h4 class="fw-700 text-grey-900 font-xssss mt-1" v-for="(value, key) in item.user" :key="key.id">
