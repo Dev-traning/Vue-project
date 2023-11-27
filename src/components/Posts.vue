@@ -4,7 +4,9 @@
         <figure class="avatar position-absolute ms-2 mt-1 top-5">
             <img :src="`${user.profile_photo}`" alt="image" height="30" class="shadow-sm rounded  w30" v-if="user.profile_photo" />
             <img src="../assets/img/profile-no-img.99d6b3a5.png" alt="image" height="30" class="shadow-sm rounded  w30" v-else />
+            <!-- <img style=" position: absolute;top: -3px;left: 16px;width: 47%;" src="./../assets/img/bluetick_small_icone.png" alt="Blue Tick Icon" class="text-primary ms-2"> -->
         </figure>
+        
         <b-button v-b-modal.modal-center name="message" class="h150 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg" cols="30" rows="10" placeholder="What's on your mind?">
             <p style="    float: left; margin-bottom: 100px;     color: rgb(33 37 41 / 60%);">Please Share Your Restroworld Stories!</p>
         </b-button>
@@ -47,6 +49,8 @@
                 <b-button type="submit" style="background-color: #004898!important" class="font-xsssss fw-700 ps-3 pe-3 lh-32 mt-1 mb-0 text-uppercase rounded-3 ls-2 bg-success d-inline-block text-white me-1 ms-auto w-100">{{loading ? "Loading..." : "Post"}}</b-button>
             </form>
         </b-modal>
+        <BlueTick_Popup ref="modal"></BlueTick_Popup>
+
     </div>
 </div>
 </template>
@@ -54,6 +58,8 @@
 <script>
 import axios from "axios";
 import Error from "./Error.vue";
+import BlueTick_Popup from './Home.vue'; // Import your modal component
+
 import {
     mapGetters,
 } from 'vuex'
@@ -61,6 +67,7 @@ export default {
     name: 'Posts',
     components: {
         Error,
+        BlueTick_Popup
     },
     data() {
         return {
@@ -134,6 +141,9 @@ export default {
             user: 'user'
         })
     },
+    mounted(){
+       
+    }
 
 }
 </script>
