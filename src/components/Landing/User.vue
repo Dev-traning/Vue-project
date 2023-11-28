@@ -30,7 +30,7 @@
                                    </div> -->
 
                                                 <div class="col-lg-8">
-                                                    <h3 class="mt-1 mb-2 ml-1 text-dark fw-500">{{user.full_name}}</h3>
+                                                    <h3 class="mt-1 mb-2 ml-1 text-dark fw-500">{{user.full_name}} <img style="width: 13%;" v-if="this.users.blue_tick == '1'" src="./../../assets/img/bluetick_small_icone.png" alt=""></h3>
                                                     <h5 class="mb-2 ml-1 text-grey-500 fw-600 font-xssss">{{users.user_type_text}}</h5>
                                                     <router-link class="p-2 mb-0 ml-1 text-white w-75 bg-info btn rounded-3 font-xsssss text-uppersace fw-600 ls-3" :to="'/profile/' + user.id" tag="button">View Profile</router-link>
 

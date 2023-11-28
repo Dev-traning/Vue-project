@@ -77,6 +77,7 @@ import DownloadVendorInvoice from "./components/Vendor/DownloadVendorInvoice.vue
 import Search from "./components/Subscribe/Search.vue";
 import Fail from "./components/Subscribe/Fail.vue";
 import Success from "./components/Subscribe/Success.vue";
+import Bluetick_Success from "./components/Subscribe/bluetick_success.vue";
 
 //Header
 import Help from "./components/Header/Help.vue";
@@ -189,10 +190,10 @@ export default new Router({
           component: Success,
         },
 
-        // {
-        //   path: "/Home/User/SuccessElitePage",
-        //   component: SuccessElitePage,
-        // },
+        {
+          path: "/blueticksuccess",
+          component: Bluetick_Success,
+        },
         
         {
           path: "/home/User/AtmPaySuc",
