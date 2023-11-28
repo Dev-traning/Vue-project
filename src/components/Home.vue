@@ -187,9 +187,9 @@ export default {
      payuUrl: "https://secure.payu.in/_payment",
       mkey: "nxpvv9VZ",
       saltKey: "3oFxUMtWG2",
-      surl: "https://uat.restroworld.com/blueticksuccess",
+      surl: "https://restroworld.com/blueticksuccess",
       // surl: "https://restroworld.com/home/User/Success",
-      furl: "https://uat.restroworld.com/home/User/Fail",
+      furl: "https://restroworld.com/home/User/Fail",
       aadharFileName: 'Choose file...', // Initial file name for Aadhar Card
       businessFileName: 'Choose file...', // Initial file name for Business Proof
    
