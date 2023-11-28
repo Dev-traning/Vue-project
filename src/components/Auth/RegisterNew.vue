@@ -84,6 +84,8 @@
 
         </div>
     </b-modal>
+
+    
 </div>
 </template>
 
@@ -305,22 +307,7 @@ export default {
           
         this.getData();
 
-        
-            //             const fullName = "Om Chevli";
-            // const nameParts = fullName.split(" "); // Split the full name by space
 
-            // const firstName = nameParts[0]; // First part is the first name
-            // const lastName = nameParts[nameParts.length - 1]; // Last part is the last name
-
-            // console.log("First Name:", firstName);
-            // console.log("Last Name:", lastName);
-
-        // let user = localStorage.getItem('token');
-        // if(user)
-        // {
-
-        //  this.$router.push("/home");
-        // }
     },
 
 };
