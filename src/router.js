@@ -47,6 +47,7 @@ import Sellrest from "./components/RestaurantProfile/Sellrest.vue";
 import SellrestEdit from "./components/RestaurantProfile/SellrestEdit.vue";
 import SmrEdit from "./components/RestaurantProfile/SmrEdit.vue";
 import DownloadInvoice from "./components/RestaurantProfile/DownloadInvoice.vue";
+import blue_tick from "./components/RestaurantProfile/blue-tick.vue";
 
 // SMR
 
@@ -64,6 +65,7 @@ import MyAppliedJobs from "./components/Manpower/MyAppliedJobs.vue";
 import JobsList from "./components/Manpower/JobsList.vue";
 import ManpowerShow from "./components/Manpower/ManpowerShow.vue";
 import DownloadManpowerInvoice from "./components/Manpower/DownloadManpowerInvoice.vue"
+import man_power_bluetick from "./components/Manpower/blue-tick.vue"
 
 // Vendor
 import VendorListing from "./components/Vendor/VendorListing.vue";
@@ -399,6 +401,11 @@ export default new Router({
           path: "/ManpowerListings/DownloadInvoiceManpower",
           component: DownloadManpowerInvoice,
         },
+        {
+          path: "/ManpowerListings/blue-tick",
+          component: man_power_bluetick,
+        },
+
       ],
     },
     {
@@ -461,6 +468,10 @@ export default new Router({
         {
           path: "/DownloadInvoice",
           component: DownloadInvoice,
+        },
+        {
+          path: "/blue-tick",
+          component: blue_tick,
         },
       ],
     },
