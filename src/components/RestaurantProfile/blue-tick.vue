@@ -1,29 +1,24 @@
 <template>
-  <div class="mont-font">
-    <Nav />
+    <div class="franchise border-info-md">
+      <div class="pl-4 border-0 card-body w-100 bg-success d-flex rounded-3">
+      
+         <h4 class="mb-0 text-white font-xs fw-600 ms-4"> Verified Your Blue-tick</h4>
+      </div>
+      <div class="p-1 border-0 card-body p-lg-3 w-100 "  >
 
-
-       <b-modal scrollable show-close="ftrue" hide-footer dialog-class="animated jackInTheBox"  centered  ref="modal"   size="60">
- <button @click="closeModel()" type="button" class="closee" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      <div class="modal-top  " >
- <div class="modal-header   ">
-   </div>
-
-
-
+      
     <div class="text-center mb-3">
-  <img style="width: 40vh;" src="./../assets/img/verifed.png" alt="">
+  <img style="width: 40vh;" src="./../../assets/img/verifed.png" alt="">
   <h1 style="color: #292828bf!important;" class="text-success font-xs w-600 fw-600 pl-4 pr-4">
     You can get a verified blue tick account for an unbeatable price of,
-    <span class="text-danger text-danger-800" style="text-decoration: line-through; font-weight: 900;">₹999 (+GST)</span>
-    instead of <span style="color: black;">₹499 (+GST)</span>. Don't miss out on this exclusive offer!
+    <br/> <span v-if="amount_pay == '678.64'" style="color: black;">₹499 (+GST)</span>
+    <span v-else style="color: black;">₹999 (+GST)</span>
+    . Don't miss out on this exclusive offer!
   </h1>
 </div>
 
 <div style="position: relative;" class="mt-4">
-  <label class="mont-font fw-600 font-xss">Aadhar Card / Pan Card / Voter ID</label>
+  <label class="mont-font fw-600 font-xss">Aadhar Card / Pan Card / Voter ID  </label>
   <div class="custom-file">
     <input type="file" class="custom-file-input" id="aadharFile" @change="handleAadharFileChange">
     <label class="custom-file-label" for="aadharFile">{{ aadharFileName }}</label>
@@ -42,18 +37,7 @@
   <button type="button" class="btn btn-primary p-2 fw-600 font-xss mt-4"  @click="paynow"  >Verified Now !!!</button>
 </div>
 
-   
-
-
-
-
-
-
-
-
-        </div>
-        
-  <form
+<form
             method="POST"
             class="pl-5 pr-5"
             id="paymentForm"
@@ -106,32 +90,25 @@
           
           </form>
 
-  </b-modal>
 
- 
-
- 
-
-    <router-view></router-view>
-    <div id="app" v-cloak></div>
-  </div>
+      </div>
+    </div>
 </template>
 
-<script>
-import Nav from "../components/Nav.vue";
 
+<script>
 import { mapGetters } from "vuex";
 import axios from 'axios';
 export default {
   name: "Home",
   components: {
-    Nav,
+
   },
        data() {
     return {
      basketAddSuccess:false,
      daysSinceCreation: 0,
-     amount_pay:"678.64",
+     amount_pay:"1178.82",
      hash: this.hash,
      txnid: this.makeid(),
      productInfo: "1YearPlan",
@@ -180,7 +157,7 @@ export default {
         const formData = new FormData();
         formData.append('document1', aadharFile);
         formData.append('document2', businessFile);
-        formData.append('bluetick_plan_id', '1');
+        formData.append('bluetick_plan_id', '2');
 
           axios.post('upload-bluetick-documents',formData).then((res)=>{
             // console.log(res.data);
@@ -246,10 +223,14 @@ export default {
       if(this.daysSinceCreation <= 15 || this.daysSinceCreation == 0 && this.user.blue_tick == 0 )
       {
 
+            this.amount_pay = 678.64
+            
+        
+      }
+      else{
 
-        this.basketAddSuccess = true;
-                  
-                  this.$refs['modal'].show();
+        this.amount_pay = 1178.82
+
       }
 
 
@@ -263,8 +244,7 @@ closeModel(){
     },
 
   mounted() {
-    // alert(this.user.get_free_subscribed == '0')
-
+    
 
     
     this.calculateDaysSinceCreation();
