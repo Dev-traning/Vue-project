@@ -1,5 +1,5 @@
 <template>
-   <main class="d-flex align-items-center min-vh-100 py-3 py-md-0 " style="background-color: #fff;">
+   <main class="d-flex align-items-center min-vh-100 py-3 py-md-0 " style="background-color: #fff; background-image: url(/img/slide_bg_pattern.cfd7254b.png);">
       <div class="mt-5"><span>&nbsp;</span></div>
 
       <div class="container  mt-5">
@@ -23,7 +23,7 @@
 
          <div class="howwork">
               <h1 class="h1 mb-5">How Restroworld Work</h1>
-              <div style="align-items: center; justify-content: center;">
+              <div style=" display: flex;align-items: center; justify-content: center;">
               <img class="img "  src="../../src/assets/Group 50.png" />
             </div>
               <p class="p">
@@ -37,8 +37,8 @@
 
 
             <div class="expolre">
-                <h1>Discover Restroworld</h1>
-                <div class="tbl">
+                <label>Discover Restroworld</label>
+                <div class="tbl mt-5">
                 <!-- <LandingPage/> -->
                 <table >
             <tr>
@@ -282,8 +282,8 @@
   text-align: center;
   display: grid;
   grid-template-rows: 10% 80% 10%;
-  height: 80vh;
-  margin-top: 20%;
+  height: 60vh;
+  margin: 10% 0%;
 }
 
 .howwork h1 {
@@ -295,11 +295,13 @@
 
 .howwork img {
   grid-row: 2/3;
-  position:absolute;
-  height: 370px;
-  margin-top: 3%; 
-  margin-left: -20%;
-  width: 40%;
+    /* position: absolute; */
+    height: 370px;
+    margin-top: 3%;
+    /* margin-left: -20%; */
+    width: 100%;
+    object-fit: contain;
+
 }
 
 .howwork p {
@@ -324,7 +326,7 @@
   width: 100%;
 }
 
-.expolre h1{
+.expolre label{
   font-weight: 700;
   font-size: 50px;
   color: #4d4d4d;
@@ -351,13 +353,6 @@ td, th {
 }
 @media screen and (min-width:0px) and (max-width: 767.98px){
 
-.howwork img {
-  position: absolute;
-  height: 370px;
-  margin-top: 23%;
-  margin-left: -49%;
-  width: 97%;
-  }
 
   .howwork h1 {
    grid-row: 1/2;
@@ -375,6 +370,25 @@ td, th {
   border-radius: 10px;
 
   }
+
+  table{
+   margin-top: 4rem;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    /* width: 100%; */
+    grid-column: 2/3;
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    font-weight: 400;
+    /* max-width: 100%; */
+    display: contents;
+  }
+  .expolre label{
+  font-weight: 700;
+  font-size: 2rem;
+  color: #4d4d4d;
+
+}
 
 
 }
