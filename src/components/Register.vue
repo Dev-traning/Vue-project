@@ -3,7 +3,7 @@
       <div class="mt-5"><span>&nbsp;</span></div>
 
       <div class="container  mt-5">
-         <div class="card login-card rounded">
+         <div class="card login-card rounded mt-5">
             <div class="row no-gutters ml-1 p-3  ">
                <div class="col-md-5 shadow-sm"> 
                   <img src="../assets/pexels-dids-5360447.jpg" alt="login" class="login-card-img "/> 
@@ -21,8 +21,94 @@
          </div>
 
 
+         <div class="howwork">
+              <h1 class="h1 mb-5">How Restroworld Work</h1>
+              <div style="align-items: center; justify-content: center;">
+              <img class="img "  src="../../src/assets/Group 50.png" />
+            </div>
+              <p class="p">
+                Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
+                waiting for you at Restroworld.
+              </p>
+            </div>
+
+
+
+
+
+            <div class="expolre">
+                <h1>Discover Restroworld</h1>
+                <div class="tbl">
+                <!-- <LandingPage/> -->
+                <table >
+            <tr>
+              <th></th>
+              <th style="background-color: #4d4d4d;
+              color: white;
+              text-align: center;
+              border-radius: 26px;
+              ">Free Registration</th>
+              <th style="background-color: #4d4d4d;
+              color: white;
+              text-align: center;
+              border-radius: 26px;
+              ">Elite Membership</th>
+            </tr>
+            <tr>
+              <td>Can do sign-up</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Post on Restroworld social media feed</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Can create jobs and view all the CVs.</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant job board</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant vendor directory</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant manpower directory</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant franchise opportunities</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
+            </tr>
+            <tr>
+              <td>Buy and sell used restaurant equipment</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
+            </tr>
+                </table>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
          <!-- what is Restroworld  -->
          <div class="mt-5"><span>&nbsp;</span></div>
+
 
          <div class="mt-5 text-center"  >
             <label style=" color: rgb(34, 34, 34); font-weight: 900 bolder; font-size: 4vh;"  class="  w-200 fw-900" >What Is   </label>  <label style=" color: rgb(34, 34, 34); font-size: 4vh; " class="  w-900 fw-900"> &nbsp;<span class="space1" style="color: #004898 !important">Restro</span><span class="space1" style="color: #c41e16 !important">world</span> ?</label>
@@ -189,6 +275,140 @@
    };
 </script>
 <style scoped>
+
+
+.howwork {
+  grid-row: 2/3;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  height: 80vh;
+  margin-top: 20%;
+}
+
+.howwork h1 {
+   grid-row: 1/2;
+    font-weight: 700;
+    font-size: 2.7rem;
+    color: #4d4d4d;
+}
+
+.howwork img {
+  grid-row: 2/3;
+  position:absolute;
+  height: 370px;
+  margin-top: 3%; 
+  margin-left: -20%;
+  width: 40%;
+}
+
+.howwork p {
+  grid-row: 3/4;
+  font-weight: 600;
+  color: #707070;
+  margin-top: 0px;
+}
+.expolre {
+  grid-row: 3/4;
+  text-align: center;
+  margin-top: 10%;
+  
+  
+}
+
+.tbl{
+  /* display: grid;
+  grid-template-columns: 15% 70% 15%;
+  width: 100%-20px; */
+  font-size: 1rem;
+  width: 100%;
+}
+
+.expolre h1{
+  font-weight: 700;
+  font-size: 50px;
+  color: #4d4d4d;
+
+}
+
+table {
+  margin-top:4rem;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  grid-column: 2/3;
+  border-collapse: separate;
+  border-spacing: 50px 0;
+  font-weight: 400;
+}
+
+
+td, th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 8px;
+  
+}
+@media screen and (min-width:0px) and (max-width: 767.98px){
+
+.howwork img {
+  position: absolute;
+  height: 370px;
+  margin-top: 23%;
+  margin-left: -49%;
+  width: 97%;
+  }
+
+  .howwork h1 {
+   grid-row: 1/2;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #4d4d4d;
+}
+
+.upper{
+
+  max-width: 92%;
+  margin-left: 4%;
+  height: fit-content;
+  padding-top: 1.5rem;
+  border-radius: 10px;
+
+  }
+
+
+}
+
+@media screen and (min-width:0px) and (max-width: 400.98px)
+{
+.upper{
+
+max-width: 92%;
+margin-left: 4%;
+height: fit-content;
+padding-top: 1.5rem;
+border-radius: 10px;
+
+}
+
+.howwork img {
+  position: absolute;
+  height: 370px;
+  margin-top: 50%;
+  width: 116%;
+  margin-left: -59%;
+
+/* position:absolute;
+
+margin-top: 34%;
+  width: 96%;
+  margin-left: 0%; */
+}
+
+
+
+
+}
    .login-card .form-control {
    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
    font-size: 1rem;
