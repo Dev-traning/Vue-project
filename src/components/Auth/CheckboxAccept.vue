@@ -3,7 +3,7 @@
     <div class="form-check">
       <input class="form-check-input" type="checkbox" v-model="accepted" @change="processAccept" id="checkbox1">
       <label class="form-check-label" for="checkbox1">
-        By creating an account you agree to our <a href="#">Terms & Privacy.</a>
+        By creating an account you agree to our <a for="redirecting privercy page" href="/home/User/privecy">Terms & Privacy.</a>
       </label>
     </div>
   </div>
