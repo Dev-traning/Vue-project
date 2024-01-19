@@ -24,7 +24,7 @@
          <div class="howwork">
               <h1 class="h1 mb-5">How Restroworld Work</h1>
               <div style=" display: flex;align-items: center; justify-content: center;">
-              <img class="img " alt="wallpaper of login page"  src="../../src/assets/Group 50.png" />
+              <img class="img " alt="wallpaper"  src="../../src/assets/Group 50.png" />
             </div>
               <p class="p">
                 Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
@@ -104,16 +104,15 @@
 
 
 
-
+         <register_component></register_component>
 
          <!-- what is Restroworld  -->
-         <div class="mt-5"><span>&nbsp;</span></div>
+         <!-- <div class="mt-5"><span>&nbsp;</span></div>
 
 
          <div class="mt-5 text-center"  >
             <label style=" color: rgb(34, 34, 34); font-weight: 900 bolder; font-size: 4vh;"  class="  w-200 fw-900" >What Is   </label>  <label style=" color: rgb(34, 34, 34); font-size: 4vh; " class="  w-900 fw-900"> &nbsp;<span class="space1" style="color: #004898 !important">Restro</span><span class="space1" style="color: #c41e16 !important">world</span> ?</label>
-            <!-- <img src="../assets/whatisrestro.png" alt=""> -->
-         </div>
+       </div>
 
          <div class="mt-1"><span>&nbsp;</span></div>
 
@@ -166,18 +165,27 @@
                   </p>
                </div>
              </div>
-         </div></div>
+         </div></div>-->
 
-         <div class="mt-1"><span>&nbsp;</span></div>
+
+
+         <div class="mt-1"><span>&nbsp;</span></div> 
+
+
+
+
+
+
 
       </div>
    </main>
 </template>
 <script>
- 
+ import register_component from "./register-component.vue"
    export default {
      name: "Register",
      components: {
+      register_component
       //  Error,
      },
 
@@ -312,20 +320,6 @@ height: fit-content;
 padding-top: 1.5rem;
 border-radius: 10px;
 
-}
-
-.howwork img {
-  position: absolute;
-  height: 370px;
-  margin-top: 50%;
-  width: 116%;
-  margin-left: -59%;
-
-/* position:absolute;
-
-margin-top: 34%;
-  width: 96%;
-  margin-left: 0%; */
 }
 
 

@@ -186,7 +186,7 @@
             <div class="howwork">
               <h1 class="h1">How Restroworld Work</h1>
               <div style="align-items: center; justify-content: center;">
-              <img class="img " alt="login page of wallpaper"  src="../../../src/assets/Group 50.png" />
+              <img class="img " alt="wallpaper"  src="../../../src/assets/Group 50.png" />
             </div>
               <p class="p">
                 Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
