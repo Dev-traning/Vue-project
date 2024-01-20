@@ -31,6 +31,7 @@
     "nvm": "^0.0.4",
     "razorpay": "^2.8.6",
     "sha512": "0.0.1",
+    "terser-webpack-plugin": "^4.2.3",
     "vue": "^2.6.11",
     "vue-analytics": "^5.22.1",
     "vue-google-login": "^2.0.5",

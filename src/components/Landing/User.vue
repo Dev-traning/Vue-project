@@ -189,14 +189,13 @@ export default {
     },
 
     async mounted() {
+        if (!localStorage.getItem("token")) {
+      this.$router.push("/")
+    }   
         this.usersOldData = JSON.parse(localStorage.getItem("UserDetails"));
-        let user = localStorage.getItem("token");
+        // let user = localStorage.getItem("token");
         this.users = JSON.parse(localStorage.getItem("UserDetails"));
-        if (!user) {
-            this.$router.push({
-                name: "/"
-            });
-        }
+        
     },
 };
 </script>

@@ -1,12 +1,12 @@
 <template>
    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0 " style="background-color: #fff; background-image: url(/img/slide_bg_pattern.cfd7254b.png);">
-      <div class="mt-5"><span>&nbsp;</span></div>
+      <div  class="mt-5"><span>&nbsp;</span></div>
 
       <div class="container  mt-5">
          <div class="card login-card rounded mt-5">
             <div class="row no-gutters ml-1 p-3  ">
                <div class="col-md-5 shadow-sm"> 
-                  <img src="../assets/pexels-dids-5360447.jpg" alt="login" class="login-card-img "/> 
+                  <img src="../assets/pexels-dids-5360447.jpg" alt="spacial -login page wallpaper" class="login-card-img "/> 
                </div>
                <div class="col-md-7">
                   <div class="card-body">
@@ -24,7 +24,7 @@
          <div class="howwork">
               <h1 class="h1 mb-5">How Restroworld Work</h1>
               <div style=" display: flex;align-items: center; justify-content: center;">
-              <img class="img "  src="../../src/assets/Group 50.png" />
+              <img class="img " alt="wallpaper"  src="../../src/assets/Group 50.png" />
             </div>
               <p class="p">
                 Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
@@ -104,16 +104,15 @@
 
 
 
-
+         <register_component></register_component>
 
          <!-- what is Restroworld  -->
-         <div class="mt-5"><span>&nbsp;</span></div>
+         <!-- <div class="mt-5"><span>&nbsp;</span></div>
 
 
          <div class="mt-5 text-center"  >
             <label style=" color: rgb(34, 34, 34); font-weight: 900 bolder; font-size: 4vh;"  class="  w-200 fw-900" >What Is   </label>  <label style=" color: rgb(34, 34, 34); font-size: 4vh; " class="  w-900 fw-900"> &nbsp;<span class="space1" style="color: #004898 !important">Restro</span><span class="space1" style="color: #c41e16 !important">world</span> ?</label>
-            <!-- <img src="../assets/whatisrestro.png" alt=""> -->
-         </div>
+       </div>
 
          <div class="mt-1"><span>&nbsp;</span></div>
 
@@ -126,7 +125,7 @@
                   <img   src="../assets/logo-2.jpg" style="height: fit-content;  position: relative;" alt="login" class="login-card-img "/> 
               
                </div>
-               <div class="header text-center mb-4"> <label for="content-title " style="font-size: 2.2vh;" class=" w-900 fw-700">
+                  <div class="header text-center mb-4"> <label for="content-title " style="font-size: 2.2vh;" class=" w-900 fw-700">
                   Restroworld: Restroworld is the first global community specially designed for the Restaurant Industry.
                </label></div>
                <div>
@@ -166,112 +165,30 @@
                   </p>
                </div>
              </div>
-         </div></div>
+         </div></div>-->
 
-         <div class="mt-1"><span>&nbsp;</span></div>
+
+
+         <div class="mt-1"><span>&nbsp;</span></div> 
+
+
+
+
+
+
 
       </div>
    </main>
 </template>
 <script>
-   // import axios from "axios";
-   // import Error from "./Error.vue";
+ import register_component from "./register-component.vue"
    export default {
      name: "Register",
      components: {
+      register_component
       //  Error,
      },
-   //   data() {
-   //     return {
-   //        selected:'',
-   //       business_name: "",
-   //       first_name: "",
-   //       last_name: "",
-   //       email: "",
-   //       password: "",
-   //       password_confirmation: "",
-   //       user_type: "",
-   //       error: "", 
-   //       country_id:'101',
-   //       state_id:'',
-   //        city_id:'',
-   //          list:[],
-   //          state:[],
-   //          city:[]
-   //     };
-   //   },
-   //   methods: {
-   //     async handalSubmit() {
-   //       try {
-   //         const response = await axios.post("users", {
-   //           business_name: this.business_name,
-   //           first_name: this.first_name,
-   //           last_name: this.last_name,
-   //           email: this.email,
-   //           password: this.password,
-   //           password_confirmation: this.password_confirmation,
-   //           user_type: this.user_type,
-   //           country_id: this.country_id,
-   //           state_id: this.state_id,
-   //           city_id: this.city_id
-   //         });
-   //         console.log(response);
-   //         this.$router.push("/login");
-   //       } catch (e) {
-   //         this.error = "Error occurred!";
-   //       }
-   //     },
-       
-   
-   
-   //           getData()
-   //                {
-   //                   axios.get('countries?is_light=true')
-   //                   .then((result)=>{
-                       
-   //                      this.list=result.data.data;
-   //                      console.warn(result)
-   //                      this.getState()
-   //                       console.warn("sonu result get country")
-   //                     })
-   //                },
-   
-   //                  getState()
-   //                  {
-   //                   axios.get('states_of_country?is_light=1' +this.country_id, {
-   //                  params: {  country_id: this.country_id  }  })
-   //                   .then((result)=>{
-   //                      this.state=result.data.data;
-   //                      console.warn(result)
-   //                         this.getCity()
-   //                       console.warn("sonu result get state")
-   //                     })
-   //                },
-   //                 getCity()
-   //                  {
-   //                   axios.get('cities_of_state?is_light=1'+this.state_id, {
-   //                  params: {  state_id: this.state_id  }  })
-   //                   .then((result)=>{
-   //                      this.city=result.data.data;
-   //                      console.warn(result)
-   //                       console.warn("sonu result get city")
-   //                     })
-   //                },
-   
-   
-   //   },
-    
 
-//                    mounted(){
-//                       this.getData()
-// // let user = localStorage.getItem('token');
-// // if(user)
-// // {
-    
-// //  this.$router.push("/home");
-// // }
-//   },
-  
    };
 </script>
 <style scoped>
@@ -403,20 +320,6 @@ height: fit-content;
 padding-top: 1.5rem;
 border-radius: 10px;
 
-}
-
-.howwork img {
-  position: absolute;
-  height: 370px;
-  margin-top: 50%;
-  width: 116%;
-  margin-left: -59%;
-
-/* position:absolute;
-
-margin-top: 34%;
-  width: 96%;
-  margin-left: 0%; */
 }
 
 
