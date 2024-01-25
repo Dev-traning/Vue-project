@@ -1,12 +1,12 @@
 <template>
-   <main class="d-flex align-items-center min-vh-100 py-3 py-md-0 " style="background-color: #fff;">
-      <div class="mt-5"><span>&nbsp;</span></div>
+   <main class="d-flex align-items-center min-vh-100 py-3 py-md-0 " style="background-color: #fff; background-image: url(/img/slide_bg_pattern.cfd7254b.png);">
+      <div  class="mt-5"><span>&nbsp;</span></div>
 
       <div class="container  mt-5">
-         <div class="card login-card rounded">
+         <div class="card login-card rounded mt-5">
             <div class="row no-gutters ml-1 p-3  ">
                <div class="col-md-5 shadow-sm"> 
-                  <img src="../assets/pexels-dids-5360447.jpg" alt="login" class="login-card-img "/> 
+                  <img src="../assets/pexels-dids-5360447.jpg" alt="spacial -login page wallpaper" class="login-card-img "/> 
                </div>
                <div class="col-md-7">
                   <div class="card-body">
@@ -21,13 +21,98 @@
          </div>
 
 
+         <div class="howwork">
+              <h1 class="h1 mb-5">How Restroworld Work</h1>
+              <div style=" display: flex;align-items: center; justify-content: center;">
+              <img class="img " alt="wallpaper"  src="../../src/assets/Group 50.png" />
+            </div>
+              <p class="p">
+                Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
+                waiting for you at Restroworld.
+              </p>
+            </div>
+
+
+
+
+
+            <div class="expolre">
+                <label>Discover Restroworld</label>
+                <div class="tbl mt-5">
+                <!-- <LandingPage/> -->
+                <table >
+            <tr>
+              <th></th>
+              <th style="background-color: #4d4d4d;
+              color: white;
+              text-align: center;
+              border-radius: 26px;
+              ">Free Registration</th>
+              <th style="background-color: #4d4d4d;
+              color: white;
+              text-align: center;
+              border-radius: 26px;
+              ">Elite Membership</th>
+            </tr>
+            <tr>
+              <td>Can do sign-up</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Post on Restroworld social media feed</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Can create jobs and view all the CVs.</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant job board</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant vendor directory</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant manpower directory</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d" /></td>
+            </tr>
+            <tr>
+              <td>Restaurant franchise opportunities</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
+            </tr>
+            <tr>
+              <td>Buy and sell used restaurant equipment</td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-xmark"  size="xl" color="#4d4d4d" /></td>
+              <td style="text-align:center"><font-awesome-icon icon="fa-solid fa-circle-check " size="xl" color="#4d4d4d"  /></td>
+            </tr>
+                </table>
+      </div>
+    </div>
+
+
+
+
+
+
+
+         <register_component></register_component>
+
          <!-- what is Restroworld  -->
-         <div class="mt-5"><span>&nbsp;</span></div>
+         <!-- <div class="mt-5"><span>&nbsp;</span></div>
+
 
          <div class="mt-5 text-center"  >
             <label style=" color: rgb(34, 34, 34); font-weight: 900 bolder; font-size: 4vh;"  class="  w-200 fw-900" >What Is   </label>  <label style=" color: rgb(34, 34, 34); font-size: 4vh; " class="  w-900 fw-900"> &nbsp;<span class="space1" style="color: #004898 !important">Restro</span><span class="space1" style="color: #c41e16 !important">world</span> ?</label>
-            <!-- <img src="../assets/whatisrestro.png" alt=""> -->
-         </div>
+       </div>
 
          <div class="mt-1"><span>&nbsp;</span></div>
 
@@ -40,7 +125,7 @@
                   <img   src="../assets/logo-2.jpg" style="height: fit-content;  position: relative;" alt="login" class="login-card-img "/> 
               
                </div>
-               <div class="header text-center mb-4"> <label for="content-title " style="font-size: 2.2vh;" class=" w-900 fw-700">
+                  <div class="header text-center mb-4"> <label for="content-title " style="font-size: 2.2vh;" class=" w-900 fw-700">
                   Restroworld: Restroworld is the first global community specially designed for the Restaurant Industry.
                </label></div>
                <div>
@@ -80,115 +165,167 @@
                   </p>
                </div>
              </div>
-         </div></div>
+         </div></div>-->
 
-         <div class="mt-1"><span>&nbsp;</span></div>
+
+
+         <div class="mt-1"><span>&nbsp;</span></div> 
+
+
+
+
+
+
 
       </div>
    </main>
 </template>
 <script>
-   // import axios from "axios";
-   // import Error from "./Error.vue";
+ import register_component from "./register-component.vue"
    export default {
      name: "Register",
      components: {
+      register_component
       //  Error,
      },
-   //   data() {
-   //     return {
-   //        selected:'',
-   //       business_name: "",
-   //       first_name: "",
-   //       last_name: "",
-   //       email: "",
-   //       password: "",
-   //       password_confirmation: "",
-   //       user_type: "",
-   //       error: "", 
-   //       country_id:'101',
-   //       state_id:'',
-   //        city_id:'',
-   //          list:[],
-   //          state:[],
-   //          city:[]
-   //     };
-   //   },
-   //   methods: {
-   //     async handalSubmit() {
-   //       try {
-   //         const response = await axios.post("users", {
-   //           business_name: this.business_name,
-   //           first_name: this.first_name,
-   //           last_name: this.last_name,
-   //           email: this.email,
-   //           password: this.password,
-   //           password_confirmation: this.password_confirmation,
-   //           user_type: this.user_type,
-   //           country_id: this.country_id,
-   //           state_id: this.state_id,
-   //           city_id: this.city_id
-   //         });
-   //         console.log(response);
-   //         this.$router.push("/login");
-   //       } catch (e) {
-   //         this.error = "Error occurred!";
-   //       }
-   //     },
-       
-   
-   
-   //           getData()
-   //                {
-   //                   axios.get('countries?is_light=true')
-   //                   .then((result)=>{
-                       
-   //                      this.list=result.data.data;
-   //                      console.warn(result)
-   //                      this.getState()
-   //                       console.warn("sonu result get country")
-   //                     })
-   //                },
-   
-   //                  getState()
-   //                  {
-   //                   axios.get('states_of_country?is_light=1' +this.country_id, {
-   //                  params: {  country_id: this.country_id  }  })
-   //                   .then((result)=>{
-   //                      this.state=result.data.data;
-   //                      console.warn(result)
-   //                         this.getCity()
-   //                       console.warn("sonu result get state")
-   //                     })
-   //                },
-   //                 getCity()
-   //                  {
-   //                   axios.get('cities_of_state?is_light=1'+this.state_id, {
-   //                  params: {  state_id: this.state_id  }  })
-   //                   .then((result)=>{
-   //                      this.city=result.data.data;
-   //                      console.warn(result)
-   //                       console.warn("sonu result get city")
-   //                     })
-   //                },
-   
-   
-   //   },
-    
 
-//                    mounted(){
-//                       this.getData()
-// // let user = localStorage.getItem('token');
-// // if(user)
-// // {
-    
-// //  this.$router.push("/home");
-// // }
-//   },
-  
    };
 </script>
 <style scoped>
+
+
+.howwork {
+  grid-row: 2/3;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  height: 60vh;
+  margin: 10% 0%;
+}
+
+.howwork h1 {
+   grid-row: 1/2;
+    font-weight: 700;
+    font-size: 2.7rem;
+    color: #4d4d4d;
+}
+
+.howwork img {
+  grid-row: 2/3;
+    /* position: absolute; */
+    height: 370px;
+    margin-top: 3%;
+    /* margin-left: -20%; */
+    width: 100%;
+    object-fit: contain;
+
+}
+
+.howwork p {
+  grid-row: 3/4;
+  font-weight: 600;
+  color: #707070;
+  margin-top: 0px;
+}
+.expolre {
+  grid-row: 3/4;
+  text-align: center;
+  margin-top: 10%;
+  
+  
+}
+
+.tbl{
+  /* display: grid;
+  grid-template-columns: 15% 70% 15%;
+  width: 100%-20px; */
+  font-size: 1rem;
+  width: 100%;
+}
+
+.expolre label{
+  font-weight: 700;
+  font-size: 50px;
+  color: #4d4d4d;
+
+}
+
+table {
+  margin-top:4rem;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  grid-column: 2/3;
+  border-collapse: separate;
+  border-spacing: 50px 0;
+  font-weight: 400;
+}
+
+
+td, th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 8px;
+  
+}
+@media screen and (min-width:0px) and (max-width: 767.98px){
+
+
+  .howwork h1 {
+   grid-row: 1/2;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #4d4d4d;
+}
+
+.upper{
+
+  max-width: 92%;
+  margin-left: 4%;
+  height: fit-content;
+  padding-top: 1.5rem;
+  border-radius: 10px;
+
+  }
+
+  table{
+   margin-top: 4rem;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    /* width: 100%; */
+    grid-column: 2/3;
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    font-weight: 400;
+    /* max-width: 100%; */
+    display: contents;
+  }
+  .expolre label{
+  font-weight: 700;
+  font-size: 2rem;
+  color: #4d4d4d;
+
+}
+
+
+}
+
+@media screen and (min-width:0px) and (max-width: 400.98px)
+{
+.upper{
+
+max-width: 92%;
+margin-left: 4%;
+height: fit-content;
+padding-top: 1.5rem;
+border-radius: 10px;
+
+}
+
+
+
+
+}
    .login-card .form-control {
    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
    font-size: 1rem;

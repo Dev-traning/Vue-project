@@ -65,12 +65,12 @@
             <div class="mont-font">
 
                 <b-alert class="p-1 text-center" v-if="otpFail" :show="dismissCountDown" dismissible variant="warning" @dismissed="dismissCountDown=0" @dismiss-count-down="countDownChanged">{{otpFail}}</b-alert>
-                <img src="../../assets/1622832_documents_email_envelope_feed_letter_icon.svg" width="170px" class="mx-auto rounded d-block" alt="" style="margin:auto;">
+                <img src="../../assets/1622832_documents_email_envelope_feed_letter_icon.svg" width="170px" class="mx-auto rounded d-block" alt="documents_email_envelope_feed_letter_icon" style="margin:auto;">
                 <h4 class="p-2 text-center login_heading text-uppercase fw-500">Verify Your E-mail - Please Enter the OTP</h4>
                 <p class="pl-4 m-auto ml-4 text-center form_content font-xssss">Please enter the OTP that we have sent to your registered E-Mail Id to verify your account.</p>
                 <form class="p-1 m-4 mb-0 text-center d-block form-group" @submit.prevent="handalSubmit">
 
-                    <input id="partitioned" type="text" maxlength="6" autocomplete="off" v-model="email_otp" />
+                    <input id="partitioned" for="write otp" type="text" maxlength="6" autocomplete="off" v-model="email_otp" />
                     <div class="justify-content-center align-items-center mt-4">
 
                         <button type="button" class="btn shadow-none btn-primary fw-500 font-xss text-light-500  p-1" @click="oTpVerify">{{loading ? "Processing..." : "Verify"}}</button>
