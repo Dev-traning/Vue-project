@@ -64,8 +64,8 @@ import ManpowerEditProfile from "./components/Manpower/ManpowerEditProfile.vue";
 import MyAppliedJobs from "./components/Manpower/MyAppliedJobs.vue";
 import JobsList from "./components/Manpower/JobsList.vue";
 import ManpowerShow from "./components/Manpower/ManpowerShow.vue";
-import DownloadManpowerInvoice from "./components/Manpower/DownloadManpowerInvoice.vue"
-import man_power_bluetick from "./components/Manpower/blue-tick.vue"
+import DownloadManpowerInvoice from "./components/Manpower/DownloadManpowerInvoice.vue";
+import man_power_bluetick from "./components/Manpower/blue-tick.vue";
 
 // Vendor
 import VendorListing from "./components/Vendor/VendorListing.vue";
@@ -108,6 +108,7 @@ import User from "./components/Landing/User.vue";
 import PostsSingle from "./components/Landing/PostsSingle.vue";
 import ReadMore from "./components/Landing/ReadMore.vue";
 import NotAuthPostsingle from "./components/Landing/NotAuthPostsingle.vue";
+import LandingHome from "./components/Landing/LandingHome.vue";
 
 // Followers
 
@@ -115,11 +116,11 @@ import Followers from "./components/Following/Followers.vue";
 import Following from "./components/Following/Following.vue";
 import Request from "./components/Following/Request.vue";
 import Follow from "./components/Following/Follow.vue";
-import DeletePolicy from './components/DeletePolicy.vue';
-import privacypolicy from './components/privacypolicy.vue';
+import DeletePolicy from "./components/DeletePolicy.vue";
+import privacypolicy from "./components/privacypolicy.vue";
 
 //about us
-import about_us from './components/AboutUs/about_us.vue'
+import about_us from "./components/AboutUs/about_us.vue";
 
 Vue.use(Router);
 
@@ -143,7 +144,7 @@ export default new Router({
     {
       path: "/postsnotAuth/:id",
       component: NotAuthPostsingle,
-    }, 
+    },
     {
       path: "/Home",
       component: Home,
@@ -153,7 +154,7 @@ export default new Router({
           path: "/Home/User",
           component: User,
         },
-         { path: "/about_us", component: about_us },
+        { path: "/about_us", component: about_us },
 
         {
           path: "/Profile/:id",
@@ -196,7 +197,7 @@ export default new Router({
           path: "/blueticksuccess",
           component: Bluetick_Success,
         },
-        
+
         {
           path: "/home/User/AtmPaySuc",
           component: AtmPaySuc,
@@ -221,17 +222,16 @@ export default new Router({
           beforeEnter: (to, from, next) => {
             const token = localStorage.getItem("token");
             const id = to.params.id;
-    
+
             if (!token) {
               next(`/postsnotAuth/${id}`); // Redirect to "/another-route/:id" if token is not found
             } else {
               next(); // Proceed with the navigation
             }
           },
-        },     
-          
-          
-          {
+        },
+
+        {
           path: "/read-more/:user_type_text/:id",
           component: ReadMore,
         },
@@ -268,7 +268,7 @@ export default new Router({
     },
 
     {
-      path: "/",
+      path: "/RegisterNew",
       component: Register,
       redirect: "/UserStore",
       children: [
@@ -290,7 +290,6 @@ export default new Router({
             },
           ],
         },
-        
 
         {
           name: "MailVerify",
@@ -323,7 +322,6 @@ export default new Router({
             },
           ],
         },
-        
 
         {
           name: "MailVerify",
@@ -405,7 +403,6 @@ export default new Router({
           path: "/ManpowerListings/blue-tick",
           component: man_power_bluetick,
         },
-
       ],
     },
     {
@@ -482,6 +479,13 @@ export default new Router({
     {
       path: "/privacypolicy",
       component: privacypolicy,
-    }
+    },
+
+    // landing page
+    {
+      path: "/",
+      component: LandingHome,
+      name: "LandingHome",
+    },
   ],
 });
