@@ -24,7 +24,6 @@
           >
           <span>For Restaurant Industry.</span>
         </h1>
-
         <p class="fs-5" style="letter-spacing: 1.5px">
           As The Name Suggests "Restroworld" Is Basically "Restro" "World" Where
           Every Single Individual Who Is Working WithThe Restaurant Industry Can
