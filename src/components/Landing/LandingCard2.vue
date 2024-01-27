@@ -109,12 +109,13 @@
         "Join The Culinary Revolution: Explore Opportunities, Connect With
         Experts, And Elevate Your Restaurant Journey With Restroworld!"
       </p>
+
       <button
         type="button"
         class="btn btn-light p-2 my-5 fw-bold custom-btn"
         style="width: 15%; color: rgb(50, 61, 119)"
       >
-        Sign Up
+        <router-link to="/RegisterNew"> Sign Up </router-link>
       </button>
     </div>
   </main>

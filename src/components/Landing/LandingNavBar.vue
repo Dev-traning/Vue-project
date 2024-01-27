@@ -3,8 +3,8 @@
     <!-- Navbar for larger screens -->
     <div class="d-none d-md-flex justify-content-center">
       <nav
-        class="d-flex w-100 justify-content-between p-4 fixed-top"
-        style="background: white"
+        class="d-flex w-100 justify-content-between fixed-top"
+        style="background: white; padding: 1.5rem 8rem"
       >
         <div class="d-flex justify-content-start pl-2">
           <RouterLink

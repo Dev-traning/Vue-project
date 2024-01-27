@@ -8,6 +8,12 @@
           class="w-100 custom-slide-image"
           style=""
         />
+        <img
+          src="./assets/Path 7557.png"
+          alt="slide-image"
+          class="w-100 custom-slide-first-image"
+          style="height: 25rem"
+        />
       </div>
 
       <div
@@ -24,7 +30,6 @@
           >
           <span>For Restaurant Industry.</span>
         </h1>
-
         <p class="fs-5" style="letter-spacing: 1.5px">
           As The Name Suggests "Restroworld" Is Basically "Restro" "World" Where
           Every Single Individual Who Is Working WithThe Restaurant Industry Can
@@ -71,6 +76,29 @@ export default {
 @media (max-width: 559px) {
   .custom-responsive {
     width: 100% !important;
+  }
+}
+
+@media (min-width: 679px) {
+  .custom-slide-first-image {
+    display: none !important;
+  }
+}
+
+@media (max-width: 679px) {
+  .custom-slide-image {
+    display: none !important;
+  }
+  .custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 389px) {
+  .custom-slide-first-image {
+    height: 35rem !important;
   }
 }
 </style>
