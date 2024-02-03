@@ -108,7 +108,7 @@ import User from "./components/Landing/User.vue";
 import PostsSingle from "./components/Landing/PostsSingle.vue";
 import ReadMore from "./components/Landing/ReadMore.vue";
 import NotAuthPostsingle from "./components/Landing/NotAuthPostsingle.vue";
-import LandingHome from "./components/Landing/LandingHome.vue";
+// import LandingHome from "./components/Landing/LandingHome.vue";
 
 // Followers
 
@@ -121,6 +121,9 @@ import privacypolicy from "./components/privacypolicy.vue";
 
 //about us
 import about_us from "./components/AboutUs/about_us.vue";
+
+//Dummy User start here
+import DummySignin from "@/components/Dummy-User/DummySignin.vue";
 
 Vue.use(Router);
 
@@ -482,10 +485,17 @@ export default new Router({
     },
 
     // landing page
+    // {
+    //   path: "/",
+    //   component: LandingHome,
+    //   name: "LandingHome",
+    // },
+
+    //Dummy-User pages herr
     {
       path: "/",
-      component: LandingHome,
-      name: "LandingHome",
+      component: DummySignin,
+      name: "DummySignin",
     },
   ],
 });
