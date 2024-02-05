@@ -7,7 +7,7 @@
         <h1 class="p-0 m-0 fs-3" style="font-weight: 500">
           {{ currentUser.full_name }}
         </h1>
-        <p class="p-0 fs-5" style="font-weight: 500">Restronent</p>
+        <p class="p-0 fs-5" style="font-weight: 500">Restaurant</p>
         <button
           @click="logout"
           type="button"
