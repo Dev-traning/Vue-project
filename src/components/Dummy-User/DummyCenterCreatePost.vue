@@ -42,7 +42,7 @@
               class="position-absolute fs-6"
               style="left: 3.5rem; top: 1rem; color: gray"
             >
-              Please share your Restroworls stories
+              Please share your Restroworld stories!
             </p>
           </div>
         </div>
