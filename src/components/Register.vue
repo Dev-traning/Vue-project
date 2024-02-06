@@ -6,7 +6,7 @@
       background-image: url(/img/slide_bg_pattern.cfd7254b.png);
     "
   >
-    <LandingNavBar />
+    <DummyNavBar />
 
     <div class="mt-5"><span>&nbsp;</span></div>
 
@@ -280,17 +280,21 @@
     </div>
   </main>
 </template>
+
 <script>
-import LandingNavBar from "./Landing/LandingNavBar.vue";
+import DummyNavBar from "./Dummy-User/DummyNavBar.vue";
+// import LandingNavBar from "./Landing/LandingNavBar.vue";
 import register_component from "./register-component.vue";
 export default {
   name: "Register",
   components: {
     register_component,
-    LandingNavBar,
+    // LandingNavBar,
+    DummyNavBar,
   },
 };
 </script>
+
 <style scoped>
 .howwork {
   grid-row: 2/3;

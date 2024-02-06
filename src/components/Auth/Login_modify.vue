@@ -1,6 +1,7 @@
 <template>
   <div class="mainContainer">
-    <LandingNavBar />
+    <DummyNavBar />
+
     <div class="form">
       <b-card no-body class="overflow-hidden upper" style="">
         <b-row no-gutters>
@@ -235,6 +236,7 @@
         </div>
       </b-modal>
     </div>
+
     <div class="howwork">
       <h1 class="h1">How Restroworld Work</h1>
       <div style="align-items: center; justify-content: center">
@@ -249,6 +251,7 @@
         waiting for you at Restroworld.
       </p>
     </div>
+
     <div class="expolre">
       <h1>Discover Restroworld</h1>
       <div class="tbl">
@@ -416,6 +419,7 @@
         </table>
       </div>
     </div>
+
     <div class="fotter">
       <b class="logo">
         <span style="color: #004898; font-size: 74px">Restro</span>
@@ -427,14 +431,17 @@
         Resturant
       </p>
     </div>
+
     <div class="white">
       <h5 class="p1">copyrights@restroworld</h5>
     </div>
   </div>
 </template>
+
 <script>
 import axios from "axios";
-import LandingNavBar from "../Landing/LandingNavBar.vue";
+import DummyNavBar from "../Dummy-User/DummyNavBar.vue";
+// import LandingNavBar from "../Landing/LandingNavBar.vue";
 
 export default {
   name: "Login_modify",
@@ -644,9 +651,12 @@ export default {
       this.$router.push("/home");
     }
   },
-  components: { LandingNavBar },
+  components: {
+    DummyNavBar,
+  },
 };
 </script>
+
 <style scoped>
 .mainContainer {
   background-image: url("../../assets/slide_bg_pattern.png");

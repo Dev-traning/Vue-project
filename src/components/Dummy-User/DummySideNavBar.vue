@@ -37,21 +37,25 @@
 
         <li class="mx-3 my-3 w-50 list-unstyled">
           <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
-          <router-link to="/login" class="text-decoration-none">
+          <button
+            @click="logout"
+            class="text-decoration-none"
+            style="border: none; background: none"
+          >
             <div
               class="home-logo d-flex justify-conent-center align-items-center"
               mouseover="label1"
               role="link"
             >
-              <span class="fs-5 fw-bold mx-3 custom-text-color" id="block1"
-                >Log-in</span
-              >
+              <span class="fs-5 fw-bold mx-3 custom-text-color" id="block1">
+                Log-In
+              </span>
             </div>
-          </router-link>
+          </button>
         </li>
 
+        <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
         <li class="mx-3 my-3 w-50 list-unstyled">
-          <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
           <router-link to="/RegisterNew" class="text-decoration-none">
             <div
               class="home-logo d-flex justify-conent-center align-items-center"
@@ -87,7 +91,21 @@ export default {
     document.removeEventListener("click", this.handleDocumentClick);
   },
 
+  created() {
+    this.lodData();
+  },
+
   methods: {
+    lodData() {
+      this.token = localStorage.getItem("authToken");
+      //   console.log("this is home page show token", this.token);
+    },
+
+    logout() {
+      localStorage.removeItem("authToken");
+      this.$router.push("/login");
+    },
+
     openSidebar() {
       this.isSidebarOpen = true;
     },
@@ -128,8 +146,8 @@ export default {
 }
 
 /* .sidebar.is-open {
-        left: 0;
-    } */
+          left: 0;
+      } */
 
 .profile-logo {
   margin-left: 5rem;
