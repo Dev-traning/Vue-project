@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="custom-res-navbar">
     <!-- Navbar for larger screens -->
     <div class="container-xl d-none d-md-flex justify-content-center w-100">
       <nav
@@ -144,9 +144,12 @@ export default {
   }
 }
 
-/* @media (max-width: 457px) {
-  .custom-right-padding {
-    padding-left: 1rem !important;
+@media (max-width: 767px) {
+  .custom-res-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
   }
-} */
+}
 </style>
