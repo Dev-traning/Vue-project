@@ -1,222 +1,224 @@
 <template>
-  <main
-    class="d-flex align-items-center min-vh-100 py-3 py-md-0"
-    style="
-      background-color: #fff;
-      background-image: url(/img/slide_bg_pattern.cfd7254b.png);
-    "
-  >
+  <div>
     <LandingNavBar />
 
-    <div class="mt-5"><span>&nbsp;</span></div>
+    <main
+      class="d-flex align-items-center min-vh-100 py-3 py-md-0"
+      style="
+        background-color: #fff;
+        background-image: url(/img/slide_bg_pattern.cfd7254b.png);
+      "
+    >
+      <div class="mt-5"><span>&nbsp;</span></div>
 
-    <div class="container mt-5">
-      <div class="card login-card rounded mt-5">
-        <div class="row no-gutters ml-1 p-3">
-          <div class="col-md-5 shadow-sm">
-            <img
-              src="../assets/pexels-dids-5360447.jpg"
-              alt="spacial -login page wallpaper"
-              class="login-card-img"
-            />
-          </div>
-          <div class="col-md-7">
-            <div class="card-body">
-              <router-view></router-view>
+      <div class="container mt-5">
+        <div class="card login-card rounded mt-5">
+          <div class="row no-gutters ml-1 p-3">
+            <div class="col-md-5 shadow-sm">
+              <img
+                src="../assets/pexels-dids-5360447.jpg"
+                alt="spacial -login page wallpaper"
+                class="login-card-img"
+              />
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <router-view></router-view>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="howwork">
-        <h1 class="h1 mb-5">How Restroworld Work</h1>
-        <div
-          style="display: flex; align-items: center; justify-content: center"
-        >
-          <img
-            class="img"
-            alt="wallpaper"
-            src="../../src/assets/Group 50.png"
-          />
+        <div class="howwork">
+          <h1 class="h1 mb-5">How Restroworld Work</h1>
+          <div
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <img
+              class="img"
+              alt="wallpaper"
+              src="../../src/assets/Group 50.png"
+            />
+          </div>
+          <p class="p">
+            Billions of Restaurants, Vendors, Chefs, Captains and many more
+            are<br />
+            waiting for you at Restroworld.
+          </p>
         </div>
-        <p class="p">
-          Billions of Restaurants, Vendors, Chefs, Captains and many more are<br />
-          waiting for you at Restroworld.
-        </p>
-      </div>
 
-      <div class="expolre">
-        <label>Discover Restroworld</label>
-        <div class="tbl mt-5">
-          <!-- <LandingPage/> -->
-          <table>
-            <tr>
-              <th></th>
-              <th
-                style="
-                  background-color: #4d4d4d;
-                  color: white;
-                  text-align: center;
-                  border-radius: 26px;
-                "
-              >
-                Free Registration
-              </th>
-              <th
-                style="
-                  background-color: #4d4d4d;
-                  color: white;
-                  text-align: center;
-                  border-radius: 26px;
-                "
-              >
-                Elite Membership
-              </th>
-            </tr>
-            <tr>
-              <td>Can do sign-up</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Post on Restroworld social media feed</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Can create jobs and view all the CVs.</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-xmark"
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Restaurant job board</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-xmark"
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Restaurant vendor directory</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-xmark"
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Restaurant manpower directory</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-xmark"
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Restaurant franchise opportunities</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-xmark"
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Buy and sell used restaurant equipment</td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-xmark"
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-              <td style="text-align: center">
-                <font-awesome-icon
-                  icon="fa-solid fa-circle-check "
-                  size="xl"
-                  color="#4d4d4d"
-                />
-              </td>
-            </tr>
-          </table>
+        <div class="expolre">
+          <label>Discover Restroworld</label>
+          <div class="tbl mt-5">
+            <!-- <LandingPage/> -->
+            <table>
+              <tr>
+                <th></th>
+                <th
+                  style="
+                    background-color: #4d4d4d;
+                    color: white;
+                    text-align: center;
+                    border-radius: 26px;
+                  "
+                >
+                  Free Registration
+                </th>
+                <th
+                  style="
+                    background-color: #4d4d4d;
+                    color: white;
+                    text-align: center;
+                    border-radius: 26px;
+                  "
+                >
+                  Elite Membership
+                </th>
+              </tr>
+              <tr>
+                <td>Can do sign-up</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Post on Restroworld social media feed</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Can create jobs and view all the CVs.</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-xmark"
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Restaurant job board</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-xmark"
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Restaurant vendor directory</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-xmark"
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Restaurant manpower directory</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-xmark"
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Restaurant franchise opportunities</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-xmark"
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Buy and sell used restaurant equipment</td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-xmark"
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+                <td style="text-align: center">
+                  <font-awesome-icon
+                    icon="fa-solid fa-circle-check "
+                    size="xl"
+                    color="#4d4d4d"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
-      </div>
 
-      <register_component></register_component>
+        <register_component></register_component>
 
-      <!-- what is Restroworld  -->
-      <!-- <div class="mt-5"><span>&nbsp;</span></div>
+        <!-- what is Restroworld  -->
+        <!-- <div class="mt-5"><span>&nbsp;</span></div>
 
 
          <div class="mt-5 text-center"  >
@@ -276,10 +278,12 @@
              </div>
          </div></div>-->
 
-      <div class="mt-1"><span>&nbsp;</span></div>
-    </div>
-  </main>
+        <div class="mt-1"><span>&nbsp;</span></div>
+      </div>
+    </main>
+  </div>
 </template>
+
 <script>
 import LandingNavBar from "./Landing/LandingNavBar.vue";
 import register_component from "./register-component.vue";
@@ -291,6 +295,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .howwork {
   grid-row: 2/3;

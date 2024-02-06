@@ -35,7 +35,7 @@ export default {
     loadData() {
       axios
         .post(`${this.apiUrl}login`, {
-          email: "dumy@gmail.com",
+          email: "restroworld@gmail.com",
           password: "12345678",
           remember_me: "1",
         })
