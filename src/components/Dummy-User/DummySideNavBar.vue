@@ -48,22 +48,22 @@
               role="link"
             >
               <span class="fs-5 fw-bold mx-3 custom-text-color" id="block1">
-                Log-out
+                Log-In
               </span>
             </div>
           </button>
         </li>
 
+        <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
         <li class="mx-3 my-3 w-50 list-unstyled">
-          <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
-          <router-link to="/maincontactUs" class="text-decoration-none">
+          <router-link to="/RegisterNew" class="text-decoration-none">
             <div
               class="home-logo d-flex justify-conent-center align-items-center"
               mouseover="label1"
               role="link"
             >
               <span class="fs-5 fw-bold mx-3 custom-text-color" id="block1"
-                >Contact-us</span
+                >Sign-up</span
               >
             </div>
           </router-link>
