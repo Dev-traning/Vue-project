@@ -96,7 +96,7 @@ export default {
 
 @media (max-width: 767px) {
   .custom-container {
-    margin-top: 2rem !important;
+    margin-top: 5rem !important;
   }
 }
 </style>
