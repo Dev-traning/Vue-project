@@ -272,10 +272,10 @@ export default {
 </script>
 
 <style scoped>
-.custom-hover-img {
+/* .custom-hover-img {
   transition: transform 0.3s ease-in-out;
 }
 .custom-hover-img:hover {
   transform: scale(1.2);
-}
+} */
 </style>
