@@ -35,7 +35,7 @@
               style="border: none; background: none"
               @click="logout"
             >
-              Log-Out
+              Log-in
             </button>
           </li>
 
