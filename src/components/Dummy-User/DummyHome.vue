@@ -4,7 +4,7 @@
 
     <div class="container-xl w-100 custom-container" style="margin-top: 7rem">
       <div class="row custom-res-row">
-        <div class="col-sm-3 custom-res-col">
+        <div class="col-sm-3 custom-res-col px-3">
           <DummyLeftSide />
         </div>
         <div class="col-sm-9 pl-0 custom-res-col">
@@ -15,7 +15,7 @@
               <DummyAllPost />
             </div>
 
-            <div class="col-sm-4 pl-0 custom-res-right-col">
+            <div class="col-sm-4 px-1 custom-res-right-col">
               <DummyRightSide />
             </div>
           </div>

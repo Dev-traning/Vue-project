@@ -7,7 +7,7 @@
             <div class="row">
               <div class="col-xl-3 col-xxl-2 col-lg-3 ps-lg-0">
                 <div
-                  class="card w-100 shadow-xss rounded-xxl border-0 mb-3 ml-3"
+                  class="card w-100 shadow-xss rounded-xxl border-0 mb-3 ml-3 m-class"
                 >
                   <div class="item">
                     <div class="overflow-hidden rounded-xxl">
@@ -265,3 +265,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@media screen and (max-width: 993px) {
+  .item {
+    margin-top: 8.5rem;
+  }
+  .m-class {
+    margin-left: 0 !important;
+  }
+}
+</style>
+
