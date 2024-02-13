@@ -47,11 +47,11 @@
           </div>
           <div>
             <h4
-              class="fw-700 text-grey-900 font-xssss mt-1"
+              class="fw-700 text-grey-900 m-0 font-xssss"
               v-for="(value, key) in item.user"
               :key="key.id"
             >
-              <div v-if="key === 'full_name'">{{ value }}</div>
+              <div v-if="key === 'full_name'" class="mt-1">{{ value }}</div>
             </h4>
             <span class="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{{
               moment(item.created_at).fromNow()
@@ -98,10 +98,7 @@
             <b-dropdown-item @click="copyDoiToClipboard(item.id)">
               <h4 class="pl-4 mt-0 fw-600 text-grey-900 font-xss">Copy Link</h4>
             </b-dropdown-item>
-        
-        
-        
-        
+
             <b-dropdown-item v-if="item.user.id == userid">
               <button
                 type="button"

@@ -74,7 +74,7 @@ export default {
   transform: scale(1.018);
 }
 
-@media only screen and (min-width: 769px) and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .img-div {
     display: none;
   }
