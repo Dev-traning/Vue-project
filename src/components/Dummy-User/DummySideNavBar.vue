@@ -1,45 +1,45 @@
 <template>
   <div>
-    <div class="sidebar w-25 vh-100 p-2" :class="{ 'is-open': isSidebarOpen }">
-      <div class="mt-3">
-        <button
-          type="button"
-          class="btn-close position-absolute top-0 end-0"
-          aria-label="Close"
-          @click="$emit('closeSidebar')"
-        ></button>
-
-        <div class="d-flex justify-content-start pl-2">
+    <div class="sidebar w-25 h-100 p-2" :class="{ 'is-open': isSidebarOpen }">
+      <div class="mt-3 d-flex align-items-center justify-content-between">
+        <div class="pl-2">
           <img
             src="./assets/Scroll Group 48.png"
             alt="logo of RedPrix"
-            style="object-fit: contain; width: 75%"
+            style="object-fit: contain; width: 80%"
           />
         </div>
+
+        <button
+          type="button"
+          class="btn-close pe-2 fs-4 fw-bold"
+          aria-label="Close"
+          @click="$emit('closeSidebar')"
+        ></button>
         <!-- <h1 class="custom-text-color fs-3 fs fw-bolder">RedPrix</h1> -->
       </div>
 
-      <ul class="py-0 px-0 my-3 mx-0">
-        <li class="mx-3 my-3 w-50 list-unstyled">
+      <ul class="py-0 px-0 my-3 mx-0 ms-2">
+        <li class="my-3 w-50 list-unstyled">
           <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
-          <router-link to="/" class="text-decoration-none">
+          <router-link to="/" class="text-decoration-none mx-0 my-0">
             <div
               class="home-logo d-flex justify-conent-center align-items-center"
               mouseover="label1"
               role="link"
             >
-              <span class="fs-5 fw-bold mx-3 custom-text-color" id="block1"
-                >home</span
+              <span class="fs-4 fw-bold custom-text-color" id="block1">
+                - Home</span
               >
             </div>
           </router-link>
         </li>
 
-        <li class="mx-3 my-3 w-50 list-unstyled">
+        <li class="my-3 w-50 list-unstyled">
           <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
           <button
             @click="logout"
-            class="text-decoration-none"
+            class="text-decoration-none mx-0 my-0"
             style="border: none; background: none"
           >
             <div
@@ -47,23 +47,23 @@
               mouseover="label1"
               role="link"
             >
-              <span class="fs-5 fw-bold mx-3 custom-text-color" id="block1">
-                Log-In
+              <span class="fs-4 fw-bold custom-text-color" id="block1">
+                - Log-In
               </span>
             </div>
           </button>
         </li>
 
         <!-- <img src="../Profile_Screens/assets/Home_selected.svg" alt=""/> -->
-        <li class="mx-3 my-3 w-50 list-unstyled">
-          <router-link to="/RegisterNew" class="text-decoration-none">
+        <li class="my-3 w-50 list-unstyled">
+          <router-link to="/RegisterNew" class="text-decoration-none mx-0 my-0">
             <div
               class="home-logo d-flex justify-conent-center align-items-center"
               mouseover="label1"
               role="link"
             >
-              <span class="fs-5 fw-bold mx-3 custom-text-color" id="block1"
-                >Sign-up</span
+              <span class="fs-4 fw-bold custom-text-color" id="block1">
+                - Sign-up</span
               >
             </div>
           </router-link>
