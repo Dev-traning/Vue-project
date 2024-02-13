@@ -2,31 +2,35 @@
   <div>
     <div class="w-100 my-3">
       <div
-        class="shadow bg-body px-3 py-2 rounded-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
+        class="shadow bg-body px-3 py-2 d-flex w-100 justify-content-start align-itmes-center flex-column"
       >
-        <div class="p-2 d-flex align-itmes-center justify-content-between">
+        <div
+          class="px-1 py-2 d-flex align-itmes-center justify-content-between"
+        >
           <h4 class="p-0 m-0 fs-6 fw-bolder">Manpower</h4>
           <h4
             @click="logout"
             class="p-0 m-0 text-primary fs-6 fw-bolder"
             style="cursor: pointer"
           >
-            see all
+            See All
           </h4>
         </div>
       </div>
 
       <div
-        class="shadow bg-body px-3 py-2 mt-4 rounded-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
+        class="shadow bg-body px-3 py-2 mt-4 d-flex w-100 justify-content-start align-itmes-center flex-column"
       >
-        <div class="p-2 d-flex align-itmes-center justify-content-between">
+        <div
+          class="px-1 py-2 d-flex align-itmes-center justify-content-between"
+        >
           <h4 class="p-0 m-0 fs-6 fw-bolder">Franchise Provider</h4>
           <h4
             @click="logout"
             class="p-0 m-0 text-primary fs-6 fw-bolder"
             style="cursor: pointer"
           >
-            see all
+            See All
           </h4>
         </div>
       </div>

@@ -22,8 +22,8 @@ export default {
       dummyData: [],
       token: "",
 
-      apiUrl: "https://api.restroworld.com/api/",
-      // apiUrl: "https://uatapi.restroworld.com/public/api/",
+      // apiUrl: "https://api.restroworld.com/api/",
+      apiUrl: "https://uatapi.restroworld.com/public/api/",
     };
   },
 
