@@ -53,8 +53,8 @@
         <div v-if="post.medias && post.medias.length > 0">
           <div v-if="post.medias.length > 1" class="position-relative">
             <div
-              class="w-100 d-flex overflow-auto position-relative"
-              style="z-index: 1"
+              class="w-100 d-flex position-relative"
+              style="z-index: 1; overflow-x: auto"
             >
               <img
                 v-for="media in post.medias"
@@ -141,23 +141,21 @@
         </div>
 
         <div class="my-3 d-flex justify-content-center align-items-center">
-          <div class="w-100 p-0">
+          <div class="w-100 p-0 pe-3">
             <input
               @click="logout"
               type="text"
-              class="w-100 p-1 rounded-3"
+              class="w-100 p-1 rounded-3 custome-outline-input"
               placeholder="Recipient's username"
-              style="outline: 2px solid rgb(103, 102, 102); border: none"
             />
           </div>
 
           <div class="p-0">
             <button
               @click="logout"
-              class="btn"
+              class="btn custome-outline"
               type="button"
               id="button-addon2"
-              style="outline: 1px solid black"
             >
               Post
             </button>
@@ -382,6 +380,25 @@ export default {
 </script>
 
 <style scoped>
+.custome-outline-input {
+  outline: 2px solid rgb(137, 137, 137);
+  border: none;
+}
+
+.custome-outline-input:focus {
+  outline: 2px solid rgb(39, 38, 38);
+  border: none;
+}
+.custome-outline {
+  outline: 1px solid rgb(75, 75, 75);
+  color: black;
+  font-weight: 600;
+}
+
+.custome-outline:hover {
+  background-color: rgb(47, 47, 46);
+  color: white;
+}
 /* .custom-hover-img {
   transition: transform 0.3s ease-in-out;
 }
