@@ -6,6 +6,7 @@
       <div class="row custom-res-row">
         <div class="col-sm-3 custom-res-col px-3">
           <DummyLeftSide />
+          <LeftAdBanner />
         </div>
         <div class="col-sm-9 pl-0 custom-res-col">
           <DummyCenterCreatePost />
@@ -17,6 +18,7 @@
 
             <div class="col-sm-4 px-1 custom-res-right-col">
               <DummyRightSide />
+              <RightAdBanner />
             </div>
           </div>
         </div>
@@ -31,6 +33,8 @@ import DummyLeftSide from "./DummyLeftSide.vue";
 import DummyRightSide from "./DummyRightSide.vue";
 import DummyCenterCreatePost from "./DummyCenterCreatePost.vue";
 import DummyAllPost from "./DummyAllPostDetails.vue";
+import LeftAdBanner from "./LeftAdBanner.vue";
+import RightAdBanner from "./RightAdBanner.vue";
 
 export default {
   name: "DummyHome",
@@ -46,6 +50,8 @@ export default {
     DummyRightSide,
     DummyCenterCreatePost,
     DummyAllPost,
+    RightAdBanner,
+    LeftAdBanner,
   },
 
   created() {

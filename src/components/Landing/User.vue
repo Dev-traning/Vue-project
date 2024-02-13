@@ -268,12 +268,18 @@ export default {
 
 <style scoped>
 @media screen and (max-width: 993px) {
-  .item {
-    margin-top: 8.5rem;
+  .main-wrapper {
+    margin-left: 1rem;
+    margin-top: 5rem;
+    margin-right: 1rem;
   }
+
+  .item {
+    margin-top: 1rem;
+  }
+
   .m-class {
     margin-left: 0 !important;
   }
 }
 </style>
-
