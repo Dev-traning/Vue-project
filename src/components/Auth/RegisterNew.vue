@@ -471,6 +471,10 @@ export default {
 
     this.getData();
   },
+  beforeRouteEnter(to, from, next) {
+    window.scrollTo(0, 0);
+    next();
+  },
 };
 </script>
 
