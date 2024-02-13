@@ -135,6 +135,7 @@ export default {
       defaultPostImage: require("./assets/ProfileImg.jpg"),
     };
   },
+  components: {},
 
   created() {
     this.lodData();
