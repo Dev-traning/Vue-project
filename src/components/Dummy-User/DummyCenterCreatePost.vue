@@ -6,7 +6,7 @@
       <div class="w-100 mb-2">
         <button
           type="button"
-          class="btn btn-warning w-100 fs-4"
+          class="btn btn-warning w-100 fs-4 rounded-0"
           style="color: white"
           @click="logout"
         >
@@ -15,13 +15,13 @@
       </div>
 
       <div
-        class="my-2 w-100 d-flex justify-content-center align-items-center bg-white p-3"
+        class="my-2 w-100 d-flex justify-content-center align-items-center bg-white p-4"
       >
         <div
-          class="w-100"
+          class="w-100 border-light-md theme-dark-bg"
           style="
             background-color: whitesmoke;
-            height: 12rem;
+            height: 10rem;
             position: relative;
             cursor: pointer;
           "
@@ -32,15 +32,21 @@
           >
             <div class="w-25">
               <img
+                class="shadow-sm rounded-3"
                 src="./assets/profile-no-img.99d6b3a5.99d6b3a5.png"
                 alt="profile-no-img"
-                style="width: 20%; height: 3rem; mix-blend-mode: darken"
+                style="
+                  width: 2.2rem;
+                  height: 2rem;
+                  mix-blend-mode: darken;
+                  margin: 0.6rem 0.6rem;
+                "
               />
             </div>
 
             <p
-              class="position-absolute fs-6"
-              style="left: 3.5rem; top: 1rem; color: gray"
+              class="position-absolute fs-6 mb-0"
+              style="left: 3.5rem; top: 1.1rem; color: gray"
             >
               Please share your Restroworld stories!
             </p>

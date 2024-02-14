@@ -1,9 +1,9 @@
 <template>
   <div class="w-100">
     <div
-      class="shadow bg-body px-3 py-2 rounded-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
+      class="shadow bg-body p-2 d-flex w-100 justify-content-start align-itmes-center flex-column"
     >
-      <div class="d-flex flex-column">
+      <div class="d-flex flex-column ms-1">
         <h1 class="p-0 m-0 fs-3" style="font-weight: 500">
           {{ currentUser.full_name }}
         </h1>
@@ -18,24 +18,20 @@
         </button>
       </div>
 
-      <div
-        class="w-100 my-3"
-        style="border-bottom: 2px solid rgb(65, 64, 64)"
-      ></div>
+      <div class="w-100 my-3 border-bottom"></div>
 
-      <div class="w-100 d-flex justify-content-center align-itmes-center">
-        <p
-          class="text-start w-100 fs-4"
-          style="font-weight: 500; color: rgb(65, 64, 64)"
-        >
+      <div class="pb-3 text-center d-block w-100 ps-3 pe-3">
+        <div class="clearfix"></div>
+        <p class="mt-0 mb-1 text-left fw-600 font-xsss text-grey-600 p-1">
           Billions of Restaurants, Vendors, Chefs, Captains are waiting for you
           at Restroworld.
         </p>
+        <div class="clearfix mb-2"></div>
       </div>
     </div>
 
     <div
-      class="shadow bg-body px-3 py-2 mt-3 rounded-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
+      class="shadow bg-body px-3 py-2 mt-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
     >
       <div class="p-2 d-flex align-itmes-center justify-content-between">
         <h4 class="p-0 m-0 fs-6 fw-bolder" style="color: black">Vender</h4>
@@ -44,16 +40,16 @@
           class="p-0 m-0 text-primary fs-6 fw-bolder"
           style="cursor: pointer"
         >
-          see all
+          See All
         </h4>
       </div>
     </div>
 
     <div
-      class="shadow bg-body px-3 py-2 mt-4 rounded-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
+      class="shadow bg-body px-1 py-1 mt-4 d-flex w-100 justify-content-start align-itmes-center flex-column"
     >
       <div
-        class="p-2 d-flex align-itmes-center justify-content-between"
+        class="py-1 d-flex align-itmes-center justify-content-between"
         style="overflow: hidden"
       >
         <img
@@ -63,14 +59,14 @@
         />
       </div>
 
-      <div class="p-1 rounded-3" style="background-color: whitesmoke">
-        <h5 class="pl-3 fw-bold">Aayush Sales</h5>
-        <h6 class="pl-3">12 Jan, 2021</h6>
+      <div class="p-1" style="background-color: whitesmoke">
+        <h5 class="ps-3 fw-bold mb-0">Aayush Sales</h5>
+        <h6 class="ps-3 fs-6 mb-1">12 Jan, 2021</h6>
       </div>
 
       <button
         @click="logout"
-        class="text-primary"
+        class="text-primary py-2"
         style="border: none; background: none"
       >
         Read More
@@ -78,10 +74,10 @@
     </div>
 
     <div
-      class="shadow bg-body px-3 py-2 mt-4 rounded-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
+      class="shadow bg-body px-1 py-1 mt-4 d-flex w-100 justify-content-start align-itmes-center flex-column"
     >
       <div
-        class="p-2 d-flex align-itmes-center justify-content-between"
+        class="py-1 d-flex align-itmes-center justify-content-between"
         style="overflow: hidden"
       >
         <img
@@ -91,14 +87,14 @@
         />
       </div>
 
-      <div class="p-1 rounded-3" style="background-color: whitesmoke">
-        <h5 class="pl-3 fw-bold">Durga Kitchen equipments</h5>
-        <h6 class="pl-3">12 Jan, 2021</h6>
+      <div class="p-1" style="background-color: whitesmoke">
+        <h5 class="ps-3 fw-bold mb-0">Durga Kitchen equipments</h5>
+        <h6 class="ps-3 mb-1">12 Jan, 2021</h6>
       </div>
 
       <button
         @click="logout"
-        class="text-primary"
+        class="text-primary py-2"
         style="border: none; background: none"
       >
         Read More
@@ -106,7 +102,7 @@
     </div>
 
     <div
-      class="shadow bg-body px-3 py-2 my-4 rounded-3 d-flex w-100 justify-content-start align-itmes-center flex-column"
+      class="shadow bg-body px-3 py-2 my-4 d-flex w-100 justify-content-start align-itmes-center flex-column"
     >
       <div class="p-2 d-flex align-itmes-center justify-content-between">
         <h4 class="p-0 m-0 fs-6 fw-bolder">Sale My Restaurant</h4>
@@ -115,7 +111,7 @@
           class="p-0 m-0 text-primary fs-6 fw-bolder"
           style="cursor: pointer"
         >
-          see all
+          See All
         </h4>
       </div>
     </div>
@@ -139,6 +135,7 @@ export default {
       defaultPostImage: require("./assets/ProfileImg.jpg"),
     };
   },
+  components: {},
 
   created() {
     this.lodData();
@@ -183,6 +180,6 @@ export default {
   transition: transform 0.3s ease-in-out;
 }
 .custom-hover-img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 </style>

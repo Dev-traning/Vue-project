@@ -3,10 +3,10 @@
     <div
       v-for="post in allPosts"
       :key="post.id"
-      class="w-100 d-flex flex-column bg-body p-4 my-3 rounded-3"
+      class="w-100 d-flex flex-column bg-body px-4 py-2 my-3"
     >
       <div
-        class="d-flex my-2 gap-2 d-flex justify-content-start align-items-center"
+        class="d-flex my-3 gap-2 d-flex justify-content-start align-items-center"
       >
         <img
           :src="
@@ -16,20 +16,20 @@
           "
           alt="profile-no-img"
           class="rounded-3"
-          style="width: 9%; height: 3rem; mix-blend-mode: darken"
+          style="width: 9; height: 2.8rem; mix-blend-mode: darken"
         />
 
         <div class="d-flex justify-content-between w-100">
           <div class="d-flex flex-column">
-            <h5 class="fw-bold fs-6">{{ post.user.first_name }}</h5>
+            <h5 class="fw-bold fs-6 mb-1 mt-1">{{ post.user.first_name }}</h5>
             <h6 class="fs-6 text-primary">
               {{ formatCreatedAt(post.created_at) }}
             </h6>
           </div>
 
           <div
-            class="p-2 d-flex justify-content-center align-items-center rounded-circle"
-            style="background-color: whitesmoke"
+            class="d-flex justify-content-center align-items-center rounded-circle"
+            style="background-color: whitesmoke; padding: 0.7rem 0.7rem"
             @click="logout"
           >
             <svg
@@ -51,14 +51,19 @@
 
       <div class="w-100">
         <div v-if="post.medias && post.medias.length > 0">
-          <div v-if="post.medias.length > 1" class="w-100 d-flex overflow-auto">
-            <img
-              v-for="media in post.medias"
-              :key="media.id"
-              :src="media.path ? media.path : defaultPostImage"
-              alt="Post Image"
-              class="w-100 rounded-3 m-2 custom-hover-img"
-            />
+          <div v-if="post.medias.length > 1" class="position-relative">
+            <div
+              class="w-100 d-flex position-relative"
+              style="z-index: 1; overflow-x: auto"
+            >
+              <img
+                v-for="media in post.medias"
+                :key="media.id"
+                :src="media.path ? media.path : defaultPostImage"
+                alt="Post Image"
+                class="w-100 rounded-3 m-2 custom-hover-img"
+              />
+            </div>
           </div>
 
           <div v-else>
@@ -74,15 +79,45 @@
 
         <div class="mt-4">
           <h4 class="fw-bold m-0 p-0 fs-4" style="color: rgb(60, 60, 60)">
-            Cluster Housekeeping Supervisor
+            {{ post.title ? post.title : "Cluster Housekeeping Supervisor" }}
           </h4>
-          <p class="fs-5 m-0 p-0 fs-5">Marriott International...</p>
+          <div class="">
+            <!-- <p
+              class="fs-5 m-0 p-0 fs-5"
+              v-if="!showMore"
+              v-html="truncatedDescription"
+            ></p>
+            <p class="fs-5 m-0 p-0 fs-5" v-else v-html="oldDescText"></p>
+            <a href="" @click.prevent="toggleDescription"
+              >Show {{ showMoreText }}</a
+            > -->
+            <p
+              v-if="!getShowMore(post)"
+              v-html="truncatedDescription(post)"
+            ></p>
+            <p v-else v-html="postDescText(post)"></p>
+            <a
+              href=""
+              @click.prevent="toggleDescription(post)"
+              v-if="post.description.length > 100"
+              >Show {{ getShowMoreText(post) }}</a
+            >
+          </div>
         </div>
+        <!-- {{
+                post.description
+                  ? post.description
+                  : "Marriott International..."
+              }} -->
 
         <div class="d-flex justify-content-between align-items-center my-2">
           <div class="d-flex justify-content-between align-items-center gap-3">
-            <h6 class="fw-bolder fs-6">3 Likes</h6>
-            <h6 class="fw-bolder fs-6">3 Comments</h6>
+            <h6 class="fw-bolder fs-6">
+              {{ post.likes_count ? post.likes_count : "3" }} Likes
+            </h6>
+            <h6 class="fw-bolder fs-6">
+              {{ post.comments_count ? post.comments_count : "3" }} Comments
+            </h6>
           </div>
 
           <div class="d-flex gap-3">
@@ -106,23 +141,21 @@
         </div>
 
         <div class="my-3 d-flex justify-content-center align-items-center">
-          <div class="w-100 p-0">
+          <div class="w-100 p-0 pe-3">
             <input
               @click="logout"
               type="text"
-              class="w-100 p-1 rounded-3"
+              class="w-100 p-1 rounded-3 custome-outline-input"
               placeholder="Recipient's username"
-              style="outline: 2px solid rgb(103, 102, 102); border: none"
             />
           </div>
 
           <div class="p-0">
             <button
               @click="logout"
-              class="btn"
+              class="btn custome-outline"
               type="button"
               id="button-addon2"
-              style="outline: 1px solid black"
             >
               Post
             </button>
@@ -150,6 +183,7 @@ export default {
     return {
       token: "",
       allPosts: [],
+      currentIndex: 0,
 
       isLoadingMorePosts: false,
 
@@ -157,6 +191,11 @@ export default {
       // apiUrl: "https://uatapi.restroworld.com/public/api/",
       defaultProfileImg: require("./assets/profile-no-img.99d6b3a5.99d6b3a5.png"),
       defaultPostImage: require("./assets/ProfileImg.jpg"),
+
+      showMore: false,
+      showMoreText: "More",
+      // postDescText: "",
+      postStates: {}, // Local state for each post
     };
   },
 
@@ -169,14 +208,83 @@ export default {
   // this.getAllPost();
   // },
 
+  computed: {
+    // truncatedDescription() {
+    //   const max_length = 100;
+    //   if (this.postDescText && this.postDescText.length > max_length) {
+    //     return this.postDescText.substring(0, max_length) + "...";
+    //   }
+    //   return this.postDescText;
+    // },
+    // oldDescText() {
+    //   return this.postDescText;
+    // },
+  },
+
   methods: {
+    // async getAllPost() {
+    //   try {
+    //     const response = await axios.get(`${this.apiUrl}posts`, {
+    //       headers: {
+    //         Authorization: `Bearer ${this.token}`,
+    //       },
+    //     });
+
+    //     this.allPosts = response.data.data;
+
+    //     // console.log(this.allPosts);
+    //   } catch (error) {
+    //     console.error("Error fetching posts:", error);
+    //   }
+    // },
+    // getDesc(desc) {
+    //   // console.log("Description: ", desc);
+    //   this.postDescText = desc;
+    // },
+
+    // toggleDescription() {
+    //   this.showMore = !this.showMore;
+    //   this.showMoreText = this.showMore ? "Less" : "More";
+    // },
+
+    truncatedDescription(post) {
+      const max_length = 100;
+      if (post.description && post.description.length > max_length) {
+        return post.description.substring(0, max_length) + "...";
+      }
+      return post.description;
+    },
+    postDescText(post) {
+      return post.description;
+    },
+    getShowMore(post) {
+      return this.postStates[post.id]
+        ? this.postStates[post.id].showMore
+        : false;
+    },
+    getShowMoreText(post) {
+      return this.postStates[post.id]
+        ? this.postStates[post.id].showMore
+          ? "Less"
+          : "More"
+        : "More";
+    },
+    toggleDescription(post) {
+      this.$set(this.postStates, post.id, {
+        showMore: !this.getShowMore(post),
+      });
+    },
+
     async getAllPost() {
       try {
-        const response = await axios.get(`${this.apiUrl}posts`, {
-          headers: {
-            Authorization: `Bearer ${this.token}`,
-          },
-        });
+        const response = await axios.get(
+          `${this.apiUrl}posts/likes-desc?likes=desc&users=desc`,
+          {
+            headers: {
+              Authorization: `Bearer ${this.token}`,
+            },
+          }
+        );
 
         this.allPosts = response.data.data;
 
@@ -272,6 +380,25 @@ export default {
 </script>
 
 <style scoped>
+.custome-outline-input {
+  outline: 2px solid rgb(137, 137, 137);
+  border: none;
+}
+
+.custome-outline-input:focus {
+  outline: 2px solid rgb(39, 38, 38);
+  border: none;
+}
+.custome-outline {
+  outline: 1px solid rgb(75, 75, 75);
+  color: black;
+  font-weight: 600;
+}
+
+.custome-outline:hover {
+  background-color: rgb(47, 47, 46);
+  color: white;
+}
 /* .custom-hover-img {
   transition: transform 0.3s ease-in-out;
 }

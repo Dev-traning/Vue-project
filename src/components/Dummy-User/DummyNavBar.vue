@@ -6,7 +6,7 @@
         class="d-flex w-100 justify-content-around align-items-center fixed-top"
         style="background: white; padding: 1.5rem 0rem"
       >
-        <div class="row align-items-center">
+        <div class="row d-flex align-items-center">
           <div class="col-sm-5">
             <RouterLink
               to="/"
@@ -22,7 +22,7 @@
           </div>
 
           <div class="col-sm-7">
-            <h3 class="fw-bold fs-4 text-primary">
+            <h3 class="fw-bold fs-4 text-primary mb-0">
               First Global Restaurant Community
             </h3>
           </div>
@@ -31,18 +31,18 @@
         <ul class="d-flex gap-5">
           <li class="list-unstyled fs-4 p-2 bg-white rounded custom-hover">
             <button
-              class="text-decoration-none text-black"
+              class="text-decoration-none text-black fw-lighter"
               style="border: none; background: none"
               @click="logout"
             >
-              Log-Out
+              Log-in
             </button>
           </li>
 
           <li class="list-unstyled fs-4 p-2 bg-white rounded custom-hover">
             <RouterLink
               to="/RegisterNew"
-              class="text-decoration-none text-black"
+              class="text-decoration-none text-black fw-lighter"
             >
               Sign-up
             </RouterLink>
@@ -127,12 +127,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-
-* {
-  font-family: "Roboto Slab", serif;
-}
-
 .custom-hover:hover {
   /* background-color: rgb(253, 251, 249) !important; */
   border: 1px solid black;
