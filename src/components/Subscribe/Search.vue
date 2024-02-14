@@ -1,11 +1,11 @@
 <template>
   <div
-    style="background-color: hsl(32deg 100% 50%);"
-    class="card w-100 shadow-md rounded-lg border-0 ps-4   pe-4   mb-3 subscribe"
+    style="background-color: hsl(32deg 100% 50%)"
+    class="card w-100 shadow-md rounded-lg border-0 ps-4 pe-4 mb-3 subscribe"
   >
     <div class="row">
       <div class="col-8">
-        <p class="mb-0 mt-1 text-white font-xsss fw-500 ">
+        <p class="mb-0 mt-1 text-white font-xsss fw-500">
           Coupon Code: REST500
         </p>
       </div>
@@ -45,7 +45,7 @@
 
             <a href="#">
               <h3
-                style="color: #004898;   margin-left: 4px;  font-weight: bold;"
+                style="color: #004898; margin-left: 4px; font-weight: bold"
                 class="pl-4 pr-4 pb-2 pt-2"
               >
                 <u>Make this An Elite Account</u>
@@ -56,13 +56,13 @@
             <div class="row">
               <div class="col">
                 <b-form-group
-                  class=" mb-2 mt-0"
+                  class="mb-2 mt-0"
                   label="First Name"
                   label-for="name-input"
                   invalid-feedback="Name is required"
                 >
                   <b-form-input
-                    class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
+                    class="rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
                     id="name-input"
                     v-model="user.first_name"
                     autocomplete="off"
@@ -71,13 +71,13 @@
               </div>
               <div class="col">
                 <b-form-group
-                  class=" mb-2 mt-0"
+                  class="mb-2 mt-0"
                   label="Last Name"
                   label-for="name-input"
                   invalid-feedback="Name is required"
                 >
                   <b-form-input
-                    class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
+                    class="rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
                     id="name-input"
                     v-model="user.last_name"
                     autocomplete="off"
@@ -88,13 +88,13 @@
             <div class="row">
               <div class="col">
                 <b-form-group
-                  class=" mb-2 mt-0"
+                  class="mb-2 mt-0"
                   label="Mobile No"
                   label-for="name-input"
                   invalid-feedback="Name is required"
                 >
                   <b-form-input
-                    class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
+                    class="rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
                     id="name-input"
                     v-model="user.mobile_no"
                     autocomplete="off"
@@ -103,13 +103,13 @@
               </div>
               <div class="col">
                 <b-form-group
-                  class=" mb-2 mt-0"
+                  class="mb-2 mt-0"
                   label="Email"
                   label-for="name-input"
                   invalid-feedback="Name is required"
                 >
                   <b-form-input
-                    class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
+                    class="rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
                     id="name-input"
                     v-model="users.email"
                     autocomplete="off"
@@ -121,14 +121,14 @@
             <div class="row">
               <div class="col">
                 <b-form-group
-                  class=" mb-2 mt-0"
+                  class="mb-2 mt-0"
                   label="Address"
                   label-for="name-input"
                   invalid-feedback="Name is required"
                 >
                   <b-form-input
                     placeholder="Optinal"
-                    class=" rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
+                    class="rounded-xxl p-2 ps-2 font-xssss text-grey-500 fw-500 border-light-md mb-0 mt-0"
                     id="name-input"
                     v-model="user.address"
                     autocomplete="off"
@@ -137,7 +137,7 @@
               </div>
             </div>
             <b-form-group
-              class=" mb-2 mt-0"
+              class="mb-2 mt-0"
               label="GST No."
               label-for="name-input"
               invalid-feedback="Name is required"
@@ -170,7 +170,7 @@
               <p class="p-0 m-0 text-warning" v-else>{{ couponerr }}</p>
             </a>
             <div v-if="isHidden" class="promo-box">
-              <div class="input-group ">
+              <div class="input-group">
                 <input
                   id="Coupes"
                   ref="removecou"
@@ -260,8 +260,8 @@
 
             <b-button
               @click="updateProfile($event)"
-              style="background-color: #004898!important"
-              class="  fw-400 ps-3 pe-3 lh-32 mt-3 mb-4 rounded-xxxxl ls-2 bg-success d-inline-block text-white me-1 ms-auto w-100"
+              style="background-color: #004898 !important"
+              class="fw-400 ps-3 pe-3 lh-32 mt-3 mb-4 rounded-xxxxl ls-2 bg-success d-inline-block text-white me-1 ms-auto w-100"
               >{{ loading ? "Processing..." : "Create Payment" }}</b-button
             >
           </form>
@@ -380,7 +380,7 @@ export default {
           if (result.data.status_code == 200) {
             this.signInButtonPressed();
             setTimeout(
-              function(scope) {
+              function (scope) {
                 scope.loading = false;
               },
               5000,
@@ -399,115 +399,99 @@ export default {
 
     signInButtonPressed() {
       var data =
-                          this.mkey +
-                          "|" +
-                          this.txnid +
-                          "|" +
-                          this.amount_pay +
-                          "|" +
-                          this.productInfo +
-                          "|" +
-                          this.users.first_name +
-                          "|" +
-                          this.users.email +
-                          "|||||||||||";
-                        var sha512 = require("js-sha512");
-                        var salt = this.saltKey;
-                        var hash = sha512(data + salt);
-                        if (hash) {
-                          localStorage.setItem("hash", hash);
-                          localStorage.setItem("expireSession", "sesion12dgtdb");
-                        }
-                        console.log(hash);
-                        console.log(data);
-
-                        document.getElementById("hash").value = hash;
-      if(this.user.country_id == '101')
-            {
-                       // document.getElementById("paymentForm").submit();
-                        document.getElementById("paymentForm").submit();  
-                          //  <<-- only this line un commented and another line Un comment To Payumoney start
-        
-
-
+        this.mkey +
+        "|" +
+        this.txnid +
+        "|" +
+        this.amount_pay +
+        "|" +
+        this.productInfo +
+        "|" +
+        this.users.first_name +
+        "|" +
+        this.users.email +
+        "|||||||||||";
+      var sha512 = require("js-sha512");
+      var salt = this.saltKey;
+      var hash = sha512(data + salt);
+      if (hash) {
+        localStorage.setItem("hash", hash);
+        localStorage.setItem("expireSession", "sesion12dgtdb");
       }
-      
-      else{
-        
-     
-      if(hash){
-       
-        var options = {
-        key: "rzp_live_tazg9e4O5sAPdQ",
-        // key: "rzp_test_EpNayKPHUEGLMY",
-        amount: this.amount_pay * 100,
+      console.log(hash);
+      console.log(data);
 
-        currency: this.currency1,
-        //  currency: 'INR', 
-        // name: this.first_name,
-        description: "Restroworld Transection",
-        image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
-        handler: function (response) {
-          this.paymentId = response.razorpay_payment_id;
-          this.orderId = response.razorpay_order_id;
-          this.signature = response.razorpay_signature;
+      document.getElementById("hash").value = hash;
+      if (this.user.country_id == "101") {
+        // document.getElementById("paymentForm").submit();
+        document.getElementById("paymentForm").submit();
+        //  <<-- only this line un commented and another line Un comment To Payumoney start
+      } else {
+        if (hash) {
+          var options = {
+            key: "rzp_live_tazg9e4O5sAPdQ",
+            // key: "rzp_test_EpNayKPHUEGLMY",
+            amount: this.amount_pay * 100,
 
-          if (response.razorpay_payment_id) {
-          
+            currency: this.currency1,
+            //  currency: 'INR',
+            // name: this.first_name,
+            description: "Restroworld Transection",
+            image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
+            handler: function (response) {
+              this.paymentId = response.razorpay_payment_id;
+              this.orderId = response.razorpay_order_id;
+              this.signature = response.razorpay_signature;
+
+              if (response.razorpay_payment_id) {
                 // alert("PaymentSuccess");
                 // window.location.href =  window.location.origin + "/Home/User/PaymentSuccess";
                 var data =
-                              this.mkey +
-                              "|" +
-                              this.txnid +
-                              "|" +
-                              this.amount_pay +
-                              "|" +
-                              this.productInfo +
-                              "|" +
-                              this.first_name +
-                              "|" +
-                              this.email +
-                              "|||||||||||";
-                            var sha512 = require("js-sha512");
-                            var salt = this.saltKey;
-                            var hash = sha512(data + salt);
-                            if (hash) {
-                              localStorage.setItem("hash", hash);
-                              localStorage.setItem("expireSession", "sesion12dgtdb");
-                            } 
-                window.location.href = "http://restroworld.com/Home/User/PaymentSuccess"
+                  this.mkey +
+                  "|" +
+                  this.txnid +
+                  "|" +
+                  this.amount_pay +
+                  "|" +
+                  this.productInfo +
+                  "|" +
+                  this.first_name +
+                  "|" +
+                  this.email +
+                  "|||||||||||";
+                var sha512 = require("js-sha512");
+                var salt = this.saltKey;
+                var hash = sha512(data + salt);
+                if (hash) {
+                  localStorage.setItem("hash", hash);
+                  localStorage.setItem("expireSession", "sesion12dgtdb");
+                }
+                window.location.href =
+                  "http://restroworld.com/Home/User/PaymentSuccess";
+              } else {
+                window.location.href = "https://restroworld.com/Home/User/Fail";
+              }
+            }.bind(this),
+            prefill: {
+              name: this.first_name,
+              email: this.email,
+            },
+            notes: {
+              address: "Razorpay Corporate Office",
+            },
+            theme: {
+              color: "#F37254",
+            },
+          };
+          var rzp1 = new window.Razorpay(options);
+          rzp1.open();
+        }
 
-          } 
-          else {
-            
-            window.location.href = "https://restroworld.com/Home/User/Fail"
-
-          }
-        }.bind(this),
-        prefill: {
-          name: this.first_name,
-          email: this.email,
-        },
-        notes: {
-          address: "Razorpay Corporate Office",
-        },
-        theme: {
-          color: "#F37254",
-        },
-      };
-      var rzp1 = new window.Razorpay(options);
-      rzp1.open();
-    }
-
-      
-          // document.getElementById("paymentForm").submit();
-   
+        // document.getElementById("paymentForm").submit();
       }
     },
 
     applyCoupon() {
-      
       axios
         .get("apply-coupon/1", {
           params: {
@@ -519,12 +503,10 @@ export default {
           this.coupon = response.data;
           this.amount_pay = response.data.payable_amount;
           this.amount_payPrint = response.data.payable_amount;
-          
-          
+
           this.couponerr = this.coupon.message;
           localStorage.setItem("copondetails", JSON.stringify(response.data));
-          localStorage.setItem("coponde",this.coupon_code);
-
+          localStorage.setItem("coponde", this.coupon_code);
         })
         .catch((error) => {
           console.log(error);
@@ -537,17 +519,12 @@ export default {
         });
     },
 
-    getcurrency(){
-      
-      axios.get('countries/' + this.users.country.id).then( (result) => {
-
+    getcurrency() {
+      axios.get("countries/" + this.users.country.id).then((result) => {
         console.log(result.data.data.currency);
-        this.currency1  = result.data.data.currency;
-
-      })
-
-
-   }
+        this.currency1 = result.data.data.currency;
+      });
+    },
   },
   mounted() {
     this.users = JSON.parse(localStorage.getItem("UserDetails"));
