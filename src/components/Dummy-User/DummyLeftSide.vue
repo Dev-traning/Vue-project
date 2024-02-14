@@ -129,8 +129,8 @@ export default {
       token: "",
       currentUser: {},
 
-      // apiUrl: "https://api.restroworld.com/api/",
-      apiUrl: "https://uatapi.restroworld.com/public/api/",
+      apiUrl: "https://api.restroworld.com/api/",
+      // apiUrl: "https://uatapi.restroworld.com/public/api/",
       defaultProfileImg: require("./assets/profile-no-img.99d6b3a5.99d6b3a5.png"),
       defaultPostImage: require("./assets/ProfileImg.jpg"),
     };
