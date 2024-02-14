@@ -424,38 +424,94 @@ export default {
     },
 
     getData() {
-      axios.get("countries?is_light=true").then((result) => {
+      axios.get(`countries?is_light=1`).then((result) => {
         this.list = result.data.data;
+        // console.log("Countries: ", this.list);
         if (this.country_id) {
           this.getState();
+          // console.log("Country Id: ", this.country_id);
         }
       });
     },
 
-    getState() {
-      axios
-        .get("states_of_country?is_light=1" + this.country_id, {
-          params: {
-            country_id: this.country_id,
-          },
-        })
-        .then((result) => {
-          this.state = result.data.data;
-          if (this.state_id) {
-            this.getCity();
+    async getState() {
+      // console.log("Country Id On Change: ", this.country_id);
+      try {
+        this.state = [];
+        let allStates = [];
+        let continueState = true;
+        let page = 1;
+
+        while (continueState) {
+          const response = await axios.get(
+            `rw-states_of_country?page=${page}&is_light=1&per_page=1000`,
+            {
+              params: {
+                country_id: this.country_id,
+              },
+            }
+          );
+          // console.log("Response of States: ", response);
+
+          const stateData = response.data && response.data.data;
+
+          if (!stateData || stateData.length === 0) {
+            // No more countries to fetch, break the loop
+            continueState = false;
+          } else {
+            allStates = [...allStates, ...stateData];
+            page++;
           }
-        });
+        }
+
+        this.state = allStates;
+
+        // console.log("All States: ", this.state);
+
+        if (this.state_id) {
+          // console.log("State Id: ", this.state_id);
+          this.getCity();
+        }
+      } catch (error) {
+        console.log("Error in Loading States: ", error);
+      }
     },
-    getCity() {
-      axios
-        .get("cities_of_state?is_light=1" + this.state_id, {
-          params: {
-            state_id: this.state_id,
-          },
-        })
-        .then((result) => {
-          this.city = result.data.data;
-        });
+    async getCity() {
+      // console.log("State Id On Change: ", this.state_id);
+      try {
+        this.city = [];
+        let allCities = [];
+        let continueCity = true;
+        let page = 1;
+
+        while (continueCity) {
+          const response = await axios.get(
+            `rw-cities_of_state?is_light=1&page=${page}&per_page=1000`,
+            {
+              params: {
+                state_id: this.state_id,
+              },
+            }
+          );
+          // console.log("Response of Cities: ", response);
+
+          const cityData = response.data && response.data.data;
+
+          if (!cityData || cityData.length === 0) {
+            // No more countries to fetch, break the loop
+            continueCity = false;
+          } else {
+            allCities = [...allCities, ...cityData];
+            page++;
+          }
+        }
+
+        this.city = allCities;
+
+        // console.log("All Cities: ", this.city);
+      } catch (error) {
+        console.log("Error in Loading States: ", error);
+      }
     },
   },
 
