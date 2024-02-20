@@ -28,7 +28,8 @@
       
        
       </table>
-         <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+item.user_type_text+'/'+item.id" tag="button">Read More</router-link >
+      <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+'Manpower'+'/'+item.id" tag="button">Read More</router-link >
+         <!-- <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+item.user_type_text+'/'+item.id" tag="button">Read More</router-link > -->
       </div>
         </div>
 

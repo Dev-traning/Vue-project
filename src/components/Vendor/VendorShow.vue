@@ -27,7 +27,7 @@
                   <td class="fw-400 text-primary text-primary-500 w-50 lh-0 font-xss">{{item.business_category}}</td>
                </tr>
             </table>
-            <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+item.user_type_text+'/'+item.id" tag="button">Read More</router-link >
+            <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+'Vendor'+'/'+item.id" tag="button">Read More</router-link >
          </div>
       </div>
       <div v-if="MpJobs">
@@ -57,7 +57,7 @@
                   <td class="fw-400 text-primary text-primary-500 w-50 lh-0 font-xss">{{item.position}}</td>
                </tr>
             </table>
-            <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+item.user_type_text.id+'/'+item.id" tag="button">Read More</router-link >
+            <router-link  class="  text-white   bg-info btn   font-xssss  fw-400 ls-3 w-100" :to="'/read-more/'+'job'+'/'+item.id" tag="button">Read More</router-link >
          </div>
          
        
@@ -110,7 +110,7 @@ export default {
       axios.get("vendor/vendor")
        .then((result) => {
           this.vendor = result.data.data;
-          alert('hello');
+         
        })}
        
        if(getPath === '8'){
