@@ -40,6 +40,7 @@
                   height: 2rem;
                   mix-blend-mode: darken;
                   margin: 0.6rem 0.6rem;
+                  object-fit: cover;
                 "
               />
             </div>

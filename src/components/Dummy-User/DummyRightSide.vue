@@ -38,56 +38,30 @@
       <div
         class="d-flex justify-content-center flex-column align-itmes-center w-100 mt-4"
       >
-        <div class="row">
+        <div class="row mb-2">
           <div class="col-sm-6 custom-res-col-6 fs-6" style="font-weight: 500">
+           
+      
             <p
               class="text-end m-0 p-0"
               style="border: none; background: none; color: gray"
-            >
-              About
-            </p>
-            <p
-              class="text-end m-0 p-0"
-              style="border: none; background: none; color: gray"
-            >
-              FranchiseePrivacy
-            </p>
-            <p
-              class="text-end m-0 p-0"
-              style="border: none; background: none; color: gray"
-            >
-              Cancellation
+            @click="redirectDeletionPolicy()"
+              >
+              Deletion
             </p>
           </div>
 
-          <div class="col-sm-6 custom-res-col-6 fs-6" style="font-weight: 500">
-            <p
-              class="text-start m-0 p-0"
-              style="border: none; background: none; color: gray"
-            >
-              UsAtmnirbhar
-            </p>
-            <p
-              class="text-start m-0 p-0"
-              style="border: none; background: none; color: gray"
-            >
-              Policy
-            </p>
-            <p
-              class="text-start m-0 p-0"
-              style="border: none; background: none; color: gray"
-            >
-              Terms & Conditions
-            </p>
+          <div class="col-sm-6 custom-res-col-6 fs-6 " style="font-weight: 500">
+           
+            <p class="text-start m-0 p-0" style="border: none; background: none; color: gray" v-on:click="redirect()">
+    privacy policy
+</p>
+
+           
           </div>
         </div>
 
-        <div
-          class="d-flex justify-content-center align-itmes-center fs-6"
-          style="font-weight: 500"
-        >
-          <a href="#">support@restroworld.com</a>
-        </div>
+       
 
         <div
           class="d-flex justify-content-center align-itmes-center fs-6"
@@ -97,7 +71,7 @@
             <span class="text-danger">
               <span class="text-primary">Restro</span>world</span
             >
-            Corporation © 2021
+            Corporation © 2024
           </p>
         </div>
       </div>
@@ -114,6 +88,13 @@ export default {
   },
 
   methods: {
+    redirect(){
+      this.$router.push('/privacypolicy')
+    },
+    redirectDeletionPolicy(){
+      this.$router.push('//deletionPolicy')
+    
+    },
     lodData() {
       this.token = localStorage.getItem("authToken");
       //   console.log("this is home page show token", this.token);

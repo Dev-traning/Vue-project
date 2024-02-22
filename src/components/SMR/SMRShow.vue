@@ -23,7 +23,9 @@
 
          <tr>
             <td class="fw-600 text-primary text-primary-600 w-50 lh-0 font-xxs">Restaurant Name</td>
-            <td class="fw-400 text-primary text-primary-500 w-50 lh-0 font-xss">{{item.restaurant.business_name}}</td>
+              <td class="fw-400 text-primary text-primary-500 w-50 lh-0 font-xss"> 
+            {{ item.contact_name }}
+              </td>
          </tr>
 
          <tr v-for="restType in restauType" v-bind:key="restType.id">
@@ -161,6 +163,13 @@ export default {
     };
   },
   methods: {
+    parseStringAndPrintName(arrayOfArrays) {
+  
+    // Return the separated data object
+    return arrayOfArrays;
+
+  },
+
    //  handleScrolledToBottom(isVisible) {
    //    if (!isVisible) {
    //      return;
@@ -235,8 +244,7 @@ getData() {
       .then((result) => {
         this.reurment = [...this.reurment, ...result.data.data];
         this.lastPage = result.data.last_page;
-        console.log(this.reurment);
-        alert(this.reurment);
+       
       })
       .catch((error) => {
         console.error(error);

@@ -27,7 +27,6 @@ restaurants in surat,
 
 <script>
 import axios from "axios";
-import { gapi } from "gapi-script";
 
 export default {
   name: "App",
@@ -39,13 +38,7 @@ export default {
 
     //  this.users = response.data;
     this.$store.dispatch("user", response.data);
-    gapi.load("client:auth2", () => {
-      gapi.client.init({
-        clientId:
-          "650798214852-1mcjn6fcle8ug6sgj3ukc4icip7jq2s4.apps.googleusercontent.com",
-        plugin_name: "chat",
-      });
-    });
+  
   },
 };
 </script>
@@ -74,6 +67,17 @@ export default {
   margin-top: 100px;
   margin-right: 20px;
 }
+</style>
+<style>
+  main {
+    position: relative;
+  }
+
+  @media (max-width: 960px) {
+    main {
+      overflow: hidden;
+    }
+  }
 </style>
  
  

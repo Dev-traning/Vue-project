@@ -300,7 +300,7 @@ export default {
 
         const page = Math.ceil(this.allPosts.length / 15) + 1;
         const pageSize = 15;
-        const response = await axios.get(`${this.apiUrl}posts`, {
+        const response = await axios.get(`${this.apiUrl}posts/likes-desc?likes=desc&users=desc`, {
           headers: {
             Authorization: `Bearer ${this.token}`,
           },

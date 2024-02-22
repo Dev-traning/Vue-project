@@ -339,9 +339,8 @@
      </table>
      
     
-   <div v-if="SMRData.restaurant.id==users.restaurant.id==false">
-   <b-button style="background-color: #004898 !important" class="w-100 p-0 mt-2"  @click="SMRDataIntrst(SMRData.user_type_text)" v-if="SMRData.relation==0">Interested</b-button>
-   </div>
+   <b-button style="background-color: #004898 !important" class="w-100 p-0 mt-2"  @click="SMRDataIntrst(SMRData.user_type_text)" >Interested</b-button>
+  
       
       
     
@@ -394,7 +393,7 @@
     
    
      </table>
-     <b-button style="background-color: #004898 !important" class="w-100 p-0 mt-2"  @click="jobApply(jobsShow.id)" v-if="requirement.relation==0">job apply</b-button>
+     <b-button style="background-color: #004898 !important" class="w-100 p-0 mt-2"  @click="jobApply(jobsShow.id)" v-if="jobsShow > 0">job apply</b-button>
 
       </div>
    
@@ -525,7 +524,7 @@
                <td class="fw-600 text-primary text-primary-600 w-50 lh-0 font-xxs">Description</td>
                <td class="fw-400 text-primary text-primary-500 w-50 lh-0 font-xss">{{requirement.description}}</td>
             </tr>  </table>
-            <b-button style="background-color: #004898 !important" class="w-100 p-0 mt-2"  @click="vendorRequir" v-if="requirement.relation==0">Interested</b-button>
+            <b-button style="background-color: #004898 !important" class="w-100 p-0 mt-2"  @click="vendorRequir">Interested</b-button>
       </div>
    
       
@@ -621,10 +620,9 @@
 
                      axios.post(`mp/manpowers/apply-now-job/${jobId}` ,{
                         is_applied:1 
-                     }).then((res)=>{
+                     }).then(()=>{
 
-                        console.log(res.data.data);
-                        
+                     
                         const Toast = this.$swal.mixin({
                      toast: true,
                      position: 'top-end',
