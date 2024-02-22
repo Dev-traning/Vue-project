@@ -45,61 +45,7 @@
       </div>
     </div>
 
-    <div
-      class="shadow bg-body px-1 py-1 mt-4 d-flex w-100 justify-content-start align-itmes-center flex-column"
-    >
-      <div
-        class="py-1 d-flex align-itmes-center justify-content-between"
-        style="overflow: hidden"
-      >
-        <img
-          src="./assets/restroworldCardImg.jpg"
-          alt="restroworldCardImg"
-          class="w-100 custom-hover-img"
-        />
-      </div>
-
-      <div class="p-1" style="background-color: whitesmoke">
-        <h5 class="ps-3 fw-bold mb-0">Aayush Sales</h5>
-        <h6 class="ps-3 fs-6 mb-1">12 Jan, 2021</h6>
-      </div>
-
-      <button
-        @click="logout"
-        class="text-primary py-2"
-        style="border: none; background: none"
-      >
-        Read More
-      </button>
-    </div>
-
-    <div
-      class="shadow bg-body px-1 py-1 mt-4 d-flex w-100 justify-content-start align-itmes-center flex-column"
-    >
-      <div
-        class="py-1 d-flex align-itmes-center justify-content-between"
-        style="overflow: hidden"
-      >
-        <img
-          src="./assets/restroworldCardImg.jpg"
-          alt="restroworldCardImg"
-          class="w-100 custom-hover-img"
-        />
-      </div>
-
-      <div class="p-1" style="background-color: whitesmoke">
-        <h5 class="ps-3 fw-bold mb-0">Durga Kitchen equipments</h5>
-        <h6 class="ps-3 mb-1">12 Jan, 2021</h6>
-      </div>
-
-      <button
-        @click="logout"
-        class="text-primary py-2"
-        style="border: none; background: none"
-      >
-        Read More
-      </button>
-    </div>
+   
 
     <div
       class="shadow bg-body px-3 py-2 my-4 d-flex w-100 justify-content-start align-itmes-center flex-column"
