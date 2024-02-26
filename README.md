@@ -16,4 +16,4 @@ docker pull dimpy24/maf
 ```
 
 ### the check the dit rep 
-See [Configuration Reference](https://hub.docker.com/r/dimpy24/maf ).
+See [Docker desktop](https://hub.docker.com/r/dimpy24/maf ).
