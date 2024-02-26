@@ -2,23 +2,18 @@
 
 ## Project setup
 ```
-npm install
+docker build -t Vuejs .
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+docker run -p 8080:8081 Vuejs
 ```
 
-### Compiles and minifies for production
+### If you want directly 
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+docker pull dimpy24/maf
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### the check the dit rep 
+See [Configuration Reference](https://hub.docker.com/r/dimpy24/maf ).
