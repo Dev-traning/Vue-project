@@ -1,23 +1,15 @@
-
-FROM node:20.11
-
-# Set the working directory to /maf
-WORKDIR /project
-
-# Copy package.json and package-lock.json to the working directory
+FROM node:lts-alpine as build-stage
+WORKDIR /home/dimpy/Documents/Docker/Rw
 COPY package*.json ./
-
-# Install the Vue CLI globally
+RUN rm -rf package-lock.json
+RUN rm -rf node_modules
 RUN npm install -g @vue/cli
-
-# Install project dependencies
 RUN npm install
-
-# Copy the entire project to the working directory
 COPY . .
 
-# Expose the default Vue development  portserver (you may need to adjust this based on your Vue project configuration)
-EXPOSE 3000
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /home/dimpy/Documents/Docker/Rw/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 
-# Start the Vue development server
-CMD ["npm", "run", "serve"]
