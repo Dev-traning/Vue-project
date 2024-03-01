@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+  rw-app:
+    image: rw:latest
+    ports:
+      - "8888:80"
